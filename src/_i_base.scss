@@ -1,0 +1,329 @@
+/*
+* Fichier de style de base. Constitut aussi le theme de base
+____________________________________________________________*/
+
+//* importation des déclarations des propriétés à utilisées
+//----------------------------------------------------------*/
+
+
+@import url("i_font_def.scss") ; /*polices*/
+
+
+/* début de la déclaration de style sur des éléments "conteneurs" tels les sections, les articles, ...
+-----------------------------------------------------------------------------------------------------*/
+
+body {
+
+    font-family: $default-font-family ;
+}
+
+* {
+    &:hover, &:focus {
+     
+        transition: all 0.35s linear ;
+    }
+    &:focus {
+     
+        @include style-focus-of("default") ;
+    }
+    &.hidden {
+        
+        visibility: hidden ;
+    }
+}
+
+
+/* fin de la déclaration de style sur les conteneurs
+-------------------------------------------------------*/
+
+
+/* début de la déclaration de style sur des éléments speciaux tels les bouttons, les zones de texte, ... 
+------------------------------------------------------------------------------------------------------*/
+
+.i-btn{
+
+    @include button-bg-look($dark-color, $white-color) ;
+    
+           display: inline-block ;
+       line-height: normal ;
+       white-space: nowrap ;
+    vertical-align: middle ;
+           padding: 5px 10px ;
+            margin: 3px ;
+            border: 2px solid $white-color ;
+     border-radius: 10px ;
+        box-shadow: 0px 1px 2px $shadow-color ;
+       font-family: Ubuntu, _Ubuntu, $default-font-family ;
+         font-size: 0.90em;
+        text-align: center ;
+    text-decoration: none ;
+
+    &:hover, &.hovered {
+
+        @include button-bg-look($hover-color, $white-color) ;
+        
+        box-shadow: 0px 1px 2px $hover-color ;
+    }
+    &:active, &.actived {
+
+        box-shadow: 0px 1px 5px $active-color ;
+    }
+    &:focus, &.focused {
+        
+        @include style-focus-of("box") ;
+    }
+    &[disabled], &.disabled, 
+    &[disabled]:hover, &.disabled:hover {
+        
+        @include button-bg-look($disable-color, $white-color) ;
+        cursor: not-allowed ;
+        box-shadow: 0px 1px 1px $disable-color ;
+    }
+}
+
+button, 
+input[ type="button"], 
+input[ type="submit"], 
+input[ type="reset"],
+input[ type="file"] {
+    
+    @extend .i-btn ;
+    
+    @at-root input[ type="file"] {
+        
+        font-size: 0.8em;
+    }
+}
+
+
+select, 
+textarea,
+input[ type="text"], 
+input[ type="password"], 
+input[ type="email"], 
+input[ type="url"],
+input[ type="number"], 
+input[ type="tel"], 
+input[ type="date"], 
+input[ type="month"], 
+input[ type="time"],
+input[ type="datetime"], 
+input[ type="datetime-local"], 
+input[ type="week"], 
+input[ type="search"],
+input[ type="color"] {
+    
+    //@NOTE Need to define this out cause IE8 won't execute CSS that contains a CSS3 selector (like the :not() selector).  
+    @mixin common-input-style {
+
+           font-family: $default-font-family ;
+                border: 1px solid lighten( $dark-color, 50%) ;
+         border-radius: 0 ;
+            box-shadow: 1px 1px 4px $shadow-color inset ;
+               padding: 7px ;
+                margin: 3px ;
+                 color: $dark-color ;
+             font-size: 0.91em ;
+                 width: $global-min-width - 50px ;
+            background: $white-color ;
+            box-sizing: border-box ;
+        vertical-align: middle ;
+        
+        &:hover {
+
+            border: 1px solid $hover-color ;
+        }
+        &:focus {
+
+                border: 1px solid $focus-color ;
+            box-shadow: 1px 1px 5px $focus-color inset ;
+            
+            @include style-focus-of("none") ;
+        }
+        
+        &[disabled], &.disabled, 
+        &[disabled]:hover, &.disabled:hover {
+            
+            background: $light-color ;
+            cursor: auto ;
+            border: 1px solid lighten( $disable-color, 50%) ;
+        }
+    }
+
+    @include common-input-style ;
+    
+    @at-root {
+        
+        input[type="color"] {
+        
+            padding: 2px ;
+        }
+        
+        select {
+
+            box-shadow: 1px 1px 3px $shadow-color ;
+
+            &:focus {
+
+                @include style-focus-of("box") ;
+            }
+        }
+        
+        textarea {
+            
+            box-shadow: 1px 1px 5px $shadow-color inset ;
+            
+            &:focus {
+
+                box-shadow: 1px 1px 7px $focus-color inset ;
+            }
+        }
+        
+        /*Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+         *since IE8 won't execute CSS that contains a CSS3 selector.
+        */
+        input:not([type]) {
+            
+            @include common-input-style ;
+        }
+    }
+}
+
+
+label input[ type="checkbox"],
+label input[ type="radio"],
+input[ type="checkbox"],
+input[ type="radio"], {
+    
+    @mixin custom-checkbox-style ($elt-altern) {
+        
+        //visibility: hidden ;
+        opacity: 0 ;
+        appearance: none ;
+        width: 0px;
+        height: 0px;
+
+        /* on prépare le label */
+        &+#{$elt-altern} {
+
+            position: relative ;
+            padding-left: 1.5em ;
+            cursor: pointer ;
+
+            /* Aspect des checkboxes */
+            /* :before sert à créer la case à cocher */
+            &:before {
+
+                content: '';
+                position: absolute;
+                left:0; top: 0.2em;
+                width: 0.85em; 
+                height: 0.85em; 
+                border: 1px solid $white-color ;
+                @include button-bg-look($dark-color, $white-color) ;
+                border-radius: 2px; /* angles arrondis */
+                box-shadow: 0px 0px 3px $shadow-color ;
+            }
+            /* Aspect général de la coche */
+            &:after {
+
+                content: '✔';
+                position: absolute;
+                top: 0; left: 0.2em;
+                font-size: 0,85em ;
+                color: $white-color ;
+                visibility: hidden ;
+            }
+            
+        }
+
+        &:focus + #{$elt-altern}:before {
+
+            box-shadow: 0px 0px 3px $focus-color ;
+            border: 1px solid $focus-color ;
+        }
+        
+        &[disabled] + #{$elt-altern}, &.disabled + #{$elt-altern}, 
+        &[disabled]:hover + #{$elt-altern}, &.disabled:hover + #{$elt-altern} {
+
+            color: darken( $disable-color, 25%) ;
+            &:before {
+                
+                @include button-bg-look($disable-color, $white-color) ;
+                cursor: not-allowed ;
+                box-shadow: 0px 0px 2px $disable-color ;
+            }
+        }
+        
+        @at-root {
+
+            input[ type="radio"] + #{$elt-altern}:before,
+            label input[ type="radio"] + #{$elt-altern}:before, {
+
+                border-radius: 50% ;
+            }
+
+            /* Aspect si "cochée" */
+            &:checked + #{$elt-altern}:after {
+
+                visibility: visible ; /* coche opaque */
+            }
+
+            &:checked + #{$elt-altern}:before {
+
+                @include button-bg-look($select-color, $white-color) ;
+            }
+        }
+    }
+    
+    @include custom-checkbox-style ("label") ;
+    @include custom-checkbox-style ("span") ;
+   
+}
+
+fieldset {
+    
+    margin: 1em ;
+    border: 1px solid $dark-color ;
+    
+    legend {
+        
+        font-size: 0.85em ;
+        font-family: Ubuntu, _Ubuntu, $default-font-family ;
+    }
+    
+    &:hover {
+        
+        border: 1px solid $hover-color ;
+        
+        legend {
+
+            color: $hover-color ;
+        }
+    }
+}
+
+
+
+table {
+    
+    border-collapse: collapse ;
+    border-spacing: 0 ;
+    empty-cells: show ;
+    text-align: center ;
+    background: $white-color ;
+    
+    td, th {
+
+        padding: 0.5em ;
+        border: 1px solid lighten( $dark-color, 50%) ;
+    }
+
+    th {
+
+        background-color: $dark-color ;
+        color: $white-color ;
+        font-family: Ubuntu, _Ubuntu, $default-font-family ;
+        font-size: 0.95em ;
+    }
+}

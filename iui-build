@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+/*=================================================================================================================
+ * Here, the script need *nodeJS* to run.
+ * 
+ * This script is for building iUI library from its partials sources; For that, the following operations are done:
+ * concatenation of partials sources to make the library.
+ * minifications.
+ *=================================================================================================================
+ * @license LGPL v2.0 or later
+ * @author  [Tindo Ngoufo Arsel](mailto:devtnga@gmail.com)
+*/

@@ -1,0 +1,64 @@
+// /* Zone de déclarations des variables à utiliser
+// -------------------------------------------------*/
+
+$global-min-width: 280px ;
+$global-max-width: 1400px ;
+$global-small-width: 800px ;
+$global-smaller-width: 640px ;
+$global-normal-width: 1024px ;
+$global-big-width: 1280px ;
+
+$white-color: #fff ;
+$red-color: #f00 ;
+$yellow-color: yellow ;
+$light-color: #f2f2f2 ;
+$black-color: #1a1a1a ;
+$dark-color: #2d2d2d ;
+$focus-color: #ffa300 ;
+$hover-color: $focus-color ;
+$active-color: $focus-color ;
+$select-color: $focus-color ;
+$disable-color: #d0d0d0 ;
+$warring-color: $yellow-color ;
+$success-color: $focus-color ;
+
+$shadow-color: rgba(103, 103, 103, 0.7) ;
+
+$default-font-family: "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif ;
+$vendor-font-family: "GE Inspira", _GE_Inspira, Raleway, $default-font-family ;
+
+
+// /* Zone de déclarations des mixins
+// ---------------------------------------------------------*/
+
+@mixin button-bg-look ($btn-color, $txt-color) {
+
+    color: $txt-color ;
+    background-color: $btn-color ;
+    background-image: linear-gradient(to top, $btn-color, lighten($btn-color,10%), lighten($btn-color,15%)) ;
+}
+
+@mixin global-bg-look ($bg-color, $txt-color) {
+
+    color: $txt-color ;
+    background-color: $bg-color ; 
+    //background-image: linear-gradient(to top, $bg-color, lighten($bg-color,5%), lighten($bg-color,10%)) ;
+}
+
+@mixin style-focus-of ($elt-type:default) {
+    
+    @if $elt-type == "box" {
+        outline: 0 ;
+        box-shadow: 0px 1px 5px $focus-color ; 
+        
+    }@else if $elt-type == "text" {
+        outline: 0 ;
+        text-shadow: 0px 0px 3px $focus-color ;   
+        
+    }@else if $elt-type == "none" {
+        outline: 0 ;
+        
+    }@else {
+        outline: thin solid $focus-color ;
+    }
+}
