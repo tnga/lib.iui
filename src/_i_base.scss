@@ -6,9 +6,6 @@ ____________________________________________________________*/
 //----------------------------------------------------------*/
 
 
-@import url("i_font_def.scss") ; /*polices*/
-
-
 /* début de la déclaration de style sur des éléments "conteneurs" tels les sections, les articles, ...
 -----------------------------------------------------------------------------------------------------*/
 
@@ -195,90 +192,92 @@ label input[ type="radio"],
 input[ type="checkbox"],
 input[ type="radio"], {
     
-    @mixin custom-checkbox-style ($elt-altern) {
+    //width: 0px;
+    //height: 0px;
+    position: relative ;
+    margin-left: 0.8em ;
+    margin-right: 0.8em ;
+    cursor: auto ;
+
+    /* Aspect des checkboxes */
+    /* :before sert à créer la case à cocher */
+    &:before {
+
+        content: '';
+        position: absolute ;
+        width: 0.90em; 
+        height: 0.90em; 
+        border: 2px solid $white-color ;
+        @include button-bg-look($dark-color, $white-color) ;
+        border-radius: 2px; /* angles arrondis */
+        box-shadow: 0px 0px 2px $shadow-color ;
+    }
+    /* Aspect général de la coche */
+    &:after {
+
+        content: '✔';
+        position: absolute;
+        top: 0; left: 0.2em;
+        font-size: 0,85em ;
+        color: $white-color ;
+        visibility: hidden ;
+    }
+
+    &:focus {
+
+        @include style-focus-of("none") ;
         
-        //visibility: hidden ;
-        opacity: 0 ;
-        appearance: none ;
-        width: 0px;
-        height: 0px;
-
-        /* on prépare le label */
-        &+#{$elt-altern} {
-
-            position: relative ;
-            padding-left: 1.5em ;
-            cursor: pointer ;
-
-            /* Aspect des checkboxes */
-            /* :before sert à créer la case à cocher */
-            &:before {
-
-                content: '';
-                position: absolute;
-                left:0; top: 0.2em;
-                width: 0.85em; 
-                height: 0.85em; 
-                border: 1px solid $white-color ;
-                @include button-bg-look($dark-color, $white-color) ;
-                border-radius: 2px; /* angles arrondis */
-                box-shadow: 0px 0px 3px $shadow-color ;
-            }
-            /* Aspect général de la coche */
-            &:after {
-
-                content: '✔';
-                position: absolute;
-                top: 0; left: 0.2em;
-                font-size: 0,85em ;
-                color: $white-color ;
-                visibility: hidden ;
-            }
+        &:before {
             
-        }
-
-        &:focus + #{$elt-altern}:before {
-
             box-shadow: 0px 0px 3px $focus-color ;
-            border: 1px solid $focus-color ;
-        }
-        
-        &[disabled] + #{$elt-altern}, &.disabled + #{$elt-altern}, 
-        &[disabled]:hover + #{$elt-altern}, &.disabled:hover + #{$elt-altern} {
-
-            color: darken( $disable-color, 25%) ;
-            &:before {
-                
-                @include button-bg-look($disable-color, $white-color) ;
-                cursor: not-allowed ;
-                box-shadow: 0px 0px 2px $disable-color ;
-            }
-        }
-        
-        @at-root {
-
-            input[ type="radio"] + #{$elt-altern}:before,
-            label input[ type="radio"] + #{$elt-altern}:before, {
-
-                border-radius: 50% ;
-            }
-
-            /* Aspect si "cochée" */
-            &:checked + #{$elt-altern}:after {
-
-                visibility: visible ; /* coche opaque */
-            }
-
-            &:checked + #{$elt-altern}:before {
-
-                @include button-bg-look($select-color, $white-color) ;
-            }
+            border: 1px solid $focus-color ;   
         }
     }
     
-    @include custom-checkbox-style ("label") ;
-    @include custom-checkbox-style ("span") ;
-   
+    &[disabled] + label, &.disabled + label, 
+    &[disabled]:hover + label, &.disabled:hover + label,
+    &[disabled] + span, &.disabled + span, 
+    &[disabled]:hover + span, &.disabled:hover + span{
+
+        color: darken( $disable-color, 25%) ;
+    }
+    &[disabled]:before, &.disabled:before, 
+    &[disabled]:hover:before, &.disabled:hover:before {
+
+        @include button-bg-look($disable-color, $white-color) ;
+        cursor: not-allowed ;
+        box-shadow: 0px 0px 2px $disable-color ;
+    }
+
+    @at-root {
+
+        input[ type="radio"]:before,
+        label input[ type="radio"]:before, {
+
+            border-radius: 50% ;
+        }
+        
+        label {
+
+            cursor: pointer ;
+
+            &:hover {
+
+                color: $hover-color ;
+            }
+        }
+
+        /* Aspect si "cochée" */
+        &:checked:after {
+
+            visibility: visible ; /* coche opaque */
+        }
+
+        &:checked:before {
+
+            @include button-bg-look($select-color, $white-color) ;
+        }
+    }
 }
 
 fieldset {

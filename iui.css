@@ -1,8 +1,66 @@
 @charset "UTF-8";
 /*
+ * Fichier de style où sont définies les fonts à utiliser
+   ______________________________________________________*/
+/*pour plus de clarté ce fichier sera inclue dans le fichier css commun ou générale*/
+@import url("i_font_def.scss");
+@font-face {
+  font-family: "_Ubuntu";
+  src: url("src/fonts/Ubuntu.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "_Raleway";
+  src: url("src/fonts/Raleway_Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "_Droid_Sans";
+  src: url("src/fonts/DroidSans.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "_Purisa";
+  src: url("src/fonts/Purisa.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "_DejaVu_Sans";
+  src: url("src/fonts/DejaVuSans.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "_Andale_Mono";
+  src: url("src/fonts/Andale_Mono.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "_Candara";
+  src: url("src/fonts/candara.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "_GE_Inspira";
+  src: url("src/fonts/GE_Inspira.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "_FreeSerif";
+  src: url("src/fonts/FreeSerif.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+/*
 * Fichier de style de base. Constitut aussi le theme de base
 ____________________________________________________________*/
-@import url("i_font_def.scss");
 /*polices*/
 /* début de la déclaration de style sur des éléments "conteneurs" tels les sections, les articles, ...
 -----------------------------------------------------------------------------------------------------*/
@@ -301,51 +359,35 @@ label input[type="checkbox"],
 label input[type="radio"],
 input[type="checkbox"],
 input[type="radio"] {
-  opacity: 0;
-  appearance: none;
-  width: 0px;
-  height: 0px;
-  /* on prépare le label */
-  opacity: 0;
-  appearance: none;
-  width: 0px;
-  height: 0px
-  /* on prépare le label */
-}
-label input[type="checkbox"] + label,
-label input[type="radio"] + label,
-input[type="checkbox"] + label,
-input[type="radio"] + label {
   position: relative;
-  padding-left: 1.5em;
-  cursor: pointer
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+  cursor: auto
   /* Aspect des checkboxes */
   /* :before sert à créer la case à cocher */
   /* Aspect général de la coche */
 }
-label input[type="checkbox"] + label:before,
-label input[type="radio"] + label:before,
-input[type="checkbox"] + label:before,
-input[type="radio"] + label:before {
+label input[type="checkbox"]:before,
+label input[type="radio"]:before,
+input[type="checkbox"]:before,
+input[type="radio"]:before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0.2em;
-  width: 0.85em;
-  height: 0.85em;
-  border: 1px solid #fff;
+  width: 0.90em;
+  height: 0.90em;
+  border: 2px solid #fff;
   color: #fff;
   background-color: #2d2d2d;
   background-image: -webkit-linear-gradient(bottom, #2d2d2d, #474747, #535353);
   background-image: linear-gradient(to top, #2d2d2d, #474747, #535353);
   border-radius: 2px;
   /* angles arrondis */
-  box-shadow: 0px 0px 3px rgba(103, 103, 103, 0.7);
+  box-shadow: 0px 0px 2px rgba(103, 103, 103, 0.7);
 }
-label input[type="checkbox"] + label:after,
-label input[type="radio"] + label:after,
-input[type="checkbox"] + label:after,
-input[type="radio"] + label:after {
+label input[type="checkbox"]:after,
+label input[type="radio"]:after,
+input[type="checkbox"]:after,
+input[type="radio"]:after {
   content: '✔';
   position: absolute;
   top: 0;
@@ -354,148 +396,59 @@ input[type="radio"] + label:after {
   color: #fff;
   visibility: hidden;
 }
-label input[type="checkbox"]:focus + label:before,
-label input[type="radio"]:focus + label:before,
-input[type="checkbox"]:focus + label:before,
-input[type="radio"]:focus + label:before {
+label input[type="checkbox"]:focus,
+label input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: 0;
+}
+label input[type="checkbox"]:focus:before,
+label input[type="radio"]:focus:before,
+input[type="checkbox"]:focus:before,
+input[type="radio"]:focus:before {
   box-shadow: 0px 0px 3px #ffa300;
   border: 1px solid #ffa300;
 }
-label input[type="checkbox"][disabled] + label, label input[type="checkbox"].disabled + label, label input[type="checkbox"][disabled]:hover + label, label input[type="checkbox"].disabled:hover + label,
+label input[type="checkbox"][disabled] + label, label input[type="checkbox"].disabled + label, label input[type="checkbox"][disabled]:hover + label, label input[type="checkbox"].disabled:hover + label, label input[type="checkbox"][disabled] + span, label input[type="checkbox"].disabled + span, label input[type="checkbox"][disabled]:hover + span, label input[type="checkbox"].disabled:hover + span,
 label input[type="radio"][disabled] + label,
 label input[type="radio"].disabled + label,
 label input[type="radio"][disabled]:hover + label,
 label input[type="radio"].disabled:hover + label,
-input[type="checkbox"][disabled] + label,
-input[type="checkbox"].disabled + label,
-input[type="checkbox"][disabled]:hover + label,
-input[type="checkbox"].disabled:hover + label,
-input[type="radio"][disabled] + label,
-input[type="radio"].disabled + label,
-input[type="radio"][disabled]:hover + label,
-input[type="radio"].disabled:hover + label {
-  color: #909090;
-}
-label input[type="checkbox"][disabled] + label:before, label input[type="checkbox"].disabled + label:before, label input[type="checkbox"][disabled]:hover + label:before, label input[type="checkbox"].disabled:hover + label:before,
-label input[type="radio"][disabled] + label:before,
-label input[type="radio"].disabled + label:before,
-label input[type="radio"][disabled]:hover + label:before,
-label input[type="radio"].disabled:hover + label:before,
-input[type="checkbox"][disabled] + label:before,
-input[type="checkbox"].disabled + label:before,
-input[type="checkbox"][disabled]:hover + label:before,
-input[type="checkbox"].disabled:hover + label:before,
-input[type="radio"][disabled] + label:before,
-input[type="radio"].disabled + label:before,
-input[type="radio"][disabled]:hover + label:before,
-input[type="radio"].disabled:hover + label:before {
-  color: #fff;
-  background-color: #d0d0d0;
-  background-image: -webkit-linear-gradient(bottom, #d0d0d0, #eaeaea, #f6f6f6);
-  background-image: linear-gradient(to top, #d0d0d0, #eaeaea, #f6f6f6);
-  cursor: not-allowed;
-  box-shadow: 0px 0px 2px #d0d0d0;
-}
-input[type="radio"] + label:before,
-label input[type="radio"] + label:before {
-  border-radius: 50%;
-}
-
-/* Aspect si "cochée" */
-label input[type="checkbox"]:checked + label:after,
-label input[type="radio"]:checked + label:after,
-input[type="checkbox"]:checked + label:after,
-input[type="radio"]:checked + label:after {
-  visibility: visible
-  /* coche opaque */
-}
-
-label input[type="checkbox"]:checked + label:before,
-label input[type="radio"]:checked + label:before,
-input[type="checkbox"]:checked + label:before,
-input[type="radio"]:checked + label:before {
-  color: #fff;
-  background-color: #ffa300;
-  background-image: -webkit-linear-gradient(bottom, #ffa300, #ffb533, #ffbf4d);
-  background-image: linear-gradient(to top, #ffa300, #ffb533, #ffbf4d);
-}
-label input[type="checkbox"] + span,
-label input[type="radio"] + span,
-input[type="checkbox"] + span,
-input[type="radio"] + span {
-  position: relative;
-  padding-left: 1.5em;
-  cursor: pointer
-  /* Aspect des checkboxes */
-  /* :before sert à créer la case à cocher */
-  /* Aspect général de la coche */
-}
-label input[type="checkbox"] + span:before,
-label input[type="radio"] + span:before,
-input[type="checkbox"] + span:before,
-input[type="radio"] + span:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.2em;
-  width: 0.85em;
-  height: 0.85em;
-  border: 1px solid #fff;
-  color: #fff;
-  background-color: #2d2d2d;
-  background-image: -webkit-linear-gradient(bottom, #2d2d2d, #474747, #535353);
-  background-image: linear-gradient(to top, #2d2d2d, #474747, #535353);
-  border-radius: 2px;
-  /* angles arrondis */
-  box-shadow: 0px 0px 3px rgba(103, 103, 103, 0.7);
-}
-label input[type="checkbox"] + span:after,
-label input[type="radio"] + span:after,
-input[type="checkbox"] + span:after,
-input[type="radio"] + span:after {
-  content: '✔';
-  position: absolute;
-  top: 0;
-  left: 0.2em;
-  font-size: 0, 85em;
-  color: #fff;
-  visibility: hidden;
-}
-label input[type="checkbox"]:focus + span:before,
-label input[type="radio"]:focus + span:before,
-input[type="checkbox"]:focus + span:before,
-input[type="radio"]:focus + span:before {
-  box-shadow: 0px 0px 3px #ffa300;
-  border: 1px solid #ffa300;
-}
-label input[type="checkbox"][disabled] + span, label input[type="checkbox"].disabled + span, label input[type="checkbox"][disabled]:hover + span, label input[type="checkbox"].disabled:hover + span,
 label input[type="radio"][disabled] + span,
 label input[type="radio"].disabled + span,
 label input[type="radio"][disabled]:hover + span,
 label input[type="radio"].disabled:hover + span,
+input[type="checkbox"][disabled] + label,
+input[type="checkbox"].disabled + label,
+input[type="checkbox"][disabled]:hover + label,
+input[type="checkbox"].disabled:hover + label,
 input[type="checkbox"][disabled] + span,
 input[type="checkbox"].disabled + span,
 input[type="checkbox"][disabled]:hover + span,
 input[type="checkbox"].disabled:hover + span,
+input[type="radio"][disabled] + label,
+input[type="radio"].disabled + label,
+input[type="radio"][disabled]:hover + label,
+input[type="radio"].disabled:hover + label,
 input[type="radio"][disabled] + span,
 input[type="radio"].disabled + span,
 input[type="radio"][disabled]:hover + span,
 input[type="radio"].disabled:hover + span {
   color: #909090;
 }
-label input[type="checkbox"][disabled] + span:before, label input[type="checkbox"].disabled + span:before, label input[type="checkbox"][disabled]:hover + span:before, label input[type="checkbox"].disabled:hover + span:before,
-label input[type="radio"][disabled] + span:before,
-label input[type="radio"].disabled + span:before,
-label input[type="radio"][disabled]:hover + span:before,
-label input[type="radio"].disabled:hover + span:before,
-input[type="checkbox"][disabled] + span:before,
-input[type="checkbox"].disabled + span:before,
-input[type="checkbox"][disabled]:hover + span:before,
-input[type="checkbox"].disabled:hover + span:before,
-input[type="radio"][disabled] + span:before,
-input[type="radio"].disabled + span:before,
-input[type="radio"][disabled]:hover + span:before,
-input[type="radio"].disabled:hover + span:before {
+label input[type="checkbox"][disabled]:before, label input[type="checkbox"].disabled:before, label input[type="checkbox"][disabled]:hover:before, label input[type="checkbox"].disabled:hover:before,
+label input[type="radio"][disabled]:before,
+label input[type="radio"].disabled:before,
+label input[type="radio"][disabled]:hover:before,
+label input[type="radio"].disabled:hover:before,
+input[type="checkbox"][disabled]:before,
+input[type="checkbox"].disabled:before,
+input[type="checkbox"][disabled]:hover:before,
+input[type="checkbox"].disabled:hover:before,
+input[type="radio"][disabled]:before,
+input[type="radio"].disabled:before,
+input[type="radio"][disabled]:hover:before,
+input[type="radio"].disabled:hover:before {
   color: #fff;
   background-color: #d0d0d0;
   background-image: -webkit-linear-gradient(bottom, #d0d0d0, #eaeaea, #f6f6f6);
@@ -503,24 +456,31 @@ input[type="radio"].disabled:hover + span:before {
   cursor: not-allowed;
   box-shadow: 0px 0px 2px #d0d0d0;
 }
-input[type="radio"] + span:before,
-label input[type="radio"] + span:before {
+input[type="radio"]:before,
+label input[type="radio"]:before {
   border-radius: 50%;
 }
 
+label {
+  cursor: pointer;
+}
+label:hover {
+  color: #ffa300;
+}
+
 /* Aspect si "cochée" */
-label input[type="checkbox"]:checked + span:after,
-label input[type="radio"]:checked + span:after,
-input[type="checkbox"]:checked + span:after,
-input[type="radio"]:checked + span:after {
+label input[type="checkbox"]:checked:after,
+label input[type="radio"]:checked:after,
+input[type="checkbox"]:checked:after,
+input[type="radio"]:checked:after {
   visibility: visible
   /* coche opaque */
 }
 
-label input[type="checkbox"]:checked + span:before,
-label input[type="radio"]:checked + span:before,
-input[type="checkbox"]:checked + span:before,
-input[type="radio"]:checked + span:before {
+label input[type="checkbox"]:checked:before,
+label input[type="radio"]:checked:before,
+input[type="checkbox"]:checked:before,
+input[type="radio"]:checked:before {
   color: #fff;
   background-color: #ffa300;
   background-image: -webkit-linear-gradient(bottom, #ffa300, #ffb533, #ffbf4d);
