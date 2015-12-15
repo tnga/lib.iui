@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Default Tests</title>
+
+    <link rel="stylesheet" href="../iui.css">
+    
+    <style>
+        h1, h2, h3, h4 {
+            
+            text-align: center ;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Basic Tests</h1>
+
+    <h2>Button</h2>
+    <div>
+        <button>button</button>
+        <button autofocus>button auto-focused</button>
+        <button class="focused">button focused</button>
+        <button class="actived">button actived</button>
+        <button class="hovered">button hovered</button>
+        <button disabled>button auto-disabled</button>
+        <button class="disabled">button disabled</button>
+        
+        <input type="button" value="input button"/>
+        <input type="submit" value="input submit"/>
+        <input type="reset" value="input reset"/>
+        
+        <a href="#" class="i-btn">button link</a>
+    </div>
+    
+    <h2>Text and number box</h2>
+    <div>
+        <input type="text" placeholder="text box" />
+        <input type="password" placeholder="password box" />
+        <input type="email" placeholder="email box" />
+        <input type="url" placeholder="url box" />
+        <input type="number" placeholder="number box" /> 
+        <input type="tel" placeholder="tel box" /> 
+        <input type="date" placeholder="date box" />
+        <input type="month" placeholder="month box" /> 
+        <input type="time" placeholder="time box" />
+        <input type="datetime" placeholder="datetime box" /> 
+        <input type="datetime-local" placeholder="datetime-local box" /> 
+        <input type="week" placeholder="week bax" /> 
+        <input type="search" placeholder="search box" />
+        <input type="color" placeholder="color box" />
+        
+        <input placeholder="not-type box" />
+        <input placeholder="disabled not-type box" disabled/>
+        
+        <textarea name="textarea-test" id="textarea-test" cols="30" rows="10">
+            textarea box
+        </textarea>
+        
+        <select name="select-test" id="select-test">
+            <option value="option1">option1</option>
+            <option value="option2">option2</option>
+            <option value="option3">option3</option>
+            <option value="option4">option4</option>
+            <option value="option5">option5</option>
+        </select>
+        
+        <input type="file" name="upload-file-test" />
+
+       <br/>
+       <br/>
+        <input type="radio" name="radio-test" id="radio-test-0" checked/>
+        <label for="radio-test-0">radio-test-0</label>
+        <input type="radio" name="radio-test" id="radio-test-1"/>
+        <label for="radio-test-1">radio-test-1</label>
+       <fieldset>
+           <legend>inside label</legend>
+           <label><input type="radio" name="radio-label-test" id="radio-label-test-0"/><label for="radio-label-test-0">radio-label-test-0</label></label>
+           <label><input type="radio" name="radio-label-test" id="radio-label-test-1"/><label for="radio-label-test-1">radio-label-test-1</label></label>
+           <label><input type="radio" name="radio-label-test"/><span>radio-span-test-0</span></label>
+           <label><input type="radio" name="radio-label-test"/><span>radio-span-test-1</span></label>
+           <label><input type="radio" name="radio-label-test" disabled/><span>radio-disabled-test</span></label>
+       </fieldset>
+       
+       <br/>
+        <input type="checkbox" name="checkbox-test" id="checkbox-test-0" checked/>
+        <label for="checkbox-test-0">checkbox-test-0</label>
+        <input type="checkbox" name="checkbox-test" id="checkbox-test-1"/>
+        <label for="checkbox-test-1">checkbox-test-1</label>
+       <fieldset>
+           <legend>inside label</legend>
+           <label><input type="checkbox" id="checkbox-label-test-0"/><label for="checkbox-label-test-0">checkbox-label-test-0</label></label>
+           <label><input type="checkbox" id="checkbox-label-test-1"/><label for="checkbox-label-test-1">checkbox-label-test-1</label></label>
+           <label><input type="checkbox"/><span>checkbox-span-test-0</span></label>
+           <label><input type="checkbox"/><span>checkbox-span-test-1</span></label>
+           <label><input type="checkbox" disabled/><span>checkbox-disabled-test</span></label>
+       </fieldset>
+        
+    </div>
+    
+    <h2>Table</h2>
+    <div>
+        <table width="100%">
+            <th>head0</th>
+            <th>head1</th>
+            <th>head2</th>
+            <th>head3</th>
+            <th>head4</th>
+            <tr>
+                <td>col0-0</td>
+                <td>col0-1</td>
+                <td>col0-2</td>
+                <td>col0-3</td>
+                <td>col0-4</td>
+            </tr>
+            <tr>
+                <td>col1-0</td>
+                <td>col1-1</td>
+                <td>col1-2</td>
+                <td>col1-3</td>
+                <td>col1-4</td>
+            </tr>
+            <tr>
+                <td>col2-0</td>
+                <td>col2-1</td>
+                <td>col2-2</td>
+                <td>col2-3</td>
+                <td>col2-4</td>
+            </tr>
+            <tr>
+                <td>col3-0</td>
+                <td>col3-1</td>
+                <td>col3-2</td>
+                <td>col3-3</td>
+                <td>col3-4</td>
+            </tr>
+            <tr>
+                <td>col4-0</td>
+                <td>col4-1</td>
+                <td>col4-2</td>
+                <td>col4-3</td>
+                <td>col4-4</td>
+            </tr>
+        </table>
+        
+        <br/>
+        <span>with structure (thead, tbody, tfoot)</span>
+        <table width="100%">
+           <thead>
+               <th>head0</th>
+               <th>head1</th>
+               <th>head2</th>
+               <th>head3</th>
+               <th>head4</th>
+           </thead>
+           <tbody>
+               <tr>
+                   <td>col0-0</td>
+                   <td>col0-1</td>
+                   <td>col0-2</td>
+                   <td>col0-3</td>
+                   <td>col0-4</td>
+               </tr>
+               <tr>
+                   <td>col1-0</td>
+                   <td>col1-1</td>
+                   <td>col1-2</td>
+                   <td>col1-3</td>
+                   <td>col1-4</td>
+               </tr>
+               <tr>
+                   <td>col2-0</td>
+                   <td>col2-1</td>
+                   <td>col2-2</td>
+                   <td>col2-3</td>
+                   <td>col2-4</td>
+               </tr>
+               <tr>
+                   <td>col3-0</td>
+                   <td>col3-1</td>
+                   <td>col3-2</td>
+                   <td>col3-3</td>
+                   <td>col3-4</td>
+               </tr>
+               <tr>
+                   <td>col4-0</td>
+                   <td>col4-1</td>
+                   <td>col4-2</td>
+                   <td>col4-3</td>
+                   <td>col4-4</td>
+               </tr>
+           </tbody>
+            <tfoot>
+                <th>foot0</th>
+                <th>foot1</th>
+                <th>foot2</th>
+                <th>foot3</th>
+                <th>foot4</th>
+            </tfoot>
+            
+        </table>
+    </div>
+    
+</body>
+</html>
