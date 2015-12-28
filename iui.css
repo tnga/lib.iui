@@ -3,7 +3,6 @@
  * Fichier de style où sont définies les fonts à utiliser
    ______________________________________________________*/
 /*pour plus de clarté ce fichier sera inclue dans le fichier css commun ou générale*/
-@import url("i_font_def.scss");
 @font-face {
   font-family: "_Ubuntu";
   src: url("src/fonts/Ubuntu.ttf");
@@ -59,11 +58,10 @@
   font-style: normal;
 }
 /*
-* Fichier de style de base. Constitut aussi le theme de base
-____________________________________________________________*/
-/*polices*/
-/* début de la déclaration de style sur des éléments "conteneurs" tels les sections, les articles, ...
------------------------------------------------------------------------------------------------------*/
+ * Base stylesheet's. It's also the basic theme.
+_____________________________________________________*/
+/* Style on "containers" elements like sections, articles, ...
+--------------------------------------------------------------*/
 body {
   font-family: "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
 }
@@ -73,16 +71,59 @@ body {
           transition: all 0.35s linear;
 }
 *:focus {
-  outline: thin solid #ffa300;
+  outline: thin solid #ff6600;
 }
 *.hidden {
   visibility: hidden;
 }
 
-/* fin de la déclaration de style sur les conteneurs
--------------------------------------------------------*/
-/* début de la déclaration de style sur des éléments speciaux tels les bouttons, les zones de texte, ... 
-------------------------------------------------------------------------------------------------------*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  text-align: center;
+  background: #fff;
+}
+table td, table th {
+  padding: 0.5em;
+  border: 1px solid #adadad;
+}
+table th {
+  background-color: #2d2d2d;
+  color: #fff;
+  font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
+  font-size: 0.95em;
+}
+
+/* Style on "specials and operatings" elements like buttons, textfields, ... 
+----------------------------------------------------------------------------*/
+a {
+  text-decoration: none;
+  color: #676767;
+  font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
+  padding: 1px 2px;
+}
+a:hover, a:visited {
+  color: #ff6600;
+}
+a:hover {
+  text-decoration: underline;
+}
+a.i-btn:hover, .i-btn a:hover, button a:hover,
+input[type="button"] a:hover,
+input[type="submit"] a:hover,
+input[type="reset"] a:hover,
+input[type="file"] a:hover, a i-btn:hover, a button:hover {
+  text-decoration: none;
+}
+a.i-btn:visited, .i-btn a:visited, button a:visited,
+input[type="button"] a:visited,
+input[type="submit"] a:visited,
+input[type="reset"] a:visited,
+input[type="file"] a:visited, a i-btn:visited, a button:visited {
+  color: #fff;
+}
+
 .i-btn, button,
 input[type="button"],
 input[type="submit"],
@@ -95,6 +136,7 @@ input[type="file"] {
   display: inline-block;
   line-height: normal;
   white-space: nowrap;
+  position: relative;
   vertical-align: middle;
   padding: 5px 10px;
   margin: 3px;
@@ -116,10 +158,10 @@ input.hovered[type="submit"],
 input.hovered[type="reset"],
 input.hovered[type="file"] {
   color: #fff;
-  background-color: #ffa300;
-  background-image: -webkit-linear-gradient(bottom, #ffa300, #ffb533, #ffbf4d);
-  background-image: linear-gradient(to top, #ffa300, #ffb533, #ffbf4d);
-  box-shadow: 0px 1px 2px #ffa300;
+  background-color: #ff6600;
+  background-image: -webkit-linear-gradient(bottom, #ff6600, #ff8533, #ff944d);
+  background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
+  box-shadow: 0px 1px 2px #ff6600;
 }
 .i-btn:active, button:active,
 input[type="button"]:active,
@@ -130,7 +172,7 @@ input.actived[type="button"],
 input.actived[type="submit"],
 input.actived[type="reset"],
 input.actived[type="file"] {
-  box-shadow: 0px 1px 5px #ffa300;
+  box-shadow: 0px 1px 5px #ff6600;
 }
 .i-btn:focus, button:focus,
 input[type="button"]:focus,
@@ -142,7 +184,7 @@ input.focused[type="submit"],
 input.focused[type="reset"],
 input.focused[type="file"] {
   outline: 0;
-  box-shadow: 0px 1px 5px #ffa300;
+  box-shadow: 0px 1px 5px #ff6600;
 }
 .i-btn[disabled], button[disabled],
 input[disabled][type="button"],
@@ -218,7 +260,7 @@ input[type="datetime-local"]:hover,
 input[type="week"]:hover,
 input[type="search"]:hover,
 input[type="color"]:hover {
-  border: 1px solid #ffa300;
+  border: 1px solid #ff6600;
 }
 select:focus,
 textarea:focus,
@@ -236,8 +278,8 @@ input[type="datetime-local"]:focus,
 input[type="week"]:focus,
 input[type="search"]:focus,
 input[type="color"]:focus {
-  border: 1px solid #ffa300;
-  box-shadow: 1px 1px 5px #ffa300 inset;
+  border: 1px solid #ff6600;
+  box-shadow: 1px 1px 5px #ff6600 inset;
   outline: 0;
 }
 select[disabled], select.disabled, select[disabled]:hover, select.disabled:hover,
@@ -314,14 +356,14 @@ select {
 }
 select:focus {
   outline: 0;
-  box-shadow: 0px 1px 5px #ffa300;
+  box-shadow: 0px 1px 5px #ff6600;
 }
 
 textarea {
   box-shadow: 1px 1px 5px rgba(103, 103, 103, 0.7) inset;
 }
 textarea:focus {
-  box-shadow: 1px 1px 7px #ffa300 inset;
+  box-shadow: 1px 1px 7px #ff6600 inset;
 }
 
 /*Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
@@ -342,11 +384,11 @@ input:not([type]) {
   vertical-align: middle;
 }
 input:not([type]):hover {
-  border: 1px solid #ffa300;
+  border: 1px solid #ff6600;
 }
 input:not([type]):focus {
-  border: 1px solid #ffa300;
-  box-shadow: 1px 1px 5px #ffa300 inset;
+  border: 1px solid #ff6600;
+  box-shadow: 1px 1px 5px #ff6600 inset;
   outline: 0;
 }
 input:not([type])[disabled], input:not([type]).disabled, input:not([type])[disabled]:hover, input:not([type]).disabled:hover {
@@ -355,20 +397,12 @@ input:not([type])[disabled], input:not([type]).disabled, input:not([type])[disab
   border: 1px solid white;
 }
 
-label input[type="checkbox"],
-label input[type="radio"],
 input[type="checkbox"],
 input[type="radio"] {
-  position: relative;
   margin-left: 0.8em;
   margin-right: 0.8em;
-  cursor: auto
-  /* Aspect des checkboxes */
-  /* :before sert à créer la case à cocher */
-  /* Aspect général de la coche */
+  cursor: auto;
 }
-label input[type="checkbox"]:before,
-label input[type="radio"]:before,
 input[type="checkbox"]:before,
 input[type="radio"]:before {
   content: '';
@@ -384,8 +418,6 @@ input[type="radio"]:before {
   /* angles arrondis */
   box-shadow: 0px 0px 2px rgba(103, 103, 103, 0.7);
 }
-label input[type="checkbox"]:after,
-label input[type="radio"]:after,
 input[type="checkbox"]:after,
 input[type="radio"]:after {
   content: '✔';
@@ -396,36 +428,16 @@ input[type="radio"]:after {
   color: #fff;
   visibility: hidden;
 }
-label input[type="checkbox"]:focus,
-label input[type="radio"]:focus,
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
   outline: 0;
 }
-label input[type="checkbox"]:focus:before,
-label input[type="radio"]:focus:before,
 input[type="checkbox"]:focus:before,
 input[type="radio"]:focus:before {
-  box-shadow: 0px 0px 3px #ffa300;
-  border: 1px solid #ffa300;
+  box-shadow: 0px 0px 3px #ff6600;
+  border: 1px solid #ff6600;
 }
-label input[type="checkbox"][disabled] + label, label input[type="checkbox"].disabled + label, label input[type="checkbox"][disabled]:hover + label, label input[type="checkbox"].disabled:hover + label, label input[type="checkbox"][disabled] + span, label input[type="checkbox"].disabled + span, label input[type="checkbox"][disabled]:hover + span, label input[type="checkbox"].disabled:hover + span,
-label input[type="radio"][disabled] + label,
-label input[type="radio"].disabled + label,
-label input[type="radio"][disabled]:hover + label,
-label input[type="radio"].disabled:hover + label,
-label input[type="radio"][disabled] + span,
-label input[type="radio"].disabled + span,
-label input[type="radio"][disabled]:hover + span,
-label input[type="radio"].disabled:hover + span,
-input[type="checkbox"][disabled] + label,
-input[type="checkbox"].disabled + label,
-input[type="checkbox"][disabled]:hover + label,
-input[type="checkbox"].disabled:hover + label,
-input[type="checkbox"][disabled] + span,
-input[type="checkbox"].disabled + span,
-input[type="checkbox"][disabled]:hover + span,
-input[type="checkbox"].disabled:hover + span,
+input[type="checkbox"][disabled] + label, input[type="checkbox"].disabled + label, input[type="checkbox"][disabled]:hover + label, input[type="checkbox"].disabled:hover + label, input[type="checkbox"][disabled] + span, input[type="checkbox"].disabled + span, input[type="checkbox"][disabled]:hover + span, input[type="checkbox"].disabled:hover + span,
 input[type="radio"][disabled] + label,
 input[type="radio"].disabled + label,
 input[type="radio"][disabled]:hover + label,
@@ -436,15 +448,7 @@ input[type="radio"][disabled]:hover + span,
 input[type="radio"].disabled:hover + span {
   color: #909090;
 }
-label input[type="checkbox"][disabled]:before, label input[type="checkbox"].disabled:before, label input[type="checkbox"][disabled]:hover:before, label input[type="checkbox"].disabled:hover:before,
-label input[type="radio"][disabled]:before,
-label input[type="radio"].disabled:before,
-label input[type="radio"][disabled]:hover:before,
-label input[type="radio"].disabled:hover:before,
-input[type="checkbox"][disabled]:before,
-input[type="checkbox"].disabled:before,
-input[type="checkbox"][disabled]:hover:before,
-input[type="checkbox"].disabled:hover:before,
+input[type="checkbox"][disabled]:before, input[type="checkbox"].disabled:before, input[type="checkbox"][disabled]:hover:before, input[type="checkbox"].disabled:hover:before,
 input[type="radio"][disabled]:before,
 input[type="radio"].disabled:before,
 input[type="radio"][disabled]:hover:before,
@@ -461,30 +465,24 @@ label input[type="radio"]:before {
   border-radius: 50%;
 }
 
+input[type="checkbox"]:checked:after,
+input[type="radio"]:checked:after {
+  visibility: visible;
+}
+
+input[type="checkbox"]:checked:before,
+input[type="radio"]:checked:before {
+  color: #fff;
+  background-color: #ff6600;
+  background-image: -webkit-linear-gradient(bottom, #ff6600, #ff8533, #ff944d);
+  background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
+}
+
 label {
   cursor: pointer;
 }
 label:hover {
-  color: #ffa300;
-}
-
-/* Aspect si "cochée" */
-label input[type="checkbox"]:checked:after,
-label input[type="radio"]:checked:after,
-input[type="checkbox"]:checked:after,
-input[type="radio"]:checked:after {
-  visibility: visible
-  /* coche opaque */
-}
-
-label input[type="checkbox"]:checked:before,
-label input[type="radio"]:checked:before,
-input[type="checkbox"]:checked:before,
-input[type="radio"]:checked:before {
-  color: #fff;
-  background-color: #ffa300;
-  background-image: -webkit-linear-gradient(bottom, #ffa300, #ffb533, #ffbf4d);
-  background-image: linear-gradient(to top, #ffa300, #ffb533, #ffbf4d);
+  color: #ff6600;
 }
 
 fieldset {
@@ -496,28 +494,298 @@ fieldset legend {
   font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
 }
 fieldset:hover {
-  border: 1px solid #ffa300;
+  border: 1px solid #ff6600;
 }
 fieldset:hover legend {
-  color: #ffa300;
+  color: #ff6600;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  empty-cells: show;
-  text-align: center;
-  background: #fff;
+/*
+* Default theme stylesheet's definitions.
+_________________________________________*/
+/*
+ * For default theme. Here is the style definition of some custom block like "main-block", ...
+______________________________________________________________________________________________*/
+#i-main-block {
+  min-width: 280px;
+  max-width: 1400px;
+  width: 100%;
+  margin: -5px auto 0px auto;
+  position: relative;
 }
-table td, table th {
-  padding: 0.5em;
-  border: 1px solid #adadad;
+
+body {
+  color: #1a1a1a;
+  background-color: #fff;
 }
-table th {
-  background-color: #2d2d2d;
-  color: #fff;
+
+/*
+ * For default theme. Here is the style definition of some custom navbars.
+__________________________________________________________________________*/
+.i-nav {
+  color: #1a1a1a;
+  background-color: #fff;
+  padding: 0.1em;
+  border-bottom: 1px solid #2d2d2d;
+  margin-top: 0px;
+  position: relative;
+  font-size: 1.05em;
+}
+.i-nav > ul {
+  margin: 0px;
+}
+.i-nav > ul li {
+  display: inline-block;
+  margin-right: 0.7em;
   font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
-  font-size: 0.95em;
+  position: relative;
+  padding: 0.3em 0em;
+  box-sizing: border-box;
 }
+.i-nav > ul li, .i-nav > ul li a {
+  color: #1a1a1a;
+  background-color: !transparent;
+}
+.i-nav > ul li a {
+  text-decoration: none;
+  padding: 0.3em;
+}
+.i-nav > ul li a:hover {
+  color: #ff6600;
+}
+.i-nav > ul li a:focus {
+  outline: 0;
+  color: #ff6600;
+}
+.i-nav > ul li ul {
+  color: #1a1a1a;
+  background-color: #fff;
+  position: absolute;
+  top: 1.7em;
+  padding: 0em;
+  min-width: 9.5em;
+  box-shadow: 0px 3px 3px rgba(103, 103, 103, 0.7);
+  z-index: 10;
+  display: none;
+}
+.i-nav > ul li ul li {
+  display: block;
+  padding: 0.3em;
+  margin: 0.3em 0.2em;
+}
+.i-nav > ul li ul li:first-of-type {
+  margin-top: 0.7em;
+}
+.i-nav > ul li:hover {
+  color: #ff6600;
+  cursor: pointer;
+}
+.i-nav > ul li:hover ul {
+  display: block;
+}
+.i-nav > ul li#current-page a, .i-nav > ul li.active-item a {
+  color: #ff6600;
+  font-weight: bold;
+}
+.i-nav > ul li.unfocusable, .i-nav > ul li:hover.unfocusable, .i-nav > ul li:focus.unfocusable {
+  color: #7f7f7f;
+  background-color: !transparent;
+}
+.i-nav.mi-bar {
+  box-shadow: 0px 4px 5px rgba(103, 103, 103, 0.7);
+  border: none;
+  padding: 0.9em 0.5em 0.4em 0.5em;
+}
+.i-nav.mi-bar.bb-style > ul li, .i-nav.mi-bar.bb-style > ul li a, .i-nav.mi-bar.bg-style > ul li, .i-nav.mi-bar.bg-style > ul li a {
+  padding-bottom: 0.5em;
+}
+.i-nav.mi-bar.bb-style > ul li ul, .i-nav.mi-bar.bg-style > ul li ul {
+  top: 1.9em;
+}
+.i-nav.mi-bar.bt-style > ul li, .i-nav.mi-bar.bt-style > ul li a, .i-nav.mi-bar.bg-style > ul li, .i-nav.mi-bar.bg-style > ul li a {
+  padding-top: 0.5em;
+}
+.i-nav.b-style > ul li#current-page, .i-nav.b-style > ul li.active-item {
+  border: 0.25em solid #ff6600;
+}
+.i-nav.b-style > ul li:hover {
+  border: 0.15em solid #ff6600;
+}
+.i-nav.bb-style > ul li#current-page, .i-nav.bb-style > ul li.active-item {
+  border-bottom: 0.25em solid #ff6600;
+}
+.i-nav.bb-style > ul li:hover {
+  border-bottom: 0.15em solid #ff6600;
+}
+.i-nav.bt-style > ul li#current-page, .i-nav.bt-style > ul li.active-item {
+  border-top: 0.25em solid #ff6600;
+}
+.i-nav.bt-style > ul li:hover {
+  border-top: 0.15em solid #ff6600;
+}
+.i-nav.bl-style > ul li#current-page, .i-nav.bl-style > ul li.active-item {
+  border-left: 0.25em solid #ff6600;
+}
+.i-nav.bl-style > ul li:hover {
+  border-left: 0.15em solid #ff6600;
+}
+.i-nav.br-style > ul li#current-page, .i-nav.br-style > ul li.active-item {
+  border-right: 0.25em solid #ff6600;
+}
+.i-nav.br-style > ul li:hover {
+  border-right: 0.15em solid #ff6600;
+}
+.i-nav.bg-style > ul li:hover, .i-nav.bg-style > ul li#current-page, .i-nav.bg-style > ul li.active-item {
+  color: #fff;
+  background-color: #ff6600;
+}
+.i-nav.bg-style > ul li#current-page a, .i-nav.bg-style > ul li.active-item a {
+  color: #fff;
+}
+.i-nav.bg-style > ul li a:hover {
+  color: #fff;
+  background-color: #ff6600;
+}
+.i-nav.fixed {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+  width: 100%;
+}
+
+/*.btn-signin, input[type="submit"].btn-signin {
+
+    @include button-bg-look($vendor-first-color, $white-color) ;
+}
+
+.btn-signup, input[type="submit"].btn-signup {
+
+    @include button-bg-look($vendor-second-color, $white-color) ;
+}
+.btn-signout, input[type="submit"].btn-signout {
+
+    @include button-bg-look($red-color, $white-color) ;
+}
+
+.pm-signup-form, .pm-signin-form {
+
+    box-shadow: 1px 3px 3px $shadow-color ;
+    padding: 10px ;
+    min-width: 350px ;
+    width: 50% ;
+    margin: auto ;
+    color: $white-color ;
+    border-radius: 25px ;
+
+    label {
+
+        display: block ;
+        margin: 11px auto ;
+        position: relative ;
+        width: 300px ;
+
+        span:first-child {
+
+            border: 1px solid $white-color ;
+            padding: 5px ;
+            margin-bottom: -4px ;
+            display: inline-block ;
+            max-width: 270px ;
+            white-space: nowrap ;
+            overflow: hidden ;
+            text-overflow: ellipsis ;
+        }
+    }
+
+    select, input[ type="text"], input[ type="password"], input[ type="email"], input[ type="number"],
+    input[ type="tel"], input[ type="date"] {
+
+        width: 270px ;
+        padding: 7px ;
+        border-radius: 10px/5px ;
+        border: 1px solid lighten( $dark-color, 70%) ;
+        box-shadow: 1px 1px 5px lighten( $dark-color, 30%) inset ;
+    }
+
+    input[name="it-is-robot"] {
+
+        display: none ;
+    }
+
+    input.no-validated-input {
+
+        border: 1px solid $red-color ;
+    }
+
+    select {
+
+        padding: 5px ;
+        box-shadow: 1px 1px 5px lighten( $dark-color, 30%) ;
+    }
+}
+
+.pm-signup-form {
+
+    background: $vendor-first-color ;
+
+    fieldset {
+
+        border: none ;
+        border-top: 1px solid $white-color ;
+        border-bottom: 1px solid $white-color ;
+        margin-top: 15px ;
+
+        legend {
+
+            font-family: Ubuntu, _Ubuntu, $default-font-family ;
+            font-size: 0.90em ;
+        }
+
+        >.btn-signup, >input[type="button"], >input[type="submit"]  {
+
+            &:last-child {
+
+                display: block ;
+                margin: 15px auto ;
+            }
+        }
+
+        >.btn-signup:last-child {
+
+            visibility: hidden ;
+        }
+    }
+}
+
+.pm-signin-form {
+
+    background: $vendor-second-color ;
+    padding-top: 50px ;
+
+    margin: 0px auto 45px auto ;
+
+    label {
+
+        margin: 30px auto ;
+    }
+
+    .btn-signin {
+
+        display: block ;
+        margin: 15px auto ;
+    }
+}
+
+label {
+
+    font-family: Ubuntu, _Ubuntu, $default-font-family ;
+
+    >span {
+
+        font-size: 0.95em ;
+    }
+}
+*/
 
 /*# sourceMappingURL=iui.css.map */

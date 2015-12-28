@@ -1,5 +1,5 @@
-// /* Zone de déclarations des variables à utiliser
-// -------------------------------------------------*/
+// /* Global's variables déclarations
+// ----------------------------------*/
 
 $global-min-width: 280px ;
 $global-max-width: 1400px ;
@@ -14,22 +14,23 @@ $yellow-color: yellow ;
 $light-color: #f2f2f2 ;
 $black-color: #1a1a1a ;
 $dark-color: #2d2d2d ;
-$focus-color: #ffa300 ;
+$focus-color: #ff6600 ;
 $hover-color: $focus-color ;
 $active-color: $focus-color ;
 $select-color: $focus-color ;
 $disable-color: #d0d0d0 ;
 $warring-color: $yellow-color ;
 $success-color: $focus-color ;
+$default-bg-color: $white-color ;
 
 $shadow-color: rgba(103, 103, 103, 0.7) ;
 
 $default-font-family: "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif ;
-$vendor-font-family: "GE Inspira", _GE_Inspira, Raleway, $default-font-family ;
+$item-font-family: Ubuntu, _Ubuntu, $default-font-family ;
 
 
-// /* Zone de déclarations des mixins
-// ---------------------------------------------------------*/
+// /* Global's mixins declarations
+// --------------------------------*/
 
 @mixin button-bg-look ($btn-color, $txt-color) {
 
@@ -38,10 +39,10 @@ $vendor-font-family: "GE Inspira", _GE_Inspira, Raleway, $default-font-family ;
     background-image: linear-gradient(to top, $btn-color, lighten($btn-color,10%), lighten($btn-color,15%)) ;
 }
 
-@mixin global-bg-look ($bg-color, $txt-color) {
+@mixin global-bg-look ($bg-color:$white-color, $txt-color:$black-color) {
 
-    color: $txt-color ;
-    background-color: $bg-color ; 
+    color: #{$txt-color} ;
+    background-color: #{$bg-color} ; 
     //background-image: linear-gradient(to top, $bg-color, lighten($bg-color,5%), lighten($bg-color,10%)) ;
 }
 
@@ -62,3 +63,16 @@ $vendor-font-family: "GE Inspira", _GE_Inspira, Raleway, $default-font-family ;
         outline: thin solid $focus-color ;
     }
 }
+
+
+// /* Particular's variables déclarations
+// --------------------------------------*/
+
+//----------------------------
+//For some navbar's properties
+
+$navbar-border: 0.15em solid $hover-color ;
+$navbar-active-border: 0.25em solid $select-color ;
+
+$navbar-padding: 0.3em ;
+

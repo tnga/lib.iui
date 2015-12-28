@@ -1,0 +1,144 @@
+/*
+* Default theme stylesheet's definitions.
+_________________________________________*/
+
+//this theme use the default skins, but can be associate to other compatible skins.
+
+@import 'default/_customs_blocks.scss' ;
+@import 'default/_navbars.scss' ;
+
+
+
+/*.btn-signin, input[type="submit"].btn-signin {
+
+    @include button-bg-look($vendor-first-color, $white-color) ;
+}
+
+.btn-signup, input[type="submit"].btn-signup {
+
+    @include button-bg-look($vendor-second-color, $white-color) ;
+}
+.btn-signout, input[type="submit"].btn-signout {
+
+    @include button-bg-look($red-color, $white-color) ;
+}
+
+.pm-signup-form, .pm-signin-form {
+
+    box-shadow: 1px 3px 3px $shadow-color ;
+    padding: 10px ;
+    min-width: 350px ;
+    width: 50% ;
+    margin: auto ;
+    color: $white-color ;
+    border-radius: 25px ;
+
+    label {
+
+        display: block ;
+        margin: 11px auto ;
+        position: relative ;
+        width: 300px ;
+
+        span:first-child {
+
+            border: 1px solid $white-color ;
+            padding: 5px ;
+            margin-bottom: -4px ;
+            display: inline-block ;
+            max-width: 270px ;
+            white-space: nowrap ;
+            overflow: hidden ;
+            text-overflow: ellipsis ;
+        }
+    }
+
+    select, input[ type="text"], input[ type="password"], input[ type="email"], input[ type="number"],
+    input[ type="tel"], input[ type="date"] {
+
+        width: 270px ;
+        padding: 7px ;
+        border-radius: 10px/5px ;
+        border: 1px solid lighten( $dark-color, 70%) ;
+        box-shadow: 1px 1px 5px lighten( $dark-color, 30%) inset ;
+    }
+
+    input[name="it-is-robot"] {
+
+        display: none ;
+    }
+
+    input.no-validated-input {
+
+        border: 1px solid $red-color ;
+    }
+
+    select {
+
+        padding: 5px ;
+        box-shadow: 1px 1px 5px lighten( $dark-color, 30%) ;
+    }
+}
+
+.pm-signup-form {
+
+    background: $vendor-first-color ;
+
+    fieldset {
+
+        border: none ;
+        border-top: 1px solid $white-color ;
+        border-bottom: 1px solid $white-color ;
+        margin-top: 15px ;
+
+        legend {
+
+            font-family: Ubuntu, _Ubuntu, $default-font-family ;
+            font-size: 0.90em ;
+        }
+
+        >.btn-signup, >input[type="button"], >input[type="submit"]  {
+
+            &:last-child {
+
+                display: block ;
+                margin: 15px auto ;
+            }
+        }
+
+        >.btn-signup:last-child {
+
+            visibility: hidden ;
+        }
+    }
+}
+
+.pm-signin-form {
+
+    background: $vendor-second-color ;
+    padding-top: 50px ;
+
+    margin: 0px auto 45px auto ;
+
+    label {
+
+        margin: 30px auto ;
+    }
+
+    .btn-signin {
+
+        display: block ;
+        margin: 15px auto ;
+    }
+}
+
+label {
+
+    font-family: Ubuntu, _Ubuntu, $default-font-family ;
+
+    >span {
+
+        font-size: 0.95em ;
+    }
+}
+*/

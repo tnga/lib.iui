@@ -1,0 +1,238 @@
+/*
+ * For default theme. Here is the style definition of some custom navbars.
+__________________________________________________________________________*/
+
+
+.i-nav {
+    
+    @include global-bg-look() ;
+    
+    padding: 0.1em ;
+    border-bottom: 1px solid $dark-color ;
+    margin-top: 0px ;
+    position: relative ;
+    font-size: 1.05em ;
+    
+    >ul {
+        
+        margin: 0px ;
+        
+        li {
+            
+            display: inline-block ;
+            margin-right: 0.7em ;
+            font-family: $item-font-family ;
+            position: relative ;
+            padding: $navbar-padding 0em ;
+            box-sizing: border-box ;
+            
+            &, a {
+                
+                @include global-bg-look("!transparent") ;
+            }
+            
+            a {
+                
+                text-decoration: none ;
+                padding: $navbar-padding ;
+                
+                &:hover {
+
+                    color: $hover-color ;
+                }
+                &:focus {
+                    
+                    @include style-focus-of("none") ;
+                    
+                    color: $hover-color ;
+                }
+            }
+            
+            ul {
+                
+                @include global-bg-look() ;
+                
+                position: absolute ;
+                top: 1.7em ;
+                padding: 0em ;
+                min-width: 9.5em ;
+                box-shadow: 0px 3px 3px $shadow-color ;
+                z-index: 10 ;
+                display: none ;
+                
+                li {
+                    
+                    display: block ;
+                    padding: $navbar-padding ;
+                    margin: 0.3em 0.2em ;
+                    
+                    &:first-of-type {
+                        
+                        margin-top: 0.7em ;
+                    }
+                }
+            }
+            
+            &:hover {
+
+                color: $hover-color ;
+                cursor: pointer ;
+                
+                ul {
+                    
+                    display: block ;
+                }
+            }
+            
+            &#current-page, &.active-item {
+                
+                a {
+                    
+                    color:$select-color ;
+                    font-weight: bold ;
+                }
+            }
+            
+            &.unfocusable, &:hover.unfocusable, &:focus.unfocusable {
+                
+                @include global-bg-look("!transparent", darken( $light-color, 45%) ) ;
+            }
+        }
+    }
+    
+    &.mi-bar { //From first umiproject's website menubar style
+        
+        box-shadow: 0px 4px 5px $shadow-color ;
+        border: none ;
+        padding: $navbar-padding+0.6em $navbar-padding+0.2em $navbar-padding+0.1em $navbar-padding+0.2em ;
+        
+        &.bb-style >ul li, &.bg-style >ul li {
+            
+            &, a {
+                
+                padding-bottom: $navbar-padding + 0.2em ;
+            }
+            
+            ul {
+                
+                top: 1.9em ;
+            }
+        }
+        &.bt-style >ul li, &.bg-style >ul li {
+            
+            &, a {
+
+                padding-top: $navbar-padding + 0.2em ;
+            }
+
+        }
+    }
+    
+    &.b-style { //border style for selection
+        
+        >ul li {
+                        
+            &#current-page, &.active-item {
+
+                border: $navbar-active-border ;
+            }
+            
+            &:hover {
+                
+                border: $navbar-border ;
+            }
+        }
+    }  
+    &.bb-style { //border-bottom style for selection
+        
+        >ul li {
+                        
+            &#current-page, &.active-item {
+
+                border-bottom: $navbar-active-border ; 
+            }
+            
+            &:hover {
+
+                border-bottom: $navbar-border ; 
+            }
+        }
+    } 
+    &.bt-style { //border-top style for selection
+        
+        >ul li {
+                        
+            &#current-page, &.active-item {
+
+                border-top: $navbar-active-border ;  
+            }
+            
+            &:hover {
+                
+                border-top: $navbar-border ;  
+            }
+        }
+    } 
+    &.bl-style { //border-left style for selection
+        
+        >ul li {
+            
+            &#current-page, &.active-item {
+
+                border-left: $navbar-active-border ;
+            }
+            
+            &:hover {
+
+                border-left: $navbar-border ;   
+            }
+        }
+    }
+    &.br-style { //border-right style for selection
+        
+        >ul li {
+                        
+            &#current-page, &.active-item {
+
+                border-right: $navbar-active-border ; 
+            }
+            
+            &:hover {
+
+                border-right: $navbar-border ;
+            }
+        }
+    }
+    &.bg-style { //background style for selection
+        
+        >ul li {
+                        
+            &:hover, &#current-page, &.active-item {
+
+                @include global-bg-look( $select-color, $white-color) ;
+            }
+            
+            &#current-page, &.active-item {
+
+                a {
+
+                    color: $white-color ;
+                }
+            }  
+            
+            a:hover {
+                
+                @include global-bg-look( $select-color, $white-color) ;
+            }
+        }
+    }
+    
+    &.fixed {
+        
+        position: fixed ;
+        top: 0px ;
+        left: 0px ;
+        z-index: 1000 ;
+        width: 100% ;
+    }
+}
