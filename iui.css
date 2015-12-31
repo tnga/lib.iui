@@ -504,19 +504,16 @@ fieldset:hover legend {
 * Default theme stylesheet's definitions.
 _________________________________________*/
 /*
- * For default theme. Here is the style definition of some custom block like "main-block", ...
-______________________________________________________________________________________________*/
-#i-main-block {
-  min-width: 280px;
-  max-width: 1400px;
-  width: 100%;
-  margin: -5px auto 0px auto;
-  position: relative;
-}
+* For default theme. Here is the style definition of some extras features.
+__________________________________________________________________________
 
-body {
-  color: #1a1a1a;
-  background-color: #fff;
+* @NOTE definitions here are for global purpose; however there can be a paticular style's definitions associated to other feature.
+* For an example with `.unfocusable` option, here is the global style, but for navbar items, 
+*there is additionnal's defintion set by `.i-nav >ul li.unfocusable` on the considered source file.
+*/
+.fixed, .i-nav.t-fixed, .i-nav.b-fixed {
+  position: fixed;
+  z-index: 10;
 }
 
 /*
@@ -563,24 +560,30 @@ __________________________________________________________________________*/
   position: absolute;
   top: 1.7em;
   padding: 0em;
-  min-width: 9.5em;
+  width: 10em;
   box-shadow: 0px 3px 3px rgba(103, 103, 103, 0.7);
   z-index: 10;
-  display: none;
 }
 .i-nav > ul li ul li {
   display: block;
   padding: 0.3em;
   margin: 0.3em 0.2em;
 }
+.i-nav > ul li ul li ul {
+  top: 0em;
+  right: -10.15em;
+}
 .i-nav > ul li ul li:first-of-type {
   margin-top: 0.7em;
+}
+.i-nav > ul li > ul {
+  display: none;
 }
 .i-nav > ul li:hover {
   color: #ff6600;
   cursor: pointer;
 }
-.i-nav > ul li:hover ul {
+.i-nav > ul li:hover > ul {
   display: block;
 }
 .i-nav > ul li#current-page a, .i-nav > ul li.active-item a {
@@ -590,20 +593,6 @@ __________________________________________________________________________*/
 .i-nav > ul li.unfocusable, .i-nav > ul li:hover.unfocusable, .i-nav > ul li:focus.unfocusable {
   color: #7f7f7f;
   background-color: !transparent;
-}
-.i-nav.mi-bar {
-  box-shadow: 0px 4px 5px rgba(103, 103, 103, 0.7);
-  border: none;
-  padding: 0.9em 0.5em 0.4em 0.5em;
-}
-.i-nav.mi-bar.bb-style > ul li, .i-nav.mi-bar.bb-style > ul li a, .i-nav.mi-bar.bg-style > ul li, .i-nav.mi-bar.bg-style > ul li a {
-  padding-bottom: 0.5em;
-}
-.i-nav.mi-bar.bb-style > ul li ul, .i-nav.mi-bar.bg-style > ul li ul {
-  top: 1.9em;
-}
-.i-nav.mi-bar.bt-style > ul li, .i-nav.mi-bar.bt-style > ul li a, .i-nav.mi-bar.bg-style > ul li, .i-nav.mi-bar.bg-style > ul li a {
-  padding-top: 0.5em;
 }
 .i-nav.b-style > ul li#current-page, .i-nav.b-style > ul li.active-item {
   border: 0.25em solid #ff6600;
@@ -646,12 +635,71 @@ __________________________________________________________________________*/
   color: #fff;
   background-color: #ff6600;
 }
-.i-nav.fixed {
-  position: fixed;
+.i-nav.t-fixed {
   top: 0px;
   left: 0px;
-  z-index: 1000;
   width: 100%;
+  z-index: 1000;
+}
+.i-nav.b-fixed {
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #2d2d2d;
+  z-index: 1000;
+}
+.i-nav.b-fixed > ul li > ul {
+  top: auto;
+  bottom: 1.7em;
+  box-shadow: 0px -3px 3px rgba(103, 103, 103, 0.7);
+}
+.i-nav.b-fixed > ul li > ul li ul {
+  top: auto;
+  bottom: 0em;
+}
+.i-nav.i-bar {
+  box-shadow: 0px 4px 5px rgba(103, 103, 103, 0.7);
+  border: none;
+  padding: 0.9em 0.5em 0.4em 0.5em;
+}
+.i-nav.i-bar.bb-style > ul li, .i-nav.i-bar.bb-style > ul li a, .i-nav.i-bar.bg-style > ul li, .i-nav.i-bar.bg-style > ul li a {
+  padding-bottom: 0.5em;
+}
+.i-nav.i-bar.bb-style > ul li ul, .i-nav.i-bar.bg-style > ul li ul {
+  top: 1.9em;
+}
+.i-nav.i-bar.bt-style > ul li, .i-nav.i-bar.bt-style > ul li a, .i-nav.i-bar.bg-style > ul li, .i-nav.i-bar.bg-style > ul li a {
+  padding-top: 0.5em;
+}
+.i-nav.i-bar.b-fixed {
+  box-shadow: 0px -4px 5px rgba(103, 103, 103, 0.7);
+  border: none;
+}
+.i-nav.i-bar.b-fixed > ul li > ul {
+  top: auto;
+  bottom: 1.9em;
+  box-shadow: 0px -3px 3px rgba(103, 103, 103, 0.7);
+}
+.i-nav.i-bar.b-fixed > ul li > ul li ul {
+  top: auto;
+  bottom: 0em;
+}
+
+/*
+ * For default theme. Here is the style definition of some custom block like "main-block", ...
+______________________________________________________________________________________________*/
+#i-main-block {
+  min-width: 280px;
+  max-width: 1400px;
+  width: 100%;
+  margin: -5px auto 0px auto;
+  position: relative;
+}
+
+body {
+  color: #1a1a1a;
+  background-color: #fff;
 }
 
 /*.btn-signin, input[type="submit"].btn-signin {

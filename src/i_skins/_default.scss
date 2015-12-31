@@ -8,6 +8,8 @@ $global-smaller-width: 640px ;
 $global-normal-width: 1024px ;
 $global-big-width: 1280px ;
 
+$global-z-index: 1000 ;
+
 $white-color: #fff ;
 $red-color: #f00 ;
 $yellow-color: yellow ;
@@ -73,6 +75,7 @@ $item-font-family: Ubuntu, _Ubuntu, $default-font-family ;
 
 $navbar-border: 0.15em solid $hover-color ;
 $navbar-active-border: 0.25em solid $select-color ;
-
 $navbar-padding: 0.3em ;
+
+$navbar-dsm-width: 10em ; //navbar default submenu width
 

@@ -3,7 +3,7 @@
 __________________________________________________________________________*/
 
 
-.i-nav {
+.i-nav { //use for navbar declaration.
     
     @include global-bg-look() ;
     
@@ -13,11 +13,11 @@ __________________________________________________________________________*/
     position: relative ;
     font-size: 1.05em ;
     
-    >ul {
+    >ul { //main item's menu container
         
         margin: 0px ;
         
-        li {
+        li { // for item's menu
             
             display: inline-block ;
             margin-right: 0.7em ;
@@ -48,23 +48,28 @@ __________________________________________________________________________*/
                 }
             }
             
-            ul {
+            ul { //sub-item's menu container
                 
                 @include global-bg-look() ;
                 
                 position: absolute ;
                 top: 1.7em ;
                 padding: 0em ;
-                min-width: 9.5em ;
+                width: $navbar-dsm-width ;
                 box-shadow: 0px 3px 3px $shadow-color ;
                 z-index: 10 ;
-                display: none ;
                 
-                li {
+                li { //sub-item's menu
                     
                     display: block ;
                     padding: $navbar-padding ;
                     margin: 0.3em 0.2em ;
+                    
+                    ul {
+                        
+                        top: 0em ;
+                        right: -($navbar-dsm-width + 0.15) ;
+                    }
                     
                     &:first-of-type {
                         
@@ -73,12 +78,17 @@ __________________________________________________________________________*/
                 }
             }
             
+            >ul {
+                
+                display: none ;
+            }
+            
             &:hover {
 
                 color: $hover-color ;
                 cursor: pointer ;
                 
-                ul {
+                >ul {
                     
                     display: block ;
                 }
@@ -97,34 +107,6 @@ __________________________________________________________________________*/
                 
                 @include global-bg-look("!transparent", darken( $light-color, 45%) ) ;
             }
-        }
-    }
-    
-    &.mi-bar { //From first umiproject's website menubar style
-        
-        box-shadow: 0px 4px 5px $shadow-color ;
-        border: none ;
-        padding: $navbar-padding+0.6em $navbar-padding+0.2em $navbar-padding+0.1em $navbar-padding+0.2em ;
-        
-        &.bb-style >ul li, &.bg-style >ul li {
-            
-            &, a {
-                
-                padding-bottom: $navbar-padding + 0.2em ;
-            }
-            
-            ul {
-                
-                top: 1.9em ;
-            }
-        }
-        &.bt-style >ul li, &.bg-style >ul li {
-            
-            &, a {
-
-                padding-top: $navbar-padding + 0.2em ;
-            }
-
         }
     }
     
@@ -227,12 +209,83 @@ __________________________________________________________________________*/
         }
     }
     
-    &.fixed {
+    &.t-fixed { //fixed on top
         
-        position: fixed ;
+        @extend .fixed ;
         top: 0px ;
         left: 0px ;
-        z-index: 1000 ;
         width: 100% ;
+        z-index: $global-z-index ;
+    } 
+    &.b-fixed { //fixed on bottom
+        
+        @extend .fixed ;
+        bottom: 0px ;
+        left: 0px ;
+        width: 100% ;
+        border: none ;
+        border-top: 1px solid $dark-color ;
+        z-index: $global-z-index ;
+        
+        >ul li >ul {
+
+            top: auto ;
+            bottom: 1.7em ;
+            box-shadow: 0px -3px 3px $shadow-color ;
+
+            li ul {
+
+                top: auto ;
+                bottom: 0em ;
+            }
+        }
+    }
+    
+
+    &.i-bar { //From first umiproject's website menubar style
+
+        box-shadow: 0px 4px 5px $shadow-color ;
+        border: none ;
+        padding: $navbar-padding+0.6em $navbar-padding+0.2em $navbar-padding+0.1em $navbar-padding+0.2em ;
+
+        &.bb-style >ul li, &.bg-style >ul li {
+
+            &, a {
+
+                padding-bottom: $navbar-padding + 0.2em ;
+            }
+
+            ul {
+
+                top: 1.9em ;
+            }
+        }
+        &.bt-style >ul li, &.bg-style >ul li {
+
+            &, a {
+
+                padding-top: $navbar-padding + 0.2em ;
+            }
+
+        }
+
+        &.b-fixed {
+
+            box-shadow: 0px -4px 5px $shadow-color ;
+            border: none ;
+
+            >ul li >ul {
+
+                top: auto ;
+                bottom: 1.9em ;
+                box-shadow: 0px -3px 3px $shadow-color ;
+
+                li ul {
+
+                    top: auto ;
+                    bottom: 0em ;
+                }
+            }
+        }
     }
 }
