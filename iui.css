@@ -522,7 +522,7 @@ __________________________________________________________________________*/
 .i-nav {
   color: #1a1a1a;
   background-color: #fff;
-  padding: 0.1em;
+  padding: 0em 0.1em;
   border-bottom: 1px solid #2d2d2d;
   margin-top: 0px;
   position: relative;
@@ -533,11 +533,12 @@ __________________________________________________________________________*/
 }
 .i-nav > ul li {
   display: inline-block;
-  margin-right: 0.7em;
+  margin-right: 0.8em;
   font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
   position: relative;
-  padding: 0.3em 0em;
+  padding: 0em;
   box-sizing: border-box;
+  vertical-align: top;
 }
 .i-nav > ul li, .i-nav > ul li a {
   color: #1a1a1a;
@@ -545,7 +546,12 @@ __________________________________________________________________________*/
 }
 .i-nav > ul li a {
   text-decoration: none;
-  padding: 0.3em;
+  padding: 0.5em 0.2em;
+  display: inline-block;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .i-nav > ul li a:hover {
   color: #ff6600;
@@ -558,20 +564,26 @@ __________________________________________________________________________*/
   color: #1a1a1a;
   background-color: #fff;
   position: absolute;
-  top: 1.7em;
+  top: 1.9em;
   padding: 0em;
   width: 10em;
   box-shadow: 0px 3px 3px rgba(103, 103, 103, 0.7);
+  font-size: 1em;
   z-index: 10;
 }
 .i-nav > ul li ul li {
   display: block;
-  padding: 0.3em;
-  margin: 0.3em 0.2em;
+  padding: 0.1em;
+  margin: 0.3em 0em;
+}
+.i-nav > ul li ul li a {
+  padding: 0.5em;
+  display: block;
+  margin: 0px;
 }
 .i-nav > ul li ul li ul {
   top: 0em;
-  right: -10.15em;
+  right: -10em;
 }
 .i-nav > ul li ul li:first-of-type {
   margin-top: 0.7em;
@@ -586,6 +598,9 @@ __________________________________________________________________________*/
 .i-nav > ul li:hover > ul {
   display: block;
 }
+.i-nav > ul li:hover > a:not([href]) {
+  color: #ff6600;
+}
 .i-nav > ul li#current-page a, .i-nav > ul li.active-item a {
   color: #ff6600;
   font-weight: bold;
@@ -599,6 +614,10 @@ __________________________________________________________________________*/
 }
 .i-nav.b-style > ul li:hover {
   border: 0.15em solid #ff6600;
+}
+.i-nav.bb-style > ul > li > a {
+  padding-left: 0.1em;
+  padding-right: 0.1em;
 }
 .i-nav.bb-style > ul li#current-page, .i-nav.bb-style > ul li.active-item {
   border-bottom: 0.25em solid #ff6600;
@@ -628,12 +647,15 @@ __________________________________________________________________________*/
   color: #fff;
   background-color: #ff6600;
 }
+.i-nav.bg-style > ul li:hover > a:not([href]), .i-nav.bg-style > ul li#current-page > a:not([href]), .i-nav.bg-style > ul li.active-item > a:not([href]) {
+  color: #fff;
+}
 .i-nav.bg-style > ul li#current-page a, .i-nav.bg-style > ul li.active-item a {
   color: #fff;
 }
 .i-nav.bg-style > ul li a:hover {
   color: #fff;
-  background-color: #ff6600;
+  background-color: !transparent;
 }
 .i-nav.t-fixed {
   top: 0px;
@@ -651,39 +673,100 @@ __________________________________________________________________________*/
 }
 .i-nav.b-fixed > ul li > ul {
   top: auto;
-  bottom: 1.7em;
+  bottom: 1.9em;
   box-shadow: 0px -3px 3px rgba(103, 103, 103, 0.7);
 }
 .i-nav.b-fixed > ul li > ul li ul {
   top: auto;
   bottom: 0em;
 }
-.i-nav.i-bar {
+.i-nav.mi-style {
+        /*&.bb-style {
+
+            >ul >li ul {
+
+                top: $navbar-dsm-position + 0.45 ;
+
+                li ul {
+
+                    top: $navbar-dsm-position + 0.6 ;
+                }
+            }
+        }*/
+}
+.i-nav.mi-style > ul > li {
+  position: inherit;
+}
+.i-nav.mi-style > ul > li ul {
+  left: 0px;
+  top: 2.2em;
+  width: 100%;
+  border-top: 1px solid #bfbfbf;
+  text-align: center;
+}
+.i-nav.mi-style > ul > li ul:hover {
+  border-top: 1px solid #ff6600;
+}
+.i-nav.mi-style > ul > li ul li {
+  display: inline-block;
+  position: static;
+  padding: 0.5em 0em;
+  margin-right: 0.8em;
+}
+.i-nav.mi-style > ul > li ul li a {
+  display: inline;
+  padding: 0.5em 0.2em;
+}
+.i-nav.mi-style > ul > li ul li ul {
+  top: 2.4em;
+}
+.i-nav.mi-bar {
   box-shadow: 0px 4px 5px rgba(103, 103, 103, 0.7);
   border: none;
-  padding: 0.9em 0.5em 0.4em 0.5em;
+  padding: 0.7em 0.5em 0.3em 0.5em;
 }
-.i-nav.i-bar.bb-style > ul li, .i-nav.i-bar.bb-style > ul li a, .i-nav.i-bar.bg-style > ul li, .i-nav.i-bar.bg-style > ul li a {
-  padding-bottom: 0.5em;
-}
-.i-nav.i-bar.bb-style > ul li ul, .i-nav.i-bar.bg-style > ul li ul {
-  top: 1.9em;
-}
-.i-nav.i-bar.bt-style > ul li, .i-nav.i-bar.bt-style > ul li a, .i-nav.i-bar.bg-style > ul li, .i-nav.i-bar.bg-style > ul li a {
-  padding-top: 0.5em;
-}
-.i-nav.i-bar.b-fixed {
+.i-nav.mi-bar.b-fixed {
   box-shadow: 0px -4px 5px rgba(103, 103, 103, 0.7);
   border: none;
+  padding: 0.4em 0.5em 0.6em 0.5em;
 }
-.i-nav.i-bar.b-fixed > ul li > ul {
+.i-nav.mi-bar.b-fixed > ul li {
+  vertical-align: bottom;
+}
+.i-nav.mi-bar.b-fixed > ul li > ul {
   top: auto;
-  bottom: 1.9em;
+  bottom: 2.1em;
   box-shadow: 0px -3px 3px rgba(103, 103, 103, 0.7);
 }
-.i-nav.i-bar.b-fixed > ul li > ul li ul {
+.i-nav.mi-bar.b-fixed > ul li > ul li ul {
   top: auto;
   bottom: 0em;
+}
+.i-nav.mi-bar.mi-style > ul > li ul {
+  top: 3em;
+}
+.i-nav.mi-bar.mi-style > ul > li ul li {
+  margin: 0.5em 0.4em;
+}
+.i-nav.mi-bar.mi-style > ul > li ul li ul {
+  top: 2.6em;
+}
+.i-nav.mi-bar.mi-style.b-fixed > ul > li ul {
+  top: auto;
+  bottom: 2.8em;
+  border: none;
+  border-bottom: 1px solid #bfbfbf;
+}
+.i-nav.mi-bar.mi-style.b-fixed > ul > li ul li {
+  margin: 0.5em 0.4em;
+}
+.i-nav.mi-bar.mi-style.b-fixed > ul > li ul li ul {
+  top: auto;
+  bottom: 2.6em;
+}
+.i-nav.mi-bar.mi-style.b-fixed > ul > li ul:hover {
+  border: none;
+  border-bottom: 1px solid #ff6600;
 }
 
 /*

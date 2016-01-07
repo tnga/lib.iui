@@ -66,6 +66,27 @@ $item-font-family: Ubuntu, _Ubuntu, $default-font-family ;
     }
 }
 
+//this can only be use if the associated element to apply with is resizable ( type: `block`, `inline-block`, ...)
+@mixin style-overflow-of ($elt-mode:default) {
+    
+    @if ($elt-mode == "line") {
+        white-space: nowrap ;
+        overflow: hidden ;
+        text-overflow: ellipsis ;
+        
+    }@else if ($elt-mode == "none") {
+        white-space: normal ;
+        overflow: visible ;
+        text-overflow: clip;
+        
+    }@else { //for default or box mode
+        //@TODO have to test if the ellipsis are showing with this case of text-overflow.
+        white-space: normal ;
+        overflow: hidden ;
+        text-overflow: ellipsis ;
+    }
+}
+
 
 // /* Particular's variables déclarations
 // --------------------------------------*/
@@ -75,7 +96,14 @@ $item-font-family: Ubuntu, _Ubuntu, $default-font-family ;
 
 $navbar-border: 0.15em solid $hover-color ;
 $navbar-active-border: 0.25em solid $select-color ;
-$navbar-padding: 0.3em ;
+$navbar-padding: 0.5em ;
+$navbar-margin: 0.5em ;
+$navbar-dsm-margin: 0.3em ; //navbar default submenu margin
 
 $navbar-dsm-width: 10em ; //navbar default submenu width
+$navbar-dsm-position: 1.9em ; //navbar default submenu position
+
+$menu-font-size: 1.05em ;
+$menu-sub-font-size: 1.0em ; //default submenu font size
+$menu-max-width: 200px ;
 

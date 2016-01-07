@@ -7,11 +7,11 @@ __________________________________________________________________________*/
     
     @include global-bg-look() ;
     
-    padding: 0.1em ;
+    padding: 0em 0.1em ;
     border-bottom: 1px solid $dark-color ;
     margin-top: 0px ;
     position: relative ;
-    font-size: 1.05em ;
+    font-size: $menu-font-size ;
     
     >ul { //main item's menu container
         
@@ -20,12 +20,13 @@ __________________________________________________________________________*/
         li { // for item's menu
             
             display: inline-block ;
-            margin-right: 0.7em ;
+            margin-right: $navbar-margin + 0.3 ;
             font-family: $item-font-family ;
             position: relative ;
-            padding: $navbar-padding 0em ;
+            padding: 0em ;
             box-sizing: border-box ;
-            
+            vertical-align: top ;
+
             &, a {
                 
                 @include global-bg-look("!transparent") ;
@@ -34,7 +35,11 @@ __________________________________________________________________________*/
             a {
                 
                 text-decoration: none ;
-                padding: $navbar-padding ;
+                padding: $navbar-padding 0.2em ;
+                display:inline-block ;
+                max-width: $menu-max-width ;
+
+                @include style-overflow-of("line") ;
                 
                 &:hover {
 
@@ -53,22 +58,30 @@ __________________________________________________________________________*/
                 @include global-bg-look() ;
                 
                 position: absolute ;
-                top: 1.7em ;
+                top: $navbar-dsm-position ;
                 padding: 0em ;
                 width: $navbar-dsm-width ;
                 box-shadow: 0px 3px 3px $shadow-color ;
+                font-size: $menu-sub-font-size ;
                 z-index: 10 ;
                 
                 li { //sub-item's menu
                     
                     display: block ;
-                    padding: $navbar-padding ;
-                    margin: 0.3em 0.2em ;
+                    padding: 0.1em ;
+                    margin: $navbar-dsm-margin 0em ;
+                    
+                    a {
+                        
+                        padding: $navbar-padding ;
+                        display: block ;
+                        margin: 0px ;
+                    }
                     
                     ul {
                         
                         top: 0em ;
-                        right: -($navbar-dsm-width + 0.15) ;
+                        right: -($navbar-dsm-width) ;
                     }
                     
                     &:first-of-type {
@@ -91,6 +104,11 @@ __________________________________________________________________________*/
                 >ul {
                     
                     display: block ;
+                }
+                
+                >a:not([href]) {
+                    
+                    color: $hover-color ;
                 }
             }
             
@@ -126,6 +144,12 @@ __________________________________________________________________________*/
         }
     }  
     &.bb-style { //border-bottom style for selection
+        
+        &>ul>li>a {
+            
+            padding-left: 0.1em ;
+            padding-right: 0.1em ;
+        }
         
         >ul li {
                         
@@ -192,6 +216,11 @@ __________________________________________________________________________*/
             &:hover, &#current-page, &.active-item {
 
                 @include global-bg-look( $select-color, $white-color) ;
+                
+                >a:not([href]) {
+
+                    color: $white-color ;
+                }
             }
             
             &#current-page, &.active-item {
@@ -204,7 +233,7 @@ __________________________________________________________________________*/
             
             a:hover {
                 
-                @include global-bg-look( $select-color, $white-color) ;
+                @include global-bg-look( "!transparent", $white-color) ;
             }
         }
     }
@@ -230,7 +259,7 @@ __________________________________________________________________________*/
         >ul li >ul {
 
             top: auto ;
-            bottom: 1.7em ;
+            bottom: $navbar-dsm-position ;
             box-shadow: 0px -3px 3px $shadow-color ;
 
             li ul {
@@ -241,50 +270,139 @@ __________________________________________________________________________*/
         }
     }
     
+    &.mi-style { //Wink: from a homework website menubar style for tutorial (for maths and computer science)
 
-    &.i-bar { //From first umiproject's website menubar style
+        >ul >li {
 
-        box-shadow: 0px 4px 5px $shadow-color ;
-        border: none ;
-        padding: $navbar-padding+0.6em $navbar-padding+0.2em $navbar-padding+0.1em $navbar-padding+0.2em ;
-
-        &.bb-style >ul li, &.bg-style >ul li {
-
-            &, a {
-
-                padding-bottom: $navbar-padding + 0.2em ;
-            }
+            position: inherit ; 
 
             ul {
 
-                top: 1.9em ;
+                left: 0px ;
+                top: $navbar-dsm-position + 0.3 ;
+                width: 100% ;
+                border-top: 1px solid darken( $light-color, 20%) ;
+                text-align: center ;
+
+                &:hover {
+
+                    border-top: 1px solid $hover-color ;
+                }
+
+                li {
+
+                    display: inline-block ;
+                    position: static ;
+                    padding: $navbar-padding 0em ;
+                    margin-right: $navbar-margin + 0.3 ;
+                    
+                    a {
+
+                        display: inline ;
+                        padding: $navbar-padding 0.2em ;
+                    }
+
+                    ul {
+
+                        top: $navbar-dsm-position + 0.5 ;
+                    }
+                }
             }
         }
-        &.bt-style >ul li, &.bg-style >ul li {
+        
+        /*&.bb-style {
 
-            &, a {
+            >ul >li ul {
 
-                padding-top: $navbar-padding + 0.2em ;
+                top: $navbar-dsm-position + 0.45 ;
+
+                li ul {
+
+                    top: $navbar-dsm-position + 0.6 ;
+                }
             }
+        }*/
+    }
+    
+    &.mi-bar { //From first umiproject's website menubar style
 
-        }
+        box-shadow: 0px 4px 5px $shadow-color ;
+        border: none ;
+        padding: $navbar-padding+0.2 $navbar-padding ($navbar-padding - 0.2) $navbar-padding ;
 
         &.b-fixed {
 
             box-shadow: 0px -4px 5px $shadow-color ;
             border: none ;
+            padding: ($navbar-padding - 0.1) $navbar-padding $navbar-padding+0.1 $navbar-padding ;
 
-            >ul li >ul {
+            >ul {
+                
+                li {
+                    
+                    vertical-align: bottom ;
+                    
+                    >ul {
+                        
+                        top: auto ;
+                        bottom: $navbar-dsm-position + 0.2 ;
+                        box-shadow: 0px -3px 3px $shadow-color ;
 
-                top: auto ;
-                bottom: 1.9em ;
-                box-shadow: 0px -3px 3px $shadow-color ;
+                        li ul {
 
-                li ul {
+                            top: auto ;
+                            bottom: 0em ;
+                        }
+                    }
+                }
+
+            }
+        }
+        
+        &.mi-style {
+
+            >ul >li ul {
+                
+                top: $navbar-dsm-position + 1.1 ;
+                
+                li {
+
+                    margin: $navbar-margin ($navbar-margin - 0.1) ;
+                    
+                    ul {
+                     
+                        top: $navbar-dsm-position + 0.7 ;
+                    }
+                }
+            }
+            
+            &.b-fixed {
+                
+                >ul >li ul {
 
                     top: auto ;
-                    bottom: 0em ;
+                    bottom: $navbar-dsm-position + 0.9 ;
+                    border: none ;
+                    border-bottom: 1px solid darken( $light-color, 20%) ;
+
+                    li {
+
+                        margin: $navbar-margin ($navbar-margin - 0.1) ;
+
+                        ul {
+
+                            top: auto;
+                            bottom: $navbar-dsm-position + 0.7 ;
+                        }
+                    }
+                    
+                    &:hover {
+
+                        border: none ;
+                        border-bottom: 1px solid $hover-color ;
+                    }
                 }
+                
             }
         }
     }
