@@ -511,14 +511,17 @@ __________________________________________________________________________
 * For an example with `.unfocusable` option, here is the global style, but for navbar items, 
 *there is additionnal's defintion set by `.i-nav >ul li.unfocusable` on the considered source file.
 */
-.fixed, .i-nav.t-fixed, .i-nav.b-fixed {
+.fixed, .i-nav.b-fixed, .i-nav.t-fixed {
   position: fixed;
   z-index: 10;
 }
 
 /*
- * For default theme. Here is the style definition of some custom navbars.
-__________________________________________________________________________*/
+ * For default theme. Here is the style definition of iui custom navbar.
+_______________________________________________________________________*/
+/*
+* For default theme. Here is the style definition of navbar design.
+__________________________________________________________________*/
 .i-nav {
   color: #1a1a1a;
   background-color: #fff;
@@ -609,90 +612,23 @@ __________________________________________________________________________*/
   color: #7f7f7f;
   background-color: !transparent;
 }
-.i-nav.b-style > ul li#current-page, .i-nav.b-style > ul li.active-item {
-  border: 0.25em solid #ff6600;
-}
-.i-nav.b-style > ul li:hover {
-  border: 0.15em solid #ff6600;
-}
-.i-nav.bb-style > ul > li > a {
-  padding-left: 0.1em;
-  padding-right: 0.1em;
-}
-.i-nav.bb-style > ul li#current-page, .i-nav.bb-style > ul li.active-item {
-  border-bottom: 0.25em solid #ff6600;
-}
-.i-nav.bb-style > ul li:hover {
-  border-bottom: 0.15em solid #ff6600;
-}
-.i-nav.bt-style > ul li#current-page, .i-nav.bt-style > ul li.active-item {
-  border-top: 0.25em solid #ff6600;
-}
-.i-nav.bt-style > ul li:hover {
-  border-top: 0.15em solid #ff6600;
-}
-.i-nav.bl-style > ul li#current-page, .i-nav.bl-style > ul li.active-item {
-  border-left: 0.25em solid #ff6600;
-}
-.i-nav.bl-style > ul li:hover {
-  border-left: 0.15em solid #ff6600;
-}
-.i-nav.br-style > ul li#current-page, .i-nav.br-style > ul li.active-item {
-  border-right: 0.25em solid #ff6600;
-}
-.i-nav.br-style > ul li:hover {
-  border-right: 0.15em solid #ff6600;
-}
-.i-nav.bg-style > ul li:hover, .i-nav.bg-style > ul li#current-page, .i-nav.bg-style > ul li.active-item {
-  color: #fff;
-  background-color: #ff6600;
-}
-.i-nav.bg-style > ul li:hover > a:not([href]), .i-nav.bg-style > ul li#current-page > a:not([href]), .i-nav.bg-style > ul li.active-item > a:not([href]) {
-  color: #fff;
-}
-.i-nav.bg-style > ul li#current-page a, .i-nav.bg-style > ul li.active-item a {
-  color: #fff;
-}
-.i-nav.bg-style > ul li a:hover {
-  color: #fff;
-  background-color: !transparent;
-}
-.i-nav.t-fixed {
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  z-index: 1000;
-}
-.i-nav.b-fixed {
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  border: none;
-  border-top: 1px solid #2d2d2d;
-  z-index: 1000;
-}
-.i-nav.b-fixed > ul li > ul {
-  top: auto;
-  bottom: 1.9em;
-  box-shadow: 0px -3px 3px rgba(103, 103, 103, 0.7);
-}
-.i-nav.b-fixed > ul li > ul li ul {
-  top: auto;
-  bottom: 0em;
-}
+
+/*
+* For default theme. Here is the style definition of "mi" design aspect for submenu in navbar.
+_____________________________________________________________________________________________*/
 .i-nav.mi-style {
-        /*&.bb-style {
+    /*&.bb-style {
 
-            >ul >li ul {
+        >ul >li ul {
 
-                top: $navbar-dsm-position + 0.45 ;
+            top: $navbar-dsm-position + 0.45 ;
 
-                li ul {
+            li ul {
 
-                    top: $navbar-dsm-position + 0.6 ;
-                }
+                top: $navbar-dsm-position + 0.6 ;
             }
-        }*/
+        }
+    }*/
 }
 .i-nav.mi-style > ul > li {
   position: inherit;
@@ -720,6 +656,113 @@ __________________________________________________________________________*/
 .i-nav.mi-style > ul > li ul li ul {
   top: 2.4em;
 }
+
+/*
+* For default theme. Here is the style definition of border design for selection in navbar.
+__________________________________________________________________________________________*/
+.i-nav.b-style > ul li#current-page, .i-nav.b-style > ul li.active-item {
+  border: 0.25em solid #ff6600;
+}
+.i-nav.b-style > ul li:hover {
+  border: 0.15em solid #ff6600;
+}
+
+/*
+* For default theme. Here is the style definition of border-bottom design for selection in navbar.
+_________________________________________________________________________________________________*/
+.i-nav.bb-style > ul > li > a {
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+}
+.i-nav.bb-style > ul li#current-page, .i-nav.bb-style > ul li.active-item {
+  border-bottom: 0.25em solid #ff6600;
+}
+.i-nav.bb-style > ul li:hover {
+  border-bottom: 0.15em solid #ff6600;
+}
+
+/*
+* For default theme. Here is the style definition of background design for selection in navbar.
+______________________________________________________________________________________________*/
+.i-nav.bg-style > ul li:hover, .i-nav.bg-style > ul li#current-page, .i-nav.bg-style > ul li.active-item {
+  color: #fff;
+  background-color: #ff6600;
+}
+.i-nav.bg-style > ul li:hover > a:not([href]), .i-nav.bg-style > ul li#current-page > a:not([href]), .i-nav.bg-style > ul li.active-item > a:not([href]) {
+  color: #fff;
+}
+.i-nav.bg-style > ul li#current-page a, .i-nav.bg-style > ul li.active-item a {
+  color: #fff;
+}
+.i-nav.bg-style > ul li a:hover {
+  color: #fff;
+  background-color: !transparent;
+}
+
+/*
+* For default theme. Here is the style definition of border-left design for selection in navbar.
+_______________________________________________________________________________________________*/
+.i-nav.bl-style > ul li#current-page, .i-nav.bl-style > ul li.active-item {
+  border-left: 0.25em solid #ff6600;
+}
+.i-nav.bl-style > ul li:hover {
+  border-left: 0.15em solid #ff6600;
+}
+
+/*
+* For default theme. Here is the style definition of border-right design for selection in navbar.
+________________________________________________________________________________________________*/
+.i-nav.br-style > ul li#current-page, .i-nav.br-style > ul li.active-item {
+  border-right: 0.25em solid #ff6600;
+}
+.i-nav.br-style > ul li:hover {
+  border-right: 0.15em solid #ff6600;
+}
+
+/*
+* For default theme. Here is the style definition of border-top design for selection in navbar.
+_________________________________________________________________________________________________*/
+.i-nav.bt-style > ul li#current-page, .i-nav.bt-style > ul li.active-item {
+  border-top: 0.25em solid #ff6600;
+}
+.i-nav.bt-style > ul li:hover {
+  border-top: 0.15em solid #ff6600;
+}
+
+/*
+* For default theme. Here is the style definition of top-fixed aspect for navbar.
+________________________________________________________________________________*/
+.i-nav.b-fixed {
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #2d2d2d;
+  z-index: 1000;
+}
+.i-nav.b-fixed > ul li > ul {
+  top: auto;
+  bottom: 1.9em;
+  box-shadow: 0px -3px 3px rgba(103, 103, 103, 0.7);
+}
+.i-nav.b-fixed > ul li > ul li ul {
+  top: auto;
+  bottom: 0em;
+}
+
+/*
+* For default theme. Here is the style definition of top-fixed aspect for navbar.
+________________________________________________________________________________*/
+.i-nav.t-fixed {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 1000;
+}
+
+/*
+* For default theme. Here is the style definition of "mi-bar" from umiproject's website navbar.
+______________________________________________________________________________________________*/
 .i-nav.mi-bar {
   box-shadow: 0px 4px 5px rgba(103, 103, 103, 0.7);
   border: none;
