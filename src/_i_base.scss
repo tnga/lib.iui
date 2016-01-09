@@ -327,6 +327,9 @@ input[ type="radio"] {
 label {
 
     cursor: pointer ;
+    font-family: $item-font-family ;
+    font-size: 0.95em ;
+    display: inline-block ;
 
     &:hover {
 

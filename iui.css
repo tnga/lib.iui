@@ -480,6 +480,9 @@ input[type="radio"]:checked:before {
 
 label {
   cursor: pointer;
+  font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
+  font-size: 0.95em;
+  display: inline-block;
 }
 label:hover {
   color: #ff6600;
@@ -517,8 +520,8 @@ __________________________________________________________________________
 }
 
 /*
- * For default theme. Here is the style definition of iui custom navbar.
-_______________________________________________________________________*/
+ * For default theme. Here is the style definition of all iui custom navbar features.
+____________________________________________________________________________________*/
 /*
 * For default theme. Here is the style definition of navbar design.
 __________________________________________________________________*/
@@ -810,6 +813,61 @@ ________________________________________________________________________________
 .i-nav.mi-bar.mi-style.b-fixed > ul > li ul:hover {
   border: none;
   border-bottom: 1px solid #ff6600;
+}
+
+/*
+* For default theme. Here is the style definition of all iui custom forms features.
+__________________________________________________________________________________*/
+/*
+* For default theme. Here is the style definition of "i-form" for forms.
+_______________________________________________________________________*/
+.i-form label {
+  margin: 0.3em;
+}
+.i-form label span:first-of-type {
+  border: 1px solid #2d2d2d;
+  padding: 0.3em;
+  margin-left: 0.1em;
+}
+.i-form label input {
+  margin-bottom: 0.5em;
+}
+.i-form label input[type="radio"] + span:first-of-type, .i-form label input[type="checkbox"] + span:first-of-type {
+  border: none;
+  padding: auto;
+}
+.i-form label:hover span:first-of-type {
+  border: 1px solid #ff6600;
+}
+.i-form label:hover input[type="radio"] + span:first-of-type,
+.i-form label:hover input[type="checkbox"] + span:first-of-type {
+  border: none;
+}
+
+/*
+* For default theme. Here is the style definition of "mi-style" design for forms.
+________________________________________________________________________________*/
+.i-form.mi-style {
+  box-shadow: 1px 3px 3px rgba(103, 103, 103, 0.7);
+  padding: 1em;
+  min-width: 280px;
+  width: 50%;
+  margin: auto;
+  border-radius: 25px;
+}
+.i-form.mi-style label {
+  display: block;
+  margin: 1.1em auto;
+  position: relative;
+  width: 240px;
+}
+.i-form.mi-style label span:first-child {
+  margin-bottom: -0.4em;
+  display: inline-block;
+  max-width: 230px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*
