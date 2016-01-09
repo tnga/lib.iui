@@ -1,6 +1,6 @@
 /*
- * For default theme. Here is the style definition of iui custom navbar.
-_______________________________________________________________________*/
+ * For default theme. Here is the style definition of all iui custom navbar features.
+____________________________________________________________________________________*/
 
 
 @import 'navbars/i_nav.scss' ;
@@ -14,3 +14,4 @@ _______________________________________________________________________*/
 @import 'navbars/b_fixed.scss' ;
 @import 'navbars/t_fixed.scss' ;
 @import 'navbars/mi_bar.scss' ;
+//@TODO remove "mi-bar" here to set new theme with it as `i-nav` (navbar). 
