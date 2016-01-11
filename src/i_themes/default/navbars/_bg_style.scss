@@ -10,7 +10,7 @@ ________________________________________________________________________________
 
         &:hover, &#current-page, &.active-item {
 
-            @include global-bg-look( $select-color, $white-color) ;
+            @include global-bg-look( $select-color, $select-txt-color) ;
 
             >a:not([href]) {
 

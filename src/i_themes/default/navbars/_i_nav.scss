@@ -8,7 +8,7 @@ __________________________________________________________________*/
     @include global-bg-look() ;
 
     padding: 0em 0.1em ;
-    border-bottom: 1px solid $dark-color ;
+    border-bottom: 1px solid $border-color ;
     margin-top: 0px ;
     position: relative ;
     font-size: $menu-font-size ;
@@ -112,7 +112,7 @@ __________________________________________________________________*/
                 }
             }
 
-            &#current-page, &.active-item {
+            &#current-page, &#current-item, &.active-item {
 
                 a {
 

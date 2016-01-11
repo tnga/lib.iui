@@ -16,6 +16,7 @@ $yellow-color: yellow ;
 $light-color: #f2f2f2 ;
 $black-color: #1a1a1a ;
 $dark-color: #2d2d2d ;
+
 $focus-color: #ff6600 ;
 $hover-color: $focus-color ;
 $active-color: $focus-color ;
@@ -23,7 +24,12 @@ $select-color: $focus-color ;
 $disable-color: #d0d0d0 ;
 $warring-color: $yellow-color ;
 $success-color: $focus-color ;
+$error-color: $red-color ;
+
+$border-color: $dark-color ;
 $default-bg-color: $white-color ;
+$default-txt-color: $black-color ;
+$select-txt-color: $white-color ;
 
 $shadow-color: rgba(103, 103, 103, 0.7) ;
 
@@ -41,7 +47,7 @@ $item-font-family: Ubuntu, _Ubuntu, $default-font-family ;
     background-image: linear-gradient(to top, $btn-color, lighten($btn-color,10%), lighten($btn-color,15%)) ;
 }
 
-@mixin global-bg-look ($bg-color:$white-color, $txt-color:$black-color) {
+@mixin global-bg-look ($bg-color:$default-bg-color, $txt-color:$default-txt-color) {
 
     color: #{$txt-color} ;
     background-color: #{$bg-color} ; 
@@ -107,3 +113,16 @@ $menu-font-size: 1.05em ;
 $menu-sub-font-size: 1.0em ; //default submenu font size
 $menu-max-width: 200px ;
 
+
+//----------------------------
+//For some collections's properties
+
+$block-tb-padding: 1.3em ; //top-bottom padding size
+$block-lr-padding: 0.9em ; //left-right padding size
+$block-stb-padding: $block-tb-padding + 0.2 ; //shadow-style's top-bottom padding size
+$block-slr-padding: $block-lr-padding ; //shadow-style's left-right padding size
+$block-rlr-padding: $block-lr-padding + 0.4 ; //radius-style's left-right padding size
+
+$block-s-shadow-color: lighten( $shadow-color, 15%) ; //shadow-style's shadow color ;
+
+$block-r-radius: 3em ; //radius-style's border radius ;

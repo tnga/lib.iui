@@ -62,8 +62,18 @@
 _____________________________________________________*/
 /* Style on "containers" elements like sections, articles, ...
 --------------------------------------------------------------*/
+#i-main-block {
+  min-width: 280px;
+  max-width: 1400px;
+  width: 100%;
+  margin: -5px auto 0px auto;
+  position: relative;
+}
+
 body {
   font-family: "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
+  color: #1a1a1a;
+  background-color: #fff;
 }
 
 *:hover, *:focus {
@@ -607,7 +617,7 @@ __________________________________________________________________*/
 .i-nav > ul li:hover > a:not([href]) {
   color: #ff6600;
 }
-.i-nav > ul li#current-page a, .i-nav > ul li.active-item a {
+.i-nav > ul li#current-page a, .i-nav > ul li#current-item a, .i-nav > ul li.active-item a {
   color: #ff6600;
   font-weight: bold;
 }
@@ -871,19 +881,141 @@ ________________________________________________________________________________
 }
 
 /*
- * For default theme. Here is the style definition of some custom block like "main-block", ...
-______________________________________________________________________________________________*/
-#i-main-block {
-  min-width: 280px;
-  max-width: 1400px;
-  width: 100%;
-  margin: -5px auto 0px auto;
-  position: relative;
+ * For default theme. Here is the style definition of some custom block for collections, ...
+____________________________________________________________________________________________*/
+/*
+* For default theme. Here is the style definition of `i-block` for collections, ...
+__________________________________________________________________________________*/
+.i-block {
+  margin: 1.5em 0.3em;
+  padding: 1.3em 0.9em;
+  box-shadow: 0px 0px 5px rgba(129, 129, 129, 0.7);
+  display: block;
 }
 
-body {
+/*
+* For default theme. Here is the style definition of `s-style` for `i-block` collections, ...
+____________________________________________________________________________________________*/
+.i-block.s-style {
+  box-shadow: 0px 0px 10px rgba(141, 141, 141, 0.7);
+  padding: 1.5em 0.9em;
+}
+
+/*
+* For default theme. Here is the style definition of `sb-style` for `i-block` collections, ...
+_____________________________________________________________________________________________*/
+.i-block.sb-style {
+  box-shadow: 0px 6px 7px rgba(141, 141, 141, 0.7);
+  padding: 1.5em 0.9em;
+}
+
+/*
+* For default theme. Here is the style definition of `st-style` for `i-block` collections, ...
+_____________________________________________________________________________________________*/
+.i-block.st-style {
+  box-shadow: 0px -6px 7px rgba(141, 141, 141, 0.7);
+  padding: 1.5em 0.9em;
+}
+
+/*
+* For default theme. Here is the style definition of `sl-style` for `i-block` collections, ...
+_____________________________________________________________________________________________*/
+.i-block.sl-style {
+  box-shadow: -6px 0px 7px rgba(141, 141, 141, 0.7);
+  padding: 1.5em 0.9em;
+}
+
+/*
+* For default theme. Here is the style definition of `sr-style` for `i-block` collections, ...
+_____________________________________________________________________________________________*/
+.i-block.sr-style {
+  box-shadow: 6px 0px 7px rgba(141, 141, 141, 0.7);
+  padding: 1.5em 0.9em;
+}
+
+/*
+* For default theme. Here is the style definition of `r-style` for `i-block` collections, ...
+_____________________________________________________________________________________________*/
+.i-block.r-style {
+  border-radius: 3em;
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+}
+
+/*
+* For default theme. Here is the style definition of `rm-style` for `i-block` collections, ...
+_____________________________________________________________________________________________*/
+.i-block.rm-style {
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+  border-radius: 3em 0em;
+}
+
+/*
+* For default theme. Here is the style definition of `rd-style` for `i-block` collections, ...
+_____________________________________________________________________________________________*/
+.i-block.rd-style {
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+  border-radius: 0em 3em;
+}
+
+/*
+* For default theme. Here is the style definition of `collection` for `i-block` collections, ...
+_____________________________________________________________________________________________*/
+.i-block.collection > h1, .i-block.collection > h2, .i-block.collection > h3, .i-block.collection > h4, .i-block.collection > h5, .i-block.collection > h6 {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.7em;
+}
+.i-block.collection h1, .i-block.collection h2, .i-block.collection h3, .i-block.collection h4, .i-block.collection h5, .i-block.collection h6 {
+  color: #737373;
+}
+.i-block.collection > section, .i-block.collection > div, .i-block.collection > header, .i-block.collection > footer {
+  margin: 0.5em auto;
+  padding: 0.5em 0em;
+}
+.i-block.collection > section, .i-block.collection > div {
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+.i-block.collection > header, .i-block.collection > footer {
+  border-top: 1px dashed #e7e7e7;
+  border-bottom: 1px dashed #e7e7e7;
+}
+.i-block.collection > li, .i-block.collection > a {
+  display: block;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  margin: 0px;
+  padding: 0.7em 0.3em;
+}
+.i-block.collection > li > h1, .i-block.collection > li > h2, .i-block.collection > li > h3, .i-block.collection > li > h4, .i-block.collection > li > h5, .i-block.collection > li > h6, .i-block.collection > a > h1, .i-block.collection > a > h2, .i-block.collection > a > h3, .i-block.collection > a > h4, .i-block.collection > a > h5, .i-block.collection > a > h6 {
+  margin: 0.3em 0em;
+}
+.i-block.collection > li + li, .i-block.collection > li + a, .i-block.collection > a + li, .i-block.collection > a + a {
+  border-top: none;
+}
+.i-block.collection > a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+.i-block.collection:not(.unfocusable) > li:hover:not(.unfocusable), .i-block.collection:not(.unfocusable) > li:not(.unfocusable).hover-item, .i-block.collection:not(.unfocusable) > a:hover:not(.unfocusable), .i-block.collection:not(.unfocusable) > a:not(.unfocusable).hover-item {
   color: #1a1a1a;
-  background-color: #fff;
+  background-color: #e2e2e2;
+}
+.i-block.collection:not(.unfocusable) > li:active:not(.unfocusable), .i-block.collection:not(.unfocusable) > li.active-item, .i-block.collection:not(.unfocusable) > li#current-item, .i-block.collection:not(.unfocusable) > a:active:not(.unfocusable), .i-block.collection:not(.unfocusable) > a.active-item, .i-block.collection:not(.unfocusable) > a#current-item {
+  -webkit-transition: none;
+          transition: none;
+  color: #fff;
+  background-color: #ff6600;
+}
+.i-block.collection.disable > li, .i-block.collection.disable > li:hover, .i-block.collection.disable > li.hover-item, .i-block.collection.disable > li:active, .i-block.collection.disable > li.active-item, .i-block.collection.disable > li#current-item, .i-block.collection > li.disable, .i-block.collection > li.disable:hover, .i-block.collection > li.disable.hover-item, .i-block.collection > li.disable:active, .i-block.collection > li.disable.active-item, .i-block.collection > li.disable#current-item {
+  color: #909090;
+  background-color: !transparent;
+}
+
+ul.i-block.collection > h1, ul.i-block.collection > h2, ul.i-block.collection > h3, ul.i-block.collection > h4, ul.i-block.collection > h5, ul.i-block.collection > h6 {
+  border: none;
 }
 
 /*.btn-signin, input[type="submit"].btn-signin {

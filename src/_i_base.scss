@@ -6,9 +6,20 @@ _____________________________________________________*/
 /* Style on "containers" elements like sections, articles, ...
 --------------------------------------------------------------*/
 
+#i-main-block {
+
+    min-width: $global-min-width;
+    max-width: $global-max-width;
+    width: 100%;
+    margin: -5px auto 0px auto ;
+    position: relative;
+}
+
 body {
 
     font-family: $default-font-family ;
+    
+    @include global-bg-look() ;
 }
 
 * {
@@ -38,7 +49,7 @@ table {
     td, th {
 
         padding: 0.5em ;
-        border: 1px solid lighten( $dark-color, 50%) ;
+        border: 1px solid lighten( $border-color, 50%) ;
     }
 
     th {
@@ -57,7 +68,7 @@ table {
 a {
     
     text-decoration: none ;
-    color: lighten( $black-color, 30%) ;
+    color: lighten( $default-txt-color, 30%) ;
     font-family: $item-font-family ;
     padding: 1px 2px ;
     
@@ -108,7 +119,7 @@ a {
 
     &:hover, &.hovered {
 
-        @include button-bg-look($hover-color, $white-color) ;
+        @include button-bg-look($hover-color, $select-txt-color) ;
         
         box-shadow: 0px 1px 2px $hover-color ;
     }
@@ -170,7 +181,7 @@ input[ type="color"] {
     @mixin common-input-style {
 
            font-family: $default-font-family ;
-                border: 1px solid lighten( $dark-color, 50%) ;
+                border: 1px solid lighten( $border-color, 50%) ;
          border-radius: 0 ;
             box-shadow: 1px 1px 4px $shadow-color inset ;
                padding: 7px ;
@@ -318,7 +329,7 @@ input[ type="radio"] {
 
         &:checked:before {
 
-            @include button-bg-look($select-color, $white-color) ;
+            @include button-bg-look($select-color, $select-txt-color) ;
         }
     }
 }
@@ -341,7 +352,7 @@ label {
 fieldset {
     
     margin: 1em ;
-    border: 1px solid $dark-color ;
+    border: 1px solid $border-color ;
     
     legend {
         
