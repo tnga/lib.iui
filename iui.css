@@ -98,6 +98,9 @@ table td, table th {
   padding: 0.5em;
   border: 1px solid #adadad;
 }
+table tr {
+  border: none;
+}
 table th {
   background-color: #2d2d2d;
   color: #fff;
@@ -999,7 +1002,7 @@ ________________________________________________________________________________
   cursor: pointer;
   text-decoration: none;
 }
-.i-block.collection:not(.unfocusable) > li:hover:not(.unfocusable), .i-block.collection:not(.unfocusable) > li:not(.unfocusable).hover-item, .i-block.collection:not(.unfocusable) > a:hover:not(.unfocusable), .i-block.collection:not(.unfocusable) > a:not(.unfocusable).hover-item {
+.i-block.collection:not(.unfocusable) > li:hover:not(.unfocusable), .i-block.collection:not(.unfocusable) > li:not(.unfocusable).hover, .i-block.collection:not(.unfocusable) > a:hover:not(.unfocusable), .i-block.collection:not(.unfocusable) > a:not(.unfocusable).hover {
   color: #1a1a1a;
   background-color: #e2e2e2;
 }
@@ -1016,6 +1019,71 @@ ________________________________________________________________________________
 
 ul.i-block.collection > h1, ul.i-block.collection > h2, ul.i-block.collection > h3, ul.i-block.collection > h4, ul.i-block.collection > h5, ul.i-block.collection > h6 {
   border: none;
+}
+
+/*
+* For default theme. Here is the style definition of all iui custom table features.
+____________________________________________________________________________________*/
+/*
+* For default theme. Here is the style definition of `no-border` design for table.
+_________________________________________________________________________________*/
+table.no-border th {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+table.no-border tr, table.no-border td {
+  border: none;
+}
+
+/*
+* For default theme. Here is the style definition of `h-border` design for table.
+_________________________________________________________________________________*/
+table.h-border td, table.h-border th {
+  border: none;
+}
+table.h-border tr, table.h-border th {
+  border-bottom: 1px solid #adadad;
+}
+
+/*
+* For default theme. Here is the style definition of `v-border` design for table.
+_________________________________________________________________________________*/
+table.v-border td, table.v-border th {
+  border: none;
+  border-left: 1px solid #adadad;
+  border-right: 1px solid #adadad;
+}
+table.v-border tr:last-of-type {
+  border-bottom: 1px solid #adadad;
+}
+
+/*
+* For default theme. Here is the style definition of `line-style` design for table.
+__________________________________________________________________________________*/
+table.line-style tr:hover:not(.unfocusable), table.line-style tr:not(.unfocusable).hover {
+  color: #1a1a1a;
+  background-color: #c6c6c6;
+}
+table.line-style th.active-item, table.line-style th#current-item, table.line-style tr.active-item, table.line-style tr#current-item {
+  color: #fff;
+  background-color: #ff6600;
+}
+table.line-style td.active-item, table.line-style td#current-item {
+  color: #fff;
+  background-color: #868686;
+}
+
+/*
+* For default theme. Here is the style definition of `cellule-style` design for table.
+_____________________________________________________________________________________*/
+table.cel-style tr:not(.unfocusable) td:hover:not(.unfocusable), table.cel-style tr:not(.unfocusable) td:not(.unfocusable).hover {
+  color: #1a1a1a;
+  background-color: #ececec;
+}
+table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unfocusable) td#current-item {
+  color: #fff;
+  background-color: #868686;
 }
 
 /*.btn-signin, input[type="submit"].btn-signin {
