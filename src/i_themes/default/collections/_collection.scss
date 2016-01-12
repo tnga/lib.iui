@@ -61,11 +61,11 @@ ________________________________________________________________________________
     &:not( .unfocusable) >li, &:not( .unfocusable) >a {
 
         //@TODO verify `.unfocusable` implementation on extras features since this (:not) will not work on old browser.
-        &:hover:not( .unfocusable), &:not( .unfocusable).hover-item {
+        &:hover:not( .unfocusable), &:not( .unfocusable).hover {
 
             @include global-bg-look( lighten( $dark-color, 71%)) ;
         }
-        &:active:not( .unfocusable), &.active-item, &#current-item {
+        &:active:not( .unfocusable), &.active-item, &#current-item { //@TODO maybe setting `active-item` when `unfocusable` ?
 
             transition: none ; //@TODO remove or modify this when will use `hover` library
 
