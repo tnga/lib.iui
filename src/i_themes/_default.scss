@@ -9,6 +9,7 @@ _________________________________________*/
 @import 'default/forms.scss' ;
 @import 'default/collections.scss' ;
 @import 'default/tables.scss' ;
+@import 'default/grids.scss' ;
 
 
 
@@ -135,13 +136,4 @@ _________________________________________*/
     }
 }
 
-label {
-
-    font-family: Ubuntu, _Ubuntu, $default-font-family ;
-
-    >span {
-
-        font-size: 0.95em ;
-    }
-}
 */

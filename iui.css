@@ -77,8 +77,7 @@ body {
 }
 
 *:hover, *:focus {
-  -webkit-transition: all 0.35s linear;
-          transition: all 0.35s linear;
+  transition: all 0.35s linear;
 }
 *:focus {
   outline: thin solid #ff6600;
@@ -144,7 +143,6 @@ input[type="reset"],
 input[type="file"] {
   color: #fff;
   background-color: #2d2d2d;
-  background-image: -webkit-linear-gradient(bottom, #2d2d2d, #474747, #535353);
   background-image: linear-gradient(to top, #2d2d2d, #474747, #535353);
   display: inline-block;
   line-height: normal;
@@ -172,7 +170,6 @@ input.hovered[type="reset"],
 input.hovered[type="file"] {
   color: #fff;
   background-color: #ff6600;
-  background-image: -webkit-linear-gradient(bottom, #ff6600, #ff8533, #ff944d);
   background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
   box-shadow: 0px 1px 2px #ff6600;
 }
@@ -218,7 +215,6 @@ input.disabled[type="reset"]:hover,
 input.disabled[type="file"]:hover {
   color: #fff;
   background-color: #d0d0d0;
-  background-image: -webkit-linear-gradient(bottom, #d0d0d0, #eaeaea, #f6f6f6);
   background-image: linear-gradient(to top, #d0d0d0, #eaeaea, #f6f6f6);
   cursor: not-allowed;
   box-shadow: 0px 1px 1px #d0d0d0;
@@ -425,7 +421,6 @@ input[type="radio"]:before {
   border: 2px solid #fff;
   color: #fff;
   background-color: #2d2d2d;
-  background-image: -webkit-linear-gradient(bottom, #2d2d2d, #474747, #535353);
   background-image: linear-gradient(to top, #2d2d2d, #474747, #535353);
   border-radius: 2px;
   /* angles arrondis */
@@ -468,7 +463,6 @@ input[type="radio"][disabled]:hover:before,
 input[type="radio"].disabled:hover:before {
   color: #fff;
   background-color: #d0d0d0;
-  background-image: -webkit-linear-gradient(bottom, #d0d0d0, #eaeaea, #f6f6f6);
   background-image: linear-gradient(to top, #d0d0d0, #eaeaea, #f6f6f6);
   cursor: not-allowed;
   box-shadow: 0px 0px 2px #d0d0d0;
@@ -487,7 +481,6 @@ input[type="checkbox"]:checked:before,
 input[type="radio"]:checked:before {
   color: #fff;
   background-color: #ff6600;
-  background-image: -webkit-linear-gradient(bottom, #ff6600, #ff8533, #ff944d);
   background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
 }
 
@@ -1007,8 +1000,7 @@ ________________________________________________________________________________
   background-color: #e2e2e2;
 }
 .i-block.collection:not(.unfocusable) > li:active:not(.unfocusable), .i-block.collection:not(.unfocusable) > li.active-item, .i-block.collection:not(.unfocusable) > li#current-item, .i-block.collection:not(.unfocusable) > a:active:not(.unfocusable), .i-block.collection:not(.unfocusable) > a.active-item, .i-block.collection:not(.unfocusable) > a#current-item {
-  -webkit-transition: none;
-          transition: none;
+  transition: none;
   color: #fff;
   background-color: #ff6600;
 }
@@ -1086,6 +1078,430 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
   background-color: #868686;
 }
 
+/*
+* For default theme. Here is the style definition of all iui custom grid features.
+==================================================================================
+
+* @NOTE grid's styles definitions here are based on [toast-grid]( https://github.com/daneden/Toast).
+* Beside IUI provide it own "grid using syntax", toast syntax is also compatible (just look at associated docs).
+*
+* Here is the style definition of "IUI's grid syntax"
+*/
+/*-----------------------------------*\
+
+  $TOAST-GRID
+
+  An insane grid.
+  You'd be mad to use it.
+
+  Usage
+  =====
+
+  Assuming default values:
+
+  <div class="grid">
+    <div class="grid__col grid__col--1-of-2">
+      A half-width column.
+    </div>
+    <div class="grid__col grid__col--1-of-4 grid__col--pull-1-of-4">
+      A quarter, pulled left by its own width. You get this, right?
+    </div>
+  </div>
+
+
+  Customisation
+  =============
+
+  $toast-grid-namespace and $toast-grid-column-namespace
+  adjusts the class names for the grid. With
+  default values, grid wrappers have a class
+  of '.grid' and columns '.grid__col'.
+
+  $toast-col-groups(n) adjusts column divisions.
+  For example, $toast-col-groups(12) will produce
+  a 12-column grid. $col-groups(3,6,8)
+  will produce a 3-, 6-, and 8-column grid.
+
+  $toast-gutter-width is—you guessed it—the gutter
+  width. Accepts any unit.
+
+  That's it. Have fun.
+
+\*-----------------------------------*/
+.i-grid {
+  list-style: none;
+  margin-left: -20px;
+}
+
+.grid--2-of-2, .col-2-of-2, .grid--3-of-3, .col-3-of-3, .grid--4-of-4, .col-4-of-4, .grid--5-of-5, .col-5-of-5, .grid--6-of-6, .col-6-of-6, .grid--8-of-8, .col-8-of-8, .grid--12-of-12, .col-12-of-12 {
+  width: 100%;
+}
+
+.grid--1-of-2, .col-1-of-2, .grid--2-of-4, .col-2-of-4, .grid--3-of-6, .col-3-of-6, .grid--4-of-8, .col-4-of-8, .grid--6-of-12, .col-6-of-12 {
+  width: 50%;
+}
+
+.grid--1-of-3, .col-1-of-3, .grid--2-of-6, .col-2-of-6, .grid--4-of-12, .col-4-of-12 {
+  width: 33.33333%;
+}
+
+.grid--2-of-3, .col-2-of-3, .grid--4-of-6, .col-4-of-6, .grid--8-of-12, .col-8-of-12 {
+  width: 66.66667%;
+}
+
+.grid--1-of-4, .col-1-of-4, .grid--2-of-8, .col-2-of-8, .grid--3-of-12, .col-3-of-12 {
+  width: 25%;
+}
+
+.grid--3-of-4, .col-3-of-4, .grid--6-of-8, .col-6-of-8, .grid--9-of-12, .col-9-of-12 {
+  width: 75%;
+}
+
+.grid--push-2-of-2, .grid.push-2-of-2, .grid--push-3-of-3, .grid.push-3-of-3, .grid--push-4-of-4, .grid.push-4-of-4, .grid--push-5-of-5, .grid.push-5-of-5, .grid--push-6-of-6, .grid.push-6-of-6, .grid--push-8-of-8, .grid.push-8-of-8, .grid--push-12-of-12, .grid.push-12-of-12 {
+  margin-left: 100%;
+}
+
+.grid--push-1-of-2, .grid.push-1-of-2, .grid--push-2-of-4, .grid.push-2-of-4, .grid--push-3-of-6, .grid.push-3-of-6, .grid--push-4-of-8, .grid.push-4-of-8, .grid--push-6-of-12, .grid.push-6-of-12 {
+  margin-left: 50%;
+}
+
+.grid--push-1-of-3, .grid.push-1-of-3, .grid--push-2-of-6, .grid.push-2-of-6, .grid--push-4-of-12, .grid.push-4-of-12 {
+  margin-left: 33.33333%;
+}
+
+.grid--push-2-of-3, .grid.push-2-of-3, .grid--push-4-of-6, .grid.push-4-of-6, .grid--push-8-of-12, .grid.push-8-of-12 {
+  margin-left: 66.66667%;
+}
+
+.grid--push-1-of-4, .grid.push-1-of-4, .grid--push-2-of-8, .grid.push-2-of-8, .grid--push-3-of-12, .grid.push-3-of-12 {
+  margin-left: 25%;
+}
+
+.grid--push-3-of-4, .grid.push-3-of-4, .grid--push-6-of-8, .grid.push-6-of-8, .grid--push-9-of-12, .grid.push-9-of-12 {
+  margin-left: 75%;
+}
+
+.grid--pull-2-of-2, .grid.pull-2-of-2, .grid--pull-3-of-3, .grid.pull-3-of-3, .grid--pull-4-of-4, .grid.pull-4-of-4, .grid--pull-5-of-5, .grid.pull-5-of-5, .grid--pull-6-of-6, .grid.pull-6-of-6, .grid--pull-8-of-8, .grid.pull-8-of-8, .grid--pull-12-of-12, .grid.pull-12-of-12 {
+  margin-left: -100%;
+}
+
+.grid--pull-1-of-2, .grid.pull-1-of-2, .grid--pull-2-of-4, .grid.pull-2-of-4, .grid--pull-3-of-6, .grid.pull-3-of-6, .grid--pull-4-of-8, .grid.pull-4-of-8, .grid--pull-6-of-12, .grid.pull-6-of-12 {
+  margin-left: -50%;
+}
+
+.grid--pull-1-of-3, .grid.pull-1-of-3, .grid--pull-2-of-6, .grid.pull-2-of-6, .grid--pull-4-of-12, .grid.pull-4-of-12 {
+  margin-left: -33.33333%;
+}
+
+.grid--pull-2-of-3, .grid.pull-2-of-3, .grid--pull-4-of-6, .grid.pull-4-of-6, .grid--pull-8-of-12, .grid.pull-8-of-12 {
+  margin-left: -66.66667%;
+}
+
+.grid--pull-1-of-4, .grid.pull-1-of-4, .grid--pull-2-of-8, .grid.pull-2-of-8, .grid--pull-3-of-12, .grid.pull-3-of-12 {
+  margin-left: -25%;
+}
+
+.grid--pull-3-of-4, .grid.pull-3-of-4, .grid--pull-6-of-8, .grid.pull-6-of-8, .grid--pull-9-of-12, .grid.pull-9-of-12 {
+  margin-left: -75%;
+}
+
+.grid--1-of-5, .col-1-of-5 {
+  width: 20%;
+}
+
+.grid--push-1-of-5, .grid.push-1-of-5 {
+  margin-left: 20%;
+}
+
+.grid--pull-1-of-5, .grid.pull-1-of-5 {
+  margin-left: -20%;
+}
+
+.grid--2-of-5, .col-2-of-5 {
+  width: 40%;
+}
+
+.grid--push-2-of-5, .grid.push-2-of-5 {
+  margin-left: 40%;
+}
+
+.grid--pull-2-of-5, .grid.pull-2-of-5 {
+  margin-left: -40%;
+}
+
+.grid--3-of-5, .col-3-of-5 {
+  width: 60%;
+}
+
+.grid--push-3-of-5, .grid.push-3-of-5 {
+  margin-left: 60%;
+}
+
+.grid--pull-3-of-5, .grid.pull-3-of-5 {
+  margin-left: -60%;
+}
+
+.grid--4-of-5, .col-4-of-5 {
+  width: 80%;
+}
+
+.grid--push-4-of-5, .grid.push-4-of-5 {
+  margin-left: 80%;
+}
+
+.grid--pull-4-of-5, .grid.pull-4-of-5 {
+  margin-left: -80%;
+}
+
+.grid--1-of-6, .col-1-of-6 {
+  width: 16.66667%;
+}
+
+.grid--push-1-of-6, .grid.push-1-of-6 {
+  margin-left: 16.66667%;
+}
+
+.grid--pull-1-of-6, .grid.pull-1-of-6 {
+  margin-left: -16.66667%;
+}
+
+.grid--5-of-6, .col-5-of-6 {
+  width: 83.33333%;
+}
+
+.grid--push-5-of-6, .grid.push-5-of-6 {
+  margin-left: 83.33333%;
+}
+
+.grid--pull-5-of-6, .grid.pull-5-of-6 {
+  margin-left: -83.33333%;
+}
+
+.grid--1-of-8, .col-1-of-8 {
+  width: 12.5%;
+}
+
+.grid--push-1-of-8, .grid.push-1-of-8 {
+  margin-left: 12.5%;
+}
+
+.grid--pull-1-of-8, .grid.pull-1-of-8 {
+  margin-left: -12.5%;
+}
+
+.grid--3-of-8, .col-3-of-8 {
+  width: 37.5%;
+}
+
+.grid--push-3-of-8, .grid.push-3-of-8 {
+  margin-left: 37.5%;
+}
+
+.grid--pull-3-of-8, .grid.pull-3-of-8 {
+  margin-left: -37.5%;
+}
+
+.grid--5-of-8, .col-5-of-8 {
+  width: 62.5%;
+}
+
+.grid--push-5-of-8, .grid.push-5-of-8 {
+  margin-left: 62.5%;
+}
+
+.grid--pull-5-of-8, .grid.pull-5-of-8 {
+  margin-left: -62.5%;
+}
+
+.grid--7-of-8, .col-7-of-8 {
+  width: 87.5%;
+}
+
+.grid--push-7-of-8, .grid.push-7-of-8 {
+  margin-left: 87.5%;
+}
+
+.grid--pull-7-of-8, .grid.pull-7-of-8 {
+  margin-left: -87.5%;
+}
+
+.grid--1-of-12, .col-1-of-12 {
+  width: 8.33333%;
+}
+
+.grid--push-1-of-12, .grid.push-1-of-12 {
+  margin-left: 8.33333%;
+}
+
+.grid--pull-1-of-12, .grid.pull-1-of-12 {
+  margin-left: -8.33333%;
+}
+
+.grid--2-of-12, .col-2-of-12 {
+  width: 16.66667%;
+}
+
+.grid--push-2-of-12, .grid.push-2-of-12 {
+  margin-left: 16.66667%;
+}
+
+.grid--pull-2-of-12, .grid.pull-2-of-12 {
+  margin-left: -16.66667%;
+}
+
+.grid--5-of-12, .col-5-of-12 {
+  width: 41.66667%;
+}
+
+.grid--push-5-of-12, .grid.push-5-of-12 {
+  margin-left: 41.66667%;
+}
+
+.grid--pull-5-of-12, .grid.pull-5-of-12 {
+  margin-left: -41.66667%;
+}
+
+.grid--7-of-12, .col-7-of-12 {
+  width: 58.33333%;
+}
+
+.grid--push-7-of-12, .grid.push-7-of-12 {
+  margin-left: 58.33333%;
+}
+
+.grid--pull-7-of-12, .grid.pull-7-of-12 {
+  margin-left: -58.33333%;
+}
+
+.grid--10-of-12, .col-10-of-12 {
+  width: 83.33333%;
+}
+
+.grid--push-10-of-12, .grid.push-10-of-12 {
+  margin-left: 83.33333%;
+}
+
+.grid--pull-10-of-12, .grid.pull-10-of-12 {
+  margin-left: -83.33333%;
+}
+
+.grid--11-of-12, .col-11-of-12 {
+  width: 91.66667%;
+}
+
+.grid--push-11-of-12, .grid.push-11-of-12 {
+  margin-left: 91.66667%;
+}
+
+.grid--pull-11-of-12, .grid.pull-11-of-12 {
+  margin-left: -91.66667%;
+}
+
+.grid {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-right: -.25em;
+  min-height: 1px;
+  padding-left: 20px;
+  vertical-align: top;
+}
+@media (max-width: 700px) {
+  .grid {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+  }
+}
+@media (max-width: 700px) and (min-width: 480px) {
+  .grid[class*="grid--m-"] {
+    display: inline-block;
+    margin-right: -.24em;
+  }
+  .grid.grid--m-1-of-2, .grid.grid--m-2-of-4, .col-2-of-4.medium, .col-1-of-2.medium {
+    width: 50%;
+  }
+  .grid.grid--m-1-of-3, .col-1-of-3.medium {
+    width: 33.33333%;
+  }
+  .grid.grid--m-2-of-3, .col-2-of-3.medium {
+    width: 66.66667%;
+  }
+  .grid.grid--m-1-of-4, .col-1-of-4.medium {
+    width: 25%;
+  }
+  .grid.grid--m-3-of-4, .col-3-of-4.medium {
+    width: 75%;
+  }
+}
+@media (max-width: 480px) {
+  .grid[class*="grid--s-"] {
+    display: inline-block;
+    margin-right: -.24em;
+  }
+  .grid.grid--s-1-of-2, .grid.grid--s-2-of-4, .col-2-of-4.small, .col-1-of-2.small {
+    width: 50%;
+  }
+  .grid.grid--s-1-of-3, .col-1-of-3.small {
+    width: 33.33333%;
+  }
+  .grid.grid--s-2-of-3, .col-2-of-3.small {
+    width: 66.66667%;
+  }
+  .grid.grid--s-1-of-4, .col-1-of-4.small {
+    width: 25%;
+  }
+  .grid.grid--s-3-of-4, .col-3-of-4.small {
+    width: 75%;
+  }
+}
+
+.grid--centered, .grid.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid--d-first, .grid.d-first {
+  float: left;
+}
+
+.grid--d-last, .grid.d-last {
+  float: right;
+}
+
+.i-grid--no-gutter, .i-grid.no-gutter {
+  margin-left: 0;
+  width: 100%;
+}
+.i-grid--no-gutter .grid, .i-grid.no-gutter .grid {
+  padding-left: 0;
+}
+.i-grid--no-gutter .grid--span-all, .i-grid.no-gutter .grid--span-all, .i-grid--no-gutter .span-all, .i-grid.no-gutter .span-all {
+  margin-left: 0;
+  width: 100%;
+}
+
+.grid--ab, .grid.align-b {
+  vertical-align: bottom;
+}
+
+.grid--am, .grid.align-m {
+  vertical-align: middle;
+}
+
+@media (max-width: 700px) and (min-width: 480px) {
+  .grid[class*="medium"] {
+    display: inline-block;
+    margin-right: -.24em;
+  }
+}
+@media (max-width: 480px) {
+  .grid[class*="small"] {
+    display: inline-block;
+    margin-right: -.24em;
+  }
+}
 /*.btn-signin, input[type="submit"].btn-signin {
 
     @include button-bg-look($vendor-first-color, $white-color) ;
@@ -1209,15 +1625,6 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
     }
 }
 
-label {
-
-    font-family: Ubuntu, _Ubuntu, $default-font-family ;
-
-    >span {
-
-        font-size: 0.95em ;
-    }
-}
 */
 
 /*# sourceMappingURL=iui.css.map */

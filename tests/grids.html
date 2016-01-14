@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+
+        <title>iui - default theme</title>
+
+        <link rel="stylesheet" type="text/css" href="../iui.css" />
+        
+        <style>
+
+            .i-grid .grid, .i-grid *[ class*="grid grid--"]
+            /*div *[ class*="grid col-"], div *[ class*="grid grid--"]*/ {
+                
+                background: darkgray ;
+                min-height: 1.5em ;
+                margin-bottom: 1.4rem;
+                position: relative ;
+            }
+            .i-grid .i-block {
+                
+                background: #f8f8f8 ;
+            }
+            
+            .grid .i-grid {
+
+                background: white ;
+            }
+            
+            .iui--demo *:after {
+                white-space: nowrap; 
+                content: attr(class);
+                bottom: 100%;
+                left: 50%;
+                padding: 0.3611rem 0.7222rem;
+                position: absolute;
+                -webkit-transform: translateX(-50%) rotate(3deg);
+                width: auto;
+                z-index: 2;
+                font: 83.333%/1.5333 "Source Code Pro", Monaco, monospace;
+                background-color: rgba(71, 82, 93, 0.8);
+                border-radius: .25em;
+                color: #fff;
+                opacity: 0;
+                -webkit-transition: 0.3s cubic-bezier(0.905, -0.25, 0.52, 1.41);
+                pointer-events: none; }
+            .iui--demo *:hover:after {
+                margin-bottom: 0.7222rem;
+                opacity: 1;
+                -webkit-transform: translateX(-50%); }
+            .iui--demo *:before {
+                content: '';
+                bottom: 100%;
+                left: 50%;
+                margin-bottom: -1.4444rem;
+                position: absolute;
+                -webkit-transform: translateX(-50%) rotate(3deg);
+                z-index: 2;
+                border: 0.7222rem solid transparent;
+                border-top-color: rgba(71, 82, 93, 0.8);
+                opacity: 0;
+                -webkit-transition: 0.3s cubic-bezier(0.905, -0.25, 0.52, 1.41);
+                pointer-events: none; }
+            .iui--demo *:hover:before {
+                margin-bottom: -0.7222rem;
+                opacity: 1;
+                -webkit-transform: translateX(-50%); }
+            @media (max-width: 700px) {
+                .iui--demo {
+                    display: none; } }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="i-main-block">
+
+            <figure class="i-block i-grid iui--demo">
+                <span>Toast syntax</span>
+                <br/>
+                <div class='grid grid--1-of-2'></div>
+                <div class='grid grid--1-of-2'></div>
+                <div class='grid grid--1-of-3'></div>
+                <div class='grid grid--2-of-3'></div>
+                <div class='grid grid--3-of-3'></div>
+                <div class='grid grid--3-of-5 grid--centered'></div>
+                <div class='grid grid--1-of-3'></div>
+                <div class='grid grid--2-of-3 grid--push-1-of-3'></div>
+                
+                <br/>
+                <span>IUI syntax</span>
+                <br/>
+                <div class='grid col-1-of-3'></div>
+                <div class='grid col-1-of-3'></div>
+                <div class='grid col-1-of-3'></div>
+                <div class='grid col-1-of-4'></div>
+                <div class='grid col-1-of-4'></div>
+                <div class='grid col-2-of-4'></div>
+                <div class='grid col-3-of-4'></div>
+                <div class='grid col-1-of-4'></div>
+                <div class='grid col-1-of-4'></div>
+                <div class='grid col-1-of-4'></div>
+                <div class='grid col-1-of-4'></div>
+                <div class='grid col-1-of-4'></div>
+                <div class='grid col-3-of-5 centered'></div>
+                <div class='grid col-1-of-5'></div>
+                <div class='grid col-1-of-5'></div>
+                <div class='grid col-1-of-5'></div>
+                <div class='grid col-1-of-5'></div>
+                <div class='grid col-1-of-5'></div>
+                <div class='grid col-1-of-6'></div>
+                <div class='grid col-2-of-6'></div>
+                <div class='grid col-3-of-6'></div>
+                <div class='grid col-4-of-6'></div>
+                <div class='grid col-2-of-6'></div>
+                <div class='grid col-1-of-6'></div>
+                <div class='grid col-1-of-6'></div>
+                <div class='grid col-1-of-6'></div>
+                <div class='grid col-1-of-6'></div>
+                <div class='grid col-1-of-6'></div>
+                <div class='grid col-1-of-6'></div>
+                <div class='grid col-1-of-8'></div>
+                <div class='grid col-2-of-8'></div>
+                <div class='grid col-3-of-8'></div>
+                <div class='grid col-2-of-8'></div>
+                <div class='grid col-5-of-8'></div>
+                <div class='grid col-3-of-8'></div>
+                <div class='grid col-1-of-8'></div>
+                <div class='grid col-1-of-8'></div>
+                <div class='grid col-1-of-8'></div>
+                <div class='grid col-1-of-8'></div>
+                <div class='grid col-1-of-8'></div>
+                <div class='grid col-1-of-8'></div>
+                <div class='grid col-1-of-8'></div>
+                <div class='grid col-1-of-8'></div>
+                <div class='grid col-1-of-12'></div>
+                <div class='grid col-2-of-12'></div>
+                <div class='grid col-3-of-12'></div>
+                <div class='grid col-4-of-12'></div>
+                <div class='grid col-2-of-12'></div>
+                <div class='grid col-5-of-12'></div>
+                <div class='grid col-7-of-12'></div>
+                <div class='grid col-6-of-12'></div>
+                <div class='grid col-6-of-12'></div>
+                <div class='grid col-12-of-12'></div>
+                <div class='grid col-1-of-12'></div>
+                <div class='grid col-1-of-12'></div>
+                <div class='grid col-1-of-12'></div>
+                <div class="grid col-6-of-12"></div>
+                <div class='grid col-1-of-12'></div>
+                <div class='grid col-1-of-12'></div>
+                <div class='grid col-1-of-12'></div>
+            </figure>
+            
+            <div class="i-block i-grid iui--demo">
+               
+                <div class="grid col-7-of-12" style="color:white">
+                    <h2>Fixed width gutters</h2>
+                    <p>No fluid gutter width bullcrap. This is the real deal. What you set is what you get.</p>
+                </div>
+
+                <figure class="i-block grid col-5-of-12">
+                    <div class="i-grid no-gutter">
+                        <div class="grid col-2-of-2"></div>
+
+                        <div class="grid col-1-of-2"></div>
+                        <div class="grid col-1-of-2"></div>
+
+                        <div class="grid col-1-of-3"></div>
+                        <div class="grid col-1-of-3"></div>
+                        <div class="grid col-1-of-3"></div>
+
+                        <div class="grid col-1-of-4"></div>
+                        <div class="grid col-1-of-4"></div>
+                        <div class="grid col-1-of-4"></div>
+                        <div class="grid col-1-of-4"></div>
+
+                        <div class="grid col-1-of-5"></div>
+                        <div class="grid col-1-of-5"></div>
+                        <div class="grid col-1-of-5"></div>
+                        <div class="grid col-1-of-5"></div>
+                        <div class="grid col-1-of-5"></div>
+                    </div>
+                </figure>
+
+                <figure class="i-block grid col-5-of-12">
+                    <div class="i-grid no-gutter">
+                        <div class="grid col-3-of-5"></div>
+                        <div class="grid col-1-of-5"></div>
+                        <div class="grid col-1-of-5"></div>
+                        <div class="grid col-3-of-4 push-1-of-4"></div>
+                        <div class="grid col-2-of-3"></div>
+                        <div class="grid col-1-of-3"></div>
+
+                        <div class="grid col-1-of-2"></div>
+                        <div class="grid col-1-of-2"></div>
+
+                        <div class="grid col-2-of-2"></div>
+                    </div>
+                </figure>
+                
+            </div>
+           
+        </div>
+
+    </body>
+
+</html>
