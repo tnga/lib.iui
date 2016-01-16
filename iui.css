@@ -77,7 +77,8 @@ body {
 }
 
 *:hover, *:focus {
-  transition: all 0.35s linear;
+  -webkit-transition: all 0.35s linear;
+          transition: all 0.35s linear;
 }
 *:focus {
   outline: thin solid #ff6600;
@@ -143,6 +144,7 @@ input[type="reset"],
 input[type="file"] {
   color: #fff;
   background-color: #2d2d2d;
+  background-image: -webkit-linear-gradient(bottom, #2d2d2d, #474747, #535353);
   background-image: linear-gradient(to top, #2d2d2d, #474747, #535353);
   display: inline-block;
   line-height: normal;
@@ -170,6 +172,7 @@ input.hovered[type="reset"],
 input.hovered[type="file"] {
   color: #fff;
   background-color: #ff6600;
+  background-image: -webkit-linear-gradient(bottom, #ff6600, #ff8533, #ff944d);
   background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
   box-shadow: 0px 1px 2px #ff6600;
 }
@@ -215,6 +218,7 @@ input.disabled[type="reset"]:hover,
 input.disabled[type="file"]:hover {
   color: #fff;
   background-color: #d0d0d0;
+  background-image: -webkit-linear-gradient(bottom, #d0d0d0, #eaeaea, #f6f6f6);
   background-image: linear-gradient(to top, #d0d0d0, #eaeaea, #f6f6f6);
   cursor: not-allowed;
   box-shadow: 0px 1px 1px #d0d0d0;
@@ -421,6 +425,7 @@ input[type="radio"]:before {
   border: 2px solid #fff;
   color: #fff;
   background-color: #2d2d2d;
+  background-image: -webkit-linear-gradient(bottom, #2d2d2d, #474747, #535353);
   background-image: linear-gradient(to top, #2d2d2d, #474747, #535353);
   border-radius: 2px;
   /* angles arrondis */
@@ -463,6 +468,7 @@ input[type="radio"][disabled]:hover:before,
 input[type="radio"].disabled:hover:before {
   color: #fff;
   background-color: #d0d0d0;
+  background-image: -webkit-linear-gradient(bottom, #d0d0d0, #eaeaea, #f6f6f6);
   background-image: linear-gradient(to top, #d0d0d0, #eaeaea, #f6f6f6);
   cursor: not-allowed;
   box-shadow: 0px 0px 2px #d0d0d0;
@@ -481,6 +487,7 @@ input[type="checkbox"]:checked:before,
 input[type="radio"]:checked:before {
   color: #fff;
   background-color: #ff6600;
+  background-image: -webkit-linear-gradient(bottom, #ff6600, #ff8533, #ff944d);
   background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
 }
 
@@ -1000,7 +1007,8 @@ ________________________________________________________________________________
   background-color: #e2e2e2;
 }
 .i-block.collection:not(.unfocusable) > li:active:not(.unfocusable), .i-block.collection:not(.unfocusable) > li.active-item, .i-block.collection:not(.unfocusable) > li#current-item, .i-block.collection:not(.unfocusable) > a:active:not(.unfocusable), .i-block.collection:not(.unfocusable) > a.active-item, .i-block.collection:not(.unfocusable) > a#current-item {
-  transition: none;
+  -webkit-transition: none;
+          transition: none;
   color: #fff;
   background-color: #ff6600;
 }
