@@ -77,8 +77,7 @@ body {
 }
 
 *:hover, *:focus {
-  -webkit-transition: all 0.35s linear;
-          transition: all 0.35s linear;
+  transition: all 0.35s linear;
 }
 *:focus {
   outline: thin solid #ff6600;
@@ -144,7 +143,6 @@ input[type="reset"],
 input[type="file"] {
   color: #fff;
   background-color: #2d2d2d;
-  background-image: -webkit-linear-gradient(bottom, #2d2d2d, #474747, #535353);
   background-image: linear-gradient(to top, #2d2d2d, #474747, #535353);
   display: inline-block;
   line-height: normal;
@@ -172,7 +170,6 @@ input.hovered[type="reset"],
 input.hovered[type="file"] {
   color: #fff;
   background-color: #ff6600;
-  background-image: -webkit-linear-gradient(bottom, #ff6600, #ff8533, #ff944d);
   background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
   box-shadow: 0px 1px 2px #ff6600;
 }
@@ -218,7 +215,6 @@ input.disabled[type="reset"]:hover,
 input.disabled[type="file"]:hover {
   color: #fff;
   background-color: #d0d0d0;
-  background-image: -webkit-linear-gradient(bottom, #d0d0d0, #eaeaea, #f6f6f6);
   background-image: linear-gradient(to top, #d0d0d0, #eaeaea, #f6f6f6);
   cursor: not-allowed;
   box-shadow: 0px 1px 1px #d0d0d0;
@@ -425,7 +421,6 @@ input[type="radio"]:before {
   border: 2px solid #fff;
   color: #fff;
   background-color: #2d2d2d;
-  background-image: -webkit-linear-gradient(bottom, #2d2d2d, #474747, #535353);
   background-image: linear-gradient(to top, #2d2d2d, #474747, #535353);
   border-radius: 2px;
   /* angles arrondis */
@@ -468,7 +463,6 @@ input[type="radio"][disabled]:hover:before,
 input[type="radio"].disabled:hover:before {
   color: #fff;
   background-color: #d0d0d0;
-  background-image: -webkit-linear-gradient(bottom, #d0d0d0, #eaeaea, #f6f6f6);
   background-image: linear-gradient(to top, #d0d0d0, #eaeaea, #f6f6f6);
   cursor: not-allowed;
   box-shadow: 0px 0px 2px #d0d0d0;
@@ -487,7 +481,6 @@ input[type="checkbox"]:checked:before,
 input[type="radio"]:checked:before {
   color: #fff;
   background-color: #ff6600;
-  background-image: -webkit-linear-gradient(bottom, #ff6600, #ff8533, #ff944d);
   background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
 }
 
@@ -1007,8 +1000,7 @@ ________________________________________________________________________________
   background-color: #e2e2e2;
 }
 .i-block.collection:not(.unfocusable) > li:active:not(.unfocusable), .i-block.collection:not(.unfocusable) > li.active-item, .i-block.collection:not(.unfocusable) > li#current-item, .i-block.collection:not(.unfocusable) > a:active:not(.unfocusable), .i-block.collection:not(.unfocusable) > a.active-item, .i-block.collection:not(.unfocusable) > a#current-item {
-  -webkit-transition: none;
-          transition: none;
+  transition: none;
   color: #fff;
   background-color: #ff6600;
 }
@@ -1094,6 +1086,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 * Beside IUI provide it own "grid using syntax", toast syntax is also compatible (just look at associated docs).
 *
 * Here is the style definition of "IUI's grid syntax"
+* @NOTE if iui-toast modifications are not merge to the toast branch; then iui will stop using the library and will implement it own way.
 */
 /*-----------------------------------*\
 
@@ -1138,83 +1131,95 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 \*-----------------------------------*/
 .i-grid {
   list-style: none;
-  margin-left: -20px;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
 }
 
+/* grid's columns are simply set by this way:
+* grid-col-virtual-width = grid-col-margin-left + grid-col-margin-right + grid-col(box-sized)-real-width.
+*=> grid-col-virtual-width = 2*grid-col-margin-right + grid-col(box-sized)-real-width   (considering: grid-col-margin-left = grid-col-margin-right )
+*then: grid-col(box-sized)-real-width = grid-col-virtual-width - 2*grid-col-margin-right
+*(grid-col-margin-right and grid-col-margin-left can be considering as column's gutter)
+*
+*this is the theory and in the practice, it work approximatively well in opera-browser( tested on 12.16),
+*but get easly breaking issue on all tested recents browsers (firefox, webkits like browsers).
+*so some way find to avoid that is to provide precision control.
+*then when set column margin-right and margin-left, take it away a precise value depending of parent column width.
+*/
 .grid--2-of-2, .col-2-of-2, .grid--3-of-3, .col-3-of-3, .grid--4-of-4, .col-4-of-4, .grid--5-of-5, .col-5-of-5, .grid--6-of-6, .col-6-of-6, .grid--8-of-8, .col-8-of-8, .grid--12-of-12, .col-12-of-12 {
-  width: 100%;
+  width: 98%;
 }
 
 .grid--1-of-2, .col-1-of-2, .grid--2-of-4, .col-2-of-4, .grid--3-of-6, .col-3-of-6, .grid--4-of-8, .col-4-of-8, .grid--6-of-12, .col-6-of-12 {
-  width: 50%;
+  width: 48%;
 }
 
 .grid--1-of-3, .col-1-of-3, .grid--2-of-6, .col-2-of-6, .grid--4-of-12, .col-4-of-12 {
-  width: 33.33333%;
+  width: 31.33333%;
 }
 
 .grid--2-of-3, .col-2-of-3, .grid--4-of-6, .col-4-of-6, .grid--8-of-12, .col-8-of-12 {
-  width: 66.66667%;
+  width: 64.66667%;
 }
 
 .grid--1-of-4, .col-1-of-4, .grid--2-of-8, .col-2-of-8, .grid--3-of-12, .col-3-of-12 {
-  width: 25%;
+  width: 23%;
 }
 
 .grid--3-of-4, .col-3-of-4, .grid--6-of-8, .col-6-of-8, .grid--9-of-12, .col-9-of-12 {
-  width: 75%;
+  width: 73%;
 }
 
 .grid--push-2-of-2, .grid.push-2-of-2, .grid--push-3-of-3, .grid.push-3-of-3, .grid--push-4-of-4, .grid.push-4-of-4, .grid--push-5-of-5, .grid.push-5-of-5, .grid--push-6-of-6, .grid.push-6-of-6, .grid--push-8-of-8, .grid.push-8-of-8, .grid--push-12-of-12, .grid.push-12-of-12 {
-  margin-left: 100%;
+  margin-left: 99%;
 }
 
 .grid--push-1-of-2, .grid.push-1-of-2, .grid--push-2-of-4, .grid.push-2-of-4, .grid--push-3-of-6, .grid.push-3-of-6, .grid--push-4-of-8, .grid.push-4-of-8, .grid--push-6-of-12, .grid.push-6-of-12 {
-  margin-left: 50%;
+  margin-left: 49%;
 }
 
 .grid--push-1-of-3, .grid.push-1-of-3, .grid--push-2-of-6, .grid.push-2-of-6, .grid--push-4-of-12, .grid.push-4-of-12 {
-  margin-left: 33.33333%;
+  margin-left: 32.33333%;
 }
 
 .grid--push-2-of-3, .grid.push-2-of-3, .grid--push-4-of-6, .grid.push-4-of-6, .grid--push-8-of-12, .grid.push-8-of-12 {
-  margin-left: 66.66667%;
+  margin-left: 65.66667%;
 }
 
 .grid--push-1-of-4, .grid.push-1-of-4, .grid--push-2-of-8, .grid.push-2-of-8, .grid--push-3-of-12, .grid.push-3-of-12 {
-  margin-left: 25%;
+  margin-left: 24%;
 }
 
 .grid--push-3-of-4, .grid.push-3-of-4, .grid--push-6-of-8, .grid.push-6-of-8, .grid--push-9-of-12, .grid.push-9-of-12 {
-  margin-left: 75%;
+  margin-left: 74%;
 }
 
 .grid--pull-2-of-2, .grid.pull-2-of-2, .grid--pull-3-of-3, .grid.pull-3-of-3, .grid--pull-4-of-4, .grid.pull-4-of-4, .grid--pull-5-of-5, .grid.pull-5-of-5, .grid--pull-6-of-6, .grid.pull-6-of-6, .grid--pull-8-of-8, .grid.pull-8-of-8, .grid--pull-12-of-12, .grid.pull-12-of-12 {
-  margin-left: -100%;
+  margin-left: -99%;
 }
 
 .grid--pull-1-of-2, .grid.pull-1-of-2, .grid--pull-2-of-4, .grid.pull-2-of-4, .grid--pull-3-of-6, .grid.pull-3-of-6, .grid--pull-4-of-8, .grid.pull-4-of-8, .grid--pull-6-of-12, .grid.pull-6-of-12 {
-  margin-left: -50%;
+  margin-left: -49%;
 }
 
 .grid--pull-1-of-3, .grid.pull-1-of-3, .grid--pull-2-of-6, .grid.pull-2-of-6, .grid--pull-4-of-12, .grid.pull-4-of-12 {
-  margin-left: -33.33333%;
+  margin-left: -32.33333%;
 }
 
 .grid--pull-2-of-3, .grid.pull-2-of-3, .grid--pull-4-of-6, .grid.pull-4-of-6, .grid--pull-8-of-12, .grid.pull-8-of-12 {
-  margin-left: -66.66667%;
+  margin-left: -65.66667%;
 }
 
 .grid--pull-1-of-4, .grid.pull-1-of-4, .grid--pull-2-of-8, .grid.pull-2-of-8, .grid--pull-3-of-12, .grid.pull-3-of-12 {
-  margin-left: -25%;
+  margin-left: -24%;
 }
 
 .grid--pull-3-of-4, .grid.pull-3-of-4, .grid--pull-6-of-8, .grid.pull-6-of-8, .grid--pull-9-of-12, .grid.pull-9-of-12 {
-  margin-left: -75%;
+  margin-left: -74%;
 }
 
 .grid--1-of-5, .col-1-of-5 {
-  width: 20%;
+  width: 18%;
 }
 
 .grid--push-1-of-5, .grid.push-1-of-5 {
@@ -1226,7 +1231,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--2-of-5, .col-2-of-5 {
-  width: 40%;
+  width: 38%;
 }
 
 .grid--push-2-of-5, .grid.push-2-of-5 {
@@ -1238,7 +1243,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--3-of-5, .col-3-of-5 {
-  width: 60%;
+  width: 58%;
 }
 
 .grid--push-3-of-5, .grid.push-3-of-5 {
@@ -1250,7 +1255,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--4-of-5, .col-4-of-5 {
-  width: 80%;
+  width: 78%;
 }
 
 .grid--push-4-of-5, .grid.push-4-of-5 {
@@ -1262,7 +1267,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--1-of-6, .col-1-of-6 {
-  width: 16.66667%;
+  width: 14.66667%;
 }
 
 .grid--push-1-of-6, .grid.push-1-of-6 {
@@ -1274,7 +1279,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--5-of-6, .col-5-of-6 {
-  width: 83.33333%;
+  width: 81.33333%;
 }
 
 .grid--push-5-of-6, .grid.push-5-of-6 {
@@ -1286,7 +1291,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--1-of-8, .col-1-of-8 {
-  width: 12.5%;
+  width: 10.5%;
 }
 
 .grid--push-1-of-8, .grid.push-1-of-8 {
@@ -1298,7 +1303,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--3-of-8, .col-3-of-8 {
-  width: 37.5%;
+  width: 35.5%;
 }
 
 .grid--push-3-of-8, .grid.push-3-of-8 {
@@ -1310,7 +1315,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--5-of-8, .col-5-of-8 {
-  width: 62.5%;
+  width: 60.5%;
 }
 
 .grid--push-5-of-8, .grid.push-5-of-8 {
@@ -1322,7 +1327,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--7-of-8, .col-7-of-8 {
-  width: 87.5%;
+  width: 85.5%;
 }
 
 .grid--push-7-of-8, .grid.push-7-of-8 {
@@ -1334,7 +1339,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--1-of-12, .col-1-of-12 {
-  width: 8.33333%;
+  width: 6.33333%;
 }
 
 .grid--push-1-of-12, .grid.push-1-of-12 {
@@ -1346,7 +1351,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--2-of-12, .col-2-of-12 {
-  width: 16.66667%;
+  width: 14.66667%;
 }
 
 .grid--push-2-of-12, .grid.push-2-of-12 {
@@ -1358,7 +1363,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--5-of-12, .col-5-of-12 {
-  width: 41.66667%;
+  width: 39.66667%;
 }
 
 .grid--push-5-of-12, .grid.push-5-of-12 {
@@ -1370,7 +1375,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--7-of-12, .col-7-of-12 {
-  width: 58.33333%;
+  width: 56.33333%;
 }
 
 .grid--push-7-of-12, .grid.push-7-of-12 {
@@ -1382,7 +1387,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--10-of-12, .col-10-of-12 {
-  width: 83.33333%;
+  width: 81.33333%;
 }
 
 .grid--push-10-of-12, .grid.push-10-of-12 {
@@ -1394,7 +1399,7 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .grid--11-of-12, .col-11-of-12 {
-  width: 91.66667%;
+  width: 89.66667%;
 }
 
 .grid--push-11-of-12, .grid.push-11-of-12 {
@@ -1408,59 +1413,39 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 .grid {
   box-sizing: border-box;
   display: inline-block;
-  margin-right: -.25em;
+  margin-right: 0.7%;
+  margin-left: 0.7%;
   min-height: 1px;
-  padding-left: 20px;
   vertical-align: top;
 }
-@media (max-width: 700px) {
+@media (min-width: 1360px) {
   .grid {
-    display: block;
-    margin-left: 0;
-    margin-right: 0;
-    width: auto;
+    margin-right: 0.8%;
+    margin-left: 0.8%;
   }
 }
-@media (max-width: 700px) and (min-width: 480px) {
-  .grid[class*="grid--m-"] {
-    display: inline-block;
-    margin-right: -.24em;
-  }
-  .grid.grid--m-1-of-2, .grid.grid--m-2-of-4, .col-2-of-4.medium, .col-1-of-2.medium {
-    width: 50%;
-  }
-  .grid.grid--m-1-of-3, .col-1-of-3.medium {
-    width: 33.33333%;
-  }
-  .grid.grid--m-2-of-3, .col-2-of-3.medium {
-    width: 66.66667%;
-  }
-  .grid.grid--m-1-of-4, .col-1-of-4.medium {
-    width: 25%;
-  }
-  .grid.grid--m-3-of-4, .col-3-of-4.medium {
-    width: 75%;
+@media (max-width: 800px) {
+  .grid {
+    margin-right: 0.6%;
+    margin-left: 0.6%;
   }
 }
-@media (max-width: 480px) {
-  .grid[class*="grid--s-"] {
-    display: inline-block;
-    margin-right: -.24em;
+@media (max-width: 640px) {
+  .grid {
+    margin-right: 0.4%;
+    margin-left: 0.4%;
   }
-  .grid.grid--s-1-of-2, .grid.grid--s-2-of-4, .col-2-of-4.small, .col-1-of-2.small {
-    width: 50%;
+}
+@media (max-width: 420px) {
+  .grid {
+    margin-right: 0.1%;
+    margin-left: 0.1%;
   }
-  .grid.grid--s-1-of-3, .col-1-of-3.small {
-    width: 33.33333%;
-  }
-  .grid.grid--s-2-of-3, .col-2-of-3.small {
-    width: 66.66667%;
-  }
-  .grid.grid--s-1-of-4, .col-1-of-4.small {
-    width: 25%;
-  }
-  .grid.grid--s-3-of-4, .col-3-of-4.small {
-    width: 75%;
+}
+@media (max-width: 320px) {
+  .grid {
+    margin-right: 0.1%;
+    margin-left: 0%;
   }
 }
 
@@ -1479,14 +1464,11 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 
 .i-grid--no-gutter, .i-grid.no-gutter {
-  margin-left: 0;
+  margin: 0;
   width: 100%;
 }
-.i-grid--no-gutter .grid, .i-grid.no-gutter .grid {
-  padding-left: 0;
-}
 .i-grid--no-gutter .grid--span-all, .i-grid.no-gutter .grid--span-all, .i-grid--no-gutter .span-all, .i-grid.no-gutter .span-all {
-  margin-left: 0;
+  margin: 0;
   width: 100%;
 }
 
@@ -1497,142 +1479,5 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 .grid--am, .grid.align-m {
   vertical-align: middle;
 }
-
-@media (max-width: 700px) and (min-width: 480px) {
-  .grid[class*="medium"] {
-    display: inline-block;
-    margin-right: -.24em;
-  }
-}
-@media (max-width: 480px) {
-  .grid[class*="small"] {
-    display: inline-block;
-    margin-right: -.24em;
-  }
-}
-/*.btn-signin, input[type="submit"].btn-signin {
-
-    @include button-bg-look($vendor-first-color, $white-color) ;
-}
-
-.btn-signup, input[type="submit"].btn-signup {
-
-    @include button-bg-look($vendor-second-color, $white-color) ;
-}
-.btn-signout, input[type="submit"].btn-signout {
-
-    @include button-bg-look($red-color, $white-color) ;
-}
-
-.pm-signup-form, .pm-signin-form {
-
-    box-shadow: 1px 3px 3px $shadow-color ;
-    padding: 10px ;
-    min-width: 350px ;
-    width: 50% ;
-    margin: auto ;
-    color: $white-color ;
-    border-radius: 25px ;
-
-    label {
-
-        display: block ;
-        margin: 11px auto ;
-        position: relative ;
-        width: 300px ;
-
-        span:first-child {
-
-            border: 1px solid $white-color ;
-            padding: 5px ;
-            margin-bottom: -4px ;
-            display: inline-block ;
-            max-width: 270px ;
-            white-space: nowrap ;
-            overflow: hidden ;
-            text-overflow: ellipsis ;
-        }
-    }
-
-    select, input[ type="text"], input[ type="password"], input[ type="email"], input[ type="number"],
-    input[ type="tel"], input[ type="date"] {
-
-        width: 270px ;
-        padding: 7px ;
-        border-radius: 10px/5px ;
-        border: 1px solid lighten( $dark-color, 70%) ;
-        box-shadow: 1px 1px 5px lighten( $dark-color, 30%) inset ;
-    }
-
-    input[name="it-is-robot"] {
-
-        display: none ;
-    }
-
-    input.no-validated-input {
-
-        border: 1px solid $red-color ;
-    }
-
-    select {
-
-        padding: 5px ;
-        box-shadow: 1px 1px 5px lighten( $dark-color, 30%) ;
-    }
-}
-
-.pm-signup-form {
-
-    background: $vendor-first-color ;
-
-    fieldset {
-
-        border: none ;
-        border-top: 1px solid $white-color ;
-        border-bottom: 1px solid $white-color ;
-        margin-top: 15px ;
-
-        legend {
-
-            font-family: Ubuntu, _Ubuntu, $default-font-family ;
-            font-size: 0.90em ;
-        }
-
-        >.btn-signup, >input[type="button"], >input[type="submit"]  {
-
-            &:last-child {
-
-                display: block ;
-                margin: 15px auto ;
-            }
-        }
-
-        >.btn-signup:last-child {
-
-            visibility: hidden ;
-        }
-    }
-}
-
-.pm-signin-form {
-
-    background: $vendor-second-color ;
-    padding-top: 50px ;
-
-    margin: 0px auto 45px auto ;
-
-    label {
-
-        margin: 30px auto ;
-    }
-
-    .btn-signin {
-
-        display: block ;
-        margin: 15px auto ;
-    }
-}
-
-*/
 
 /*# sourceMappingURL=iui.css.map */
