@@ -4,5 +4,9 @@
 
 node_modules/
 src/i_themes/default/_grids (copie).scss
+src/animate
+src/hover
+src/_i_animation.scss
 tests/checkbox.html
 bower_components/jeet
+bower_components/toast/css/
