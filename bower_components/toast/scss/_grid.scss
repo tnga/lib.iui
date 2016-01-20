@@ -44,6 +44,7 @@
 // This stops me from being overzealous with enforcing classes
 $toast-grid-namespace: "grid" !default;
 $toast-grid-column-namespace: "grid__col" !default;
+$toast-grid-column-prefixe: $toast-grid-column-namespace !default;
 
 // $col-groups are the column groups you want
 // For example, $col-groups: (3, 4, 5) will output:
@@ -53,51 +54,77 @@ $toast-col-groups: (2, 3, 4, 5, 6, 8, 12) !default;
 // Gutter width
 $toast-gutter-width: 20px !default;
 
+$toast-gcs: 1/100 !default; //$toast-gutter-column-size so that it's take in [0,1]
+
 // Breakpoints
-$toast-breakpoint-medium: 700px !default;
-$toast-breakpoint-small: 480px !default;
+$toast-breakpoint-min: 320px !default ;
+$toast-breakpoint-smaller: 420px !default ;
+$toast-breakpoint-small: 640px !default ;
+$toast-breakpoint-medium: 800px !default ;
+$toast-breakpoint-normal: 1024px !default ;
+$toast-breakpoint-big: 1360px !default ;
 
 // Pushes and pulls
 $toast-pushes: true !default;
 $toast-pulls: true !default;
 
 .#{$toast-grid-namespace} {
+  
   list-style: none;
-  margin-left: -$toast-gutter-width;
+  margin-left: $toast-gutter-width;
+  margin-right: $toast-gutter-width;
 }
 
-%span-all       { width: percentage(1/1); }
+/* grid's columns are simply set by this way:
+* grid-col-virtual-width = grid-col-margin-left + grid-col-margin-right + grid-col(box-sized)-real-width.
+*=> grid-col-virtual-width = 2*grid-col-margin-right + grid-col(box-sized)-real-width   (considering: grid-col-margin-left = grid-col-margin-right )
+*then: grid-col(box-sized)-real-width = grid-col-virtual-width - 2*grid-col-margin-right
+*(grid-col-margin-right and grid-col-margin-left can be considering as column's gutter)
+*
+*this is the theory and in the practice, it work approximatively well in opera-browser( tested on 12.16),
+*but get easly breaking issue on all tested recents browsers (firefox, webkits like browsers).
+*so some way find to avoid that is to provide precision control.
+*then when set column margin-right and margin-left, take it away a precise value depending of parent column width.
+*/
+//get the column's gutter size with a precision (for approximation).
+//`precision`, cause theory seems sometime to not exactly match with pratice :(.
+@function toast-alpha-margin ($precision:0) {
+  
+  @return  percentage($toast-gcs) - $precision ;
+}
 
-%one-half       { width: percentage(1/2); }
+%span-all       { width: percentage(1/1) - 2*toast-alpha-margin() ; }
 
-%one-third      { width: percentage(1/3); }
-%two-thirds     { width: percentage(2/3); }
+%one-half       { width: percentage(1/2) - 2*toast-alpha-margin() ; }
 
-%one-quarter    { width: percentage(1/4); }
-%two-quarters   { width: percentage(2/4); }
-%three-quarters { width: percentage(3/4); }
+%one-third      { width: percentage(1/3) - 2*toast-alpha-margin() ; }
+%two-thirds     { width: percentage(2/3) - 2*toast-alpha-margin() ; }
 
-%push-span-all       { margin-left: percentage(1/1); }
+%one-quarter    { width: percentage(1/4) - 2*toast-alpha-margin() ; }
+%two-quarters   { width: percentage(2/4) - 2*toast-alpha-margin() ; }
+%three-quarters { width: percentage(3/4) - 2*toast-alpha-margin() ; }
 
-%push-one-half       { margin-left: percentage(1/2); }
+%push-span-all       { margin-left: percentage(1/1) - toast-alpha-margin() ; }
 
-%push-one-third      { margin-left: percentage(1/3); }
-%push-two-thirds     { margin-left: percentage(2/3); }
+%push-one-half       { margin-left: percentage(1/2) - toast-alpha-margin() ; }
 
-%push-one-quarter    { margin-left: percentage(1/4); }
-%push-two-quarters   { margin-left: percentage(2/4); }
-%push-three-quarters { margin-left: percentage(3/4); }
+%push-one-third      { margin-left: percentage(1/3) - toast-alpha-margin() ; }
+%push-two-thirds     { margin-left: percentage(2/3) - toast-alpha-margin() ; }
 
-%pull-span-all       { margin-left: -(percentage(1/1)); }
+%push-one-quarter    { margin-left: percentage(1/4) - toast-alpha-margin() ; }
+%push-two-quarters   { margin-left: percentage(2/4) - toast-alpha-margin() ; }
+%push-three-quarters { margin-left: percentage(3/4) - toast-alpha-margin() ; }
 
-%pull-one-half       { margin-left: -(percentage(1/2)); }
+%pull-span-all       { margin-left: -(percentage(1/1) - toast-alpha-margin() ); }
 
-%pull-one-third      { margin-left: -(percentage(1/3)); }
-%pull-two-thirds     { margin-left: -(percentage(2/3)); }
+%pull-one-half       { margin-left: -(percentage(1/2) - toast-alpha-margin() ); }
 
-%pull-one-quarter    { margin-left: -(percentage(1/4)); }
-%pull-two-quarters   { margin-left: -(percentage(2/4)); }
-%pull-three-quarters { margin-left: -(percentage(3/4)); }
+%pull-one-third      { margin-left: -(percentage(1/3) - toast-alpha-margin() ); }
+%pull-two-thirds     { margin-left: -(percentage(2/3) - toast-alpha-margin() ); }
+
+%pull-one-quarter    { margin-left: -(percentage(1/4) - toast-alpha-margin() ); }
+%pull-two-quarters   { margin-left: -(percentage(2/4) - toast-alpha-margin() ); }
+%pull-three-quarters { margin-left: -(percentage(3/4) - toast-alpha-margin() ); }
 
 // For each of our column groups...
 @each $group in $toast-col-groups {
@@ -121,7 +148,7 @@ $toast-pulls: true !default;
         @extend %three-quarters;
       } @else {
 
-        width: percentage($i/$group);
+        width: percentage($i/$group) - 2*toast-alpha-margin() ;
 
       }
     }
@@ -183,83 +210,41 @@ $toast-pulls: true !default;
 .#{$toast-grid-column-namespace} {
   box-sizing: border-box;
   display: inline-block;
-  margin-right: -.25em;
+  margin-right: toast-alpha-margin(3/10) ;
+  margin-left: toast-alpha-margin(3/10) ;
   min-height: 1px;
-  padding-left: $toast-gutter-width;
   vertical-align: top;
 
+  @media (min-width: $toast-breakpoint-big) {
+
+    margin-right: toast-alpha-margin(2/10) ;
+    margin-left: toast-alpha-margin(2/10) ;
+  }
   @media (max-width: $toast-breakpoint-medium) {
-    display: block;
-    margin-left: 0;
-    margin-right: 0;
-    width: auto;
+    
+    margin-right: toast-alpha-margin(4/10) ;
+    margin-left: toast-alpha-margin(4/10) ;
   }
-
-  @media (max-width: $toast-breakpoint-medium) and (min-width: $toast-breakpoint-small) {
-    &[class*="#{$toast-grid-column-namespace}--m-"] {
-      display: inline-block;
-      margin-right: -.24em;
-    }
-
-    &.#{$toast-grid-column-namespace}--m-1-of-2 {
-      width: percentage(1/2);
-    }
-
-    &.#{$toast-grid-column-namespace}--m-1-of-3 {
-      width: percentage(1/3);
-    }
-
-    &.#{$toast-grid-column-namespace}--m-2-of-3 {
-      width: percentage(2/3);
-    }
-
-    &.#{$toast-grid-column-namespace}--m-1-of-4 {
-      width: percentage(1/4);
-    }
-
-    &.#{$toast-grid-column-namespace}--m-2-of-4 {
-      @extend .#{$toast-grid-column-namespace}--m-1-of-2;
-    }
-
-    &.#{$toast-grid-column-namespace}--m-3-of-4 {
-      width: percentage(3/4);
-    }
-  }
-
   @media (max-width: $toast-breakpoint-small) {
-    &[class*="#{$toast-grid-column-namespace}--s-"] {
-      display: inline-block;
-      margin-right: -.24em;
-    }
-
-    &.#{$toast-grid-column-namespace}--s-1-of-2 {
-      width: percentage(1/2);
-    }
-
-    &.#{$toast-grid-column-namespace}--s-1-of-3 {
-      width: percentage(1/3);
-    }
-
-    &.#{$toast-grid-column-namespace}--s-2-of-3 {
-      width: percentage(2/3);
-    }
-
-    &.#{$toast-grid-column-namespace}--s-1-of-4 {
-      width: percentage(1/4);
-    }
-
-    &.#{$toast-grid-column-namespace}--s-2-of-4 {
-      @extend .#{$toast-grid-column-namespace}--s-1-of-2;
-    }
-
-    &.#{$toast-grid-column-namespace}--s-3-of-4 {
-      width: percentage(3/4);
-    }
+    
+    margin-right: toast-alpha-margin(6/10) ;
+    margin-left: toast-alpha-margin(6/10) ;
+  } 
+  @media (max-width: $toast-breakpoint-smaller) {
+    
+    margin-right: toast-alpha-margin(9/10) ;
+    margin-left: toast-alpha-margin(9/10) ;
+  }
+  @media (max-width: $toast-breakpoint-min) {
+    
+    margin-right: toast-alpha-margin(9/10) ;
+    margin-left: toast-alpha-margin(10/10) ;
   }
 }
 
 // Centers the column in the grid and clears the row of all other columns
 .#{$toast-grid-column-namespace}--centered {
+  
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -268,36 +253,37 @@ $toast-pulls: true !default;
 
 // Displays the column as the first in its row
 .#{$toast-grid-column-namespace}--d-first {
+  
   float: left;
 }
 
 // Displays the column as the last in its row
 .#{$toast-grid-column-namespace}--d-last {
+  
   float: right;
 }
 
 // Removes gutters from the columns
 .#{$toast-grid-namespace}--no-gutter {
-  margin-left: 0;
+  
+  margin: 0;
   width: 100%;
 
-  .#{$toast-grid-column-namespace} {
-    padding-left: 0;
-  }
-
   .#{$toast-grid-column-namespace}--span-all {
-    margin-left: 0;
+    
+    margin: 0;
     width: 100%;
   }
 }
 
 // Align column to the bottom.
 .#{$toast-grid-column-namespace}--ab {
+  
   vertical-align: bottom;
 }
 
 // Align column to the middle.
 .#{$toast-grid-column-namespace}--am {
+  
   vertical-align: middle;
 }
-
