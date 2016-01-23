@@ -10,3 +10,5 @@ src/_i_animation.scss
 tests/checkbox.html
 bower_components/jeet
 bower_components/toast/css/
+next_README.md
+/.sass-cache/
