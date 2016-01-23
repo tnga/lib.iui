@@ -29,7 +29,7 @@ __________________________________________________________________*/
 
             &, a {
 
-                @include global-bg-look("!transparent") ;
+                @include global-bg-look("transparent") ;
             }
 
             a {
@@ -123,7 +123,7 @@ __________________________________________________________________*/
 
             &.unfocusable, &:hover.unfocusable, &:focus.unfocusable {
 
-                @include global-bg-look("!transparent", darken( $light-color, 45%) ) ;
+                @include global-bg-look("transparent", darken( $light-color, 45%) ) ;
             }
         }
     }  

@@ -76,7 +76,7 @@ ________________________________________________________________________________
 
         &, &:hover, &.hover-item, &:active, &.active-item, &#current-item {
 
-            @include global-bg-look( "!transparent", darken( $disable-color, 25%) ) ;
+            @include global-bg-look( "transparent", darken( $disable-color, 25%) ) ;
         }
     }
 }

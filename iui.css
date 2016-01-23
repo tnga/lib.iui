@@ -432,7 +432,7 @@ input[type="radio"]:after {
   position: relative;
   top: 0;
   left: 0.25em;
-  font-size: 0, 85em;
+  font-size: 0.85em;
   color: #fff;
   visibility: hidden;
 }
@@ -554,7 +554,7 @@ __________________________________________________________________*/
 }
 .i-nav > ul li, .i-nav > ul li a {
   color: #1a1a1a;
-  background-color: !transparent;
+  background-color: transparent;
 }
 .i-nav > ul li a {
   text-decoration: none;
@@ -619,7 +619,7 @@ __________________________________________________________________*/
 }
 .i-nav > ul li.unfocusable, .i-nav > ul li:hover.unfocusable, .i-nav > ul li:focus.unfocusable {
   color: #7f7f7f;
-  background-color: !transparent;
+  background-color: transparent;
 }
 
 /*
@@ -705,7 +705,7 @@ ________________________________________________________________________________
 }
 .i-nav.bg-style > ul li a:hover {
   color: #fff;
-  background-color: !transparent;
+  background-color: transparent;
 }
 
 /*
@@ -840,7 +840,7 @@ _______________________________________________________________________*/
 }
 .i-form label input[type="radio"] + span:first-of-type, .i-form label input[type="checkbox"] + span:first-of-type {
   border: none;
-  padding: auto;
+  padding: initial;
 }
 .i-form label:hover span:first-of-type {
   border: 1px solid #ff6600;
@@ -1006,7 +1006,7 @@ ________________________________________________________________________________
 }
 .i-block.collection.disable > li, .i-block.collection.disable > li:hover, .i-block.collection.disable > li.hover-item, .i-block.collection.disable > li:active, .i-block.collection.disable > li.active-item, .i-block.collection.disable > li#current-item, .i-block.collection > li.disable, .i-block.collection > li.disable:hover, .i-block.collection > li.disable.hover-item, .i-block.collection > li.disable:active, .i-block.collection > li.disable.active-item, .i-block.collection > li.disable#current-item {
   color: #909090;
-  background-color: !transparent;
+  background-color: transparent;
 }
 
 ul.i-block.collection > h1, ul.i-block.collection > h2, ul.i-block.collection > h3, ul.i-block.collection > h4, ul.i-block.collection > h5, ul.i-block.collection > h6 {

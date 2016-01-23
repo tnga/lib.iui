@@ -28,7 +28,7 @@ ________________________________________________________________________________
 
         a:hover {
 
-            @include global-bg-look( "!transparent", $white-color) ;
+            @include global-bg-look( "transparent", $white-color) ;
         }
     }
 }
