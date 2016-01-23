@@ -1,3 +1,17 @@
+/*===================================================================================================================
+ * Here, the script need *nodeJS* and *gulp* to run.
+ * 
+ * This script is for building iUI library from its partials sources; For that, the following operations can be done:
+ * watching partials sources to biuld the library depending of changes.
+ * compiling considered partials sources.
+ * autoprefixe and generate sourcemap when needed.
+ * minifications.
+ *===================================================================================================================
+ * @license LGPL v2.1 or later
+ * @author  [Tindo Ngoufo Arsel](mailto:devtnga@gmail.com)
+*/
+
+
 if (process.versions.node <= '0.12.0') {
     
     console.warn('iui-gulp: recommand node version 0.12.x or later ') ;
@@ -43,7 +57,7 @@ gulp.task('sass', function() {
         .pipe( sourcemaps.write( paths.dest))
         .pipe( gulp.dest(paths.dest)) ;
     
-    notifier.notify({ title: 'iui-sass:', message: 'css generation\'s task complete!' }) ;
+    notifier.notify({ title: 'iui-sass:', message: 'css generation\'s / minification\'s task complete!' }) ;
 
 });
 
