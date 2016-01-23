@@ -7,12 +7,17 @@ if (process.versions.node <= '0.12.0') {
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    cssnano = require('gulp-cssnano'),
+    cssnano = require('gulp-minify-css'), //@TODO this seems to be deprecated, so have to migrate to cssnano. 
+    //cssnano = require('gulp-cssnano'), //@FIXME make cssnano not try to minify sourcemaps.
     sourcemaps = require('gulp-sourcemaps'),
-    notify = require('gulp-notify'),
-    rename = require('gulp-rename') ;
+    ignore = require('gulp-ignore'),
+    rename = require('gulp-rename') ,
+    
+    notifier = require('node-notifier') ;
 
 var paths = {
+    sassAll: 'src/**/*.scss' ,
+    sassMain: 'src/iui.scss' ,
     sass: 'src/*.scss' ,
     bower: 'bower_components' ,
     node: 'node_modules' ,
@@ -30,24 +35,35 @@ gulp.task('sass', function() {
                             'ie >= 8',
                             'iOS >= 7',
                             'Android >= 4.2'))
-        //.pipe( sourcemaps.write('.',{includeContent: false})) //@FIXME sourcemaps operation seems to provide issue here.
+        .pipe( sourcemaps.write( paths.dest, {includeContent: false}))
         .pipe( gulp.dest( paths.dest))
-        .pipe( notify({ message: 'iui-sass: css generation\'s task complete!' }))
-        .pipe( cssnano())
+        .pipe( ignore.exclude('*.map'))
         .pipe( rename({suffix: '.min'}))
+        .pipe( cssnano())
         .pipe( sourcemaps.write( paths.dest))
-        .pipe( gulp.dest(paths.dest))
-        .pipe( notify({ message: 'iui-sass: css minification\' task complete!' })) ;
+        .pipe( gulp.dest(paths.dest)) ;
+    
+    notifier.notify({ title: 'iui-sass:', message: 'css generation\'s task complete!' }) ;
+
 });
 
 // library's builder task
 gulp.task('build', ['sass'] );
 
-// Rerun the task when a file changes
+// Return the task when a file changes
 gulp.task('watch', function() {
     
-    gulp.watch( paths.sass, ['sass']);
+    gulp.watch( paths.sassAll, ['sass']) ;
+    
+    notifier.notify({ title: 'iui-watcher:', message: 'source files are being watched!' }) ;
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['build']);
+gulp.task('default', ['watch'], function() {
+    
+    console.log('.....\n iui-dev: available task:') ;
+    console.log('watch [default] - (watch source files and automate building)') ;
+    console.log('sass - (generate and minify css from sass\'s files)') ;
+    console.log('build - (build the project)') ;
+    console.log('.....') ;
+});
