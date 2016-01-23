@@ -21,8 +21,7 @@ if (process.versions.node <= '0.12.0') {
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    cssnano = require('gulp-minify-css'), //@TODO this seems to be deprecated, so have to migrate to cssnano. 
-    //cssnano = require('gulp-cssnano'), //@FIXME make cssnano not try to minify sourcemaps.
+    cssnano = require('gulp-cssnano'),
     sourcemaps = require('gulp-sourcemaps'),
     ignore = require('gulp-ignore'),
     rename = require('gulp-rename') ,
@@ -49,7 +48,7 @@ gulp.task('sass', function() {
                             'ie >= 8',
                             'iOS >= 7',
                             'Android >= 4.2'))
-        .pipe( sourcemaps.write( paths.dest, {includeContent: false}))
+        .pipe( sourcemaps.write( paths.dest, {includeContent: false})) //@TODO make source files from sourcemaps to be load by browsers (see `sourceRoot` property)
         .pipe( gulp.dest( paths.dest))
         .pipe( ignore.exclude('*.map'))
         .pipe( rename({suffix: '.min'}))
