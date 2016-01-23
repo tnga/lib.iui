@@ -5,7 +5,7 @@ iUI: inside user interface
 It’s firstly build with [UMI web’s projects](http://umiproject.sf.net) and for css development.
 However it can be use for any css projects.
 
-By using the power of preprocessed stylesheet language like **sass**, the goal is to build special css theme with beauty and elegant spirit.
+By using the power of preprocessed stylesheet language like [sass](https://github.com/sass/sass), the goal is to build special css theme with beauty and elegant spirit.
 
 Actually, the library is on building and it will continuous to grow up.
 
@@ -40,16 +40,16 @@ If you want to use the javaScript associated features, you will need to install 
 
 To contribute, note that all the development features are done in `src/` directory.
 Functionalities are grouped depending of what is added. 
-When new group feature's file is created, it have to be specified in *./gulpfile.js* script.
+When new group feature's file is created, it have to be specified in `./gulpfile.js` script.
 
 `gulp build` command have to be use to build the library for browser side usage. 
-Take it a look of *./gulpfile.js* for more informations.
+Take it a look of `./gulpfile.js` for more informations.
 
 Also note that [nodejs](https://nodejs.org) have to be installed and also [npm](https://npmjs.com) library's associated dependencies.
 
 ## LICENSE
 
-Copyright (c) (December) - 2015 [Tindo Ngoufo Arsel](mailto:devtnga@gmail.com).
+Copyright (c) (December)-2015 -> (January)-2016 [Tindo Ngoufo Arsel](mailto:devtnga@gmail.com).
 
 The LGPL version 2.1 or later. See [LICENSE.md](https://github.com/tnga/lib.iui/blob/master/LICENSE.md) for more details.
 
