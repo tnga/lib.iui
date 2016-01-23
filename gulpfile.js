@@ -42,7 +42,7 @@ var paths = {
 gulp.task('sass', function() {
     // compile and minify all target sass files.
     // with sourcemaps all the way down
-    sass( paths.sass, {sourcemap: true, style: 'expanded', loadPath: [ paths.bower]} ).on('error', sass.logError)
+    sass( paths.sass, {sourcemap: true, style: 'expanded'} ).on('error', sass.logError)
         .pipe( autoprefixer('last 5 Chrome versions',
                             'last 5 Firefox versions',
                             'last 2 Safari versions',
