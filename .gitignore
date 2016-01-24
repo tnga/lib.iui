@@ -3,12 +3,11 @@
 # Example .gitignore files: https://github.com/github/gitignore
 
 node_modules/
-src/i_themes/default/_grids (copie).scss
-src/animate
-src/hover
-src/_i_animation.scss
 tests/checkbox.html
-bower_components/jeet
 bower_components/toast/css/
 next_README.md
 /.sass-cache/
+/src/sass/animate/
+/src/sass/hover/
+/src/sass/_i_animation.scss
+/src/sass/i_themes/default/_grids (copie).scss
