@@ -5,55 +5,55 @@
 /*pour plus de clarté ce fichier sera inclue dans le fichier css commun ou générale*/
 @font-face {
   font-family: "_Ubuntu";
-  src: url("src/fonts/Ubuntu.ttf");
+  src: url("./fonts/Ubuntu.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "_Raleway";
-  src: url("src/fonts/Raleway_Regular.ttf");
+  src: url("./fonts/Raleway_Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "_Droid_Sans";
-  src: url("src/fonts/DroidSans.ttf");
+  src: url("./fonts/DroidSans.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "_Purisa";
-  src: url("src/fonts/Purisa.ttf");
+  src: url("./fonts/Purisa.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "_DejaVu_Sans";
-  src: url("src/fonts/DejaVuSans.ttf");
+  src: url("./fonts/DejaVuSans.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "_Andale_Mono";
-  src: url("src/fonts/Andale_Mono.ttf");
+  src: url("./fonts/Andale_Mono.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "_Candara";
-  src: url("src/fonts/candara.ttf");
+  src: url("./fonts/candara.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "_GE_Inspira";
-  src: url("src/fonts/GE_Inspira.ttf");
+  src: url("./fonts/GE_Inspira.ttf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "_FreeSerif";
-  src: url("src/fonts/FreeSerif.ttf");
+  src: url("./fonts/FreeSerif.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -1482,4 +1482,4 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 
 
 
-/*# sourceMappingURL=iui.css.map */
+/*# sourceMappingURL=sourcemaps/iui.css.map */

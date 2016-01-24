@@ -29,12 +29,13 @@ var gulp = require('gulp'),
     notifier = require('node-notifier') ;
 
 var paths = {
-    sassAll: 'src/**/*.scss' ,
-    sassMain: 'src/iui.scss' ,
-    sass: 'src/*.scss' ,
+    sassAll: 'src/sass/**/*.scss' ,
+    sassMain: 'src/sass/iui.scss' ,
+    sass: 'src/sass/*.scss' ,
     bower: 'bower_components' ,
     node: 'node_modules' ,
-    dest: '.'
+    destMap: 'sourcemaps' ,
+    dest: './dist'
     //scripts: ['client/js/**/*.coffee', '!client/external/**/*.coffee']
 };
 
@@ -48,12 +49,12 @@ gulp.task('sass', function() {
                             'ie >= 8',
                             'iOS >= 7',
                             'Android >= 4.2'))
-        .pipe( sourcemaps.write( paths.dest, {includeContent: false})) //@TODO make source files from sourcemaps to be load by browsers (see `sourceRoot` property)
+        .pipe( sourcemaps.write( paths.destMap, {includeContent: false})) //@TODO make source files from sourcemaps to be load by browsers (see `sourceRoot` property)
         .pipe( gulp.dest( paths.dest))
         .pipe( ignore.exclude('*.map'))
         .pipe( rename({suffix: '.min'}))
         .pipe( cssnano())
-        .pipe( sourcemaps.write( paths.dest))
+        .pipe( sourcemaps.write( paths.destMap))
         .pipe( gulp.dest(paths.dest)) ;
     
     notifier.notify({ title: 'iui-sass:', message: 'css generation\'s / minification\'s task complete!' }) ;
