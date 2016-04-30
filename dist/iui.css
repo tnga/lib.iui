@@ -109,6 +109,10 @@ table th {
 
 /* Style on "specials and operatings" elements like buttons, textfields, ... 
 ----------------------------------------------------------------------------*/
+q, blockquote {
+  font-family: Purisa, i_Purisa, "Lucida Handwriting", "Comic Sans Ms";
+}
+
 a {
   text-decoration: none;
   color: #676767;
