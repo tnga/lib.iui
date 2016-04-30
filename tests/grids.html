@@ -13,19 +13,20 @@
         
         <style>
 
-            .i-grid .grid, .i-grid *[ class*="grid grid--"] {
+            .i-grid col, .i-grid *[ class*="col"] {
                 
                 background: darkgray ;
                 min-height: 1.5em ;
                 margin-bottom: 1.4rem;
                 position: relative ;
+                border: 1px solid #2d2d2d ;
             }
             .i-grid .i-block {
                 
                 background: #f8f8f8 ;
             }
             
-            .grid .i-grid {
+            .col .i-grid {
 
                 background: white ;
             }
@@ -81,126 +82,113 @@
         <div id="i-main-block">
 
             <figure class="i-block i-grid iui--demo">
-                <span>Toast syntax</span>
-                <br/>
-                <div class='grid grid--1-of-2'></div>
-                <div class='grid grid--1-of-2'></div>
-                <div class='grid grid--1-of-3'></div>
-                <div class='grid grid--2-of-3'></div>
-                <div class='grid grid--3-of-3'></div>
-                <div class='grid grid--3-of-5 grid--centered'></div>
-                <div class='grid grid--1-of-3'></div>
-                <div class='grid grid--2-of-3 grid--push-1-of-3'></div>
                 
-                <br/>
-                <span>IUI syntax</span>
-                <br/>
-                <div class='grid col-1-of-3'></div>
-                <div class='grid col-1-of-3'></div>
-                <div class='grid col-1-of-3'></div>
-                <div class='grid col-1-of-4'></div>
-                <div class='grid col-1-of-4'></div>
-                <div class='grid col-2-of-4'></div>
-                <div class='grid col-3-of-4'></div>
-                <div class='grid col-1-of-4'></div>
-                <div class='grid col-1-of-4'></div>
-                <div class='grid col-1-of-4'></div>
-                <div class='grid col-1-of-4'></div>
-                <div class='grid col-1-of-4'></div>
-                <div class='grid col-3-of-5 centered'></div>
-                <div class='grid col-1-of-5'></div>
-                <div class='grid col-1-of-5'></div>
-                <div class='grid col-1-of-5'></div>
-                <div class='grid col-1-of-5'></div>
-                <div class='grid col-1-of-5'></div>
-                <div class='grid col-1-of-6'></div>
-                <div class='grid col-2-of-6'></div>
-                <div class='grid col-3-of-6'></div>
-                <div class='grid col-4-of-6'></div>
-                <div class='grid col-2-of-6'></div>
-                <div class='grid col-1-of-6'></div>
-                <div class='grid col-1-of-6'></div>
-                <div class='grid col-1-of-6'></div>
-                <div class='grid col-1-of-6'></div>
-                <div class='grid col-1-of-6'></div>
-                <div class='grid col-1-of-6'></div>
-                <div class='grid col-1-of-8'></div>
-                <div class='grid col-2-of-8'></div>
-                <div class='grid col-3-of-8'></div>
-                <div class='grid col-2-of-8'></div>
-                <div class='grid col-5-of-8'></div>
-                <div class='grid col-3-of-8'></div>
-                <div class='grid col-1-of-8'></div>
-                <div class='grid col-1-of-8'></div>
-                <div class='grid col-1-of-8'></div>
-                <div class='grid col-1-of-8'></div>
-                <div class='grid col-1-of-8'></div>
-                <div class='grid col-1-of-8'></div>
-                <div class='grid col-1-of-8'></div>
-                <div class='grid col-1-of-8'></div>
-                <div class='grid col-1-of-12'></div>
-                <div class='grid col-2-of-12'></div>
-                <div class='grid col-3-of-12'></div>
-                <div class='grid col-4-of-12'></div>
-                <div class='grid col-2-of-12'></div>
-                <div class='grid col-5-of-12'></div>
-                <div class='grid col-7-of-12'></div>
-                <div class='grid col-6-of-12'></div>
-                <div class='grid col-6-of-12'></div>
-                <div class='grid col-12-of-12'></div>
-                <div class='grid col-1-of-12'></div>
-                <div class='grid col-1-of-12'></div>
-                <div class='grid col-1-of-12'></div>
-                <div class="grid col-6-of-12"></div>
-                <div class='grid col-1-of-12'></div>
-                <div class='grid col-1-of-12'></div>
-                <div class='grid col-1-of-12'></div>
+                <div class='col x1-3'></div>
+                <div class='col x1-3'></div>
+                <div class='col x1-3'></div>
+                <div class='col x1-4'></div>
+                <div class='col x1-4'></div>
+                <div class='col x2-4'></div>
+                <div class='col x3-4'></div>
+                <div class='col x1-4'></div>
+                <div class='col x1-4'></div>
+                <div class='col x1-4'></div>
+                <div class='col x1-4'></div>
+                <div class='col x1-4'></div>
+                <div class='col x3-5 centered'></div>
+                <div class='col x1-5'></div>
+                <div class='col x1-5'></div>
+                <div class='col x1-5'></div>
+                <div class='col x1-5'></div>
+                <div class='col x1-5'></div>
+                <div class='col x1-6'></div>
+                <div class='col x2-6'></div>
+                <div class='col x3-6'></div>
+                <div class='col x4-6'></div>
+                <div class='col x2-6'></div>
+                <div class='col x1-6'></div>
+                <div class='col x1-6'></div>
+                <div class='col x1-6'></div>
+                <div class='col x1-6'></div>
+                <div class='col x1-6'></div>
+                <div class='col x1-6'></div>
+                <div class='col x1-8'></div>
+                <div class='col x2-8'></div>
+                <div class='col x3-8'></div>
+                <div class='col x2-8'></div>
+                <div class='col x5-8'></div>
+                <div class='col x3-8'></div>
+                <div class='col x1-8'></div>
+                <div class='col x1-8'></div>
+                <div class='col x1-8'></div>
+                <div class='col x1-8'></div>
+                <div class='col x1-8'></div>
+                <div class='col x1-8'></div>
+                <div class='col x1-8'></div>
+                <div class='col x1-8'></div>
+                <div class='col x1-12'></div>
+                <div class='col x2-12'></div>
+                <div class='col x3-12'></div>
+                <div class='col x4-12'></div>
+                <div class='col x2-12'></div>
+                <div class='col x5-12'></div>
+                <div class='col x7-12'></div>
+                <div class='col x6-12'></div>
+                <div class='col x6-12'></div>
+                <div class='col x12-12'></div>
+                <div class='col x1-12'></div>
+                <div class='col x1-12'></div>
+                <div class='col x1-12'></div>
+                <div class="col x6-12"></div>
+                <div class='col x1-12'></div>
+                <div class='col x1-12'></div>
+                <div class='col x1-12'></div>
             </figure>
             
             <div class="i-block i-grid iui--demo">
                
-                <div class="grid col-7-of-12" style="color:white">
+                <div class="col x7-12" style="color:white">
                     <h2>Fixed width gutters</h2>
                     <p>No fluid gutter width bullcrap. This is the real deal. What you set is what you get.</p>
                 </div>
 
-                <figure class="i-block grid col-5-of-12">
+                <figure class="i-block col x6-12">
                     <div class="i-grid no-gutter">
-                        <div class="grid col-2-of-2"></div>
+                        <div class="col x2-2"></div>
 
-                        <div class="grid col-1-of-2"></div>
-                        <div class="grid col-1-of-2"></div>
+                        <div class="col x1-2"></div>
+                        <div class="col x1-2"></div>
 
-                        <div class="grid col-1-of-3"></div>
-                        <div class="grid col-1-of-3"></div>
-                        <div class="grid col-1-of-3"></div>
+                        <div class="col x1-3"></div>
+                        <div class="col x1-3"></div>
+                        <div class="col x1-3"></div>
 
-                        <div class="grid col-1-of-4"></div>
-                        <div class="grid col-1-of-4"></div>
-                        <div class="grid col-1-of-4"></div>
-                        <div class="grid col-1-of-4"></div>
+                        <div class="col x1-4"></div>
+                        <div class="col x1-4"></div>
+                        <div class="col x1-4"></div>
+                        <div class="col x1-4"></div>
 
-                        <div class="grid col-1-of-5"></div>
-                        <div class="grid col-1-of-5"></div>
-                        <div class="grid col-1-of-5"></div>
-                        <div class="grid col-1-of-5"></div>
-                        <div class="grid col-1-of-5"></div>
+                        <div class="col x1-5"></div>
+                        <div class="col x1-5"></div>
+                        <div class="col x1-5"></div>
+                        <div class="col x1-5"></div>
+                        <div class="col x1-5"></div>
                     </div>
                 </figure>
 
-                <figure class="i-block grid col-5-of-12">
+                <figure class="i-block col x6-12">
                     <div class="i-grid no-gutter">
-                        <div class="grid col-3-of-5"></div>
-                        <div class="grid col-1-of-5"></div>
-                        <div class="grid col-1-of-5"></div>
-                        <div class="grid col-3-of-4 push-1-of-4"></div>
-                        <div class="grid col-2-of-3"></div>
-                        <div class="grid col-1-of-3"></div>
+                        <div class="col x3-5"></div>
+                        <div class="col x1-5"></div>
+                        <div class="col x1-5"></div>
+                        <div class="col x3-4 push-s1-4"></div>
+                        <div class="col x2-3"></div>
+                        <div class="col x1-3"></div>
 
-                        <div class="grid col-1-of-2"></div>
-                        <div class="grid col-1-of-2"></div>
+                        <div class="col x1-2"></div>
+                        <div class="col x1-2"></div>
 
-                        <div class="grid col-2-of-2"></div>
+                        <div class="col x2-2"></div>
                     </div>
                 </figure>
                 

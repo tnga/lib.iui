@@ -9,76 +9,146 @@
 * @NOTE if iui-toast modifications are not merge to the toast branch; then iui will stop using the library and will implement it own way.
 */
 
-$toast-grid-namespace: "i-grid" ;
-$toast-grid-column-namespace: "grid" ;
-$toast-gutter-width: 0.3em ;
+// Media Query Ranges
 
+$screen-smaller-width: 420px ;
+$screen-small-width: 640px ;
+$screen-medium-width: 800px ;
+$screen-normal-width: 1024px ;
+$screen-large-width: 1280px ;
+$screen-big-width: 1500px ;
 
-@import '../../../../bower_components/iui_toast/scss/grid.scss' ;
+//structured as target-id : target-width 
+$media-groups: ("x": "any", 
+                "p": $screen-smaller-width, "s": $screen-small-width,
+                "m": $screen-medium-width,  "n": $screen-normal-width,
+                "l": $screen-large-width,   "b": $screen-big-width
+               ) ;
 
+$col-groups: (2, 3, 4, 5, 6, 8, 12) !default;
 
-// For each of our column groups...
-@each $group in $toast-col-groups {
-    
-    // For each column width from 1 to the column group...
-    @for $i from 1 through $group {
+$grid-pushes: true ;
+$grid-pulls: true ;
+$grid-offsets: true ;
 
-        .col-#{$i}-of-#{$group} {
+$inl-gutter-width: 1em !default; // internal column's gutter
+$enl-gutter-width: 1/100 !default; //external column's gutter; it's take in [0,1]
 
-            @extend .#{$toast-grid-column-namespace}--#{$i}-of-#{$group} ;
-        }
+//* grid's columns are simply set by this way:
+//* col-virtual-width = col-margin-left + col-margin-right + col(border-sized)-real-width.
+//*=> col-virtual-width = 2*col-margin-right + col(border-sized)-real-width   (considering: col-margin-left = col-margin-right )
+//*then: col(border-sized)-real-width = col-virtual-width - 2*col-margin-right
+//*(col-margin-right and col-margin-left can be considering as column's external gutter)
+//*(let take 2*col-margin-right = external-gutter-width)
+//*then: col(border-sized)-real-width = col-virtual-width - external-gutter-width
+//*
+//*this is the theory and in the practice, it work approximatively well in opera-browser( tested on 12.16),
+//*but get easly breaking issue on all tested recents browsers (firefox, webkits like browsers) when column's internal and external gutter become high.
+//*so some way find to avoid that is to provide precision control for some higher value of column's internal and external gutter.
+//*then when set column margin-right and margin-left, take it away a precise value depending of column's parent width.
+//*when set column padding, take in mind the fact to avoid that, depending of column's parent width, setting value become higher than `col-real-width`.
+//*/
+//get the column's external gutter size with a precision (for approximation).
+//`precision`, cause theory seems sometime to not exactly match with pratice :(.
+@function col-alpha-margin ($precision:0) {
 
-        @if ($toast-pushes) {
-            
-            .#{$toast-grid-column-namespace}.push-#{$i}-of-#{$group} {
-                
-                @extend  .#{$toast-grid-column-namespace}--push-#{$i}-of-#{$group} ;
-            }
-        }
+    @return  percentage($enl-gutter-width) - $precision ;
+}
 
-        @if ($toast-pulls) {
+.i-grid {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    box-sizing: content-box;
 
-            .#{$toast-grid-column-namespace}.pull-#{$i}-of-#{$group} {
-
-                @extend  .#{$toast-grid-column-namespace}--pull-#{$i}-of-#{$group} ;
-            }
-        }
+    // Clear floating children
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
     }
-}
 
+    .col {
+        float: left;
+        box-sizing: border-box;
+        padding: 0 $inl-gutter-width / 2;
+        margin-right: col-alpha-margin() / 2 ;
+        margin-left: col-alpha-margin() / 2 ;
+        left: auto;
+        right: auto;
 
-// Centers the column in the grid and clears the row of all other columns
-.#{$toast-grid-column-namespace}.centered {
-    
-    @extend .#{$toast-grid-column-namespace}--centered ;
-}
-// Displays the column as the first in its row
-.#{$toast-grid-column-namespace}.d-first {
-    
-    @extend .#{$toast-grid-column-namespace}--d-first ;
-}
-// Displays the column as the last in its row
-.#{$toast-grid-column-namespace}.d-last {
-    
-    @extend .#{$toast-grid-column-namespace}--d-last ;
-}
-// Removes gutters from the columns
-.#{$toast-grid-namespace}.no-gutter {
-    
-    @extend .#{$toast-grid-namespace}--no-gutter ;
-}
-// Removes gutters from the columns
-.span-all {
-    
-    @extend .#{$toast-grid-column-namespace}--span-all  ;
-}
-// Align column to the bottom.
-.#{$toast-grid-column-namespace}.align-b {
-    
-    @extend .#{$toast-grid-column-namespace}--ab ;
-}
-// Align column to the middle.
-.#{$toast-grid-column-namespace}.align-m {
-    
-    @extend .#{$toast-grid-column-namespace}--am ;
+        &[class*="push-"],
+        &[class*="pull-"] {
+            position: relative;
+        }
+
+        //* below, the goal is to genarate column class syntax depending of target media screen.
+        //* with `&.#{$target-id}#{$i}-#${group}` we can have for example:
+        //* `.col.x1-2` for smallest media and up
+        //* `.col.p1-3` for smaller media and up
+        //* `.col.s1-5` for small media and up
+        //* `.col.m1-6` for medium media and up
+        //* `.col.n1-8` for normal media and up
+        //* `.col.l1-10` for large media and up
+        //* `.col.b1-12` for large media and up
+        //*
+        //* where `{$i}-#{$group}` mean '$i of $group' (1-3 = '1 of 3')
+        //* which also mean 1 column of 3 (or 1/3 of the row's width)
+        //*/
+        @mixin gen-media-col-from ($target-id, $i, $group) {
+            
+            &.#{$target-id}#{$i}-#{$group} {
+
+                width: percentage($i/$group) - col-alpha-margin() ;
+            }
+
+            @if ($grid-pushes) {
+
+                &.push-#{$target-id}#{$i}-#{$group} {
+
+                    left: percentage($i/$group);
+                }
+            } // end pushes
+
+            @if ($grid-pulls) {
+
+                &.pull-#{$target-id}#{$i}-#{$group} {
+
+                    right: percentage($i/$group);
+                }
+            } // end pulls
+
+            @if ($grid-offsets) {
+
+                &.offset-#{$target-id}#{$i}-#{$group} {
+
+                    margin-left: percentage($i/$group);
+                }
+             } // end offset
+        }
+
+        // For each of our column groups...
+        @each $group in $col-groups {
+
+            // For each column width from 1 to the column group...
+            @for $i from 1 through $group {
+                // For each of our target media groups...
+                @each $target-id, $target-width in $media-groups {
+
+                    @if $target-width == "any" {
+
+                        @include gen-media-col-from ($target-id, $i, $group) ;
+                    }
+                    @else {
+
+                        @media only screen and (min-width : #{$target-width}) {
+
+                            @include gen-media-col-from ($target-id, $i, $group) ;
+                        }
+                    }
+                } // end @each
+            } // end @for
+        } // end @each
+
+    }
 }
