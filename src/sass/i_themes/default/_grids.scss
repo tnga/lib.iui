@@ -55,6 +55,7 @@ $enl-gutter-width: 1/100 !default; //external column's gutter; it's take in [0,1
     @return  percentage($enl-gutter-width) - $precision ;
 }
 
+
 .i-grid {
     margin-left: auto;
     margin-right: auto;
@@ -94,27 +95,79 @@ $enl-gutter-width: 1/100 !default; //external column's gutter; it's take in [0,1
         //*
         //* where `{$i}-#{$group}` mean '$i of $group' (1-3 = '1 of 3')
         //* which also mean 1 column of 3 (or 1/3 of the row's width)
-        //*/
+        //
+        //**optimization for column class definition with css code generation**.
+        //*this optimization can be compare to grid system implementation on commit `86c4f39`* (compare both genereted grid css line size).
+        //
+        //for example, .col.x1-1, col.x2-2, ..., col.x12-12 have the same style definitions.
+        //so an optimized way is to group its around that css properties using firsts haven column class ratios (1/1, 1/2, ...).
+        //in other word, considering 1/1 = 2/2 = 3/3 = ... or 1/3 = 2/6 = 6/12 we will test if a ratio ($i/$group) have allready use.
+        //if so, considered column class will be use as class to be extended by class that have similar ratio.
+        //for that we use a scope range that will content unique ratios with associated column class name.
+        //as example, 1/2 is one of unique ratio that we can have depending of `$col-groups` list.
+        //so it will be setting on the scope range with it associated column class name (egg: `x1-2`).
+        //then, all similar ratio (2/4, 4/8, 5/10, 6/12) will have associated class (egg: `x2-4`, ...) extend 1/2 ratio's class egg: `x1-2`) css definitions
+        //
+        //initial scope range declaration
+        $col-scope-range: () ;
+        $push-scope-range: () ;
+        $pull-scope-range: () ;
+        $offset-scope-range: () ;
+        
+        //genarate column class syntax 
         @mixin gen-media-col-from ($target-id, $i, $group) {
             
             &.#{$target-id}#{$i}-#{$group} {
-
-                width: percentage($i/$group) - col-alpha-margin() ;
+                
+                @if map_has_key($col-scope-range, $i/$group) {
+                    
+                    $col-to-extend: map_get($col-scope-range, $i/$group) ;
+                    
+                    @extend  .#{$col-to-extend};
+                }
+                @else {
+                   
+                    width: percentage($i/$group) - col-alpha-margin() ;
+                    
+                    $col-scope-range: map-merge($col-scope-range, ($i/$group : '#{$target-id}#{$i}-#{$group}')) ;
+                }               
             }
 
             @if ($grid-pushes) {
 
                 &.push-#{$target-id}#{$i}-#{$group} {
 
-                    left: percentage($i/$group);
+                    @if map_has_key($push-scope-range, $i/$group) {
+
+                        $push-to-extend: map_get($push-scope-range, $i/$group) ;
+
+                        @extend  .#{$push-to-extend};
+                    }
+                    @else {
+
+                        left: percentage($i/$group);
+
+                        $push-scope-range: map-merge($push-scope-range, ($i/$group : 'push-#{$target-id}#{$i}-#{$group}')) ;
+                    } 
                 }
             } // end pushes
 
             @if ($grid-pulls) {
-
+                
                 &.pull-#{$target-id}#{$i}-#{$group} {
+                    
+                    @if map_has_key($pull-scope-range, $i/$group) {
 
-                    right: percentage($i/$group);
+                        $pull-to-extend: map_get($pull-scope-range, $i/$group) ;
+
+                        @extend  .#{$pull-to-extend};
+                    }
+                    @else {
+
+                        right: percentage($i/$group);
+
+                        $pull-scope-range: map-merge($pull-scope-range, ($i/$group : 'pull-#{$target-id}#{$i}-#{$group}')) ;
+                    } 
                 }
             } // end pulls
 
@@ -122,33 +175,60 @@ $enl-gutter-width: 1/100 !default; //external column's gutter; it's take in [0,1
 
                 &.offset-#{$target-id}#{$i}-#{$group} {
 
-                    margin-left: percentage($i/$group);
+                    @if map_has_key($offset-scope-range, $i/$group) {
+
+                        $offset-to-extend: map_get($offset-scope-range, $i/$group) ;
+
+                        @extend  .#{$offset-to-extend};
+                    }
+                    @else {
+
+                        margin-left: percentage($i/$group);
+
+                        $offset-scope-range: map-merge($offset-scope-range, ($i/$group : 'offset-#{$target-id}#{$i}-#{$group}')) ;
+                    }
                 }
              } // end offset
         }
 
-        // For each of our column groups...
-        @each $group in $col-groups {
+        //genarate column class syntax depending of target media screen
+        // For each of our target media groups...
+        @each $target-id, $target-width in $media-groups {
 
-            // For each column width from 1 to the column group...
-            @for $i from 1 through $group {
-                // For each of our target media groups...
-                @each $target-id, $target-width in $media-groups {
+            @if $target-width == "any" {
 
-                    @if $target-width == "any" {
+                // For each of our column groups...
+                @each $group in $col-groups {
+
+                    // For each column width from 1 to the column group...
+                    @for $i from 1 through $group {
 
                         @include gen-media-col-from ($target-id, $i, $group) ;
-                    }
-                    @else {
-
-                        @media only screen and (min-width : #{$target-width}) {
-
-                            @include gen-media-col-from ($target-id, $i, $group) ;
-                        }
-                    }
+                    } // end @for
                 } // end @each
-            } // end @for
-        } // end @each
+            }
+            @else {
 
+                @media only screen and (min-width : #{$target-width}) {
+
+                    //initial scope range declaration to overwrite precedent usages
+                    $col-scope-range: () ;
+                    $push-scope-range: () ;
+                    $pull-scope-range: () ;
+                    $offset-scope-range: () ;
+                    
+                    // For each of our column groups...
+                    @each $group in $col-groups {
+
+                        // For each column width from 1 to the column group...
+                        @for $i from 1 through $group {
+
+                           @include gen-media-col-from ($target-id, $i, $group) ;
+                        } // end @for
+                    } // end @each
+                }
+            } // end @else
+        } // end @each
+            
     }
 }
