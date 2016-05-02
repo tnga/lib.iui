@@ -9,31 +9,6 @@
 * @NOTE if iui-toast modifications are not merge to the toast branch; then iui will stop using the library and will implement it own way.
 */
 
-// Media Query Ranges
-
-$screen-smaller-width: 420px ;
-$screen-small-width: 640px ;
-$screen-medium-width: 800px ;
-$screen-normal-width: 1024px ;
-$screen-large-width: 1280px ;
-$screen-big-width: 1500px ;
-
-//structured as target-id : target-width 
-$media-groups: ("x": "any", 
-                "p": $screen-smaller-width, "s": $screen-small-width,
-                "m": $screen-medium-width,  "n": $screen-normal-width,
-                "l": $screen-large-width,   "b": $screen-big-width
-               ) ;
-
-$col-groups: (2, 3, 4, 5, 6, 8, 12) !default;
-
-$grid-pushes: true ;
-$grid-pulls: true ;
-$grid-offsets: true ;
-
-$inl-gutter-width: 1em !default; // internal column's gutter
-$enl-gutter-width: 1/100 !default; //external column's gutter; it's take in [0,1]
-
 //* grid's columns are simply set by this way:
 //* col-virtual-width = col-margin-left + col-margin-right + col(border-sized)-real-width.
 //*=> col-virtual-width = 2*col-margin-right + col(border-sized)-real-width   (considering: col-margin-left = col-margin-right )
@@ -56,7 +31,7 @@ $enl-gutter-width: 1/100 !default; //external column's gutter; it's take in [0,1
 }
 
 
-.i-grid {
+.#{$grid-namespace} {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;

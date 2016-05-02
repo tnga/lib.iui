@@ -1,37 +1,56 @@
 // /* Global's variables déclarations
 // ----------------------------------*/
+//1. screen
+//-------------------------------------
+//2. color
+//-------------------------------------
+//3. font
+//-------------------------------------
 
-$global-min-width: 280px ;
-$global-max-width: 1440px ;
-$global-small-width: 800px ;
-$global-smaller-width: 640px ;
-$global-normal-width: 1024px ;
-$global-big-width: 1280px ;
 
-$global-z-index: 1000 ;
+//1. screen
+//-------------------------------------
 
-$white-color: #fff ;
-$red-color: #f00 ;
-$yellow-color: yellow ;
-$light-color: #f2f2f2 ;
-$black-color: #1a1a1a ;
-$dark-color: #2d2d2d ;
+$global-min-width: 280px !default;
+$global-max-width: 1440px !default;
+// Media Query Ranges
+$screen-smaller-width: 420px !default;
+$screen-small-width: 640px !default;
+$screen-medium-width: 800px !default;
+$screen-normal-width: 1024px !default;
+$screen-large-width: 1280px !default;
+$screen-big-width: 1500px !default;
 
-$focus-color: #ff6600 ;
-$hover-color: $focus-color ;
-$active-color: $focus-color ;
-$select-color: $focus-color ;
-$disable-color: #d0d0d0 ;
-$warring-color: $yellow-color ;
-$success-color: $focus-color ;
-$error-color: $red-color ;
+$global-z-index: 1000 !default;
 
-$border-color: $dark-color ;
-$default-bg-color: $white-color ;
-$default-txt-color: $black-color ;
-$select-txt-color: $white-color ;
+//2. color
+//-------------------------------------
 
-$shadow-color: rgba(103, 103, 103, 0.7) ;
+$white-color: #fff !default;
+$red-color: #f00 !default;
+$yellow-color: yellow !default;
+$light-color: #f2f2f2 !default;
+$black-color: #1a1a1a !default;
+$dark-color: #2d2d2d !default;
+
+$focus-color: #ff6600 !default;
+$hover-color: $focus-color !default;
+$active-color: $focus-color !default;
+$select-color: $focus-color !default;
+$disable-color: #d0d0d0 !default;
+$warring-color: $yellow-color !default;
+$success-color: $focus-color !default;
+$error-color: $red-color !default;
+
+$border-color: $dark-color !default;
+$default-bg-color: $white-color !default;
+$default-txt-color: $black-color !default;
+$select-txt-color: $white-color !default;
+
+$shadow-color: rgba(103, 103, 103, 0.7) !default;
+
+//3. font
+//-------------------------------------
 
 $default-font-family: "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif ;
 $item-font-family: Ubuntu, _Ubuntu, $default-font-family ;
@@ -97,8 +116,15 @@ $quote-font-family: Purisa, i_Purisa, "Lucida Handwriting", "Comic Sans Ms" ;
 
 // /* Particular's variables déclarations
 // --------------------------------------*/
+//1.----------------------------
+//For some navbar's properties
+//2.----------------------------
+//For some collections's properties
+//3.----------------------------
+//For some grid's properties
 
-//----------------------------
+
+//1.----------------------------
 //For some navbar's properties
 
 $navbar-border: 0.15em solid $hover-color ;
@@ -115,7 +141,7 @@ $menu-sub-font-size: 1.0em ; //default submenu font size
 $menu-max-width: 200px ;
 
 
-//----------------------------
+//2.----------------------------
 //For some collections's properties
 
 $block-tb-padding: 1.3em ; //top-bottom padding size
@@ -127,3 +153,25 @@ $block-rlr-padding: $block-lr-padding + 0.4 ; //radius-style's left-right paddin
 $block-s-shadow-color: lighten( $shadow-color, 15%) ; //shadow-style's shadow color ;
 
 $block-r-radius: 3em ; //radius-style's border radius ;
+
+
+//3.----------------------------
+//For some grid's properties
+
+//structured as target-id : target-width 
+$media-groups: ("x": "any", 
+    "p": $screen-smaller-width, "s": $screen-small-width,
+    "m": $screen-medium-width,  "n": $screen-normal-width,
+    "l": $screen-large-width,   "b": $screen-big-width
+) ;
+
+$col-groups: (2, 3, 4, 5, 6, 8, 12) !default;
+
+$grid-pushes: true !default;
+$grid-pulls: true !default;
+$grid-offsets: true !default;
+
+$inl-gutter-width: 1em !default; // internal column's gutter
+$enl-gutter-width: 1/100 !default; //external column's gutter; it's take in [0,1]
+
+$grid-namespace: "i-grid" !default;
