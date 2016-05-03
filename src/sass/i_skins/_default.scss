@@ -171,7 +171,7 @@ $grid-pushes: true !default;
 $grid-pulls: true !default;
 $grid-offsets: true !default;
 
-$inl-gutter-width: 1em !default; // internal column's gutter
+$inl-gutter-width: 0.6em !default; // internal column's gutter
 $enl-gutter-width: 1/100 !default; //external column's gutter; it's take in [0,1]
 
 $grid-namespace: "i-grid" !default;

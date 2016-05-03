@@ -37,6 +37,16 @@
     margin-bottom: 20px;
     box-sizing: content-box;
 
+    &.no-inl-gutter .col {
+        padding: 0px !important;    
+    }
+    &.span-all .col {
+        width: 100% - col-alpha-margin() !important;    
+    }
+    &.reverse .col {
+        float: right!important;    
+    }
+    
     // Clear floating children
     &:after {
         content: "";
@@ -47,12 +57,12 @@
     .col {
         float: left;
         box-sizing: border-box;
-        padding: 0 $inl-gutter-width / 2;
+        padding: $inl-gutter-width / 2;
         margin-right: col-alpha-margin() / 2 ;
         margin-left: col-alpha-margin() / 2 ;
         left: auto;
         right: auto;
-
+        
         &[class*="push-"],
         &[class*="pull-"] {
             position: relative;
