@@ -165,13 +165,13 @@ $media-groups: ("x": "any",
     "l": $screen-large-width,   "b": $screen-big-width
 ) ;
 
-$col-groups: (2, 3, 4, 5, 6, 8, 12) !default;
+$col-groups: (2, 3, 4, 5, 6, 8, 10, 12) !default;
 
 $grid-pushes: true !default;
 $grid-pulls: true !default;
 $grid-offsets: true !default;
 
 $inl-gutter-width: 0.6em !default; // internal column's gutter
-$enl-gutter-width: 1/100 !default; //external column's gutter; it's take in [0,1]
+$enl-gutter-width: 0/100 !default; //external column's gutter; it's take in [0,1]
 
 $grid-namespace: "i-grid" !default;
