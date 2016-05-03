@@ -93,7 +93,7 @@
         $pull-scope-range: () ;
         $offset-scope-range: () ;
         
-        //genarate column class syntax 
+        //genarate column class syntax depending of media
         @mixin gen-media-col-from ($target-id, $i, $group) {
             
             &.#{$target-id}#{$i}-#{$group} {
@@ -167,7 +167,26 @@
                         $offset-scope-range: map-merge($offset-scope-range, ($i/$group : 'offset-#{$target-id}#{$i}-#{$group}')) ;
                     }
                 }
-             } // end offset
+            } // end offset
+        }
+
+        //genarate display class syntax for col (disable display or visibility) depending of media
+        @mixin gen-media-disp-from ($target-id) {
+
+            @if ($grid-nones) {
+
+                &.none-#{$target-id} {
+
+                    display: none;
+                }
+            } // end nones
+            @if ($grid-hiddens) {
+
+                &.hidden-#{$target-id} {
+
+                    visibility: hidden;
+                }
+            } // end hiddens
         }
 
         //genarate column class syntax depending of target media screen
@@ -176,6 +195,7 @@
 
             @if $target-width == "any" {
 
+                @include gen-media-disp-from ($target-id) ;
                 // For each of our column groups...
                 @each $group in $col-groups {
 
@@ -188,6 +208,11 @@
             }
             @else {
 
+                @media only screen and (max-width : #{$target-width}) {
+                    
+                    @include gen-media-disp-from ($target-id) ;
+                }
+            
                 @media only screen and (min-width : #{$target-width}) {
 
                     //initial scope range declaration to overwrite precedent usages

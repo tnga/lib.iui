@@ -170,8 +170,10 @@ $col-groups: (2, 3, 4, 5, 6, 8, 10, 12) !default;
 $grid-pushes: true !default;
 $grid-pulls: true !default;
 $grid-offsets: true !default;
+$grid-nones: true !default;
+$grid-hiddens: true !default;
 
-$inl-gutter-width: 0.6em !default; // internal column's gutter
+$inl-gutter-width: 1em !default; // internal column's gutter
 $enl-gutter-width: 0/100 !default; //external column's gutter; it's take in [0,1]
 
 $grid-namespace: "i-grid" !default;
