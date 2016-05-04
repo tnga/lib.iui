@@ -1,4 +1,15 @@
-@import 'i_skins/default.scss' ;
-@import 'i_font_def.scss' ;
-@import 'i_base.scss' ;
-@import 'i_themes/default.scss' ;
+@import 'settings.scss' ;
+
+//import choosen library's skin on the line bellow
+
+@import 'fonts.scss' ;
+@import 'base.scss' ;
+
+@import 'features/extras.scss' ;
+@import 'features/navbars.scss' ;
+@import 'features/forms.scss' ;
+@import 'features/collections.scss' ;
+@import 'features/tables.scss' ;
+@import 'features/grids.scss' ;
+
+//import choosen library's theme on the line bellow
