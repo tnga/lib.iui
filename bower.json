@@ -1,7 +1,7 @@
 {
   "name": "iui",
   "description": "Simple mini sass/css library which provide some user's friendly designs for the associated projects.",
-  "main": "iui.css",
+  "main": "dist/iui.min.css",
   "authors": [
     "Tindo Ngoufo Arsel <devtnga@gmail.com>"
   ],
@@ -28,8 +28,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "toast": "toast-grid#~1.0.0"
-  }
+  ]
 }
