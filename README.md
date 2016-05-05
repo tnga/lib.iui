@@ -28,10 +28,7 @@ If you want to use the javaScript associated features, you will need to install 
     ```sh
     $ bower update
     ```   
-    Therefore, you use the library by include it to your project. Commonly:
-    ```html
-    <link rel="stylesheet" href="bower_components/iui/iui.min.css"></link>
-    ```
+    
 2. [Download the code](https://github.com/tnga/lib.iui/archive/master.zip) and follow instructions.
     - The minify code is sufficient to include it to your project.
     - Read the documentation for more information.
@@ -49,7 +46,7 @@ Also note that [nodejs](https://nodejs.org) have to be installed and also [npm](
 
 ## LICENSE
 
-Copyright (c) (December)-2015 -> (January)-2016 [Tindo Ngoufo Arsel](mailto:devtnga@gmail.com).
+Copyright (c) (December)-2015 -> (May)-2016 [Tindo Ngoufo Arsel](mailto:devtnga@gmail.com).
 
 The LGPL version 2.1 or later. See [LICENSE.md](https://github.com/tnga/lib.iui/blob/master/LICENSE.md) for more details.
 
