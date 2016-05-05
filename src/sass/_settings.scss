@@ -21,6 +21,13 @@ $screen-normal-width: 1024px !default;
 $screen-large-width: 1280px !default;
 $screen-big-width: 1500px !default;
 
+//structured as target-id : target-width 
+$media-groups: ("x": "any", 
+    "p": $screen-smaller-width, "s": $screen-small-width,
+    "m": $screen-medium-width,  "n": $screen-normal-width,
+    "l": $screen-large-width,   "b": $screen-big-width
+) ;
+
 $global-z-index: 1000 !default;
 
 //2. color
@@ -126,7 +133,8 @@ $quote-font-family: Purisa, i_Purisa, "Lucida Handwriting", "Comic Sans Ms" ;
 //For some collections's properties
 //3.----------------------------
 //For some grid's properties
-
+//4.----------------------------
+//For some other extras properties
 
 //1.----------------------------
 //For some navbar's properties
@@ -162,22 +170,19 @@ $block-r-radius: 3em ; //radius-style's border radius ;
 //3.----------------------------
 //For some grid's properties
 
-//structured as target-id : target-width 
-$media-groups: ("x": "any", 
-    "p": $screen-smaller-width, "s": $screen-small-width,
-    "m": $screen-medium-width,  "n": $screen-normal-width,
-    "l": $screen-large-width,   "b": $screen-big-width
-) ;
-
 $col-groups: (2, 3, 4, 5, 6, 8, 10, 12) !default;
 
 $grid-pushes: true !default;
 $grid-pulls: true !default;
 $grid-offsets: true !default;
-$grid-nones: true !default;
-$grid-hiddens: true !default;
 
 $inl-gutter-width: 1em !default; // internal column's gutter
 $enl-gutter-width: 0/100 !default; //external column's gutter; it's take in [0,1]
 
 $grid-namespace: "i-grid" !default;
+
+//4.----------------------------
+//For some other extras properties
+
+$elt-nones: true !default;
+$elt-hides: true !default;

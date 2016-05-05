@@ -170,32 +170,12 @@
             } // end offset
         }
 
-        //genarate display class syntax for col (disable display or visibility) depending of media
-        @mixin gen-media-disp-from ($target-id) {
-
-            @if ($grid-nones) {
-
-                &.none-#{$target-id} {
-
-                    display: none;
-                }
-            } // end nones
-            @if ($grid-hiddens) {
-
-                &.hidden-#{$target-id} {
-
-                    visibility: hidden;
-                }
-            } // end hiddens
-        }
-
         //genarate column class syntax depending of target media screen
         // For each of our target media groups...
         @each $target-id, $target-width in $media-groups {
 
             @if $target-width == "any" {
 
-                @include gen-media-disp-from ($target-id) ;
                 // For each of our column groups...
                 @each $group in $col-groups {
 
@@ -207,11 +187,6 @@
                 } // end @each
             }
             @else {
-
-                @media only screen and (max-width : #{$target-width}) {
-                    
-                    @include gen-media-disp-from ($target-id) ;
-                }
             
                 @media only screen and (min-width : #{$target-width}) {
 

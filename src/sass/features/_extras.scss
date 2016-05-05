@@ -7,6 +7,41 @@ __________________________________________________________________________
 *there is additionnal's defintion set by `.i-nav >ul li.unfocusable` on the considered source file.
 */
 
+//genarate display class syntax for elements (disable display or visibility) depending of media.
+//( class `hide-x`, `hide-s`, ..., `hide-b` and `none-x`, ..., `none-b` )
+@mixin gen-media-disp-from ($target-id) {
+
+    @if ($elt-nones) {
+
+        .none-#{$target-id} {
+
+            display: none;
+        }
+    } // end nones
+    @if ($elt-hides) {
+
+        .hide-#{$target-id} {
+
+            visibility: hidden;
+        }
+    } // end hiddens
+}
+// For each of our target media groups...
+@each $target-id, $target-width in $media-groups {
+
+    @if $target-width == "any" {
+
+        @include gen-media-disp-from ($target-id) ;
+    }
+    @else {
+
+        @media only screen and (max-width : #{$target-width}) {
+
+            @include gen-media-disp-from ($target-id) ;
+        }
+    } // end @else
+} // end @each
+
 
 .fixed {
 
