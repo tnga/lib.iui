@@ -939,6 +939,68 @@ __________________________________________________________________________
 * For an example with `.unfocusable` option, here is the global style, but for navbar items, 
 *there is additionnal's defintion set by `.i-nav >ul li.unfocusable` on the considered source file.
 */
+.none-x {
+  display: none;
+}
+
+.hide-x {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 420px) {
+  .none-p {
+    display: none;
+  }
+
+  .hide-p {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .none-s {
+    display: none;
+  }
+
+  .hide-s {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .none-m {
+    display: none;
+  }
+
+  .hide-m {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .none-n {
+    display: none;
+  }
+
+  .hide-n {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .none-l {
+    display: none;
+  }
+
+  .hide-l {
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .none-b {
+    display: none;
+  }
+
+  .hide-b {
+    visibility: hidden;
+  }
+}
 .fixed, .i-nav.b-fixed, .i-nav.t-fixed {
   position: fixed;
   z-index: 10;
@@ -1533,12 +1595,6 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 .i-grid .col[class*="push-"], .i-grid .col[class*="pull-"] {
   position: relative;
 }
-.i-grid .col.none-x {
-  display: none;
-}
-.i-grid .col.hidden-x {
-  visibility: hidden;
-}
 .i-grid .col.x1-2, .i-grid .col.x2-4, .i-grid .col.x3-6, .i-grid .col.x4-8, .i-grid .col.x5-10, .i-grid .col.x6-12 {
   width: 50%;
 }
@@ -1826,14 +1882,6 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
 }
 .i-grid .col.offset-x11-12 {
   margin-left: 91.66667%;
-}
-@media only screen and (max-width: 420px) {
-  .i-grid .col.none-p {
-    display: none;
-  }
-  .i-grid .col.hidden-p {
-    visibility: hidden;
-  }
 }
 @media only screen and (min-width: 420px) {
   .i-grid .col.p1-2, .i-grid .col.p2-4, .i-grid .col.p3-6, .i-grid .col.p4-8, .i-grid .col.p5-10, .i-grid .col.p6-12 {
@@ -2123,14 +2171,6 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
   }
   .i-grid .col.offset-p11-12 {
     margin-left: 91.66667%;
-  }
-}
-@media only screen and (max-width: 640px) {
-  .i-grid .col.none-s {
-    display: none;
-  }
-  .i-grid .col.hidden-s {
-    visibility: hidden;
   }
 }
 @media only screen and (min-width: 640px) {
@@ -2423,14 +2463,6 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
     margin-left: 91.66667%;
   }
 }
-@media only screen and (max-width: 800px) {
-  .i-grid .col.none-m {
-    display: none;
-  }
-  .i-grid .col.hidden-m {
-    visibility: hidden;
-  }
-}
 @media only screen and (min-width: 800px) {
   .i-grid .col.m1-2, .i-grid .col.m2-4, .i-grid .col.m3-6, .i-grid .col.m4-8, .i-grid .col.m5-10, .i-grid .col.m6-12 {
     width: 50%;
@@ -2719,14 +2751,6 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
   }
   .i-grid .col.offset-m11-12 {
     margin-left: 91.66667%;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .i-grid .col.none-n {
-    display: none;
-  }
-  .i-grid .col.hidden-n {
-    visibility: hidden;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -3019,14 +3043,6 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
     margin-left: 91.66667%;
   }
 }
-@media only screen and (max-width: 1280px) {
-  .i-grid .col.none-l {
-    display: none;
-  }
-  .i-grid .col.hidden-l {
-    visibility: hidden;
-  }
-}
 @media only screen and (min-width: 1280px) {
   .i-grid .col.l1-2, .i-grid .col.l2-4, .i-grid .col.l3-6, .i-grid .col.l4-8, .i-grid .col.l5-10, .i-grid .col.l6-12 {
     width: 50%;
@@ -3315,14 +3331,6 @@ table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unf
   }
   .i-grid .col.offset-l11-12 {
     margin-left: 91.66667%;
-  }
-}
-@media only screen and (max-width: 1500px) {
-  .i-grid .col.none-b {
-    display: none;
-  }
-  .i-grid .col.hidden-b {
-    visibility: hidden;
   }
 }
 @media only screen and (min-width: 1500px) {
