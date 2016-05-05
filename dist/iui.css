@@ -852,8 +852,8 @@ input[type="checkbox"]:after,
 input[type="radio"]:after {
   content: '✔';
   position: relative;
-  top: 0;
-  left: 0.25em;
+  top: -0.1em;
+  left: 0.30em;
   font-size: 0.85em;
   color: #fff;
   visibility: hidden;
