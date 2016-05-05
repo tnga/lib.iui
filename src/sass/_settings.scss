@@ -84,6 +84,10 @@ $quote-font-family: Purisa, i_Purisa, "Lucida Handwriting", "Comic Sans Ms" ;
         outline: 0 ;
         text-shadow: 0px 0px 3px $focus-color ;   
         
+    }@else if $elt-type == "link" {
+        outline: 0 ;
+        text-decoration: underline ;   
+        
     }@else if $elt-type == "none" {
         outline: 0 ;
         

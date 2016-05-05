@@ -90,6 +90,10 @@ a {
         
         text-decoration: underline ;
     }
+    &:focus {
+        
+        @include style-focus-of ("link") ;
+    }
     
     @at-root {
         
@@ -152,6 +156,7 @@ a {
     & a {
         
         @extend a.i-btn ;
+        color: $white-color ;
     }
 }
 
