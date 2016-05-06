@@ -1116,7 +1116,7 @@ __________________________________________________________________*/
 * For default theme. Here is the style definition of "mi" design aspect for submenu in navbar.
 _____________________________________________________________________________________________*/
 .i-nav.mi-style {
-    /*&.bb-style {
+    /*&.s-bor-b {
 
         >ul >li ul {
 
@@ -1159,41 +1159,41 @@ ________________________________________________________________________________
 /*
 * For default theme. Here is the style definition of border design for selection in navbar.
 __________________________________________________________________________________________*/
-.i-nav.b-style > ul li#current-page, .i-nav.b-style > ul li.active-item {
+.i-nav.s-bor > ul li#current-page, .i-nav.s-bor > ul li.active-item {
   border: 0.25em solid #ff6600;
 }
-.i-nav.b-style > ul li:hover {
+.i-nav.s-bor > ul li:hover {
   border: 0.15em solid #ff6600;
 }
 
 /*
 * For default theme. Here is the style definition of border-bottom design for selection in navbar.
 _________________________________________________________________________________________________*/
-.i-nav.bb-style > ul > li > a {
+.i-nav.s-bor-b > ul > li > a {
   padding-left: 0.1em;
   padding-right: 0.1em;
 }
-.i-nav.bb-style > ul li#current-page, .i-nav.bb-style > ul li.active-item {
+.i-nav.s-bor-b > ul li#current-page, .i-nav.s-bor-b > ul li.active-item {
   border-bottom: 0.25em solid #ff6600;
 }
-.i-nav.bb-style > ul li:hover {
+.i-nav.s-bor-b > ul li:hover {
   border-bottom: 0.15em solid #ff6600;
 }
 
 /*
 * For default theme. Here is the style definition of background design for selection in navbar.
 ______________________________________________________________________________________________*/
-.i-nav.bg-style > ul li:hover, .i-nav.bg-style > ul li#current-page, .i-nav.bg-style > ul li.active-item {
+.i-nav.s-bg > ul li:hover, .i-nav.s-bg > ul li#current-page, .i-nav.s-bg > ul li.active-item {
   color: #fff;
   background-color: #ff6600;
 }
-.i-nav.bg-style > ul li:hover > a:not([href]), .i-nav.bg-style > ul li#current-page > a:not([href]), .i-nav.bg-style > ul li.active-item > a:not([href]) {
+.i-nav.s-bg > ul li:hover > a:not([href]), .i-nav.s-bg > ul li#current-page > a:not([href]), .i-nav.s-bg > ul li.active-item > a:not([href]) {
   color: #fff;
 }
-.i-nav.bg-style > ul li#current-page a, .i-nav.bg-style > ul li.active-item a {
+.i-nav.s-bg > ul li#current-page a, .i-nav.s-bg > ul li.active-item a {
   color: #fff;
 }
-.i-nav.bg-style > ul li a:hover {
+.i-nav.s-bg > ul li a:hover {
   color: #fff;
   background-color: transparent;
 }
@@ -1201,30 +1201,30 @@ ________________________________________________________________________________
 /*
 * For default theme. Here is the style definition of border-left design for selection in navbar.
 _______________________________________________________________________________________________*/
-.i-nav.bl-style > ul li#current-page, .i-nav.bl-style > ul li.active-item {
+.i-nav.s-bor-l > ul li#current-page, .i-nav.s-bor-l > ul li.active-item {
   border-left: 0.25em solid #ff6600;
 }
-.i-nav.bl-style > ul li:hover {
+.i-nav.s-bor-l > ul li:hover {
   border-left: 0.15em solid #ff6600;
 }
 
 /*
 * For default theme. Here is the style definition of border-right design for selection in navbar.
 ________________________________________________________________________________________________*/
-.i-nav.br-style > ul li#current-page, .i-nav.br-style > ul li.active-item {
+.i-nav.s-bor-r > ul li#current-page, .i-nav.s-bor-r > ul li.active-item {
   border-right: 0.25em solid #ff6600;
 }
-.i-nav.br-style > ul li:hover {
+.i-nav.s-bor-r > ul li:hover {
   border-right: 0.15em solid #ff6600;
 }
 
 /*
 * For default theme. Here is the style definition of border-top design for selection in navbar.
 _________________________________________________________________________________________________*/
-.i-nav.bt-style > ul li#current-page, .i-nav.bt-style > ul li.active-item {
+.i-nav.s-bor-t > ul li#current-page, .i-nav.s-bor-t > ul li.active-item {
   border-top: 0.25em solid #ff6600;
 }
-.i-nav.bt-style > ul li:hover {
+.i-nav.s-bor-t > ul li:hover {
   border-top: 0.15em solid #ff6600;
 }
 
@@ -1380,67 +1380,67 @@ ________________________________________________________________________________
 }
 
 /*
-* For default theme. Here is the style definition of `s-style` for `i-block` collections, ...
-____________________________________________________________________________________________*/
-.i-block.s-style {
+* For default theme. Here is the style definition of shadow design for collections, ...
+_______________________________________________________________________________________*/
+.i-block.s-sha {
   box-shadow: 0px 0px 10px rgba(141, 141, 141, 0.7);
   padding: 1.5em 0.9em;
 }
 
 /*
-* For default theme. Here is the style definition of `sb-style` for `i-block` collections, ...
-_____________________________________________________________________________________________*/
-.i-block.sb-style {
+* For default theme. Here is the style definition of shadow-bottom design for collections, ...
+______________________________________________________________________________________________*/
+.i-block.s-sha-b {
   box-shadow: 0px 6px 7px rgba(141, 141, 141, 0.7);
   padding: 1.5em 0.9em;
 }
 
 /*
-* For default theme. Here is the style definition of `st-style` for `i-block` collections, ...
-_____________________________________________________________________________________________*/
-.i-block.st-style {
+* For default theme. Here is the style definition of shadow-top design for collections, ...
+___________________________________________________________________________________________*/
+.i-block.s-sha-t {
   box-shadow: 0px -6px 7px rgba(141, 141, 141, 0.7);
   padding: 1.5em 0.9em;
 }
 
 /*
-* For default theme. Here is the style definition of `sl-style` for `i-block` collections, ...
+* For default theme. Here is the style definition of shadow-left design for collections, ...
 _____________________________________________________________________________________________*/
-.i-block.sl-style {
+.i-block.s-sha-l {
   box-shadow: -6px 0px 7px rgba(141, 141, 141, 0.7);
   padding: 1.5em 0.9em;
 }
 
 /*
-* For default theme. Here is the style definition of `sr-style` for `i-block` collections, ...
+* For default theme. Here is the style definition of shadow-right design for collections, ...
 _____________________________________________________________________________________________*/
-.i-block.sr-style {
+.i-block.s-sha-r {
   box-shadow: 6px 0px 7px rgba(141, 141, 141, 0.7);
   padding: 1.5em 0.9em;
 }
 
 /*
-* For default theme. Here is the style definition of `r-style` for `i-block` collections, ...
-_____________________________________________________________________________________________*/
-.i-block.r-style {
+* For default theme. Here is the style definition of border-radius design for collections, ...
+______________________________________________________________________________________________*/
+.i-block.s-rad {
   border-radius: 3em;
   padding-left: 1.3em;
   padding-right: 1.3em;
 }
 
 /*
-* For default theme. Here is the style definition of `rm-style` for `i-block` collections, ...
-_____________________________________________________________________________________________*/
-.i-block.rm-style {
+* For default theme. Here is the style definition of border-radius design on left diagonal for collections, ...
+_______________________________________________________________________________________________________________*/
+.i-block.s-rad-ld {
   padding-left: 1.3em;
   padding-right: 1.3em;
   border-radius: 3em 0em;
 }
 
 /*
-* For default theme. Here is the style definition of `rd-style` for `i-block` collections, ...
-_____________________________________________________________________________________________*/
-.i-block.rd-style {
+* For default theme. Here is the style definition of border-radius design on right diagonal for collections, ...
+________________________________________________________________________________________________________________*/
+.i-block.s-rad-rd {
   padding-left: 1.3em;
   padding-right: 1.3em;
   border-radius: 0em 3em;
@@ -1543,15 +1543,15 @@ table.v-border tr:last-of-type {
 /*
 * For default theme. Here is the style definition of `line-style` design for table.
 __________________________________________________________________________________*/
-table.line-style tr:hover:not(.unfocusable), table.line-style tr:not(.unfocusable).hover {
+table.s-line tr:hover:not(.unfocusable), table.s-line tr:not(.unfocusable).hover {
   color: #1a1a1a;
   background-color: #c6c6c6;
 }
-table.line-style th.active-item, table.line-style th#current-item, table.line-style tr.active-item, table.line-style tr#current-item {
+table.s-line th.active-item, table.s-line th#current-item, table.s-line tr.active-item, table.s-line tr#current-item {
   color: #fff;
   background-color: #ff6600;
 }
-table.line-style td.active-item, table.line-style td#current-item {
+table.s-line td.active-item, table.s-line td#current-item {
   color: #fff;
   background-color: #868686;
 }
@@ -1559,11 +1559,11 @@ table.line-style td.active-item, table.line-style td#current-item {
 /*
 * For default theme. Here is the style definition of `cellule-style` design for table.
 _____________________________________________________________________________________*/
-table.cel-style tr:not(.unfocusable) td:hover:not(.unfocusable), table.cel-style tr:not(.unfocusable) td:not(.unfocusable).hover {
+table.s-cel tr:not(.unfocusable) td:hover:not(.unfocusable), table.s-cel tr:not(.unfocusable) td:not(.unfocusable).hover {
   color: #1a1a1a;
   background-color: #ececec;
 }
-table.cel-style tr:not(.unfocusable) td.active-item, table.cel-style tr:not(.unfocusable) td#current-item {
+table.s-cel tr:not(.unfocusable) td.active-item, table.s-cel tr:not(.unfocusable) td#current-item {
   color: #fff;
   background-color: #868686;
 }
