@@ -1,4 +1,13 @@
 @charset "UTF-8";
+img.responsive, video.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).

@@ -64,6 +64,21 @@ $item-font-family: Ubuntu, _Ubuntu, $default-font-family ;
 $quote-font-family: Purisa, i_Purisa, "Lucida Handwriting", "Comic Sans Ms" ;
 
 
+// /* Global's placeholder declarations
+// -----------------------------------*/
+
+%responsive {
+    
+    max-width: 100% ;
+    height: auto ;
+}
+
+%circle {
+    
+    border-radius: 50% ;
+}
+
+
 // /* Global's mixins declarations
 // --------------------------------*/
 

@@ -111,6 +111,14 @@ a {
     }
 }
 
+img, video {    
+    
+    &.responsive{
+        
+        @extend %responsive ;
+    }
+}
+
 .i-btn{
 
     @include button-bg-look($dark-color, $white-color) ;

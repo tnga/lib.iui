@@ -48,3 +48,8 @@ __________________________________________________________________________
     position: fixed ;
     z-index: $global-z-index / 100 ;
 }
+
+.circle {
+    
+    @extend %circle ;
+}
