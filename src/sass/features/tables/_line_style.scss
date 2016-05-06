@@ -3,7 +3,7 @@
 __________________________________________________________________________________*/
 
 
-table.line-style { //line-style for line selection
+table.s-line { //line-style for line selection
 
     //@TODO verify `.unfocusable` implementation on extras features since this (:not) will not work on old browser.
     tr:hover:not( .unfocusable), tr:not( .unfocusable).hover {
