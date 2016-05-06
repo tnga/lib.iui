@@ -1,0 +1,11 @@
+/*
+* For default theme. Here is the style definition of border-radius design on right for collections, ...
+_______________________________________________________________________________________________________*/
+
+
+.i-block.s-rad-r { // partial (right-top, right-bottom) border-radius with box's style 
+
+    padding-left: $block-rlr-padding ;
+    padding-right: $block-rlr-padding ;
+    border-radius: $block-r-radius 0em 0em $block-r-radius ;
+}

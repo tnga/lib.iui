@@ -1429,6 +1429,24 @@ ________________________________________________________________________________
 }
 
 /*
+* For default theme. Here is the style definition of border-radius design on left for collections, ...
+______________________________________________________________________________________________________*/
+.i-block.s-rad-l {
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+  border-radius: 0em 3em 3em 0em;
+}
+
+/*
+* For default theme. Here is the style definition of border-radius design on right for collections, ...
+_______________________________________________________________________________________________________*/
+.i-block.s-rad-r {
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+  border-radius: 3em 0em 0em 3em;
+}
+
+/*
 * For default theme. Here is the style definition of border-radius design on left diagonal for collections, ...
 _______________________________________________________________________________________________________________*/
 .i-block.s-rad-ld {
