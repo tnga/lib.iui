@@ -3,9 +3,52 @@
 ______________________________________________________________________________________________*/
 
 
-.i-block.s-rad { // full border-radius with box's style
-    
-    border-radius: $block-r-radius ;
-    padding-left: $block-rlr-padding ;
-    padding-right: $block-rlr-padding ;
+@if index($radius-styles, 's-rad') != null {
+
+    .s-rad { // full border-radius with box's style
+
+        border-radius: $block-r-radius ;
+        padding-left: $block-rlr-padding ;
+        padding-right: $block-rlr-padding ;
+    }
+}
+
+@if index($radius-styles, 's-rad-l') != null {
+
+    .s-rad-l { // partial (left-top, left-bottom) border-radius with box's style 
+
+        padding-left: $block-rlr-padding ;
+        padding-right: $block-rlr-padding ;
+        border-radius: 0em $block-r-radius $block-r-radius 0em ;
+    }    
+}
+
+@if index($radius-styles, 's-rad-ld') != null {
+
+    .s-rad-ld { // partial (left-top, right-bottom) border-radius with box's style 
+
+        padding-left: $block-rlr-padding ;
+        padding-right: $block-rlr-padding ;
+        border-radius: $block-r-radius 0em ;
+    }
+}
+
+@if index($radius-styles, 's-rad-r') != null {
+
+    .s-rad-r { // partial (right-top, right-bottom) border-radius with box's style 
+
+        padding-left: $block-rlr-padding ;
+        padding-right: $block-rlr-padding ;
+        border-radius: $block-r-radius 0em 0em $block-r-radius ;
+    }
+}
+
+@if index($radius-styles, 's-rad-rd') != null {
+
+    .s-rad-rd { // partial (right-top, left-bottom) border-radius with box's style 
+
+        padding-left: $block-rlr-padding ;
+        padding-right: $block-rlr-padding ;
+        border-radius: 0em $block-r-radius ;
+    }
 }

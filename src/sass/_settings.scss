@@ -201,3 +201,6 @@ $grid-namespace: "i-grid" !default;
 
 $elt-nones: true !default;
 $elt-hides: true !default;
+
+$shadow-styles: ('s-sha', 's-sha-t', 's-sha-b', 's-sha-l', 's-sha-r') ;
+$radius-styles: ('s-rad', 's-rad-l', 's-rad-ld', 's-rad-r', 's-rad-rd') ;

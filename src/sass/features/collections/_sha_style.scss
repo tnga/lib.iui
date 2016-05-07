@@ -1,10 +1,47 @@
 /*
-* For default theme. Here is the style definition of shadow design for collections, ...
+* For default theme. Here is the style definition of shadows design for collections, ...
 _______________________________________________________________________________________*/
 
+@if index($shadow-styles, 's-sha') != null {
+    
+    .s-sha { //more shadow with box's style 
 
-.i-block.s-sha { //more shadow with box's style 
+        box-shadow: 0px 0px 10px $block-s-shadow-color ;
+        padding: $block-stb-padding $block-slr-padding ;
+    }
+}
 
-    box-shadow: 0px 0px 10px $block-s-shadow-color ;
-    padding: $block-stb-padding $block-slr-padding ;
+@if index($shadow-styles, 's-sha-t') != null {
+    
+    .s-sha-t { //more shadow-top with box's style 
+
+        box-shadow: 0px -6px 7px $block-s-shadow-color ;
+        padding: $block-stb-padding $block-slr-padding ;
+    }
+}
+
+@if index($shadow-styles, 's-sha-b') != null {
+    
+    .s-sha-b { //more shadow-bottom with box's style 
+
+        box-shadow: 0px 6px 7px $block-s-shadow-color ;
+        padding: $block-stb-padding $block-slr-padding ;
+    }
+}
+@if index($shadow-styles, 's-sha-l') != null {
+    
+    .s-sha-l { //more shadow-left with box's style 
+
+        box-shadow: -6px 0px 7px $block-s-shadow-color ;
+        padding: $block-stb-padding $block-slr-padding ;
+    }
+}
+@if index($shadow-styles, 's-sha-r') != null {
+    
+    .s-sha-r { //more shadow-right with box's style 
+
+        box-shadow: 6px 0px 7px $block-s-shadow-color ;
+        padding: $block-stb-padding $block-slr-padding ;
+    }
+
 }

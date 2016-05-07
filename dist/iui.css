@@ -1380,41 +1380,29 @@ ________________________________________________________________________________
 }
 
 /*
-* For default theme. Here is the style definition of shadow design for collections, ...
+* For default theme. Here is the style definition of shadows design for collections, ...
 _______________________________________________________________________________________*/
-.i-block.s-sha {
+.s-sha {
   box-shadow: 0px 0px 10px rgba(141, 141, 141, 0.7);
   padding: 1.5em 0.9em;
 }
 
-/*
-* For default theme. Here is the style definition of shadow-bottom design for collections, ...
-______________________________________________________________________________________________*/
-.i-block.s-sha-b {
-  box-shadow: 0px 6px 7px rgba(141, 141, 141, 0.7);
-  padding: 1.5em 0.9em;
-}
-
-/*
-* For default theme. Here is the style definition of shadow-top design for collections, ...
-___________________________________________________________________________________________*/
-.i-block.s-sha-t {
+.s-sha-t {
   box-shadow: 0px -6px 7px rgba(141, 141, 141, 0.7);
   padding: 1.5em 0.9em;
 }
 
-/*
-* For default theme. Here is the style definition of shadow-left design for collections, ...
-_____________________________________________________________________________________________*/
-.i-block.s-sha-l {
+.s-sha-b {
+  box-shadow: 0px 6px 7px rgba(141, 141, 141, 0.7);
+  padding: 1.5em 0.9em;
+}
+
+.s-sha-l {
   box-shadow: -6px 0px 7px rgba(141, 141, 141, 0.7);
   padding: 1.5em 0.9em;
 }
 
-/*
-* For default theme. Here is the style definition of shadow-right design for collections, ...
-_____________________________________________________________________________________________*/
-.i-block.s-sha-r {
+.s-sha-r {
   box-shadow: 6px 0px 7px rgba(141, 141, 141, 0.7);
   padding: 1.5em 0.9em;
 }
@@ -1422,43 +1410,31 @@ ________________________________________________________________________________
 /*
 * For default theme. Here is the style definition of border-radius design for collections, ...
 ______________________________________________________________________________________________*/
-.i-block.s-rad {
+.s-rad {
   border-radius: 3em;
   padding-left: 1.3em;
   padding-right: 1.3em;
 }
 
-/*
-* For default theme. Here is the style definition of border-radius design on left for collections, ...
-______________________________________________________________________________________________________*/
-.i-block.s-rad-l {
+.s-rad-l {
   padding-left: 1.3em;
   padding-right: 1.3em;
   border-radius: 0em 3em 3em 0em;
 }
 
-/*
-* For default theme. Here is the style definition of border-radius design on right for collections, ...
-_______________________________________________________________________________________________________*/
-.i-block.s-rad-r {
-  padding-left: 1.3em;
-  padding-right: 1.3em;
-  border-radius: 3em 0em 0em 3em;
-}
-
-/*
-* For default theme. Here is the style definition of border-radius design on left diagonal for collections, ...
-_______________________________________________________________________________________________________________*/
-.i-block.s-rad-ld {
+.s-rad-ld {
   padding-left: 1.3em;
   padding-right: 1.3em;
   border-radius: 3em 0em;
 }
 
-/*
-* For default theme. Here is the style definition of border-radius design on right diagonal for collections, ...
-________________________________________________________________________________________________________________*/
-.i-block.s-rad-rd {
+.s-rad-r {
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+  border-radius: 3em 0em 0em 3em;
+}
+
+.s-rad-rd {
   padding-left: 1.3em;
   padding-right: 1.3em;
   border-radius: 0em 3em;
