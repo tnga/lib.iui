@@ -49,7 +49,7 @@ __________________________________________________________________________
     z-index: $global-z-index / 100 ;
 }
 
-.circle {
+.s-circle { //@TODO move it to extra geometric's styles features
     
     @extend %circle ;
 }

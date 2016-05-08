@@ -4,7 +4,7 @@ img.responsive, video.responsive {
   height: auto;
 }
 
-.circle {
+.s-circle {
   border-radius: 50%;
 }
 
@@ -1351,57 +1351,57 @@ ________________________________________________________________________________
 /*
 * For default theme. Here is the style definition of `collection` for `i-block` collections, ...
 _____________________________________________________________________________________________*/
-.i-block.collection > h1, .i-block.collection > h2, .i-block.collection > h3, .i-block.collection > h4, .i-block.collection > h5, .i-block.collection > h6 {
+.i-collection > h1, .i-collection > h2, .i-collection > h3, .i-collection > h4, .i-collection > h5, .i-collection > h6 {
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.7em;
 }
-.i-block.collection h1, .i-block.collection h2, .i-block.collection h3, .i-block.collection h4, .i-block.collection h5, .i-block.collection h6 {
+.i-collection h1, .i-collection h2, .i-collection h3, .i-collection h4, .i-collection h5, .i-collection h6 {
   color: #737373;
 }
-.i-block.collection > section, .i-block.collection > div, .i-block.collection > header, .i-block.collection > footer {
+.i-collection > section, .i-collection > div, .i-collection > header, .i-collection > footer {
   margin: 0.5em auto;
   padding: 0.5em 0em;
 }
-.i-block.collection > section, .i-block.collection > div {
+.i-collection > section, .i-collection > div {
   border-top: 1px solid #e7e7e7;
   border-bottom: 1px solid #e7e7e7;
 }
-.i-block.collection > header, .i-block.collection > footer {
+.i-collection > header, .i-collection > footer {
   border-top: 1px dashed #e7e7e7;
   border-bottom: 1px dashed #e7e7e7;
 }
-.i-block.collection > li, .i-block.collection > a {
+.i-collection > li, .i-collection > a {
   display: block;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
   margin: 0px;
   padding: 0.7em 0.3em;
 }
-.i-block.collection > li > h1, .i-block.collection > li > h2, .i-block.collection > li > h3, .i-block.collection > li > h4, .i-block.collection > li > h5, .i-block.collection > li > h6, .i-block.collection > a > h1, .i-block.collection > a > h2, .i-block.collection > a > h3, .i-block.collection > a > h4, .i-block.collection > a > h5, .i-block.collection > a > h6 {
+.i-collection > li > h1, .i-collection > li > h2, .i-collection > li > h3, .i-collection > li > h4, .i-collection > li > h5, .i-collection > li > h6, .i-collection > a > h1, .i-collection > a > h2, .i-collection > a > h3, .i-collection > a > h4, .i-collection > a > h5, .i-collection > a > h6 {
   margin: 0.3em 0em;
 }
-.i-block.collection > li + li, .i-block.collection > li + a, .i-block.collection > a + li, .i-block.collection > a + a {
+.i-collection > li + li, .i-collection > li + a, .i-collection > a + li, .i-collection > a + a {
   border-top: none;
 }
-.i-block.collection > a:hover {
+.i-collection > a:hover {
   cursor: pointer;
   text-decoration: none;
 }
-.i-block.collection:not(.unfocusable) > li:hover:not(.unfocusable), .i-block.collection:not(.unfocusable) > li:not(.unfocusable).hover, .i-block.collection:not(.unfocusable) > a:hover:not(.unfocusable), .i-block.collection:not(.unfocusable) > a:not(.unfocusable).hover {
+.i-collection:not(.unfocusable) > li:hover:not(.unfocusable), .i-collection:not(.unfocusable) > li:not(.unfocusable).hover, .i-collection:not(.unfocusable) > a:hover:not(.unfocusable), .i-collection:not(.unfocusable) > a:not(.unfocusable).hover {
   color: #1a1a1a;
   background-color: #e2e2e2;
 }
-.i-block.collection:not(.unfocusable) > li:active:not(.unfocusable), .i-block.collection:not(.unfocusable) > li.active-item, .i-block.collection:not(.unfocusable) > li#current-item, .i-block.collection:not(.unfocusable) > a:active:not(.unfocusable), .i-block.collection:not(.unfocusable) > a.active-item, .i-block.collection:not(.unfocusable) > a#current-item {
+.i-collection:not(.unfocusable) > li:active:not(.unfocusable), .i-collection:not(.unfocusable) > li.active-item, .i-collection:not(.unfocusable) > li#current-item, .i-collection:not(.unfocusable) > a:active:not(.unfocusable), .i-collection:not(.unfocusable) > a.active-item, .i-collection:not(.unfocusable) > a#current-item {
   transition: none;
   color: #fff;
   background-color: #ff6600;
 }
-.i-block.collection.disable > li, .i-block.collection.disable > li:hover, .i-block.collection.disable > li.hover-item, .i-block.collection.disable > li:active, .i-block.collection.disable > li.active-item, .i-block.collection.disable > li#current-item, .i-block.collection > li.disable, .i-block.collection > li.disable:hover, .i-block.collection > li.disable.hover-item, .i-block.collection > li.disable:active, .i-block.collection > li.disable.active-item, .i-block.collection > li.disable#current-item {
+.i-collection.disable > li, .i-collection.disable > li:hover, .i-collection.disable > li.hover-item, .i-collection.disable > li:active, .i-collection.disable > li.active-item, .i-collection.disable > li#current-item, .i-collection > li.disable, .i-collection > li.disable:hover, .i-collection > li.disable.hover-item, .i-collection > li.disable:active, .i-collection > li.disable.active-item, .i-collection > li.disable#current-item {
   color: #909090;
   background-color: transparent;
 }
 
-ul.i-block.collection > h1, ul.i-block.collection > h2, ul.i-block.collection > h3, ul.i-block.collection > h4, ul.i-block.collection > h5, ul.i-block.collection > h6 {
+ul.i-collection > h1, ul.i-collection > h2, ul.i-collection > h3, ul.i-collection > h4, ul.i-collection > h5, ul.i-collection > h6 {
   border: none;
 }
 

@@ -1,3 +1,9 @@
+// I- Global's variables déclarations
+// II- Global's placeholder declarations
+// III- Global's mixins declarations
+// IV- Particular's variables déclarations
+
+
 // /* Global's variables déclarations
 // ----------------------------------*/
 //1. screen
@@ -151,6 +157,8 @@ $quote-font-family: Purisa, i_Purisa, "Lucida Handwriting", "Comic Sans Ms" ;
 //4.----------------------------
 //For some tables's properties
 //5.----------------------------
+//For some helpers's properties
+//6.----------------------------
 //For some other extras properties
 
 //1.----------------------------
@@ -217,10 +225,14 @@ $table-aspects: ('s-cel', 's-line', 'hover-cel', 'hover-line', 'h-border', 'v-bo
 
 
 //5.----------------------------
-//For some other extras properties
+//For some helpers's properties
 
 $elt-nones: true !default;
 $elt-hides: true !default;
+
+
+//6.----------------------------
+//For some other extras properties
 
 $shadow-styles: ('s-sha', 's-sha-t', 's-sha-b', 's-sha-l', 's-sha-r') !default;
 $radius-styles: ('s-rad', 's-rad-l', 's-rad-ld', 's-rad-r', 's-rad-rd') !default;
