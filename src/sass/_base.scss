@@ -29,7 +29,7 @@ body {
     }
     &:focus {
      
-        @include style-focus-of("default") ;
+        @include style-focus-of("none") ;
     }
     &.hidden {
         
@@ -116,6 +116,10 @@ img, video {
     &.responsive{
         
         @extend %responsive ;
+    }
+    &:focus {
+
+        @include style-focus-of("default") ;
     }
 }
 
@@ -384,7 +388,7 @@ fieldset {
         font-family: $item-font-family ;
     }
     
-    &:hover {
+    &:hover { //@TODO verify if will also apply on mobile when :focus (if on mobile focus=hover)
         
         border: 1px solid $hover-color ;
         
