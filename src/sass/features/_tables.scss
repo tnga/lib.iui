@@ -3,10 +3,128 @@
 ____________________________________________________________________________________*/
 
 
-@import 'tables/no_border.scss' ;
-@import 'tables/h_border.scss' ;
-@import 'tables/v_border.scss' ;
-@import 'tables/line_style.scss' ;
-@import 'tables/cel_style.scss' ;
+table {
+    
+    th, tr {
 
-//@TODO implement `.col-style` for column selection. Javascript can be necessary for that.
+        &.active-item, &#current-item {
+            
+            &, td:not( .active-item) {
+                
+                background: $active-color !important;
+                color: $select-txt-color !important;
+            }
+        }
+    } 
+
+    td.active-item, td#current-item {
+
+        @include global-bg-look( $table-cel-a-color, $select-txt-color) ;
+    }
+    
+    @if index($table-aspects, 's-cel') != null {
+
+        &.s-cel { //cellule-style for cellule selection
+
+            tr td:nth-child( odd) {
+
+                //@TODO verify `.unfocusable` style priority on helpers features since this (:not) will not work on old browser.
+                &:not( .unfocusable), &:not( .unfocusable) {
+
+                    @include global-bg-look( $table-cel-o-color) ;
+                }
+            }
+        }
+    }
+    
+    @if index($table-aspects, 's-line') != null {
+
+        &.s-line { //line-style for line selection
+
+            //@TODO verify `.unfocusable` style priority on helpers features since this (:not) will not work on old browser.
+            tr:nth-child( odd) {
+
+                @include global-bg-look( $table-line-o-color) ;
+            }
+        }
+    }
+    
+    @if index($table-aspects, 'hover-cel') != null {
+
+        &.hover-cel { //cellule-style for cellule selection
+
+            tr:not( .unfocusable) td {
+
+                //@TODO verify `.unfocusable` implementation on helpers features since this (:not) will not work on old browser.
+                &:hover:not( .unfocusable), &:not( .unfocusable).hover {
+
+                    @include global-bg-look( $table-cel-h-color) ;
+                }
+            }
+        }
+    }
+    
+    @if index($table-aspects, 'hover-line') != null {
+
+        &.hover-line { //line-style for line selection
+
+            //@TODO verify `.unfocusable` style priority on helpers features since this (:not) will not work on old browser.
+            tr:hover:not( .unfocusable), tr:not( .unfocusable).hover {
+
+                @include global-bg-look( $table-line-h-color) ;
+            }
+        }
+    }
+    
+    @if index($table-aspects, 'h-border') != null {
+
+        &.h-border { // horizontal border
+
+            td, th {
+
+                border: none;
+            }
+
+            tr, th {
+
+                border-bottom: 1px solid lighten( $border-color, 50%) ;
+            }
+        }
+    }
+    
+    @if index($table-aspects, 'v-border') != null {
+
+        &.v-border { // vertical border
+
+            td, th {
+
+                border: none ;
+                border-left: 1px solid lighten( $border-color, 50%) ;
+                border-right: 1px solid lighten( $border-color, 50%) ;
+            }
+
+            tr:last-of-type {
+
+                border-bottom: 1px solid lighten( $border-color, 50%) ;
+            }
+        }
+    }
+    
+    @if index($table-aspects, 'no-border') != null {
+
+        &.no-border {
+
+            th {
+
+                border-left: none ;
+                border-right: none ;
+                border-top: none ;
+            }
+
+            tr, td {
+
+                border: none ; 
+            }
+        }
+    }
+}

@@ -6,11 +6,19 @@
 @import 'fonts.scss' ;
 @import 'base.scss' ;
 
-@import 'features/extras.scss' ;
-@import 'features/navbars.scss' ;
+@import 'features/helpers.scss' ;
+
+@import 'features/navbars/i_nav.scss' ;
+@import 'features/navbars/mi_bar.scss' ;
+@import 'features/navbars/mi_style.scss' ;
+@import 'features/navbars/bg_style.scss' ;
+@import 'features/navbars/bor_style.scss' ;
+
 @import 'features/forms.scss' ;
 @import 'features/collections.scss' ;
 @import 'features/tables.scss' ;
 @import 'features/grids.scss' ;
+@import 'features/extras/shadow_styles.scss' ;
+@import 'features/extras/radius_styles.scss' ;
 
 //import choosen library's theme on the line bellow

@@ -2,18 +2,106 @@
 * For default theme. Here is the style definition of border design for selection in navbar.
 __________________________________________________________________________________________*/
 
-.i-nav.s-bor { //border style for selection
+.i-nav {
 
-    >ul li {
+    @if index( $navbar-border-aspect, 'look-b') != null {
 
-        &#current-page, &.active-item {
+        &.look-b { //border style for selection
 
-            border: $navbar-active-border ;
-        }
+            >ul li {
 
-        &:hover {
+                &#current-page, &.active-item {
 
-            border: $navbar-border ;
+                    border: $navbar-active-border ;
+                }
+
+                &:hover {
+
+                    border: $navbar-border ;
+                }
+            }
+        }  
+    }
+
+    @if index( $navbar-border-aspect, 'look-bt') != null {
+
+        &.look-bt { //border-top style for selection
+
+            >ul li {
+
+                &#current-page, &.active-item {
+
+                    border-top: $navbar-active-border ;  
+                }
+
+                &:hover {
+
+                    border-top: $navbar-border ;  
+                }
+            }
+        } 
+    }
+
+    @if index( $navbar-border-aspect, 'look-bb') != null {
+
+        &.look-bb { //border-bottom style for selection
+
+            &>ul>li>a {
+
+                padding-left: 0.1em ;
+                padding-right: 0.1em ;
+            }
+
+            >ul li {
+
+                &#current-page, &.active-item {
+
+                    border-bottom: $navbar-active-border ; 
+                }
+
+                &:hover {
+
+                    border-bottom: $navbar-border ; 
+                }
+            }    
         }
     }
-}  
+
+    @if index( $navbar-border-aspect, 'look-bl') != null {
+
+        &.look-bl { //border-left style for selection
+
+            >ul li {
+
+                &#current-page, &.active-item {
+
+                    border-left: $navbar-active-border ;
+                }
+
+                &:hover {
+
+                    border-left: $navbar-border ;   
+                }
+            }
+        } 
+    }
+    
+    @if index( $navbar-border-aspect, 'look-br') != null {
+
+        &.look-br { //border-right style for selection
+
+            >ul li {
+
+                &#current-page, &.active-item {
+
+                    border-right: $navbar-active-border ; 
+                }
+
+                &:hover {
+
+                    border-right: $navbar-border ;
+                }
+            }
+        }
+    }     
+}

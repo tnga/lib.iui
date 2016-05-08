@@ -149,10 +149,17 @@ $quote-font-family: Purisa, i_Purisa, "Lucida Handwriting", "Comic Sans Ms" ;
 //3.----------------------------
 //For some grid's properties
 //4.----------------------------
+//For some tables's properties
+//5.----------------------------
 //For some other extras properties
 
 //1.----------------------------
 //For some navbar's properties
+
+$navbar-t-fixed: true !default;
+$navbar-b-fixed: true !default;
+
+$navbar-border-aspect: ('look-b', 'look-bt', 'look-bb', 'look-bl', 'look-br') !default;
 
 $navbar-border: 0.15em solid $hover-color ;
 $navbar-active-border: 0.25em solid $select-color ;
@@ -196,11 +203,24 @@ $enl-gutter-width: 0/100 !default; //external column's gutter; it's take in [0,1
 
 $grid-namespace: "i-grid" !default;
 
+
 //4.----------------------------
+//For some tables's properties
+
+$table-cel-a-color: lighten( $dark-color, 35%) !default; //column-active color
+$table-cel-o-color: lighten( $dark-color, 70%) !default; //column-odd color
+$table-cel-h-color: lighten( $dark-color, 80%) !default; //column-hover color
+$table-line-o-color: lighten( $dark-color, 75%) !default; //line-odd color
+$table-line-h-color: lighten( $dark-color, 60%) !default; //line-odd color
+
+$table-aspects: ('s-cel', 's-line', 'hover-cel', 'hover-line', 'h-border', 'v-border', 'no-border') !default;
+
+
+//5.----------------------------
 //For some other extras properties
 
 $elt-nones: true !default;
 $elt-hides: true !default;
 
-$shadow-styles: ('s-sha', 's-sha-t', 's-sha-b', 's-sha-l', 's-sha-r') ;
-$radius-styles: ('s-rad', 's-rad-l', 's-rad-ld', 's-rad-r', 's-rad-rd') ;
+$shadow-styles: ('s-sha', 's-sha-t', 's-sha-b', 's-sha-l', 's-sha-r') !default;
+$radius-styles: ('s-rad', 's-rad-l', 's-rad-ld', 's-rad-r', 's-rad-rd') !default;

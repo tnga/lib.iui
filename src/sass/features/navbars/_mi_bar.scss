@@ -9,32 +9,35 @@ ________________________________________________________________________________
     border: none ;
     padding: $navbar-padding+0.2 $navbar-padding ($navbar-padding - 0.2) $navbar-padding ;
 
-    &.b-fixed {
+    @if $navbar-b-fixed {
+        
+        &.b-fixed {
 
-        box-shadow: 0px -4px 5px $shadow-color ;
-        border: none ;
-        padding: ($navbar-padding - 0.1) $navbar-padding $navbar-padding+0.1 $navbar-padding ;
+            box-shadow: 0px -4px 5px $shadow-color ;
+            border: none ;
+            padding: ($navbar-padding - 0.1) $navbar-padding $navbar-padding+0.1 $navbar-padding ;
 
-        >ul {
+            >ul {
 
-            li {
+                li {
 
-                vertical-align: bottom ;
+                    vertical-align: bottom ;
 
-                >ul {
-
-                    top: auto ;
-                    bottom: $navbar-dsm-position + 0.2 ;
-                    box-shadow: 0px -3px 3px $shadow-color ;
-
-                    li ul {
+                    >ul {
 
                         top: auto ;
-                        bottom: 0em ;
+                        bottom: $navbar-dsm-position + 0.2 ;
+                        box-shadow: 0px -3px 3px $shadow-color ;
+
+                        li ul {
+
+                            top: auto ;
+                            bottom: 0em ;
+                        }
                     }
                 }
-            }
 
+            }
         }
     }
 
@@ -55,33 +58,36 @@ ________________________________________________________________________________
             }
         }
 
-        &.b-fixed {
+        @if $navbar-b-fixed {
+            
+            &.b-fixed {
 
-            >ul >li ul {
+                >ul >li ul {
 
-                top: auto ;
-                bottom: $navbar-dsm-position + 0.9 ;
-                border: none ;
-                border-bottom: 1px solid darken( $light-color, 20%) ;
+                    top: auto ;
+                    bottom: $navbar-dsm-position + 0.9 ;
+                    border: none ;
+                    border-bottom: 1px solid darken( $light-color, 20%) ;
 
-                li {
+                    li {
 
-                    margin: $navbar-margin ($navbar-margin - 0.1) ;
+                        margin: $navbar-margin ($navbar-margin - 0.1) ;
 
-                    ul {
+                        ul {
 
-                        top: auto;
-                        bottom: $navbar-dsm-position + 0.7 ;
+                            top: auto;
+                            bottom: $navbar-dsm-position + 0.7 ;
+                        }
+                    }
+
+                    &:hover {
+
+                        border: none ;
+                        border-bottom: 1px solid $hover-color ;
                     }
                 }
 
-                &:hover {
-
-                    border: none ;
-                    border-bottom: 1px solid $hover-color ;
-                }
             }
-
         }
     }
 }
