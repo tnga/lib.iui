@@ -1287,9 +1287,6 @@ ________________________________________________________________________________
 }
 
 /*
-* For default theme. Here is the style definition of all iui custom forms features.
-__________________________________________________________________________________*/
-/*
 * For default theme. Here is the style definition of "i-form" for forms.
 _______________________________________________________________________*/
 .i-form label {
@@ -1341,9 +1338,6 @@ ________________________________________________________________________________
   text-overflow: ellipsis;
 }
 
-/*
- * For default theme. Here is the style definition of some custom block for collections, ...
-____________________________________________________________________________________________*/
 /*
 * For default theme. Here is the style definition of `i-block` for collections, ...
 __________________________________________________________________________________*/
