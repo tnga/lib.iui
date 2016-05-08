@@ -1,4 +1,13 @@
 @import 'settings.scss' ;
+/*
+ * add custom settings here; for example:
+ *decide what navbar aspect can be included by setting:
+  $navbar-border-aspect: ('look-b', 'look-bt', 'look-bb', 'look-bl', 'look-br') ;
+*decide what extras styles can be included by setting:
+  $shadow-styles: ('s-sha', 's-sha-t', 's-sha-b', 's-sha-l', 's-sha-r') ;
+  $radius-styles: ('s-rad', 's-rad-l', 's-rad-ld', 's-rad-r', 's-rad-rd') ;
+ * . . .
+*/
 
 //import choosen library's skin on the line bellow
 
