@@ -3,7 +3,7 @@
 ________________________________________________________________________________*/
 
 
-.i-form.mi-style { //wink: from "paymo project" form design
+form.mi-style { //wink: from "paymo project" form design
 
     box-shadow: 1px 3px 3px $shadow-color ;
     padding: 1em ;
@@ -22,6 +22,7 @@ ________________________________________________________________________________
         span:first-child {
 
             margin-bottom: -0.4em ;
+            padding: 0.3em ;
             display: inline-block ;
             max-width: $global-min-width - 50px ;
 

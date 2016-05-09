@@ -6,7 +6,7 @@ _____________________________________________________*/
 /* Style on "containers" elements like sections, articles, ...
 --------------------------------------------------------------*/
 
-#i-main-block {
+#main-block {
 
     min-width: $global-min-width;
     max-width: $global-max-width;
@@ -97,7 +97,7 @@ a {
     
     @at-root {
         
-        a.i-btn, a i-btn, a button {
+        a.btn, a btn, a button {
             
             &:hover {
                 
@@ -123,7 +123,7 @@ img, video {
     }
 }
 
-.i-btn{
+.btn{
 
     @include button-bg-look($dark-color, $white-color) ;
     
@@ -167,7 +167,7 @@ img, video {
     
     & a {
         
-        @extend a.i-btn ;
+        @extend a.btn ;
         color: $white-color ;
     }
 }
@@ -178,7 +178,7 @@ input[ type="submit"],
 input[ type="reset"],
 input[ type="file"] {
     
-    @extend .i-btn ;
+    @extend .btn ;
     
     @at-root input[ type="file"] {
         

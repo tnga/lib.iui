@@ -478,7 +478,7 @@ textarea {
 _____________________________________________________*/
 /* Style on "containers" elements like sections, articles, ...
 --------------------------------------------------------------*/
-#i-main-block {
+#main-block {
   min-width: 280px;
   max-width: 1440px;
   width: 100%;
@@ -545,18 +545,18 @@ a:focus {
   outline: 0;
   text-decoration: underline;
 }
-a.i-btn:hover, .i-btn a:hover, button a:hover,
+a.btn:hover, .btn a:hover, button a:hover,
 input[type="button"] a:hover,
 input[type="submit"] a:hover,
 input[type="reset"] a:hover,
-input[type="file"] a:hover, a i-btn:hover, a button:hover {
+input[type="file"] a:hover, a btn:hover, a button:hover {
   text-decoration: none;
 }
-a.i-btn:visited, .i-btn a:visited, button a:visited,
+a.btn:visited, .btn a:visited, button a:visited,
 input[type="button"] a:visited,
 input[type="submit"] a:visited,
 input[type="reset"] a:visited,
-input[type="file"] a:visited, a i-btn:visited, a button:visited {
+input[type="file"] a:visited, a btn:visited, a button:visited {
   color: #fff;
 }
 
@@ -564,7 +564,7 @@ img:focus, video:focus {
   outline: thin solid #ff6600;
 }
 
-.i-btn, button,
+.btn, button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -587,11 +587,11 @@ input[type="file"] {
   text-align: center;
   text-decoration: none;
 }
-.i-btn:hover, button:hover,
+.btn:hover, button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
-input[type="file"]:hover, .i-btn.hovered, button.hovered,
+input[type="file"]:hover, .btn.hovered, button.hovered,
 input.hovered[type="button"],
 input.hovered[type="submit"],
 input.hovered[type="reset"],
@@ -601,22 +601,22 @@ input.hovered[type="file"] {
   background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
   box-shadow: 0px 1px 2px #ff6600;
 }
-.i-btn:active, button:active,
+.btn:active, button:active,
 input[type="button"]:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
-input[type="file"]:active, .i-btn.actived, button.actived,
+input[type="file"]:active, .btn.actived, button.actived,
 input.actived[type="button"],
 input.actived[type="submit"],
 input.actived[type="reset"],
 input.actived[type="file"] {
   box-shadow: 0px 1px 5px #ff6600;
 }
-.i-btn:focus, button:focus,
+.btn:focus, button:focus,
 input[type="button"]:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
-input[type="file"]:focus, .i-btn.focused, button.focused,
+input[type="file"]:focus, .btn.focused, button.focused,
 input.focused[type="button"],
 input.focused[type="submit"],
 input.focused[type="reset"],
@@ -624,19 +624,19 @@ input.focused[type="file"] {
   outline: 0;
   box-shadow: 0px 1px 5px #ff6600;
 }
-.i-btn[disabled], button[disabled],
+.btn[disabled], button[disabled],
 input[disabled][type="button"],
 input[disabled][type="submit"],
 input[disabled][type="reset"],
-input[disabled][type="file"], .i-btn.disabled, button.disabled,
+input[disabled][type="file"], .btn.disabled, button.disabled,
 input.disabled[type="button"],
 input.disabled[type="submit"],
 input.disabled[type="reset"],
-input.disabled[type="file"], .i-btn[disabled]:hover, button[disabled]:hover,
+input.disabled[type="file"], .btn[disabled]:hover, button[disabled]:hover,
 input[disabled][type="button"]:hover,
 input[disabled][type="submit"]:hover,
 input[disabled][type="reset"]:hover,
-input[disabled][type="file"]:hover, .i-btn.disabled:hover, button.disabled:hover,
+input[disabled][type="file"]:hover, .btn.disabled:hover, button.disabled:hover,
 input.disabled[type="button"]:hover,
 input.disabled[type="submit"]:hover,
 input.disabled[type="reset"]:hover,
@@ -647,7 +647,7 @@ input.disabled[type="file"]:hover {
   cursor: not-allowed;
   box-shadow: 0px 1px 1px #d0d0d0;
 }
-.i-btn a, button a,
+.btn a, button a,
 input[type="button"] a,
 input[type="submit"] a,
 input[type="reset"] a,
@@ -950,7 +950,7 @@ __________________________________________________________________________
 
 * @NOTE definitions here are for global purpose; however there can be a paticular style's definitions associated to other feature.
 * For an example with `.unfocusable` option, here is the global style, but for navbar items, 
-*there is additionnal's defintion set by `.i-nav >ul li.unfocusable` on the considered source file.
+*there is additionnal's defintion set by `.navbar >ul li.unfocusable` on the considered source file.
 */
 .none-x {
   display: none;
@@ -1014,7 +1014,7 @@ __________________________________________________________________________
     visibility: hidden;
   }
 }
-.fixed, .i-nav.t-fixed, .i-nav.b-fixed {
+.fixed, .navbar.t-fixed, .navbar.b-fixed {
   position: fixed;
   z-index: 10;
 }
@@ -1022,7 +1022,7 @@ __________________________________________________________________________
 /*
 * For default theme. Here is the style definition of navbar design.
 __________________________________________________________________*/
-.i-nav {
+.navbar {
   color: #1a1a1a;
   background-color: #fff;
   padding: 0em 0.1em;
@@ -1033,10 +1033,10 @@ __________________________________________________________________*/
   /* helpers
   ------------------------------------------------------------*/
 }
-.i-nav > ul {
+.navbar > ul {
   margin: 0px;
 }
-.i-nav > ul li {
+.navbar > ul li {
   display: inline-block;
   margin-right: 0.8em;
   font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
@@ -1045,11 +1045,11 @@ __________________________________________________________________*/
   box-sizing: border-box;
   vertical-align: top;
 }
-.i-nav > ul li, .i-nav > ul li a {
+.navbar > ul li, .navbar > ul li a {
   color: #1a1a1a;
   background-color: transparent;
 }
-.i-nav > ul li a {
+.navbar > ul li a {
   text-decoration: none;
   padding: 0.5em 0.2em;
   display: inline-block;
@@ -1058,14 +1058,14 @@ __________________________________________________________________*/
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.i-nav > ul li a:hover {
+.navbar > ul li a:hover {
   color: #ff6600;
 }
-.i-nav > ul li a:focus {
+.navbar > ul li a:focus {
   outline: 0;
   color: #ff6600;
 }
-.i-nav > ul li ul {
+.navbar > ul li ul {
   color: #1a1a1a;
   background-color: #fff;
   position: absolute;
@@ -1076,51 +1076,51 @@ __________________________________________________________________*/
   font-size: 1em;
   z-index: 10;
 }
-.i-nav > ul li ul li {
+.navbar > ul li ul li {
   display: block;
   padding: 0.1em;
   margin: 0.3em 0em;
 }
-.i-nav > ul li ul li a {
+.navbar > ul li ul li a {
   padding: 0.5em;
   display: block;
   margin: 0px;
 }
-.i-nav > ul li ul li ul {
+.navbar > ul li ul li ul {
   top: 0em;
   right: -10em;
 }
-.i-nav > ul li ul li:first-of-type {
+.navbar > ul li ul li:first-of-type {
   margin-top: 0.7em;
 }
-.i-nav > ul li > ul {
+.navbar > ul li > ul {
   display: none;
 }
-.i-nav > ul li:hover {
+.navbar > ul li:hover {
   color: #ff6600;
   cursor: pointer;
 }
-.i-nav > ul li:hover > ul {
+.navbar > ul li:hover > ul {
   display: block;
 }
-.i-nav > ul li:hover > a:not([href]) {
+.navbar > ul li:hover > a:not([href]) {
   color: #ff6600;
 }
-.i-nav > ul li#current-page a, .i-nav > ul li#current-item a, .i-nav > ul li.active-item a {
+.navbar > ul li#current-page a, .navbar > ul li#current-item a, .navbar > ul li.active-item a {
   color: #ff6600;
   font-weight: bold;
 }
-.i-nav > ul li.unfocusable, .i-nav > ul li:hover.unfocusable, .i-nav > ul li:focus.unfocusable {
+.navbar > ul li.unfocusable, .navbar > ul li:hover.unfocusable, .navbar > ul li:focus.unfocusable {
   color: #7f7f7f;
   background-color: transparent;
 }
-.i-nav.t-fixed {
+.navbar.t-fixed {
   top: 0px;
   left: 0px;
   width: 100%;
   z-index: 1000;
 }
-.i-nav.b-fixed {
+.navbar.b-fixed {
   bottom: 0px;
   left: 0px;
   width: 100%;
@@ -1128,64 +1128,64 @@ __________________________________________________________________*/
   border-top: 1px solid #2d2d2d;
   z-index: 1000;
 }
-.i-nav.b-fixed > ul li > ul {
+.navbar.b-fixed > ul li > ul {
   top: auto;
   bottom: 1.9em;
   box-shadow: 0px -3px 3px rgba(103, 103, 103, 0.7);
 }
-.i-nav.b-fixed > ul li > ul li ul {
+.navbar.b-fixed > ul li > ul li ul {
   top: auto;
   bottom: 0em;
 }
 
 /*
-* For default theme. Here is the style definition of "mi-bar" from umiproject's website navbar.
+* For default theme. Here is the style definition of "mbar" from umiproject's website navbar.
 ______________________________________________________________________________________________*/
-.i-nav.mi-bar {
+.navbar.mbar {
   box-shadow: 0px 4px 5px rgba(103, 103, 103, 0.7);
   border: none;
   padding: 0.7em 0.5em 0.3em 0.5em;
 }
-.i-nav.mi-bar.b-fixed {
+.navbar.mbar.b-fixed {
   box-shadow: 0px -4px 5px rgba(103, 103, 103, 0.7);
   border: none;
   padding: 0.4em 0.5em 0.6em 0.5em;
 }
-.i-nav.mi-bar.b-fixed > ul li {
+.navbar.mbar.b-fixed > ul li {
   vertical-align: bottom;
 }
-.i-nav.mi-bar.b-fixed > ul li > ul {
+.navbar.mbar.b-fixed > ul li > ul {
   top: auto;
   bottom: 2.1em;
   box-shadow: 0px -3px 3px rgba(103, 103, 103, 0.7);
 }
-.i-nav.mi-bar.b-fixed > ul li > ul li ul {
+.navbar.mbar.b-fixed > ul li > ul li ul {
   top: auto;
   bottom: 0em;
 }
-.i-nav.mi-bar.mi-style > ul > li ul {
+.navbar.mbar.mi-style > ul > li ul {
   top: 3em;
 }
-.i-nav.mi-bar.mi-style > ul > li ul li {
+.navbar.mbar.mi-style > ul > li ul li {
   margin: 0.5em 0.4em;
 }
-.i-nav.mi-bar.mi-style > ul > li ul li ul {
+.navbar.mbar.mi-style > ul > li ul li ul {
   top: 2.6em;
 }
-.i-nav.mi-bar.mi-style.b-fixed > ul > li ul {
+.navbar.mbar.mi-style.b-fixed > ul > li ul {
   top: auto;
   bottom: 2.8em;
   border: none;
   border-bottom: 1px solid #bfbfbf;
 }
-.i-nav.mi-bar.mi-style.b-fixed > ul > li ul li {
+.navbar.mbar.mi-style.b-fixed > ul > li ul li {
   margin: 0.5em 0.4em;
 }
-.i-nav.mi-bar.mi-style.b-fixed > ul > li ul li ul {
+.navbar.mbar.mi-style.b-fixed > ul > li ul li ul {
   top: auto;
   bottom: 2.6em;
 }
-.i-nav.mi-bar.mi-style.b-fixed > ul > li ul:hover {
+.navbar.mbar.mi-style.b-fixed > ul > li ul:hover {
   border: none;
   border-bottom: 1px solid #ff6600;
 }
@@ -1193,7 +1193,7 @@ ________________________________________________________________________________
 /*
 * For default theme. Here is the style definition of "mi" design aspect for submenu in navbar.
 _____________________________________________________________________________________________*/
-.i-nav.mi-style {
+.navbar.mi-style {
     /*&.s-bor-b {
 
         >ul >li ul {
@@ -1207,47 +1207,47 @@ ________________________________________________________________________________
         }
     }*/
 }
-.i-nav.mi-style > ul > li {
+.navbar.mi-style > ul > li {
   position: inherit;
 }
-.i-nav.mi-style > ul > li ul {
+.navbar.mi-style > ul > li ul {
   left: 0px;
   top: 2.2em;
   width: 100%;
   border-top: 1px solid #bfbfbf;
   text-align: center;
 }
-.i-nav.mi-style > ul > li ul:hover {
+.navbar.mi-style > ul > li ul:hover {
   border-top: 1px solid #ff6600;
 }
-.i-nav.mi-style > ul > li ul li {
+.navbar.mi-style > ul > li ul li {
   display: inline-block;
   position: static;
   padding: 0.5em 0em;
   margin-right: 0.8em;
 }
-.i-nav.mi-style > ul > li ul li a {
+.navbar.mi-style > ul > li ul li a {
   display: inline;
   padding: 0.5em 0.2em;
 }
-.i-nav.mi-style > ul > li ul li ul {
+.navbar.mi-style > ul > li ul li ul {
   top: 2.4em;
 }
 
 /*
 * For default theme. Here is the style definition of background design for selection in navbar.
 ______________________________________________________________________________________________*/
-.i-nav.look-bg > ul li:hover, .i-nav.look-bg > ul li#current-page, .i-nav.look-bg > ul li.active-item {
+.navbar.look-bg > ul li:hover, .navbar.look-bg > ul li#current-page, .navbar.look-bg > ul li.active-item {
   color: #fff;
   background-color: #ff6600;
 }
-.i-nav.look-bg > ul li:hover > a:not([href]), .i-nav.look-bg > ul li#current-page > a:not([href]), .i-nav.look-bg > ul li.active-item > a:not([href]) {
+.navbar.look-bg > ul li:hover > a:not([href]), .navbar.look-bg > ul li#current-page > a:not([href]), .navbar.look-bg > ul li.active-item > a:not([href]) {
   color: #fff;
 }
-.i-nav.look-bg > ul li#current-page a, .i-nav.look-bg > ul li.active-item a {
+.navbar.look-bg > ul li#current-page a, .navbar.look-bg > ul li.active-item a {
   color: #fff;
 }
-.i-nav.look-bg > ul li a:hover {
+.navbar.look-bg > ul li a:hover {
   color: #fff;
   background-color: transparent;
 }
@@ -1255,71 +1255,71 @@ ________________________________________________________________________________
 /*
 * For default theme. Here is the style definition of border design for selection in navbar.
 __________________________________________________________________________________________*/
-.i-nav.look-b > ul li#current-page, .i-nav.look-b > ul li.active-item {
+.navbar.look-b > ul li#current-page, .navbar.look-b > ul li.active-item {
   border: 0.25em solid #ff6600;
 }
-.i-nav.look-b > ul li:hover {
+.navbar.look-b > ul li:hover {
   border: 0.15em solid #ff6600;
 }
-.i-nav.look-bt > ul li#current-page, .i-nav.look-bt > ul li.active-item {
+.navbar.look-bt > ul li#current-page, .navbar.look-bt > ul li.active-item {
   border-top: 0.25em solid #ff6600;
 }
-.i-nav.look-bt > ul li:hover {
+.navbar.look-bt > ul li:hover {
   border-top: 0.15em solid #ff6600;
 }
-.i-nav.look-bb > ul > li > a {
+.navbar.look-bb > ul > li > a {
   padding-left: 0.1em;
   padding-right: 0.1em;
 }
-.i-nav.look-bb > ul li#current-page, .i-nav.look-bb > ul li.active-item {
+.navbar.look-bb > ul li#current-page, .navbar.look-bb > ul li.active-item {
   border-bottom: 0.25em solid #ff6600;
 }
-.i-nav.look-bb > ul li:hover {
+.navbar.look-bb > ul li:hover {
   border-bottom: 0.15em solid #ff6600;
 }
-.i-nav.look-bl > ul li#current-page, .i-nav.look-bl > ul li.active-item {
+.navbar.look-bl > ul li#current-page, .navbar.look-bl > ul li.active-item {
   border-left: 0.25em solid #ff6600;
 }
-.i-nav.look-bl > ul li:hover {
+.navbar.look-bl > ul li:hover {
   border-left: 0.15em solid #ff6600;
 }
-.i-nav.look-br > ul li#current-page, .i-nav.look-br > ul li.active-item {
+.navbar.look-br > ul li#current-page, .navbar.look-br > ul li.active-item {
   border-right: 0.25em solid #ff6600;
 }
-.i-nav.look-br > ul li:hover {
+.navbar.look-br > ul li:hover {
   border-right: 0.15em solid #ff6600;
 }
 
 /*
-* For default theme. Here is the style definition of "i-form" for forms.
+* For default theme. Here is the style definition of "look-form" for forms.
 _______________________________________________________________________*/
-.i-form label {
+form.look-form label {
   margin: 0.3em;
 }
-.i-form label span:first-of-type {
+form.look-form label span:first-of-type {
   border: 1px solid #2d2d2d;
   padding: 0.3em;
   margin-left: 0.1em;
 }
-.i-form label input {
+form.look-form label input {
   margin-bottom: 0.5em;
 }
-.i-form label input[type="radio"] + span:first-of-type, .i-form label input[type="checkbox"] + span:first-of-type {
+form.look-form label input[type="radio"] + span:first-of-type, form.look-form label input[type="checkbox"] + span:first-of-type {
   border: none;
   padding: initial;
 }
-.i-form label:hover span:first-of-type {
+form.look-form label:hover span:first-of-type {
   border: 1px solid #ff6600;
 }
-.i-form label:hover input[type="radio"] + span:first-of-type,
-.i-form label:hover input[type="checkbox"] + span:first-of-type {
+form.look-form label:hover input[type="radio"] + span:first-of-type,
+form.look-form label:hover input[type="checkbox"] + span:first-of-type {
   border: none;
 }
 
 /*
 * For default theme. Here is the style definition of "mi-style" design for forms.
 ________________________________________________________________________________*/
-.i-form.mi-style {
+form.mi-style {
   box-shadow: 1px 3px 3px rgba(103, 103, 103, 0.7);
   padding: 1em;
   min-width: 280px;
@@ -1327,14 +1327,15 @@ ________________________________________________________________________________
   margin: auto;
   border-radius: 25px;
 }
-.i-form.mi-style label {
+form.mi-style label {
   display: block;
   margin: 1.1em auto;
   position: relative;
   width: 240px;
 }
-.i-form.mi-style label span:first-child {
+form.mi-style label span:first-child {
   margin-bottom: -0.4em;
+  padding: 0.3em;
   display: inline-block;
   max-width: 230px;
   white-space: nowrap;
@@ -1343,9 +1344,9 @@ ________________________________________________________________________________
 }
 
 /*
-* For default theme. Here is the style definition of `i-block` for collections, ...
+* For default theme. Here is the style definition of `block` for collections, ...
 __________________________________________________________________________________*/
-.i-block {
+.block {
   margin: 1.5em 0.3em;
   padding: 1.3em 0.9em;
   box-shadow: 0px 0px 5px rgba(129, 129, 129, 0.7);
@@ -1353,59 +1354,59 @@ ________________________________________________________________________________
 }
 
 /*
-* For default theme. Here is the style definition of `collection` for `i-block` collections, ...
+* For default theme. Here is the style definition of `collection` for `block` collections, ...
 _____________________________________________________________________________________________*/
-.i-collection > h1, .i-collection > h2, .i-collection > h3, .i-collection > h4, .i-collection > h5, .i-collection > h6 {
+.collection > h1, .collection > h2, .collection > h3, .collection > h4, .collection > h5, .collection > h6 {
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.7em;
 }
-.i-collection h1, .i-collection h2, .i-collection h3, .i-collection h4, .i-collection h5, .i-collection h6 {
+.collection h1, .collection h2, .collection h3, .collection h4, .collection h5, .collection h6 {
   color: #737373;
 }
-.i-collection > section, .i-collection > div, .i-collection > header, .i-collection > footer {
+.collection > section, .collection > div, .collection > header, .collection > footer {
   margin: 0.5em auto;
   padding: 0.5em 0em;
 }
-.i-collection > section, .i-collection > div {
+.collection > section, .collection > div {
   border-top: 1px solid #e7e7e7;
   border-bottom: 1px solid #e7e7e7;
 }
-.i-collection > header, .i-collection > footer {
+.collection > header, .collection > footer {
   border-top: 1px dashed #e7e7e7;
   border-bottom: 1px dashed #e7e7e7;
 }
-.i-collection > li, .i-collection > a {
+.collection > li, .collection > a {
   display: block;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
   margin: 0px;
   padding: 0.7em 0.3em;
 }
-.i-collection > li > h1, .i-collection > li > h2, .i-collection > li > h3, .i-collection > li > h4, .i-collection > li > h5, .i-collection > li > h6, .i-collection > a > h1, .i-collection > a > h2, .i-collection > a > h3, .i-collection > a > h4, .i-collection > a > h5, .i-collection > a > h6 {
+.collection > li > h1, .collection > li > h2, .collection > li > h3, .collection > li > h4, .collection > li > h5, .collection > li > h6, .collection > a > h1, .collection > a > h2, .collection > a > h3, .collection > a > h4, .collection > a > h5, .collection > a > h6 {
   margin: 0.3em 0em;
 }
-.i-collection > li + li, .i-collection > li + a, .i-collection > a + li, .i-collection > a + a {
+.collection > li + li, .collection > li + a, .collection > a + li, .collection > a + a {
   border-top: none;
 }
-.i-collection > a:hover {
+.collection > a:hover {
   cursor: pointer;
   text-decoration: none;
 }
-.i-collection:not(.unfocusable) > li:hover:not(.unfocusable), .i-collection:not(.unfocusable) > li:not(.unfocusable).hover, .i-collection:not(.unfocusable) > a:hover:not(.unfocusable), .i-collection:not(.unfocusable) > a:not(.unfocusable).hover {
+.collection:not(.unfocusable) > li:hover:not(.unfocusable), .collection:not(.unfocusable) > li:not(.unfocusable).hover, .collection:not(.unfocusable) > a:hover:not(.unfocusable), .collection:not(.unfocusable) > a:not(.unfocusable).hover {
   color: #1a1a1a;
   background-color: #e2e2e2;
 }
-.i-collection:not(.unfocusable) > li:active:not(.unfocusable), .i-collection:not(.unfocusable) > li.active-item, .i-collection:not(.unfocusable) > li#current-item, .i-collection:not(.unfocusable) > a:active:not(.unfocusable), .i-collection:not(.unfocusable) > a.active-item, .i-collection:not(.unfocusable) > a#current-item {
+.collection:not(.unfocusable) > li:active:not(.unfocusable), .collection:not(.unfocusable) > li.active-item, .collection:not(.unfocusable) > li#current-item, .collection:not(.unfocusable) > a:active:not(.unfocusable), .collection:not(.unfocusable) > a.active-item, .collection:not(.unfocusable) > a#current-item {
   transition: none;
   color: #fff;
   background-color: #ff6600;
 }
-.i-collection.disable > li, .i-collection.disable > li:hover, .i-collection.disable > li.hover-item, .i-collection.disable > li:active, .i-collection.disable > li.active-item, .i-collection.disable > li#current-item, .i-collection > li.disable, .i-collection > li.disable:hover, .i-collection > li.disable.hover-item, .i-collection > li.disable:active, .i-collection > li.disable.active-item, .i-collection > li.disable#current-item {
+.collection.disable > li, .collection.disable > li:hover, .collection.disable > li.hover-item, .collection.disable > li:active, .collection.disable > li.active-item, .collection.disable > li#current-item, .collection > li.disable, .collection > li.disable:hover, .collection > li.disable.hover-item, .collection > li.disable:active, .collection > li.disable.active-item, .collection > li.disable#current-item {
   color: #909090;
   background-color: transparent;
 }
 
-ul.i-collection > h1, ul.i-collection > h2, ul.i-collection > h3, ul.i-collection > h4, ul.i-collection > h5, ul.i-collection > h6 {
+ul.collection > h1, ul.collection > h2, ul.collection > h3, ul.collection > h4, ul.collection > h5, ul.collection > h6 {
   border: none;
 }
 
@@ -1463,27 +1464,27 @@ table.no-border tr, table.no-border td {
 * For default theme. Here is the style definition of all iui custom grid features.
 ==================================================================================
 */
-.i-grid {
+.grid {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
   box-sizing: content-box;
 }
-.i-grid.no-inl-gutter .col {
+.grid.no-inl-gutter .col {
   padding: 0px !important;
 }
-.i-grid.span-all .col {
+.grid.span-all .col {
   width: 100% !important;
 }
-.i-grid.reverse .col {
+.grid.reverse .col {
   float: right !important;
 }
-.i-grid:after {
+.grid:after {
   content: "";
   display: table;
   clear: both;
 }
-.i-grid .col {
+.grid .col {
   float: left;
   box-sizing: border-box;
   padding: 0.5em;
@@ -1492,2036 +1493,2067 @@ table.no-border tr, table.no-border td {
   left: auto;
   right: auto;
 }
-.i-grid .col[class*="push-"], .i-grid .col[class*="pull-"] {
+.grid .col[class*="push-"], .grid .col[class*="pull-"] {
   position: relative;
 }
-.i-grid .col.x1-2, .i-grid .col.x2-4, .i-grid .col.x3-6, .i-grid .col.x4-8, .i-grid .col.x5-10, .i-grid .col.x6-12 {
+.grid .col.x1-2, .grid .col.x2-4, .grid .col.x3-6, .grid .col.x4-8, .grid .col.x5-10, .grid .col.x6-12 {
   width: 50%;
 }
-.i-grid .col.push-x1-2, .i-grid .col.push-x2-4, .i-grid .col.push-x3-6, .i-grid .col.push-x4-8, .i-grid .col.push-x5-10, .i-grid .col.push-x6-12 {
+.grid .col.push-x1-2, .grid .col.push-x2-4, .grid .col.push-x3-6, .grid .col.push-x4-8, .grid .col.push-x5-10, .grid .col.push-x6-12 {
   left: 50%;
 }
-.i-grid .col.pull-x1-2, .i-grid .col.pull-x2-4, .i-grid .col.pull-x3-6, .i-grid .col.pull-x4-8, .i-grid .col.pull-x5-10, .i-grid .col.pull-x6-12 {
+.grid .col.pull-x1-2, .grid .col.pull-x2-4, .grid .col.pull-x3-6, .grid .col.pull-x4-8, .grid .col.pull-x5-10, .grid .col.pull-x6-12 {
   right: 50%;
 }
-.i-grid .col.offset-x1-2, .i-grid .col.offset-x2-4, .i-grid .col.offset-x3-6, .i-grid .col.offset-x4-8, .i-grid .col.offset-x5-10, .i-grid .col.offset-x6-12 {
+.grid .col.offset-x1-2, .grid .col.offset-x2-4, .grid .col.offset-x3-6, .grid .col.offset-x4-8, .grid .col.offset-x5-10, .grid .col.offset-x6-12 {
   margin-left: 50%;
 }
-.i-grid .col.x2-2, .i-grid .col.x3-3, .i-grid .col.x4-4, .i-grid .col.x5-5, .i-grid .col.x6-6, .i-grid .col.x8-8, .i-grid .col.x10-10, .i-grid .col.x12-12 {
+.grid .col.x2-2, .grid .col.x3-3, .grid .col.x4-4, .grid .col.x5-5, .grid .col.x6-6, .grid .col.x8-8, .grid .col.x10-10, .grid .col.x12-12 {
   width: 100%;
 }
-.i-grid .col.push-x2-2, .i-grid .col.push-x3-3, .i-grid .col.push-x4-4, .i-grid .col.push-x5-5, .i-grid .col.push-x6-6, .i-grid .col.push-x8-8, .i-grid .col.push-x10-10, .i-grid .col.push-x12-12 {
+.grid .col.push-x2-2, .grid .col.push-x3-3, .grid .col.push-x4-4, .grid .col.push-x5-5, .grid .col.push-x6-6, .grid .col.push-x8-8, .grid .col.push-x10-10, .grid .col.push-x12-12 {
   left: 100%;
 }
-.i-grid .col.pull-x2-2, .i-grid .col.pull-x3-3, .i-grid .col.pull-x4-4, .i-grid .col.pull-x5-5, .i-grid .col.pull-x6-6, .i-grid .col.pull-x8-8, .i-grid .col.pull-x10-10, .i-grid .col.pull-x12-12 {
+.grid .col.pull-x2-2, .grid .col.pull-x3-3, .grid .col.pull-x4-4, .grid .col.pull-x5-5, .grid .col.pull-x6-6, .grid .col.pull-x8-8, .grid .col.pull-x10-10, .grid .col.pull-x12-12 {
   right: 100%;
 }
-.i-grid .col.offset-x2-2, .i-grid .col.offset-x3-3, .i-grid .col.offset-x4-4, .i-grid .col.offset-x5-5, .i-grid .col.offset-x6-6, .i-grid .col.offset-x8-8, .i-grid .col.offset-x10-10, .i-grid .col.offset-x12-12 {
+.grid .col.offset-x2-2, .grid .col.offset-x3-3, .grid .col.offset-x4-4, .grid .col.offset-x5-5, .grid .col.offset-x6-6, .grid .col.offset-x8-8, .grid .col.offset-x10-10, .grid .col.offset-x12-12 {
   margin-left: 100%;
 }
-.i-grid .col.x1-3, .i-grid .col.x2-6, .i-grid .col.x4-12 {
+.grid .col.x1-3, .grid .col.x2-6, .grid .col.x4-12 {
   width: 33.33333%;
 }
-.i-grid .col.push-x1-3, .i-grid .col.push-x2-6, .i-grid .col.push-x4-12 {
+.grid .col.push-x1-3, .grid .col.push-x2-6, .grid .col.push-x4-12 {
   left: 33.33333%;
 }
-.i-grid .col.pull-x1-3, .i-grid .col.pull-x2-6, .i-grid .col.pull-x4-12 {
+.grid .col.pull-x1-3, .grid .col.pull-x2-6, .grid .col.pull-x4-12 {
   right: 33.33333%;
 }
-.i-grid .col.offset-x1-3, .i-grid .col.offset-x2-6, .i-grid .col.offset-x4-12 {
+.grid .col.offset-x1-3, .grid .col.offset-x2-6, .grid .col.offset-x4-12 {
   margin-left: 33.33333%;
 }
-.i-grid .col.x2-3, .i-grid .col.x4-6, .i-grid .col.x8-12 {
+.grid .col.x2-3, .grid .col.x4-6, .grid .col.x8-12 {
   width: 66.66667%;
 }
-.i-grid .col.push-x2-3, .i-grid .col.push-x4-6, .i-grid .col.push-x8-12 {
+.grid .col.push-x2-3, .grid .col.push-x4-6, .grid .col.push-x8-12 {
   left: 66.66667%;
 }
-.i-grid .col.pull-x2-3, .i-grid .col.pull-x4-6, .i-grid .col.pull-x8-12 {
+.grid .col.pull-x2-3, .grid .col.pull-x4-6, .grid .col.pull-x8-12 {
   right: 66.66667%;
 }
-.i-grid .col.offset-x2-3, .i-grid .col.offset-x4-6, .i-grid .col.offset-x8-12 {
+.grid .col.offset-x2-3, .grid .col.offset-x4-6, .grid .col.offset-x8-12 {
   margin-left: 66.66667%;
 }
-.i-grid .col.x1-4, .i-grid .col.x2-8, .i-grid .col.x3-12 {
+.grid .col.x1-4, .grid .col.x2-8, .grid .col.x3-12 {
   width: 25%;
 }
-.i-grid .col.push-x1-4, .i-grid .col.push-x2-8, .i-grid .col.push-x3-12 {
+.grid .col.push-x1-4, .grid .col.push-x2-8, .grid .col.push-x3-12 {
   left: 25%;
 }
-.i-grid .col.pull-x1-4, .i-grid .col.pull-x2-8, .i-grid .col.pull-x3-12 {
+.grid .col.pull-x1-4, .grid .col.pull-x2-8, .grid .col.pull-x3-12 {
   right: 25%;
 }
-.i-grid .col.offset-x1-4, .i-grid .col.offset-x2-8, .i-grid .col.offset-x3-12 {
+.grid .col.offset-x1-4, .grid .col.offset-x2-8, .grid .col.offset-x3-12 {
   margin-left: 25%;
 }
-.i-grid .col.x3-4, .i-grid .col.x6-8, .i-grid .col.x9-12 {
+.grid .col.x3-4, .grid .col.x6-8, .grid .col.x9-12 {
   width: 75%;
 }
-.i-grid .col.push-x3-4, .i-grid .col.push-x6-8, .i-grid .col.push-x9-12 {
+.grid .col.push-x3-4, .grid .col.push-x6-8, .grid .col.push-x9-12 {
   left: 75%;
 }
-.i-grid .col.pull-x3-4, .i-grid .col.pull-x6-8, .i-grid .col.pull-x9-12 {
+.grid .col.pull-x3-4, .grid .col.pull-x6-8, .grid .col.pull-x9-12 {
   right: 75%;
 }
-.i-grid .col.offset-x3-4, .i-grid .col.offset-x6-8, .i-grid .col.offset-x9-12 {
+.grid .col.offset-x3-4, .grid .col.offset-x6-8, .grid .col.offset-x9-12 {
   margin-left: 75%;
 }
-.i-grid .col.x1-5, .i-grid .col.x2-10 {
+.grid .col.x1-5, .grid .col.x2-10 {
   width: 20%;
 }
-.i-grid .col.push-x1-5, .i-grid .col.push-x2-10 {
+.grid .col.push-x1-5, .grid .col.push-x2-10 {
   left: 20%;
 }
-.i-grid .col.pull-x1-5, .i-grid .col.pull-x2-10 {
+.grid .col.pull-x1-5, .grid .col.pull-x2-10 {
   right: 20%;
 }
-.i-grid .col.offset-x1-5, .i-grid .col.offset-x2-10 {
+.grid .col.offset-x1-5, .grid .col.offset-x2-10 {
   margin-left: 20%;
 }
-.i-grid .col.x2-5, .i-grid .col.x4-10 {
+.grid .col.x2-5, .grid .col.x4-10 {
   width: 40%;
 }
-.i-grid .col.push-x2-5, .i-grid .col.push-x4-10 {
+.grid .col.push-x2-5, .grid .col.push-x4-10 {
   left: 40%;
 }
-.i-grid .col.pull-x2-5, .i-grid .col.pull-x4-10 {
+.grid .col.pull-x2-5, .grid .col.pull-x4-10 {
   right: 40%;
 }
-.i-grid .col.offset-x2-5, .i-grid .col.offset-x4-10 {
+.grid .col.offset-x2-5, .grid .col.offset-x4-10 {
   margin-left: 40%;
 }
-.i-grid .col.x3-5, .i-grid .col.x6-10 {
+.grid .col.x3-5, .grid .col.x6-10 {
   width: 60%;
 }
-.i-grid .col.push-x3-5, .i-grid .col.push-x6-10 {
+.grid .col.push-x3-5, .grid .col.push-x6-10 {
   left: 60%;
 }
-.i-grid .col.pull-x3-5, .i-grid .col.pull-x6-10 {
+.grid .col.pull-x3-5, .grid .col.pull-x6-10 {
   right: 60%;
 }
-.i-grid .col.offset-x3-5, .i-grid .col.offset-x6-10 {
+.grid .col.offset-x3-5, .grid .col.offset-x6-10 {
   margin-left: 60%;
 }
-.i-grid .col.x4-5, .i-grid .col.x8-10 {
+.grid .col.x4-5, .grid .col.x8-10 {
   width: 80%;
 }
-.i-grid .col.push-x4-5, .i-grid .col.push-x8-10 {
+.grid .col.push-x4-5, .grid .col.push-x8-10 {
   left: 80%;
 }
-.i-grid .col.pull-x4-5, .i-grid .col.pull-x8-10 {
+.grid .col.pull-x4-5, .grid .col.pull-x8-10 {
   right: 80%;
 }
-.i-grid .col.offset-x4-5, .i-grid .col.offset-x8-10 {
+.grid .col.offset-x4-5, .grid .col.offset-x8-10 {
   margin-left: 80%;
 }
-.i-grid .col.x1-6, .i-grid .col.x2-12 {
+.grid .col.x1-6, .grid .col.x2-12 {
   width: 16.66667%;
 }
-.i-grid .col.push-x1-6, .i-grid .col.push-x2-12 {
+.grid .col.push-x1-6, .grid .col.push-x2-12 {
   left: 16.66667%;
 }
-.i-grid .col.pull-x1-6, .i-grid .col.pull-x2-12 {
+.grid .col.pull-x1-6, .grid .col.pull-x2-12 {
   right: 16.66667%;
 }
-.i-grid .col.offset-x1-6, .i-grid .col.offset-x2-12 {
+.grid .col.offset-x1-6, .grid .col.offset-x2-12 {
   margin-left: 16.66667%;
 }
-.i-grid .col.x5-6, .i-grid .col.x10-12 {
+.grid .col.x5-6, .grid .col.x10-12 {
   width: 83.33333%;
 }
-.i-grid .col.push-x5-6, .i-grid .col.push-x10-12 {
+.grid .col.push-x5-6, .grid .col.push-x10-12 {
   left: 83.33333%;
 }
-.i-grid .col.pull-x5-6, .i-grid .col.pull-x10-12 {
+.grid .col.pull-x5-6, .grid .col.pull-x10-12 {
   right: 83.33333%;
 }
-.i-grid .col.offset-x5-6, .i-grid .col.offset-x10-12 {
+.grid .col.offset-x5-6, .grid .col.offset-x10-12 {
   margin-left: 83.33333%;
 }
-.i-grid .col.x1-8 {
+.grid .col.x1-8 {
   width: 12.5%;
 }
-.i-grid .col.push-x1-8 {
+.grid .col.push-x1-8 {
   left: 12.5%;
 }
-.i-grid .col.pull-x1-8 {
+.grid .col.pull-x1-8 {
   right: 12.5%;
 }
-.i-grid .col.offset-x1-8 {
+.grid .col.offset-x1-8 {
   margin-left: 12.5%;
 }
-.i-grid .col.x3-8 {
+.grid .col.x3-8 {
   width: 37.5%;
 }
-.i-grid .col.push-x3-8 {
+.grid .col.push-x3-8 {
   left: 37.5%;
 }
-.i-grid .col.pull-x3-8 {
+.grid .col.pull-x3-8 {
   right: 37.5%;
 }
-.i-grid .col.offset-x3-8 {
+.grid .col.offset-x3-8 {
   margin-left: 37.5%;
 }
-.i-grid .col.x5-8 {
+.grid .col.x5-8 {
   width: 62.5%;
 }
-.i-grid .col.push-x5-8 {
+.grid .col.push-x5-8 {
   left: 62.5%;
 }
-.i-grid .col.pull-x5-8 {
+.grid .col.pull-x5-8 {
   right: 62.5%;
 }
-.i-grid .col.offset-x5-8 {
+.grid .col.offset-x5-8 {
   margin-left: 62.5%;
 }
-.i-grid .col.x7-8 {
+.grid .col.x7-8 {
   width: 87.5%;
 }
-.i-grid .col.push-x7-8 {
+.grid .col.push-x7-8 {
   left: 87.5%;
 }
-.i-grid .col.pull-x7-8 {
+.grid .col.pull-x7-8 {
   right: 87.5%;
 }
-.i-grid .col.offset-x7-8 {
+.grid .col.offset-x7-8 {
   margin-left: 87.5%;
 }
-.i-grid .col.x1-10 {
+.grid .col.x1-10 {
   width: 10%;
 }
-.i-grid .col.push-x1-10 {
+.grid .col.push-x1-10 {
   left: 10%;
 }
-.i-grid .col.pull-x1-10 {
+.grid .col.pull-x1-10 {
   right: 10%;
 }
-.i-grid .col.offset-x1-10 {
+.grid .col.offset-x1-10 {
   margin-left: 10%;
 }
-.i-grid .col.x3-10 {
+.grid .col.x3-10 {
   width: 30%;
 }
-.i-grid .col.push-x3-10 {
+.grid .col.push-x3-10 {
   left: 30%;
 }
-.i-grid .col.pull-x3-10 {
+.grid .col.pull-x3-10 {
   right: 30%;
 }
-.i-grid .col.offset-x3-10 {
+.grid .col.offset-x3-10 {
   margin-left: 30%;
 }
-.i-grid .col.x7-10 {
+.grid .col.x7-10 {
   width: 70%;
 }
-.i-grid .col.push-x7-10 {
+.grid .col.push-x7-10 {
   left: 70%;
 }
-.i-grid .col.pull-x7-10 {
+.grid .col.pull-x7-10 {
   right: 70%;
 }
-.i-grid .col.offset-x7-10 {
+.grid .col.offset-x7-10 {
   margin-left: 70%;
 }
-.i-grid .col.x9-10 {
+.grid .col.x9-10 {
   width: 90%;
 }
-.i-grid .col.push-x9-10 {
+.grid .col.push-x9-10 {
   left: 90%;
 }
-.i-grid .col.pull-x9-10 {
+.grid .col.pull-x9-10 {
   right: 90%;
 }
-.i-grid .col.offset-x9-10 {
+.grid .col.offset-x9-10 {
   margin-left: 90%;
 }
-.i-grid .col.x1-12 {
+.grid .col.x1-12 {
   width: 8.33333%;
 }
-.i-grid .col.push-x1-12 {
+.grid .col.push-x1-12 {
   left: 8.33333%;
 }
-.i-grid .col.pull-x1-12 {
+.grid .col.pull-x1-12 {
   right: 8.33333%;
 }
-.i-grid .col.offset-x1-12 {
+.grid .col.offset-x1-12 {
   margin-left: 8.33333%;
 }
-.i-grid .col.x5-12 {
+.grid .col.x5-12 {
   width: 41.66667%;
 }
-.i-grid .col.push-x5-12 {
+.grid .col.push-x5-12 {
   left: 41.66667%;
 }
-.i-grid .col.pull-x5-12 {
+.grid .col.pull-x5-12 {
   right: 41.66667%;
 }
-.i-grid .col.offset-x5-12 {
+.grid .col.offset-x5-12 {
   margin-left: 41.66667%;
 }
-.i-grid .col.x7-12 {
+.grid .col.x7-12 {
   width: 58.33333%;
 }
-.i-grid .col.push-x7-12 {
+.grid .col.push-x7-12 {
   left: 58.33333%;
 }
-.i-grid .col.pull-x7-12 {
+.grid .col.pull-x7-12 {
   right: 58.33333%;
 }
-.i-grid .col.offset-x7-12 {
+.grid .col.offset-x7-12 {
   margin-left: 58.33333%;
 }
-.i-grid .col.x11-12 {
+.grid .col.x11-12 {
   width: 91.66667%;
 }
-.i-grid .col.push-x11-12 {
+.grid .col.push-x11-12 {
   left: 91.66667%;
 }
-.i-grid .col.pull-x11-12 {
+.grid .col.pull-x11-12 {
   right: 91.66667%;
 }
-.i-grid .col.offset-x11-12 {
+.grid .col.offset-x11-12 {
   margin-left: 91.66667%;
 }
 @media only screen and (min-width: 420px) {
-  .i-grid .col.p1-2, .i-grid .col.p2-4, .i-grid .col.p3-6, .i-grid .col.p4-8, .i-grid .col.p5-10, .i-grid .col.p6-12 {
+  .grid .col.p1-2, .grid .col.p2-4, .grid .col.p3-6, .grid .col.p4-8, .grid .col.p5-10, .grid .col.p6-12 {
     width: 50%;
   }
-  .i-grid .col.push-p1-2, .i-grid .col.push-p2-4, .i-grid .col.push-p3-6, .i-grid .col.push-p4-8, .i-grid .col.push-p5-10, .i-grid .col.push-p6-12 {
+  .grid .col.push-p1-2, .grid .col.push-p2-4, .grid .col.push-p3-6, .grid .col.push-p4-8, .grid .col.push-p5-10, .grid .col.push-p6-12 {
     left: 50%;
   }
-  .i-grid .col.pull-p1-2, .i-grid .col.pull-p2-4, .i-grid .col.pull-p3-6, .i-grid .col.pull-p4-8, .i-grid .col.pull-p5-10, .i-grid .col.pull-p6-12 {
+  .grid .col.pull-p1-2, .grid .col.pull-p2-4, .grid .col.pull-p3-6, .grid .col.pull-p4-8, .grid .col.pull-p5-10, .grid .col.pull-p6-12 {
     right: 50%;
   }
-  .i-grid .col.offset-p1-2, .i-grid .col.offset-p2-4, .i-grid .col.offset-p3-6, .i-grid .col.offset-p4-8, .i-grid .col.offset-p5-10, .i-grid .col.offset-p6-12 {
+  .grid .col.offset-p1-2, .grid .col.offset-p2-4, .grid .col.offset-p3-6, .grid .col.offset-p4-8, .grid .col.offset-p5-10, .grid .col.offset-p6-12 {
     margin-left: 50%;
   }
-  .i-grid .col.p2-2, .i-grid .col.p3-3, .i-grid .col.p4-4, .i-grid .col.p5-5, .i-grid .col.p6-6, .i-grid .col.p8-8, .i-grid .col.p10-10, .i-grid .col.p12-12 {
+  .grid .col.p2-2, .grid .col.p3-3, .grid .col.p4-4, .grid .col.p5-5, .grid .col.p6-6, .grid .col.p8-8, .grid .col.p10-10, .grid .col.p12-12 {
     width: 100%;
   }
-  .i-grid .col.push-p2-2, .i-grid .col.push-p3-3, .i-grid .col.push-p4-4, .i-grid .col.push-p5-5, .i-grid .col.push-p6-6, .i-grid .col.push-p8-8, .i-grid .col.push-p10-10, .i-grid .col.push-p12-12 {
+  .grid .col.push-p2-2, .grid .col.push-p3-3, .grid .col.push-p4-4, .grid .col.push-p5-5, .grid .col.push-p6-6, .grid .col.push-p8-8, .grid .col.push-p10-10, .grid .col.push-p12-12 {
     left: 100%;
   }
-  .i-grid .col.pull-p2-2, .i-grid .col.pull-p3-3, .i-grid .col.pull-p4-4, .i-grid .col.pull-p5-5, .i-grid .col.pull-p6-6, .i-grid .col.pull-p8-8, .i-grid .col.pull-p10-10, .i-grid .col.pull-p12-12 {
+  .grid .col.pull-p2-2, .grid .col.pull-p3-3, .grid .col.pull-p4-4, .grid .col.pull-p5-5, .grid .col.pull-p6-6, .grid .col.pull-p8-8, .grid .col.pull-p10-10, .grid .col.pull-p12-12 {
     right: 100%;
   }
-  .i-grid .col.offset-p2-2, .i-grid .col.offset-p3-3, .i-grid .col.offset-p4-4, .i-grid .col.offset-p5-5, .i-grid .col.offset-p6-6, .i-grid .col.offset-p8-8, .i-grid .col.offset-p10-10, .i-grid .col.offset-p12-12 {
+  .grid .col.offset-p2-2, .grid .col.offset-p3-3, .grid .col.offset-p4-4, .grid .col.offset-p5-5, .grid .col.offset-p6-6, .grid .col.offset-p8-8, .grid .col.offset-p10-10, .grid .col.offset-p12-12 {
     margin-left: 100%;
   }
-  .i-grid .col.p1-3, .i-grid .col.p2-6, .i-grid .col.p4-12 {
+  .grid .col.p1-3, .grid .col.p2-6, .grid .col.p4-12 {
     width: 33.33333%;
   }
-  .i-grid .col.push-p1-3, .i-grid .col.push-p2-6, .i-grid .col.push-p4-12 {
+  .grid .col.push-p1-3, .grid .col.push-p2-6, .grid .col.push-p4-12 {
     left: 33.33333%;
   }
-  .i-grid .col.pull-p1-3, .i-grid .col.pull-p2-6, .i-grid .col.pull-p4-12 {
+  .grid .col.pull-p1-3, .grid .col.pull-p2-6, .grid .col.pull-p4-12 {
     right: 33.33333%;
   }
-  .i-grid .col.offset-p1-3, .i-grid .col.offset-p2-6, .i-grid .col.offset-p4-12 {
+  .grid .col.offset-p1-3, .grid .col.offset-p2-6, .grid .col.offset-p4-12 {
     margin-left: 33.33333%;
   }
-  .i-grid .col.p2-3, .i-grid .col.p4-6, .i-grid .col.p8-12 {
+  .grid .col.p2-3, .grid .col.p4-6, .grid .col.p8-12 {
     width: 66.66667%;
   }
-  .i-grid .col.push-p2-3, .i-grid .col.push-p4-6, .i-grid .col.push-p8-12 {
+  .grid .col.push-p2-3, .grid .col.push-p4-6, .grid .col.push-p8-12 {
     left: 66.66667%;
   }
-  .i-grid .col.pull-p2-3, .i-grid .col.pull-p4-6, .i-grid .col.pull-p8-12 {
+  .grid .col.pull-p2-3, .grid .col.pull-p4-6, .grid .col.pull-p8-12 {
     right: 66.66667%;
   }
-  .i-grid .col.offset-p2-3, .i-grid .col.offset-p4-6, .i-grid .col.offset-p8-12 {
+  .grid .col.offset-p2-3, .grid .col.offset-p4-6, .grid .col.offset-p8-12 {
     margin-left: 66.66667%;
   }
-  .i-grid .col.p1-4, .i-grid .col.p2-8, .i-grid .col.p3-12 {
+  .grid .col.p1-4, .grid .col.p2-8, .grid .col.p3-12 {
     width: 25%;
   }
-  .i-grid .col.push-p1-4, .i-grid .col.push-p2-8, .i-grid .col.push-p3-12 {
+  .grid .col.push-p1-4, .grid .col.push-p2-8, .grid .col.push-p3-12 {
     left: 25%;
   }
-  .i-grid .col.pull-p1-4, .i-grid .col.pull-p2-8, .i-grid .col.pull-p3-12 {
+  .grid .col.pull-p1-4, .grid .col.pull-p2-8, .grid .col.pull-p3-12 {
     right: 25%;
   }
-  .i-grid .col.offset-p1-4, .i-grid .col.offset-p2-8, .i-grid .col.offset-p3-12 {
+  .grid .col.offset-p1-4, .grid .col.offset-p2-8, .grid .col.offset-p3-12 {
     margin-left: 25%;
   }
-  .i-grid .col.p3-4, .i-grid .col.p6-8, .i-grid .col.p9-12 {
+  .grid .col.p3-4, .grid .col.p6-8, .grid .col.p9-12 {
     width: 75%;
   }
-  .i-grid .col.push-p3-4, .i-grid .col.push-p6-8, .i-grid .col.push-p9-12 {
+  .grid .col.push-p3-4, .grid .col.push-p6-8, .grid .col.push-p9-12 {
     left: 75%;
   }
-  .i-grid .col.pull-p3-4, .i-grid .col.pull-p6-8, .i-grid .col.pull-p9-12 {
+  .grid .col.pull-p3-4, .grid .col.pull-p6-8, .grid .col.pull-p9-12 {
     right: 75%;
   }
-  .i-grid .col.offset-p3-4, .i-grid .col.offset-p6-8, .i-grid .col.offset-p9-12 {
+  .grid .col.offset-p3-4, .grid .col.offset-p6-8, .grid .col.offset-p9-12 {
     margin-left: 75%;
   }
-  .i-grid .col.p1-5, .i-grid .col.p2-10 {
+  .grid .col.p1-5, .grid .col.p2-10 {
     width: 20%;
   }
-  .i-grid .col.push-p1-5, .i-grid .col.push-p2-10 {
+  .grid .col.push-p1-5, .grid .col.push-p2-10 {
     left: 20%;
   }
-  .i-grid .col.pull-p1-5, .i-grid .col.pull-p2-10 {
+  .grid .col.pull-p1-5, .grid .col.pull-p2-10 {
     right: 20%;
   }
-  .i-grid .col.offset-p1-5, .i-grid .col.offset-p2-10 {
+  .grid .col.offset-p1-5, .grid .col.offset-p2-10 {
     margin-left: 20%;
   }
-  .i-grid .col.p2-5, .i-grid .col.p4-10 {
+  .grid .col.p2-5, .grid .col.p4-10 {
     width: 40%;
   }
-  .i-grid .col.push-p2-5, .i-grid .col.push-p4-10 {
+  .grid .col.push-p2-5, .grid .col.push-p4-10 {
     left: 40%;
   }
-  .i-grid .col.pull-p2-5, .i-grid .col.pull-p4-10 {
+  .grid .col.pull-p2-5, .grid .col.pull-p4-10 {
     right: 40%;
   }
-  .i-grid .col.offset-p2-5, .i-grid .col.offset-p4-10 {
+  .grid .col.offset-p2-5, .grid .col.offset-p4-10 {
     margin-left: 40%;
   }
-  .i-grid .col.p3-5, .i-grid .col.p6-10 {
+  .grid .col.p3-5, .grid .col.p6-10 {
     width: 60%;
   }
-  .i-grid .col.push-p3-5, .i-grid .col.push-p6-10 {
+  .grid .col.push-p3-5, .grid .col.push-p6-10 {
     left: 60%;
   }
-  .i-grid .col.pull-p3-5, .i-grid .col.pull-p6-10 {
+  .grid .col.pull-p3-5, .grid .col.pull-p6-10 {
     right: 60%;
   }
-  .i-grid .col.offset-p3-5, .i-grid .col.offset-p6-10 {
+  .grid .col.offset-p3-5, .grid .col.offset-p6-10 {
     margin-left: 60%;
   }
-  .i-grid .col.p4-5, .i-grid .col.p8-10 {
+  .grid .col.p4-5, .grid .col.p8-10 {
     width: 80%;
   }
-  .i-grid .col.push-p4-5, .i-grid .col.push-p8-10 {
+  .grid .col.push-p4-5, .grid .col.push-p8-10 {
     left: 80%;
   }
-  .i-grid .col.pull-p4-5, .i-grid .col.pull-p8-10 {
+  .grid .col.pull-p4-5, .grid .col.pull-p8-10 {
     right: 80%;
   }
-  .i-grid .col.offset-p4-5, .i-grid .col.offset-p8-10 {
+  .grid .col.offset-p4-5, .grid .col.offset-p8-10 {
     margin-left: 80%;
   }
-  .i-grid .col.p1-6, .i-grid .col.p2-12 {
+  .grid .col.p1-6, .grid .col.p2-12 {
     width: 16.66667%;
   }
-  .i-grid .col.push-p1-6, .i-grid .col.push-p2-12 {
+  .grid .col.push-p1-6, .grid .col.push-p2-12 {
     left: 16.66667%;
   }
-  .i-grid .col.pull-p1-6, .i-grid .col.pull-p2-12 {
+  .grid .col.pull-p1-6, .grid .col.pull-p2-12 {
     right: 16.66667%;
   }
-  .i-grid .col.offset-p1-6, .i-grid .col.offset-p2-12 {
+  .grid .col.offset-p1-6, .grid .col.offset-p2-12 {
     margin-left: 16.66667%;
   }
-  .i-grid .col.p5-6, .i-grid .col.p10-12 {
+  .grid .col.p5-6, .grid .col.p10-12 {
     width: 83.33333%;
   }
-  .i-grid .col.push-p5-6, .i-grid .col.push-p10-12 {
+  .grid .col.push-p5-6, .grid .col.push-p10-12 {
     left: 83.33333%;
   }
-  .i-grid .col.pull-p5-6, .i-grid .col.pull-p10-12 {
+  .grid .col.pull-p5-6, .grid .col.pull-p10-12 {
     right: 83.33333%;
   }
-  .i-grid .col.offset-p5-6, .i-grid .col.offset-p10-12 {
+  .grid .col.offset-p5-6, .grid .col.offset-p10-12 {
     margin-left: 83.33333%;
   }
-  .i-grid .col.p1-8 {
+  .grid .col.p1-8 {
     width: 12.5%;
   }
-  .i-grid .col.push-p1-8 {
+  .grid .col.push-p1-8 {
     left: 12.5%;
   }
-  .i-grid .col.pull-p1-8 {
+  .grid .col.pull-p1-8 {
     right: 12.5%;
   }
-  .i-grid .col.offset-p1-8 {
+  .grid .col.offset-p1-8 {
     margin-left: 12.5%;
   }
-  .i-grid .col.p3-8 {
+  .grid .col.p3-8 {
     width: 37.5%;
   }
-  .i-grid .col.push-p3-8 {
+  .grid .col.push-p3-8 {
     left: 37.5%;
   }
-  .i-grid .col.pull-p3-8 {
+  .grid .col.pull-p3-8 {
     right: 37.5%;
   }
-  .i-grid .col.offset-p3-8 {
+  .grid .col.offset-p3-8 {
     margin-left: 37.5%;
   }
-  .i-grid .col.p5-8 {
+  .grid .col.p5-8 {
     width: 62.5%;
   }
-  .i-grid .col.push-p5-8 {
+  .grid .col.push-p5-8 {
     left: 62.5%;
   }
-  .i-grid .col.pull-p5-8 {
+  .grid .col.pull-p5-8 {
     right: 62.5%;
   }
-  .i-grid .col.offset-p5-8 {
+  .grid .col.offset-p5-8 {
     margin-left: 62.5%;
   }
-  .i-grid .col.p7-8 {
+  .grid .col.p7-8 {
     width: 87.5%;
   }
-  .i-grid .col.push-p7-8 {
+  .grid .col.push-p7-8 {
     left: 87.5%;
   }
-  .i-grid .col.pull-p7-8 {
+  .grid .col.pull-p7-8 {
     right: 87.5%;
   }
-  .i-grid .col.offset-p7-8 {
+  .grid .col.offset-p7-8 {
     margin-left: 87.5%;
   }
-  .i-grid .col.p1-10 {
+  .grid .col.p1-10 {
     width: 10%;
   }
-  .i-grid .col.push-p1-10 {
+  .grid .col.push-p1-10 {
     left: 10%;
   }
-  .i-grid .col.pull-p1-10 {
+  .grid .col.pull-p1-10 {
     right: 10%;
   }
-  .i-grid .col.offset-p1-10 {
+  .grid .col.offset-p1-10 {
     margin-left: 10%;
   }
-  .i-grid .col.p3-10 {
+  .grid .col.p3-10 {
     width: 30%;
   }
-  .i-grid .col.push-p3-10 {
+  .grid .col.push-p3-10 {
     left: 30%;
   }
-  .i-grid .col.pull-p3-10 {
+  .grid .col.pull-p3-10 {
     right: 30%;
   }
-  .i-grid .col.offset-p3-10 {
+  .grid .col.offset-p3-10 {
     margin-left: 30%;
   }
-  .i-grid .col.p7-10 {
+  .grid .col.p7-10 {
     width: 70%;
   }
-  .i-grid .col.push-p7-10 {
+  .grid .col.push-p7-10 {
     left: 70%;
   }
-  .i-grid .col.pull-p7-10 {
+  .grid .col.pull-p7-10 {
     right: 70%;
   }
-  .i-grid .col.offset-p7-10 {
+  .grid .col.offset-p7-10 {
     margin-left: 70%;
   }
-  .i-grid .col.p9-10 {
+  .grid .col.p9-10 {
     width: 90%;
   }
-  .i-grid .col.push-p9-10 {
+  .grid .col.push-p9-10 {
     left: 90%;
   }
-  .i-grid .col.pull-p9-10 {
+  .grid .col.pull-p9-10 {
     right: 90%;
   }
-  .i-grid .col.offset-p9-10 {
+  .grid .col.offset-p9-10 {
     margin-left: 90%;
   }
-  .i-grid .col.p1-12 {
+  .grid .col.p1-12 {
     width: 8.33333%;
   }
-  .i-grid .col.push-p1-12 {
+  .grid .col.push-p1-12 {
     left: 8.33333%;
   }
-  .i-grid .col.pull-p1-12 {
+  .grid .col.pull-p1-12 {
     right: 8.33333%;
   }
-  .i-grid .col.offset-p1-12 {
+  .grid .col.offset-p1-12 {
     margin-left: 8.33333%;
   }
-  .i-grid .col.p5-12 {
+  .grid .col.p5-12 {
     width: 41.66667%;
   }
-  .i-grid .col.push-p5-12 {
+  .grid .col.push-p5-12 {
     left: 41.66667%;
   }
-  .i-grid .col.pull-p5-12 {
+  .grid .col.pull-p5-12 {
     right: 41.66667%;
   }
-  .i-grid .col.offset-p5-12 {
+  .grid .col.offset-p5-12 {
     margin-left: 41.66667%;
   }
-  .i-grid .col.p7-12 {
+  .grid .col.p7-12 {
     width: 58.33333%;
   }
-  .i-grid .col.push-p7-12 {
+  .grid .col.push-p7-12 {
     left: 58.33333%;
   }
-  .i-grid .col.pull-p7-12 {
+  .grid .col.pull-p7-12 {
     right: 58.33333%;
   }
-  .i-grid .col.offset-p7-12 {
+  .grid .col.offset-p7-12 {
     margin-left: 58.33333%;
   }
-  .i-grid .col.p11-12 {
+  .grid .col.p11-12 {
     width: 91.66667%;
   }
-  .i-grid .col.push-p11-12 {
+  .grid .col.push-p11-12 {
     left: 91.66667%;
   }
-  .i-grid .col.pull-p11-12 {
+  .grid .col.pull-p11-12 {
     right: 91.66667%;
   }
-  .i-grid .col.offset-p11-12 {
+  .grid .col.offset-p11-12 {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 640px) {
-  .i-grid .col.s1-2, .i-grid .col.s2-4, .i-grid .col.s3-6, .i-grid .col.s4-8, .i-grid .col.s5-10, .i-grid .col.s6-12 {
+  .grid .col.s1-2, .grid .col.s2-4, .grid .col.s3-6, .grid .col.s4-8, .grid .col.s5-10, .grid .col.s6-12 {
     width: 50%;
   }
-  .i-grid .col.push-s1-2, .i-grid .col.push-s2-4, .i-grid .col.push-s3-6, .i-grid .col.push-s4-8, .i-grid .col.push-s5-10, .i-grid .col.push-s6-12 {
+  .grid .col.push-s1-2, .grid .col.push-s2-4, .grid .col.push-s3-6, .grid .col.push-s4-8, .grid .col.push-s5-10, .grid .col.push-s6-12 {
     left: 50%;
   }
-  .i-grid .col.pull-s1-2, .i-grid .col.pull-s2-4, .i-grid .col.pull-s3-6, .i-grid .col.pull-s4-8, .i-grid .col.pull-s5-10, .i-grid .col.pull-s6-12 {
+  .grid .col.pull-s1-2, .grid .col.pull-s2-4, .grid .col.pull-s3-6, .grid .col.pull-s4-8, .grid .col.pull-s5-10, .grid .col.pull-s6-12 {
     right: 50%;
   }
-  .i-grid .col.offset-s1-2, .i-grid .col.offset-s2-4, .i-grid .col.offset-s3-6, .i-grid .col.offset-s4-8, .i-grid .col.offset-s5-10, .i-grid .col.offset-s6-12 {
+  .grid .col.offset-s1-2, .grid .col.offset-s2-4, .grid .col.offset-s3-6, .grid .col.offset-s4-8, .grid .col.offset-s5-10, .grid .col.offset-s6-12 {
     margin-left: 50%;
   }
-  .i-grid .col.s2-2, .i-grid .col.s3-3, .i-grid .col.s4-4, .i-grid .col.s5-5, .i-grid .col.s6-6, .i-grid .col.s8-8, .i-grid .col.s10-10, .i-grid .col.s12-12 {
+  .grid .col.s2-2, .grid .col.s3-3, .grid .col.s4-4, .grid .col.s5-5, .grid .col.s6-6, .grid .col.s8-8, .grid .col.s10-10, .grid .col.s12-12 {
     width: 100%;
   }
-  .i-grid .col.push-s2-2, .i-grid .col.push-s3-3, .i-grid .col.push-s4-4, .i-grid .col.push-s5-5, .i-grid .col.push-s6-6, .i-grid .col.push-s8-8, .i-grid .col.push-s10-10, .i-grid .col.push-s12-12 {
+  .grid .col.push-s2-2, .grid .col.push-s3-3, .grid .col.push-s4-4, .grid .col.push-s5-5, .grid .col.push-s6-6, .grid .col.push-s8-8, .grid .col.push-s10-10, .grid .col.push-s12-12 {
     left: 100%;
   }
-  .i-grid .col.pull-s2-2, .i-grid .col.pull-s3-3, .i-grid .col.pull-s4-4, .i-grid .col.pull-s5-5, .i-grid .col.pull-s6-6, .i-grid .col.pull-s8-8, .i-grid .col.pull-s10-10, .i-grid .col.pull-s12-12 {
+  .grid .col.pull-s2-2, .grid .col.pull-s3-3, .grid .col.pull-s4-4, .grid .col.pull-s5-5, .grid .col.pull-s6-6, .grid .col.pull-s8-8, .grid .col.pull-s10-10, .grid .col.pull-s12-12 {
     right: 100%;
   }
-  .i-grid .col.offset-s2-2, .i-grid .col.offset-s3-3, .i-grid .col.offset-s4-4, .i-grid .col.offset-s5-5, .i-grid .col.offset-s6-6, .i-grid .col.offset-s8-8, .i-grid .col.offset-s10-10, .i-grid .col.offset-s12-12 {
+  .grid .col.offset-s2-2, .grid .col.offset-s3-3, .grid .col.offset-s4-4, .grid .col.offset-s5-5, .grid .col.offset-s6-6, .grid .col.offset-s8-8, .grid .col.offset-s10-10, .grid .col.offset-s12-12 {
     margin-left: 100%;
   }
-  .i-grid .col.s1-3, .i-grid .col.s2-6, .i-grid .col.s4-12 {
+  .grid .col.s1-3, .grid .col.s2-6, .grid .col.s4-12 {
     width: 33.33333%;
   }
-  .i-grid .col.push-s1-3, .i-grid .col.push-s2-6, .i-grid .col.push-s4-12 {
+  .grid .col.push-s1-3, .grid .col.push-s2-6, .grid .col.push-s4-12 {
     left: 33.33333%;
   }
-  .i-grid .col.pull-s1-3, .i-grid .col.pull-s2-6, .i-grid .col.pull-s4-12 {
+  .grid .col.pull-s1-3, .grid .col.pull-s2-6, .grid .col.pull-s4-12 {
     right: 33.33333%;
   }
-  .i-grid .col.offset-s1-3, .i-grid .col.offset-s2-6, .i-grid .col.offset-s4-12 {
+  .grid .col.offset-s1-3, .grid .col.offset-s2-6, .grid .col.offset-s4-12 {
     margin-left: 33.33333%;
   }
-  .i-grid .col.s2-3, .i-grid .col.s4-6, .i-grid .col.s8-12 {
+  .grid .col.s2-3, .grid .col.s4-6, .grid .col.s8-12 {
     width: 66.66667%;
   }
-  .i-grid .col.push-s2-3, .i-grid .col.push-s4-6, .i-grid .col.push-s8-12 {
+  .grid .col.push-s2-3, .grid .col.push-s4-6, .grid .col.push-s8-12 {
     left: 66.66667%;
   }
-  .i-grid .col.pull-s2-3, .i-grid .col.pull-s4-6, .i-grid .col.pull-s8-12 {
+  .grid .col.pull-s2-3, .grid .col.pull-s4-6, .grid .col.pull-s8-12 {
     right: 66.66667%;
   }
-  .i-grid .col.offset-s2-3, .i-grid .col.offset-s4-6, .i-grid .col.offset-s8-12 {
+  .grid .col.offset-s2-3, .grid .col.offset-s4-6, .grid .col.offset-s8-12 {
     margin-left: 66.66667%;
   }
-  .i-grid .col.s1-4, .i-grid .col.s2-8, .i-grid .col.s3-12 {
+  .grid .col.s1-4, .grid .col.s2-8, .grid .col.s3-12 {
     width: 25%;
   }
-  .i-grid .col.push-s1-4, .i-grid .col.push-s2-8, .i-grid .col.push-s3-12 {
+  .grid .col.push-s1-4, .grid .col.push-s2-8, .grid .col.push-s3-12 {
     left: 25%;
   }
-  .i-grid .col.pull-s1-4, .i-grid .col.pull-s2-8, .i-grid .col.pull-s3-12 {
+  .grid .col.pull-s1-4, .grid .col.pull-s2-8, .grid .col.pull-s3-12 {
     right: 25%;
   }
-  .i-grid .col.offset-s1-4, .i-grid .col.offset-s2-8, .i-grid .col.offset-s3-12 {
+  .grid .col.offset-s1-4, .grid .col.offset-s2-8, .grid .col.offset-s3-12 {
     margin-left: 25%;
   }
-  .i-grid .col.s3-4, .i-grid .col.s6-8, .i-grid .col.s9-12 {
+  .grid .col.s3-4, .grid .col.s6-8, .grid .col.s9-12 {
     width: 75%;
   }
-  .i-grid .col.push-s3-4, .i-grid .col.push-s6-8, .i-grid .col.push-s9-12 {
+  .grid .col.push-s3-4, .grid .col.push-s6-8, .grid .col.push-s9-12 {
     left: 75%;
   }
-  .i-grid .col.pull-s3-4, .i-grid .col.pull-s6-8, .i-grid .col.pull-s9-12 {
+  .grid .col.pull-s3-4, .grid .col.pull-s6-8, .grid .col.pull-s9-12 {
     right: 75%;
   }
-  .i-grid .col.offset-s3-4, .i-grid .col.offset-s6-8, .i-grid .col.offset-s9-12 {
+  .grid .col.offset-s3-4, .grid .col.offset-s6-8, .grid .col.offset-s9-12 {
     margin-left: 75%;
   }
-  .i-grid .col.s1-5, .i-grid .col.s2-10 {
+  .grid .col.s1-5, .grid .col.s2-10 {
     width: 20%;
   }
-  .i-grid .col.push-s1-5, .i-grid .col.push-s2-10 {
+  .grid .col.push-s1-5, .grid .col.push-s2-10 {
     left: 20%;
   }
-  .i-grid .col.pull-s1-5, .i-grid .col.pull-s2-10 {
+  .grid .col.pull-s1-5, .grid .col.pull-s2-10 {
     right: 20%;
   }
-  .i-grid .col.offset-s1-5, .i-grid .col.offset-s2-10 {
+  .grid .col.offset-s1-5, .grid .col.offset-s2-10 {
     margin-left: 20%;
   }
-  .i-grid .col.s2-5, .i-grid .col.s4-10 {
+  .grid .col.s2-5, .grid .col.s4-10 {
     width: 40%;
   }
-  .i-grid .col.push-s2-5, .i-grid .col.push-s4-10 {
+  .grid .col.push-s2-5, .grid .col.push-s4-10 {
     left: 40%;
   }
-  .i-grid .col.pull-s2-5, .i-grid .col.pull-s4-10 {
+  .grid .col.pull-s2-5, .grid .col.pull-s4-10 {
     right: 40%;
   }
-  .i-grid .col.offset-s2-5, .i-grid .col.offset-s4-10 {
+  .grid .col.offset-s2-5, .grid .col.offset-s4-10 {
     margin-left: 40%;
   }
-  .i-grid .col.s3-5, .i-grid .col.s6-10 {
+  .grid .col.s3-5, .grid .col.s6-10 {
     width: 60%;
   }
-  .i-grid .col.push-s3-5, .i-grid .col.push-s6-10 {
+  .grid .col.push-s3-5, .grid .col.push-s6-10 {
     left: 60%;
   }
-  .i-grid .col.pull-s3-5, .i-grid .col.pull-s6-10 {
+  .grid .col.pull-s3-5, .grid .col.pull-s6-10 {
     right: 60%;
   }
-  .i-grid .col.offset-s3-5, .i-grid .col.offset-s6-10 {
+  .grid .col.offset-s3-5, .grid .col.offset-s6-10 {
     margin-left: 60%;
   }
-  .i-grid .col.s4-5, .i-grid .col.s8-10 {
+  .grid .col.s4-5, .grid .col.s8-10 {
     width: 80%;
   }
-  .i-grid .col.push-s4-5, .i-grid .col.push-s8-10 {
+  .grid .col.push-s4-5, .grid .col.push-s8-10 {
     left: 80%;
   }
-  .i-grid .col.pull-s4-5, .i-grid .col.pull-s8-10 {
+  .grid .col.pull-s4-5, .grid .col.pull-s8-10 {
     right: 80%;
   }
-  .i-grid .col.offset-s4-5, .i-grid .col.offset-s8-10 {
+  .grid .col.offset-s4-5, .grid .col.offset-s8-10 {
     margin-left: 80%;
   }
-  .i-grid .col.s1-6, .i-grid .col.s2-12 {
+  .grid .col.s1-6, .grid .col.s2-12 {
     width: 16.66667%;
   }
-  .i-grid .col.push-s1-6, .i-grid .col.push-s2-12 {
+  .grid .col.push-s1-6, .grid .col.push-s2-12 {
     left: 16.66667%;
   }
-  .i-grid .col.pull-s1-6, .i-grid .col.pull-s2-12 {
+  .grid .col.pull-s1-6, .grid .col.pull-s2-12 {
     right: 16.66667%;
   }
-  .i-grid .col.offset-s1-6, .i-grid .col.offset-s2-12 {
+  .grid .col.offset-s1-6, .grid .col.offset-s2-12 {
     margin-left: 16.66667%;
   }
-  .i-grid .col.s5-6, .i-grid .col.s10-12 {
+  .grid .col.s5-6, .grid .col.s10-12 {
     width: 83.33333%;
   }
-  .i-grid .col.push-s5-6, .i-grid .col.push-s10-12 {
+  .grid .col.push-s5-6, .grid .col.push-s10-12 {
     left: 83.33333%;
   }
-  .i-grid .col.pull-s5-6, .i-grid .col.pull-s10-12 {
+  .grid .col.pull-s5-6, .grid .col.pull-s10-12 {
     right: 83.33333%;
   }
-  .i-grid .col.offset-s5-6, .i-grid .col.offset-s10-12 {
+  .grid .col.offset-s5-6, .grid .col.offset-s10-12 {
     margin-left: 83.33333%;
   }
-  .i-grid .col.s1-8 {
+  .grid .col.s1-8 {
     width: 12.5%;
   }
-  .i-grid .col.push-s1-8 {
+  .grid .col.push-s1-8 {
     left: 12.5%;
   }
-  .i-grid .col.pull-s1-8 {
+  .grid .col.pull-s1-8 {
     right: 12.5%;
   }
-  .i-grid .col.offset-s1-8 {
+  .grid .col.offset-s1-8 {
     margin-left: 12.5%;
   }
-  .i-grid .col.s3-8 {
+  .grid .col.s3-8 {
     width: 37.5%;
   }
-  .i-grid .col.push-s3-8 {
+  .grid .col.push-s3-8 {
     left: 37.5%;
   }
-  .i-grid .col.pull-s3-8 {
+  .grid .col.pull-s3-8 {
     right: 37.5%;
   }
-  .i-grid .col.offset-s3-8 {
+  .grid .col.offset-s3-8 {
     margin-left: 37.5%;
   }
-  .i-grid .col.s5-8 {
+  .grid .col.s5-8 {
     width: 62.5%;
   }
-  .i-grid .col.push-s5-8 {
+  .grid .col.push-s5-8 {
     left: 62.5%;
   }
-  .i-grid .col.pull-s5-8 {
+  .grid .col.pull-s5-8 {
     right: 62.5%;
   }
-  .i-grid .col.offset-s5-8 {
+  .grid .col.offset-s5-8 {
     margin-left: 62.5%;
   }
-  .i-grid .col.s7-8 {
+  .grid .col.s7-8 {
     width: 87.5%;
   }
-  .i-grid .col.push-s7-8 {
+  .grid .col.push-s7-8 {
     left: 87.5%;
   }
-  .i-grid .col.pull-s7-8 {
+  .grid .col.pull-s7-8 {
     right: 87.5%;
   }
-  .i-grid .col.offset-s7-8 {
+  .grid .col.offset-s7-8 {
     margin-left: 87.5%;
   }
-  .i-grid .col.s1-10 {
+  .grid .col.s1-10 {
     width: 10%;
   }
-  .i-grid .col.push-s1-10 {
+  .grid .col.push-s1-10 {
     left: 10%;
   }
-  .i-grid .col.pull-s1-10 {
+  .grid .col.pull-s1-10 {
     right: 10%;
   }
-  .i-grid .col.offset-s1-10 {
+  .grid .col.offset-s1-10 {
     margin-left: 10%;
   }
-  .i-grid .col.s3-10 {
+  .grid .col.s3-10 {
     width: 30%;
   }
-  .i-grid .col.push-s3-10 {
+  .grid .col.push-s3-10 {
     left: 30%;
   }
-  .i-grid .col.pull-s3-10 {
+  .grid .col.pull-s3-10 {
     right: 30%;
   }
-  .i-grid .col.offset-s3-10 {
+  .grid .col.offset-s3-10 {
     margin-left: 30%;
   }
-  .i-grid .col.s7-10 {
+  .grid .col.s7-10 {
     width: 70%;
   }
-  .i-grid .col.push-s7-10 {
+  .grid .col.push-s7-10 {
     left: 70%;
   }
-  .i-grid .col.pull-s7-10 {
+  .grid .col.pull-s7-10 {
     right: 70%;
   }
-  .i-grid .col.offset-s7-10 {
+  .grid .col.offset-s7-10 {
     margin-left: 70%;
   }
-  .i-grid .col.s9-10 {
+  .grid .col.s9-10 {
     width: 90%;
   }
-  .i-grid .col.push-s9-10 {
+  .grid .col.push-s9-10 {
     left: 90%;
   }
-  .i-grid .col.pull-s9-10 {
+  .grid .col.pull-s9-10 {
     right: 90%;
   }
-  .i-grid .col.offset-s9-10 {
+  .grid .col.offset-s9-10 {
     margin-left: 90%;
   }
-  .i-grid .col.s1-12 {
+  .grid .col.s1-12 {
     width: 8.33333%;
   }
-  .i-grid .col.push-s1-12 {
+  .grid .col.push-s1-12 {
     left: 8.33333%;
   }
-  .i-grid .col.pull-s1-12 {
+  .grid .col.pull-s1-12 {
     right: 8.33333%;
   }
-  .i-grid .col.offset-s1-12 {
+  .grid .col.offset-s1-12 {
     margin-left: 8.33333%;
   }
-  .i-grid .col.s5-12 {
+  .grid .col.s5-12 {
     width: 41.66667%;
   }
-  .i-grid .col.push-s5-12 {
+  .grid .col.push-s5-12 {
     left: 41.66667%;
   }
-  .i-grid .col.pull-s5-12 {
+  .grid .col.pull-s5-12 {
     right: 41.66667%;
   }
-  .i-grid .col.offset-s5-12 {
+  .grid .col.offset-s5-12 {
     margin-left: 41.66667%;
   }
-  .i-grid .col.s7-12 {
+  .grid .col.s7-12 {
     width: 58.33333%;
   }
-  .i-grid .col.push-s7-12 {
+  .grid .col.push-s7-12 {
     left: 58.33333%;
   }
-  .i-grid .col.pull-s7-12 {
+  .grid .col.pull-s7-12 {
     right: 58.33333%;
   }
-  .i-grid .col.offset-s7-12 {
+  .grid .col.offset-s7-12 {
     margin-left: 58.33333%;
   }
-  .i-grid .col.s11-12 {
+  .grid .col.s11-12 {
     width: 91.66667%;
   }
-  .i-grid .col.push-s11-12 {
+  .grid .col.push-s11-12 {
     left: 91.66667%;
   }
-  .i-grid .col.pull-s11-12 {
+  .grid .col.pull-s11-12 {
     right: 91.66667%;
   }
-  .i-grid .col.offset-s11-12 {
+  .grid .col.offset-s11-12 {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 800px) {
-  .i-grid .col.m1-2, .i-grid .col.m2-4, .i-grid .col.m3-6, .i-grid .col.m4-8, .i-grid .col.m5-10, .i-grid .col.m6-12 {
+  .grid .col.m1-2, .grid .col.m2-4, .grid .col.m3-6, .grid .col.m4-8, .grid .col.m5-10, .grid .col.m6-12 {
     width: 50%;
   }
-  .i-grid .col.push-m1-2, .i-grid .col.push-m2-4, .i-grid .col.push-m3-6, .i-grid .col.push-m4-8, .i-grid .col.push-m5-10, .i-grid .col.push-m6-12 {
+  .grid .col.push-m1-2, .grid .col.push-m2-4, .grid .col.push-m3-6, .grid .col.push-m4-8, .grid .col.push-m5-10, .grid .col.push-m6-12 {
     left: 50%;
   }
-  .i-grid .col.pull-m1-2, .i-grid .col.pull-m2-4, .i-grid .col.pull-m3-6, .i-grid .col.pull-m4-8, .i-grid .col.pull-m5-10, .i-grid .col.pull-m6-12 {
+  .grid .col.pull-m1-2, .grid .col.pull-m2-4, .grid .col.pull-m3-6, .grid .col.pull-m4-8, .grid .col.pull-m5-10, .grid .col.pull-m6-12 {
     right: 50%;
   }
-  .i-grid .col.offset-m1-2, .i-grid .col.offset-m2-4, .i-grid .col.offset-m3-6, .i-grid .col.offset-m4-8, .i-grid .col.offset-m5-10, .i-grid .col.offset-m6-12 {
+  .grid .col.offset-m1-2, .grid .col.offset-m2-4, .grid .col.offset-m3-6, .grid .col.offset-m4-8, .grid .col.offset-m5-10, .grid .col.offset-m6-12 {
     margin-left: 50%;
   }
-  .i-grid .col.m2-2, .i-grid .col.m3-3, .i-grid .col.m4-4, .i-grid .col.m5-5, .i-grid .col.m6-6, .i-grid .col.m8-8, .i-grid .col.m10-10, .i-grid .col.m12-12 {
+  .grid .col.m2-2, .grid .col.m3-3, .grid .col.m4-4, .grid .col.m5-5, .grid .col.m6-6, .grid .col.m8-8, .grid .col.m10-10, .grid .col.m12-12 {
     width: 100%;
   }
-  .i-grid .col.push-m2-2, .i-grid .col.push-m3-3, .i-grid .col.push-m4-4, .i-grid .col.push-m5-5, .i-grid .col.push-m6-6, .i-grid .col.push-m8-8, .i-grid .col.push-m10-10, .i-grid .col.push-m12-12 {
+  .grid .col.push-m2-2, .grid .col.push-m3-3, .grid .col.push-m4-4, .grid .col.push-m5-5, .grid .col.push-m6-6, .grid .col.push-m8-8, .grid .col.push-m10-10, .grid .col.push-m12-12 {
     left: 100%;
   }
-  .i-grid .col.pull-m2-2, .i-grid .col.pull-m3-3, .i-grid .col.pull-m4-4, .i-grid .col.pull-m5-5, .i-grid .col.pull-m6-6, .i-grid .col.pull-m8-8, .i-grid .col.pull-m10-10, .i-grid .col.pull-m12-12 {
+  .grid .col.pull-m2-2, .grid .col.pull-m3-3, .grid .col.pull-m4-4, .grid .col.pull-m5-5, .grid .col.pull-m6-6, .grid .col.pull-m8-8, .grid .col.pull-m10-10, .grid .col.pull-m12-12 {
     right: 100%;
   }
-  .i-grid .col.offset-m2-2, .i-grid .col.offset-m3-3, .i-grid .col.offset-m4-4, .i-grid .col.offset-m5-5, .i-grid .col.offset-m6-6, .i-grid .col.offset-m8-8, .i-grid .col.offset-m10-10, .i-grid .col.offset-m12-12 {
+  .grid .col.offset-m2-2, .grid .col.offset-m3-3, .grid .col.offset-m4-4, .grid .col.offset-m5-5, .grid .col.offset-m6-6, .grid .col.offset-m8-8, .grid .col.offset-m10-10, .grid .col.offset-m12-12 {
     margin-left: 100%;
   }
-  .i-grid .col.m1-3, .i-grid .col.m2-6, .i-grid .col.m4-12 {
+  .grid .col.m1-3, .grid .col.m2-6, .grid .col.m4-12 {
     width: 33.33333%;
   }
-  .i-grid .col.push-m1-3, .i-grid .col.push-m2-6, .i-grid .col.push-m4-12 {
+  .grid .col.push-m1-3, .grid .col.push-m2-6, .grid .col.push-m4-12 {
     left: 33.33333%;
   }
-  .i-grid .col.pull-m1-3, .i-grid .col.pull-m2-6, .i-grid .col.pull-m4-12 {
+  .grid .col.pull-m1-3, .grid .col.pull-m2-6, .grid .col.pull-m4-12 {
     right: 33.33333%;
   }
-  .i-grid .col.offset-m1-3, .i-grid .col.offset-m2-6, .i-grid .col.offset-m4-12 {
+  .grid .col.offset-m1-3, .grid .col.offset-m2-6, .grid .col.offset-m4-12 {
     margin-left: 33.33333%;
   }
-  .i-grid .col.m2-3, .i-grid .col.m4-6, .i-grid .col.m8-12 {
+  .grid .col.m2-3, .grid .col.m4-6, .grid .col.m8-12 {
     width: 66.66667%;
   }
-  .i-grid .col.push-m2-3, .i-grid .col.push-m4-6, .i-grid .col.push-m8-12 {
+  .grid .col.push-m2-3, .grid .col.push-m4-6, .grid .col.push-m8-12 {
     left: 66.66667%;
   }
-  .i-grid .col.pull-m2-3, .i-grid .col.pull-m4-6, .i-grid .col.pull-m8-12 {
+  .grid .col.pull-m2-3, .grid .col.pull-m4-6, .grid .col.pull-m8-12 {
     right: 66.66667%;
   }
-  .i-grid .col.offset-m2-3, .i-grid .col.offset-m4-6, .i-grid .col.offset-m8-12 {
+  .grid .col.offset-m2-3, .grid .col.offset-m4-6, .grid .col.offset-m8-12 {
     margin-left: 66.66667%;
   }
-  .i-grid .col.m1-4, .i-grid .col.m2-8, .i-grid .col.m3-12 {
+  .grid .col.m1-4, .grid .col.m2-8, .grid .col.m3-12 {
     width: 25%;
   }
-  .i-grid .col.push-m1-4, .i-grid .col.push-m2-8, .i-grid .col.push-m3-12 {
+  .grid .col.push-m1-4, .grid .col.push-m2-8, .grid .col.push-m3-12 {
     left: 25%;
   }
-  .i-grid .col.pull-m1-4, .i-grid .col.pull-m2-8, .i-grid .col.pull-m3-12 {
+  .grid .col.pull-m1-4, .grid .col.pull-m2-8, .grid .col.pull-m3-12 {
     right: 25%;
   }
-  .i-grid .col.offset-m1-4, .i-grid .col.offset-m2-8, .i-grid .col.offset-m3-12 {
+  .grid .col.offset-m1-4, .grid .col.offset-m2-8, .grid .col.offset-m3-12 {
     margin-left: 25%;
   }
-  .i-grid .col.m3-4, .i-grid .col.m6-8, .i-grid .col.m9-12 {
+  .grid .col.m3-4, .grid .col.m6-8, .grid .col.m9-12 {
     width: 75%;
   }
-  .i-grid .col.push-m3-4, .i-grid .col.push-m6-8, .i-grid .col.push-m9-12 {
+  .grid .col.push-m3-4, .grid .col.push-m6-8, .grid .col.push-m9-12 {
     left: 75%;
   }
-  .i-grid .col.pull-m3-4, .i-grid .col.pull-m6-8, .i-grid .col.pull-m9-12 {
+  .grid .col.pull-m3-4, .grid .col.pull-m6-8, .grid .col.pull-m9-12 {
     right: 75%;
   }
-  .i-grid .col.offset-m3-4, .i-grid .col.offset-m6-8, .i-grid .col.offset-m9-12 {
+  .grid .col.offset-m3-4, .grid .col.offset-m6-8, .grid .col.offset-m9-12 {
     margin-left: 75%;
   }
-  .i-grid .col.m1-5, .i-grid .col.m2-10 {
+  .grid .col.m1-5, .grid .col.m2-10 {
     width: 20%;
   }
-  .i-grid .col.push-m1-5, .i-grid .col.push-m2-10 {
+  .grid .col.push-m1-5, .grid .col.push-m2-10 {
     left: 20%;
   }
-  .i-grid .col.pull-m1-5, .i-grid .col.pull-m2-10 {
+  .grid .col.pull-m1-5, .grid .col.pull-m2-10 {
     right: 20%;
   }
-  .i-grid .col.offset-m1-5, .i-grid .col.offset-m2-10 {
+  .grid .col.offset-m1-5, .grid .col.offset-m2-10 {
     margin-left: 20%;
   }
-  .i-grid .col.m2-5, .i-grid .col.m4-10 {
+  .grid .col.m2-5, .grid .col.m4-10 {
     width: 40%;
   }
-  .i-grid .col.push-m2-5, .i-grid .col.push-m4-10 {
+  .grid .col.push-m2-5, .grid .col.push-m4-10 {
     left: 40%;
   }
-  .i-grid .col.pull-m2-5, .i-grid .col.pull-m4-10 {
+  .grid .col.pull-m2-5, .grid .col.pull-m4-10 {
     right: 40%;
   }
-  .i-grid .col.offset-m2-5, .i-grid .col.offset-m4-10 {
+  .grid .col.offset-m2-5, .grid .col.offset-m4-10 {
     margin-left: 40%;
   }
-  .i-grid .col.m3-5, .i-grid .col.m6-10 {
+  .grid .col.m3-5, .grid .col.m6-10 {
     width: 60%;
   }
-  .i-grid .col.push-m3-5, .i-grid .col.push-m6-10 {
+  .grid .col.push-m3-5, .grid .col.push-m6-10 {
     left: 60%;
   }
-  .i-grid .col.pull-m3-5, .i-grid .col.pull-m6-10 {
+  .grid .col.pull-m3-5, .grid .col.pull-m6-10 {
     right: 60%;
   }
-  .i-grid .col.offset-m3-5, .i-grid .col.offset-m6-10 {
+  .grid .col.offset-m3-5, .grid .col.offset-m6-10 {
     margin-left: 60%;
   }
-  .i-grid .col.m4-5, .i-grid .col.m8-10 {
+  .grid .col.m4-5, .grid .col.m8-10 {
     width: 80%;
   }
-  .i-grid .col.push-m4-5, .i-grid .col.push-m8-10 {
+  .grid .col.push-m4-5, .grid .col.push-m8-10 {
     left: 80%;
   }
-  .i-grid .col.pull-m4-5, .i-grid .col.pull-m8-10 {
+  .grid .col.pull-m4-5, .grid .col.pull-m8-10 {
     right: 80%;
   }
-  .i-grid .col.offset-m4-5, .i-grid .col.offset-m8-10 {
+  .grid .col.offset-m4-5, .grid .col.offset-m8-10 {
     margin-left: 80%;
   }
-  .i-grid .col.m1-6, .i-grid .col.m2-12 {
+  .grid .col.m1-6, .grid .col.m2-12 {
     width: 16.66667%;
   }
-  .i-grid .col.push-m1-6, .i-grid .col.push-m2-12 {
+  .grid .col.push-m1-6, .grid .col.push-m2-12 {
     left: 16.66667%;
   }
-  .i-grid .col.pull-m1-6, .i-grid .col.pull-m2-12 {
+  .grid .col.pull-m1-6, .grid .col.pull-m2-12 {
     right: 16.66667%;
   }
-  .i-grid .col.offset-m1-6, .i-grid .col.offset-m2-12 {
+  .grid .col.offset-m1-6, .grid .col.offset-m2-12 {
     margin-left: 16.66667%;
   }
-  .i-grid .col.m5-6, .i-grid .col.m10-12 {
+  .grid .col.m5-6, .grid .col.m10-12 {
     width: 83.33333%;
   }
-  .i-grid .col.push-m5-6, .i-grid .col.push-m10-12 {
+  .grid .col.push-m5-6, .grid .col.push-m10-12 {
     left: 83.33333%;
   }
-  .i-grid .col.pull-m5-6, .i-grid .col.pull-m10-12 {
+  .grid .col.pull-m5-6, .grid .col.pull-m10-12 {
     right: 83.33333%;
   }
-  .i-grid .col.offset-m5-6, .i-grid .col.offset-m10-12 {
+  .grid .col.offset-m5-6, .grid .col.offset-m10-12 {
     margin-left: 83.33333%;
   }
-  .i-grid .col.m1-8 {
+  .grid .col.m1-8 {
     width: 12.5%;
   }
-  .i-grid .col.push-m1-8 {
+  .grid .col.push-m1-8 {
     left: 12.5%;
   }
-  .i-grid .col.pull-m1-8 {
+  .grid .col.pull-m1-8 {
     right: 12.5%;
   }
-  .i-grid .col.offset-m1-8 {
+  .grid .col.offset-m1-8 {
     margin-left: 12.5%;
   }
-  .i-grid .col.m3-8 {
+  .grid .col.m3-8 {
     width: 37.5%;
   }
-  .i-grid .col.push-m3-8 {
+  .grid .col.push-m3-8 {
     left: 37.5%;
   }
-  .i-grid .col.pull-m3-8 {
+  .grid .col.pull-m3-8 {
     right: 37.5%;
   }
-  .i-grid .col.offset-m3-8 {
+  .grid .col.offset-m3-8 {
     margin-left: 37.5%;
   }
-  .i-grid .col.m5-8 {
+  .grid .col.m5-8 {
     width: 62.5%;
   }
-  .i-grid .col.push-m5-8 {
+  .grid .col.push-m5-8 {
     left: 62.5%;
   }
-  .i-grid .col.pull-m5-8 {
+  .grid .col.pull-m5-8 {
     right: 62.5%;
   }
-  .i-grid .col.offset-m5-8 {
+  .grid .col.offset-m5-8 {
     margin-left: 62.5%;
   }
-  .i-grid .col.m7-8 {
+  .grid .col.m7-8 {
     width: 87.5%;
   }
-  .i-grid .col.push-m7-8 {
+  .grid .col.push-m7-8 {
     left: 87.5%;
   }
-  .i-grid .col.pull-m7-8 {
+  .grid .col.pull-m7-8 {
     right: 87.5%;
   }
-  .i-grid .col.offset-m7-8 {
+  .grid .col.offset-m7-8 {
     margin-left: 87.5%;
   }
-  .i-grid .col.m1-10 {
+  .grid .col.m1-10 {
     width: 10%;
   }
-  .i-grid .col.push-m1-10 {
+  .grid .col.push-m1-10 {
     left: 10%;
   }
-  .i-grid .col.pull-m1-10 {
+  .grid .col.pull-m1-10 {
     right: 10%;
   }
-  .i-grid .col.offset-m1-10 {
+  .grid .col.offset-m1-10 {
     margin-left: 10%;
   }
-  .i-grid .col.m3-10 {
+  .grid .col.m3-10 {
     width: 30%;
   }
-  .i-grid .col.push-m3-10 {
+  .grid .col.push-m3-10 {
     left: 30%;
   }
-  .i-grid .col.pull-m3-10 {
+  .grid .col.pull-m3-10 {
     right: 30%;
   }
-  .i-grid .col.offset-m3-10 {
+  .grid .col.offset-m3-10 {
     margin-left: 30%;
   }
-  .i-grid .col.m7-10 {
+  .grid .col.m7-10 {
     width: 70%;
   }
-  .i-grid .col.push-m7-10 {
+  .grid .col.push-m7-10 {
     left: 70%;
   }
-  .i-grid .col.pull-m7-10 {
+  .grid .col.pull-m7-10 {
     right: 70%;
   }
-  .i-grid .col.offset-m7-10 {
+  .grid .col.offset-m7-10 {
     margin-left: 70%;
   }
-  .i-grid .col.m9-10 {
+  .grid .col.m9-10 {
     width: 90%;
   }
-  .i-grid .col.push-m9-10 {
+  .grid .col.push-m9-10 {
     left: 90%;
   }
-  .i-grid .col.pull-m9-10 {
+  .grid .col.pull-m9-10 {
     right: 90%;
   }
-  .i-grid .col.offset-m9-10 {
+  .grid .col.offset-m9-10 {
     margin-left: 90%;
   }
-  .i-grid .col.m1-12 {
+  .grid .col.m1-12 {
     width: 8.33333%;
   }
-  .i-grid .col.push-m1-12 {
+  .grid .col.push-m1-12 {
     left: 8.33333%;
   }
-  .i-grid .col.pull-m1-12 {
+  .grid .col.pull-m1-12 {
     right: 8.33333%;
   }
-  .i-grid .col.offset-m1-12 {
+  .grid .col.offset-m1-12 {
     margin-left: 8.33333%;
   }
-  .i-grid .col.m5-12 {
+  .grid .col.m5-12 {
     width: 41.66667%;
   }
-  .i-grid .col.push-m5-12 {
+  .grid .col.push-m5-12 {
     left: 41.66667%;
   }
-  .i-grid .col.pull-m5-12 {
+  .grid .col.pull-m5-12 {
     right: 41.66667%;
   }
-  .i-grid .col.offset-m5-12 {
+  .grid .col.offset-m5-12 {
     margin-left: 41.66667%;
   }
-  .i-grid .col.m7-12 {
+  .grid .col.m7-12 {
     width: 58.33333%;
   }
-  .i-grid .col.push-m7-12 {
+  .grid .col.push-m7-12 {
     left: 58.33333%;
   }
-  .i-grid .col.pull-m7-12 {
+  .grid .col.pull-m7-12 {
     right: 58.33333%;
   }
-  .i-grid .col.offset-m7-12 {
+  .grid .col.offset-m7-12 {
     margin-left: 58.33333%;
   }
-  .i-grid .col.m11-12 {
+  .grid .col.m11-12 {
     width: 91.66667%;
   }
-  .i-grid .col.push-m11-12 {
+  .grid .col.push-m11-12 {
     left: 91.66667%;
   }
-  .i-grid .col.pull-m11-12 {
+  .grid .col.pull-m11-12 {
     right: 91.66667%;
   }
-  .i-grid .col.offset-m11-12 {
+  .grid .col.offset-m11-12 {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .i-grid .col.n1-2, .i-grid .col.n2-4, .i-grid .col.n3-6, .i-grid .col.n4-8, .i-grid .col.n5-10, .i-grid .col.n6-12 {
+  .grid .col.n1-2, .grid .col.n2-4, .grid .col.n3-6, .grid .col.n4-8, .grid .col.n5-10, .grid .col.n6-12 {
     width: 50%;
   }
-  .i-grid .col.push-n1-2, .i-grid .col.push-n2-4, .i-grid .col.push-n3-6, .i-grid .col.push-n4-8, .i-grid .col.push-n5-10, .i-grid .col.push-n6-12 {
+  .grid .col.push-n1-2, .grid .col.push-n2-4, .grid .col.push-n3-6, .grid .col.push-n4-8, .grid .col.push-n5-10, .grid .col.push-n6-12 {
     left: 50%;
   }
-  .i-grid .col.pull-n1-2, .i-grid .col.pull-n2-4, .i-grid .col.pull-n3-6, .i-grid .col.pull-n4-8, .i-grid .col.pull-n5-10, .i-grid .col.pull-n6-12 {
+  .grid .col.pull-n1-2, .grid .col.pull-n2-4, .grid .col.pull-n3-6, .grid .col.pull-n4-8, .grid .col.pull-n5-10, .grid .col.pull-n6-12 {
     right: 50%;
   }
-  .i-grid .col.offset-n1-2, .i-grid .col.offset-n2-4, .i-grid .col.offset-n3-6, .i-grid .col.offset-n4-8, .i-grid .col.offset-n5-10, .i-grid .col.offset-n6-12 {
+  .grid .col.offset-n1-2, .grid .col.offset-n2-4, .grid .col.offset-n3-6, .grid .col.offset-n4-8, .grid .col.offset-n5-10, .grid .col.offset-n6-12 {
     margin-left: 50%;
   }
-  .i-grid .col.n2-2, .i-grid .col.n3-3, .i-grid .col.n4-4, .i-grid .col.n5-5, .i-grid .col.n6-6, .i-grid .col.n8-8, .i-grid .col.n10-10, .i-grid .col.n12-12 {
+  .grid .col.n2-2, .grid .col.n3-3, .grid .col.n4-4, .grid .col.n5-5, .grid .col.n6-6, .grid .col.n8-8, .grid .col.n10-10, .grid .col.n12-12 {
     width: 100%;
   }
-  .i-grid .col.push-n2-2, .i-grid .col.push-n3-3, .i-grid .col.push-n4-4, .i-grid .col.push-n5-5, .i-grid .col.push-n6-6, .i-grid .col.push-n8-8, .i-grid .col.push-n10-10, .i-grid .col.push-n12-12 {
+  .grid .col.push-n2-2, .grid .col.push-n3-3, .grid .col.push-n4-4, .grid .col.push-n5-5, .grid .col.push-n6-6, .grid .col.push-n8-8, .grid .col.push-n10-10, .grid .col.push-n12-12 {
     left: 100%;
   }
-  .i-grid .col.pull-n2-2, .i-grid .col.pull-n3-3, .i-grid .col.pull-n4-4, .i-grid .col.pull-n5-5, .i-grid .col.pull-n6-6, .i-grid .col.pull-n8-8, .i-grid .col.pull-n10-10, .i-grid .col.pull-n12-12 {
+  .grid .col.pull-n2-2, .grid .col.pull-n3-3, .grid .col.pull-n4-4, .grid .col.pull-n5-5, .grid .col.pull-n6-6, .grid .col.pull-n8-8, .grid .col.pull-n10-10, .grid .col.pull-n12-12 {
     right: 100%;
   }
-  .i-grid .col.offset-n2-2, .i-grid .col.offset-n3-3, .i-grid .col.offset-n4-4, .i-grid .col.offset-n5-5, .i-grid .col.offset-n6-6, .i-grid .col.offset-n8-8, .i-grid .col.offset-n10-10, .i-grid .col.offset-n12-12 {
+  .grid .col.offset-n2-2, .grid .col.offset-n3-3, .grid .col.offset-n4-4, .grid .col.offset-n5-5, .grid .col.offset-n6-6, .grid .col.offset-n8-8, .grid .col.offset-n10-10, .grid .col.offset-n12-12 {
     margin-left: 100%;
   }
-  .i-grid .col.n1-3, .i-grid .col.n2-6, .i-grid .col.n4-12 {
+  .grid .col.n1-3, .grid .col.n2-6, .grid .col.n4-12 {
     width: 33.33333%;
   }
-  .i-grid .col.push-n1-3, .i-grid .col.push-n2-6, .i-grid .col.push-n4-12 {
+  .grid .col.push-n1-3, .grid .col.push-n2-6, .grid .col.push-n4-12 {
     left: 33.33333%;
   }
-  .i-grid .col.pull-n1-3, .i-grid .col.pull-n2-6, .i-grid .col.pull-n4-12 {
+  .grid .col.pull-n1-3, .grid .col.pull-n2-6, .grid .col.pull-n4-12 {
     right: 33.33333%;
   }
-  .i-grid .col.offset-n1-3, .i-grid .col.offset-n2-6, .i-grid .col.offset-n4-12 {
+  .grid .col.offset-n1-3, .grid .col.offset-n2-6, .grid .col.offset-n4-12 {
     margin-left: 33.33333%;
   }
-  .i-grid .col.n2-3, .i-grid .col.n4-6, .i-grid .col.n8-12 {
+  .grid .col.n2-3, .grid .col.n4-6, .grid .col.n8-12 {
     width: 66.66667%;
   }
-  .i-grid .col.push-n2-3, .i-grid .col.push-n4-6, .i-grid .col.push-n8-12 {
+  .grid .col.push-n2-3, .grid .col.push-n4-6, .grid .col.push-n8-12 {
     left: 66.66667%;
   }
-  .i-grid .col.pull-n2-3, .i-grid .col.pull-n4-6, .i-grid .col.pull-n8-12 {
+  .grid .col.pull-n2-3, .grid .col.pull-n4-6, .grid .col.pull-n8-12 {
     right: 66.66667%;
   }
-  .i-grid .col.offset-n2-3, .i-grid .col.offset-n4-6, .i-grid .col.offset-n8-12 {
+  .grid .col.offset-n2-3, .grid .col.offset-n4-6, .grid .col.offset-n8-12 {
     margin-left: 66.66667%;
   }
-  .i-grid .col.n1-4, .i-grid .col.n2-8, .i-grid .col.n3-12 {
+  .grid .col.n1-4, .grid .col.n2-8, .grid .col.n3-12 {
     width: 25%;
   }
-  .i-grid .col.push-n1-4, .i-grid .col.push-n2-8, .i-grid .col.push-n3-12 {
+  .grid .col.push-n1-4, .grid .col.push-n2-8, .grid .col.push-n3-12 {
     left: 25%;
   }
-  .i-grid .col.pull-n1-4, .i-grid .col.pull-n2-8, .i-grid .col.pull-n3-12 {
+  .grid .col.pull-n1-4, .grid .col.pull-n2-8, .grid .col.pull-n3-12 {
     right: 25%;
   }
-  .i-grid .col.offset-n1-4, .i-grid .col.offset-n2-8, .i-grid .col.offset-n3-12 {
+  .grid .col.offset-n1-4, .grid .col.offset-n2-8, .grid .col.offset-n3-12 {
     margin-left: 25%;
   }
-  .i-grid .col.n3-4, .i-grid .col.n6-8, .i-grid .col.n9-12 {
+  .grid .col.n3-4, .grid .col.n6-8, .grid .col.n9-12 {
     width: 75%;
   }
-  .i-grid .col.push-n3-4, .i-grid .col.push-n6-8, .i-grid .col.push-n9-12 {
+  .grid .col.push-n3-4, .grid .col.push-n6-8, .grid .col.push-n9-12 {
     left: 75%;
   }
-  .i-grid .col.pull-n3-4, .i-grid .col.pull-n6-8, .i-grid .col.pull-n9-12 {
+  .grid .col.pull-n3-4, .grid .col.pull-n6-8, .grid .col.pull-n9-12 {
     right: 75%;
   }
-  .i-grid .col.offset-n3-4, .i-grid .col.offset-n6-8, .i-grid .col.offset-n9-12 {
+  .grid .col.offset-n3-4, .grid .col.offset-n6-8, .grid .col.offset-n9-12 {
     margin-left: 75%;
   }
-  .i-grid .col.n1-5, .i-grid .col.n2-10 {
+  .grid .col.n1-5, .grid .col.n2-10 {
     width: 20%;
   }
-  .i-grid .col.push-n1-5, .i-grid .col.push-n2-10 {
+  .grid .col.push-n1-5, .grid .col.push-n2-10 {
     left: 20%;
   }
-  .i-grid .col.pull-n1-5, .i-grid .col.pull-n2-10 {
+  .grid .col.pull-n1-5, .grid .col.pull-n2-10 {
     right: 20%;
   }
-  .i-grid .col.offset-n1-5, .i-grid .col.offset-n2-10 {
+  .grid .col.offset-n1-5, .grid .col.offset-n2-10 {
     margin-left: 20%;
   }
-  .i-grid .col.n2-5, .i-grid .col.n4-10 {
+  .grid .col.n2-5, .grid .col.n4-10 {
     width: 40%;
   }
-  .i-grid .col.push-n2-5, .i-grid .col.push-n4-10 {
+  .grid .col.push-n2-5, .grid .col.push-n4-10 {
     left: 40%;
   }
-  .i-grid .col.pull-n2-5, .i-grid .col.pull-n4-10 {
+  .grid .col.pull-n2-5, .grid .col.pull-n4-10 {
     right: 40%;
   }
-  .i-grid .col.offset-n2-5, .i-grid .col.offset-n4-10 {
+  .grid .col.offset-n2-5, .grid .col.offset-n4-10 {
     margin-left: 40%;
   }
-  .i-grid .col.n3-5, .i-grid .col.n6-10 {
+  .grid .col.n3-5, .grid .col.n6-10 {
     width: 60%;
   }
-  .i-grid .col.push-n3-5, .i-grid .col.push-n6-10 {
+  .grid .col.push-n3-5, .grid .col.push-n6-10 {
     left: 60%;
   }
-  .i-grid .col.pull-n3-5, .i-grid .col.pull-n6-10 {
+  .grid .col.pull-n3-5, .grid .col.pull-n6-10 {
     right: 60%;
   }
-  .i-grid .col.offset-n3-5, .i-grid .col.offset-n6-10 {
+  .grid .col.offset-n3-5, .grid .col.offset-n6-10 {
     margin-left: 60%;
   }
-  .i-grid .col.n4-5, .i-grid .col.n8-10 {
+  .grid .col.n4-5, .grid .col.n8-10 {
     width: 80%;
   }
-  .i-grid .col.push-n4-5, .i-grid .col.push-n8-10 {
+  .grid .col.push-n4-5, .grid .col.push-n8-10 {
     left: 80%;
   }
-  .i-grid .col.pull-n4-5, .i-grid .col.pull-n8-10 {
+  .grid .col.pull-n4-5, .grid .col.pull-n8-10 {
     right: 80%;
   }
-  .i-grid .col.offset-n4-5, .i-grid .col.offset-n8-10 {
+  .grid .col.offset-n4-5, .grid .col.offset-n8-10 {
     margin-left: 80%;
   }
-  .i-grid .col.n1-6, .i-grid .col.n2-12 {
+  .grid .col.n1-6, .grid .col.n2-12 {
     width: 16.66667%;
   }
-  .i-grid .col.push-n1-6, .i-grid .col.push-n2-12 {
+  .grid .col.push-n1-6, .grid .col.push-n2-12 {
     left: 16.66667%;
   }
-  .i-grid .col.pull-n1-6, .i-grid .col.pull-n2-12 {
+  .grid .col.pull-n1-6, .grid .col.pull-n2-12 {
     right: 16.66667%;
   }
-  .i-grid .col.offset-n1-6, .i-grid .col.offset-n2-12 {
+  .grid .col.offset-n1-6, .grid .col.offset-n2-12 {
     margin-left: 16.66667%;
   }
-  .i-grid .col.n5-6, .i-grid .col.n10-12 {
+  .grid .col.n5-6, .grid .col.n10-12 {
     width: 83.33333%;
   }
-  .i-grid .col.push-n5-6, .i-grid .col.push-n10-12 {
+  .grid .col.push-n5-6, .grid .col.push-n10-12 {
     left: 83.33333%;
   }
-  .i-grid .col.pull-n5-6, .i-grid .col.pull-n10-12 {
+  .grid .col.pull-n5-6, .grid .col.pull-n10-12 {
     right: 83.33333%;
   }
-  .i-grid .col.offset-n5-6, .i-grid .col.offset-n10-12 {
+  .grid .col.offset-n5-6, .grid .col.offset-n10-12 {
     margin-left: 83.33333%;
   }
-  .i-grid .col.n1-8 {
+  .grid .col.n1-8 {
     width: 12.5%;
   }
-  .i-grid .col.push-n1-8 {
+  .grid .col.push-n1-8 {
     left: 12.5%;
   }
-  .i-grid .col.pull-n1-8 {
+  .grid .col.pull-n1-8 {
     right: 12.5%;
   }
-  .i-grid .col.offset-n1-8 {
+  .grid .col.offset-n1-8 {
     margin-left: 12.5%;
   }
-  .i-grid .col.n3-8 {
+  .grid .col.n3-8 {
     width: 37.5%;
   }
-  .i-grid .col.push-n3-8 {
+  .grid .col.push-n3-8 {
     left: 37.5%;
   }
-  .i-grid .col.pull-n3-8 {
+  .grid .col.pull-n3-8 {
     right: 37.5%;
   }
-  .i-grid .col.offset-n3-8 {
+  .grid .col.offset-n3-8 {
     margin-left: 37.5%;
   }
-  .i-grid .col.n5-8 {
+  .grid .col.n5-8 {
     width: 62.5%;
   }
-  .i-grid .col.push-n5-8 {
+  .grid .col.push-n5-8 {
     left: 62.5%;
   }
-  .i-grid .col.pull-n5-8 {
+  .grid .col.pull-n5-8 {
     right: 62.5%;
   }
-  .i-grid .col.offset-n5-8 {
+  .grid .col.offset-n5-8 {
     margin-left: 62.5%;
   }
-  .i-grid .col.n7-8 {
+  .grid .col.n7-8 {
     width: 87.5%;
   }
-  .i-grid .col.push-n7-8 {
+  .grid .col.push-n7-8 {
     left: 87.5%;
   }
-  .i-grid .col.pull-n7-8 {
+  .grid .col.pull-n7-8 {
     right: 87.5%;
   }
-  .i-grid .col.offset-n7-8 {
+  .grid .col.offset-n7-8 {
     margin-left: 87.5%;
   }
-  .i-grid .col.n1-10 {
+  .grid .col.n1-10 {
     width: 10%;
   }
-  .i-grid .col.push-n1-10 {
+  .grid .col.push-n1-10 {
     left: 10%;
   }
-  .i-grid .col.pull-n1-10 {
+  .grid .col.pull-n1-10 {
     right: 10%;
   }
-  .i-grid .col.offset-n1-10 {
+  .grid .col.offset-n1-10 {
     margin-left: 10%;
   }
-  .i-grid .col.n3-10 {
+  .grid .col.n3-10 {
     width: 30%;
   }
-  .i-grid .col.push-n3-10 {
+  .grid .col.push-n3-10 {
     left: 30%;
   }
-  .i-grid .col.pull-n3-10 {
+  .grid .col.pull-n3-10 {
     right: 30%;
   }
-  .i-grid .col.offset-n3-10 {
+  .grid .col.offset-n3-10 {
     margin-left: 30%;
   }
-  .i-grid .col.n7-10 {
+  .grid .col.n7-10 {
     width: 70%;
   }
-  .i-grid .col.push-n7-10 {
+  .grid .col.push-n7-10 {
     left: 70%;
   }
-  .i-grid .col.pull-n7-10 {
+  .grid .col.pull-n7-10 {
     right: 70%;
   }
-  .i-grid .col.offset-n7-10 {
+  .grid .col.offset-n7-10 {
     margin-left: 70%;
   }
-  .i-grid .col.n9-10 {
+  .grid .col.n9-10 {
     width: 90%;
   }
-  .i-grid .col.push-n9-10 {
+  .grid .col.push-n9-10 {
     left: 90%;
   }
-  .i-grid .col.pull-n9-10 {
+  .grid .col.pull-n9-10 {
     right: 90%;
   }
-  .i-grid .col.offset-n9-10 {
+  .grid .col.offset-n9-10 {
     margin-left: 90%;
   }
-  .i-grid .col.n1-12 {
+  .grid .col.n1-12 {
     width: 8.33333%;
   }
-  .i-grid .col.push-n1-12 {
+  .grid .col.push-n1-12 {
     left: 8.33333%;
   }
-  .i-grid .col.pull-n1-12 {
+  .grid .col.pull-n1-12 {
     right: 8.33333%;
   }
-  .i-grid .col.offset-n1-12 {
+  .grid .col.offset-n1-12 {
     margin-left: 8.33333%;
   }
-  .i-grid .col.n5-12 {
+  .grid .col.n5-12 {
     width: 41.66667%;
   }
-  .i-grid .col.push-n5-12 {
+  .grid .col.push-n5-12 {
     left: 41.66667%;
   }
-  .i-grid .col.pull-n5-12 {
+  .grid .col.pull-n5-12 {
     right: 41.66667%;
   }
-  .i-grid .col.offset-n5-12 {
+  .grid .col.offset-n5-12 {
     margin-left: 41.66667%;
   }
-  .i-grid .col.n7-12 {
+  .grid .col.n7-12 {
     width: 58.33333%;
   }
-  .i-grid .col.push-n7-12 {
+  .grid .col.push-n7-12 {
     left: 58.33333%;
   }
-  .i-grid .col.pull-n7-12 {
+  .grid .col.pull-n7-12 {
     right: 58.33333%;
   }
-  .i-grid .col.offset-n7-12 {
+  .grid .col.offset-n7-12 {
     margin-left: 58.33333%;
   }
-  .i-grid .col.n11-12 {
+  .grid .col.n11-12 {
     width: 91.66667%;
   }
-  .i-grid .col.push-n11-12 {
+  .grid .col.push-n11-12 {
     left: 91.66667%;
   }
-  .i-grid .col.pull-n11-12 {
+  .grid .col.pull-n11-12 {
     right: 91.66667%;
   }
-  .i-grid .col.offset-n11-12 {
+  .grid .col.offset-n11-12 {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .i-grid .col.l1-2, .i-grid .col.l2-4, .i-grid .col.l3-6, .i-grid .col.l4-8, .i-grid .col.l5-10, .i-grid .col.l6-12 {
+  .grid .col.l1-2, .grid .col.l2-4, .grid .col.l3-6, .grid .col.l4-8, .grid .col.l5-10, .grid .col.l6-12 {
     width: 50%;
   }
-  .i-grid .col.push-l1-2, .i-grid .col.push-l2-4, .i-grid .col.push-l3-6, .i-grid .col.push-l4-8, .i-grid .col.push-l5-10, .i-grid .col.push-l6-12 {
+  .grid .col.push-l1-2, .grid .col.push-l2-4, .grid .col.push-l3-6, .grid .col.push-l4-8, .grid .col.push-l5-10, .grid .col.push-l6-12 {
     left: 50%;
   }
-  .i-grid .col.pull-l1-2, .i-grid .col.pull-l2-4, .i-grid .col.pull-l3-6, .i-grid .col.pull-l4-8, .i-grid .col.pull-l5-10, .i-grid .col.pull-l6-12 {
+  .grid .col.pull-l1-2, .grid .col.pull-l2-4, .grid .col.pull-l3-6, .grid .col.pull-l4-8, .grid .col.pull-l5-10, .grid .col.pull-l6-12 {
     right: 50%;
   }
-  .i-grid .col.offset-l1-2, .i-grid .col.offset-l2-4, .i-grid .col.offset-l3-6, .i-grid .col.offset-l4-8, .i-grid .col.offset-l5-10, .i-grid .col.offset-l6-12 {
+  .grid .col.offset-l1-2, .grid .col.offset-l2-4, .grid .col.offset-l3-6, .grid .col.offset-l4-8, .grid .col.offset-l5-10, .grid .col.offset-l6-12 {
     margin-left: 50%;
   }
-  .i-grid .col.l2-2, .i-grid .col.l3-3, .i-grid .col.l4-4, .i-grid .col.l5-5, .i-grid .col.l6-6, .i-grid .col.l8-8, .i-grid .col.l10-10, .i-grid .col.l12-12 {
+  .grid .col.l2-2, .grid .col.l3-3, .grid .col.l4-4, .grid .col.l5-5, .grid .col.l6-6, .grid .col.l8-8, .grid .col.l10-10, .grid .col.l12-12 {
     width: 100%;
   }
-  .i-grid .col.push-l2-2, .i-grid .col.push-l3-3, .i-grid .col.push-l4-4, .i-grid .col.push-l5-5, .i-grid .col.push-l6-6, .i-grid .col.push-l8-8, .i-grid .col.push-l10-10, .i-grid .col.push-l12-12 {
+  .grid .col.push-l2-2, .grid .col.push-l3-3, .grid .col.push-l4-4, .grid .col.push-l5-5, .grid .col.push-l6-6, .grid .col.push-l8-8, .grid .col.push-l10-10, .grid .col.push-l12-12 {
     left: 100%;
   }
-  .i-grid .col.pull-l2-2, .i-grid .col.pull-l3-3, .i-grid .col.pull-l4-4, .i-grid .col.pull-l5-5, .i-grid .col.pull-l6-6, .i-grid .col.pull-l8-8, .i-grid .col.pull-l10-10, .i-grid .col.pull-l12-12 {
+  .grid .col.pull-l2-2, .grid .col.pull-l3-3, .grid .col.pull-l4-4, .grid .col.pull-l5-5, .grid .col.pull-l6-6, .grid .col.pull-l8-8, .grid .col.pull-l10-10, .grid .col.pull-l12-12 {
     right: 100%;
   }
-  .i-grid .col.offset-l2-2, .i-grid .col.offset-l3-3, .i-grid .col.offset-l4-4, .i-grid .col.offset-l5-5, .i-grid .col.offset-l6-6, .i-grid .col.offset-l8-8, .i-grid .col.offset-l10-10, .i-grid .col.offset-l12-12 {
+  .grid .col.offset-l2-2, .grid .col.offset-l3-3, .grid .col.offset-l4-4, .grid .col.offset-l5-5, .grid .col.offset-l6-6, .grid .col.offset-l8-8, .grid .col.offset-l10-10, .grid .col.offset-l12-12 {
     margin-left: 100%;
   }
-  .i-grid .col.l1-3, .i-grid .col.l2-6, .i-grid .col.l4-12 {
+  .grid .col.l1-3, .grid .col.l2-6, .grid .col.l4-12 {
     width: 33.33333%;
   }
-  .i-grid .col.push-l1-3, .i-grid .col.push-l2-6, .i-grid .col.push-l4-12 {
+  .grid .col.push-l1-3, .grid .col.push-l2-6, .grid .col.push-l4-12 {
     left: 33.33333%;
   }
-  .i-grid .col.pull-l1-3, .i-grid .col.pull-l2-6, .i-grid .col.pull-l4-12 {
+  .grid .col.pull-l1-3, .grid .col.pull-l2-6, .grid .col.pull-l4-12 {
     right: 33.33333%;
   }
-  .i-grid .col.offset-l1-3, .i-grid .col.offset-l2-6, .i-grid .col.offset-l4-12 {
+  .grid .col.offset-l1-3, .grid .col.offset-l2-6, .grid .col.offset-l4-12 {
     margin-left: 33.33333%;
   }
-  .i-grid .col.l2-3, .i-grid .col.l4-6, .i-grid .col.l8-12 {
+  .grid .col.l2-3, .grid .col.l4-6, .grid .col.l8-12 {
     width: 66.66667%;
   }
-  .i-grid .col.push-l2-3, .i-grid .col.push-l4-6, .i-grid .col.push-l8-12 {
+  .grid .col.push-l2-3, .grid .col.push-l4-6, .grid .col.push-l8-12 {
     left: 66.66667%;
   }
-  .i-grid .col.pull-l2-3, .i-grid .col.pull-l4-6, .i-grid .col.pull-l8-12 {
+  .grid .col.pull-l2-3, .grid .col.pull-l4-6, .grid .col.pull-l8-12 {
     right: 66.66667%;
   }
-  .i-grid .col.offset-l2-3, .i-grid .col.offset-l4-6, .i-grid .col.offset-l8-12 {
+  .grid .col.offset-l2-3, .grid .col.offset-l4-6, .grid .col.offset-l8-12 {
     margin-left: 66.66667%;
   }
-  .i-grid .col.l1-4, .i-grid .col.l2-8, .i-grid .col.l3-12 {
+  .grid .col.l1-4, .grid .col.l2-8, .grid .col.l3-12 {
     width: 25%;
   }
-  .i-grid .col.push-l1-4, .i-grid .col.push-l2-8, .i-grid .col.push-l3-12 {
+  .grid .col.push-l1-4, .grid .col.push-l2-8, .grid .col.push-l3-12 {
     left: 25%;
   }
-  .i-grid .col.pull-l1-4, .i-grid .col.pull-l2-8, .i-grid .col.pull-l3-12 {
+  .grid .col.pull-l1-4, .grid .col.pull-l2-8, .grid .col.pull-l3-12 {
     right: 25%;
   }
-  .i-grid .col.offset-l1-4, .i-grid .col.offset-l2-8, .i-grid .col.offset-l3-12 {
+  .grid .col.offset-l1-4, .grid .col.offset-l2-8, .grid .col.offset-l3-12 {
     margin-left: 25%;
   }
-  .i-grid .col.l3-4, .i-grid .col.l6-8, .i-grid .col.l9-12 {
+  .grid .col.l3-4, .grid .col.l6-8, .grid .col.l9-12 {
     width: 75%;
   }
-  .i-grid .col.push-l3-4, .i-grid .col.push-l6-8, .i-grid .col.push-l9-12 {
+  .grid .col.push-l3-4, .grid .col.push-l6-8, .grid .col.push-l9-12 {
     left: 75%;
   }
-  .i-grid .col.pull-l3-4, .i-grid .col.pull-l6-8, .i-grid .col.pull-l9-12 {
+  .grid .col.pull-l3-4, .grid .col.pull-l6-8, .grid .col.pull-l9-12 {
     right: 75%;
   }
-  .i-grid .col.offset-l3-4, .i-grid .col.offset-l6-8, .i-grid .col.offset-l9-12 {
+  .grid .col.offset-l3-4, .grid .col.offset-l6-8, .grid .col.offset-l9-12 {
     margin-left: 75%;
   }
-  .i-grid .col.l1-5, .i-grid .col.l2-10 {
+  .grid .col.l1-5, .grid .col.l2-10 {
     width: 20%;
   }
-  .i-grid .col.push-l1-5, .i-grid .col.push-l2-10 {
+  .grid .col.push-l1-5, .grid .col.push-l2-10 {
     left: 20%;
   }
-  .i-grid .col.pull-l1-5, .i-grid .col.pull-l2-10 {
+  .grid .col.pull-l1-5, .grid .col.pull-l2-10 {
     right: 20%;
   }
-  .i-grid .col.offset-l1-5, .i-grid .col.offset-l2-10 {
+  .grid .col.offset-l1-5, .grid .col.offset-l2-10 {
     margin-left: 20%;
   }
-  .i-grid .col.l2-5, .i-grid .col.l4-10 {
+  .grid .col.l2-5, .grid .col.l4-10 {
     width: 40%;
   }
-  .i-grid .col.push-l2-5, .i-grid .col.push-l4-10 {
+  .grid .col.push-l2-5, .grid .col.push-l4-10 {
     left: 40%;
   }
-  .i-grid .col.pull-l2-5, .i-grid .col.pull-l4-10 {
+  .grid .col.pull-l2-5, .grid .col.pull-l4-10 {
     right: 40%;
   }
-  .i-grid .col.offset-l2-5, .i-grid .col.offset-l4-10 {
+  .grid .col.offset-l2-5, .grid .col.offset-l4-10 {
     margin-left: 40%;
   }
-  .i-grid .col.l3-5, .i-grid .col.l6-10 {
+  .grid .col.l3-5, .grid .col.l6-10 {
     width: 60%;
   }
-  .i-grid .col.push-l3-5, .i-grid .col.push-l6-10 {
+  .grid .col.push-l3-5, .grid .col.push-l6-10 {
     left: 60%;
   }
-  .i-grid .col.pull-l3-5, .i-grid .col.pull-l6-10 {
+  .grid .col.pull-l3-5, .grid .col.pull-l6-10 {
     right: 60%;
   }
-  .i-grid .col.offset-l3-5, .i-grid .col.offset-l6-10 {
+  .grid .col.offset-l3-5, .grid .col.offset-l6-10 {
     margin-left: 60%;
   }
-  .i-grid .col.l4-5, .i-grid .col.l8-10 {
+  .grid .col.l4-5, .grid .col.l8-10 {
     width: 80%;
   }
-  .i-grid .col.push-l4-5, .i-grid .col.push-l8-10 {
+  .grid .col.push-l4-5, .grid .col.push-l8-10 {
     left: 80%;
   }
-  .i-grid .col.pull-l4-5, .i-grid .col.pull-l8-10 {
+  .grid .col.pull-l4-5, .grid .col.pull-l8-10 {
     right: 80%;
   }
-  .i-grid .col.offset-l4-5, .i-grid .col.offset-l8-10 {
+  .grid .col.offset-l4-5, .grid .col.offset-l8-10 {
     margin-left: 80%;
   }
-  .i-grid .col.l1-6, .i-grid .col.l2-12 {
+  .grid .col.l1-6, .grid .col.l2-12 {
     width: 16.66667%;
   }
-  .i-grid .col.push-l1-6, .i-grid .col.push-l2-12 {
+  .grid .col.push-l1-6, .grid .col.push-l2-12 {
     left: 16.66667%;
   }
-  .i-grid .col.pull-l1-6, .i-grid .col.pull-l2-12 {
+  .grid .col.pull-l1-6, .grid .col.pull-l2-12 {
     right: 16.66667%;
   }
-  .i-grid .col.offset-l1-6, .i-grid .col.offset-l2-12 {
+  .grid .col.offset-l1-6, .grid .col.offset-l2-12 {
     margin-left: 16.66667%;
   }
-  .i-grid .col.l5-6, .i-grid .col.l10-12 {
+  .grid .col.l5-6, .grid .col.l10-12 {
     width: 83.33333%;
   }
-  .i-grid .col.push-l5-6, .i-grid .col.push-l10-12 {
+  .grid .col.push-l5-6, .grid .col.push-l10-12 {
     left: 83.33333%;
   }
-  .i-grid .col.pull-l5-6, .i-grid .col.pull-l10-12 {
+  .grid .col.pull-l5-6, .grid .col.pull-l10-12 {
     right: 83.33333%;
   }
-  .i-grid .col.offset-l5-6, .i-grid .col.offset-l10-12 {
+  .grid .col.offset-l5-6, .grid .col.offset-l10-12 {
     margin-left: 83.33333%;
   }
-  .i-grid .col.l1-8 {
+  .grid .col.l1-8 {
     width: 12.5%;
   }
-  .i-grid .col.push-l1-8 {
+  .grid .col.push-l1-8 {
     left: 12.5%;
   }
-  .i-grid .col.pull-l1-8 {
+  .grid .col.pull-l1-8 {
     right: 12.5%;
   }
-  .i-grid .col.offset-l1-8 {
+  .grid .col.offset-l1-8 {
     margin-left: 12.5%;
   }
-  .i-grid .col.l3-8 {
+  .grid .col.l3-8 {
     width: 37.5%;
   }
-  .i-grid .col.push-l3-8 {
+  .grid .col.push-l3-8 {
     left: 37.5%;
   }
-  .i-grid .col.pull-l3-8 {
+  .grid .col.pull-l3-8 {
     right: 37.5%;
   }
-  .i-grid .col.offset-l3-8 {
+  .grid .col.offset-l3-8 {
     margin-left: 37.5%;
   }
-  .i-grid .col.l5-8 {
+  .grid .col.l5-8 {
     width: 62.5%;
   }
-  .i-grid .col.push-l5-8 {
+  .grid .col.push-l5-8 {
     left: 62.5%;
   }
-  .i-grid .col.pull-l5-8 {
+  .grid .col.pull-l5-8 {
     right: 62.5%;
   }
-  .i-grid .col.offset-l5-8 {
+  .grid .col.offset-l5-8 {
     margin-left: 62.5%;
   }
-  .i-grid .col.l7-8 {
+  .grid .col.l7-8 {
     width: 87.5%;
   }
-  .i-grid .col.push-l7-8 {
+  .grid .col.push-l7-8 {
     left: 87.5%;
   }
-  .i-grid .col.pull-l7-8 {
+  .grid .col.pull-l7-8 {
     right: 87.5%;
   }
-  .i-grid .col.offset-l7-8 {
+  .grid .col.offset-l7-8 {
     margin-left: 87.5%;
   }
-  .i-grid .col.l1-10 {
+  .grid .col.l1-10 {
     width: 10%;
   }
-  .i-grid .col.push-l1-10 {
+  .grid .col.push-l1-10 {
     left: 10%;
   }
-  .i-grid .col.pull-l1-10 {
+  .grid .col.pull-l1-10 {
     right: 10%;
   }
-  .i-grid .col.offset-l1-10 {
+  .grid .col.offset-l1-10 {
     margin-left: 10%;
   }
-  .i-grid .col.l3-10 {
+  .grid .col.l3-10 {
     width: 30%;
   }
-  .i-grid .col.push-l3-10 {
+  .grid .col.push-l3-10 {
     left: 30%;
   }
-  .i-grid .col.pull-l3-10 {
+  .grid .col.pull-l3-10 {
     right: 30%;
   }
-  .i-grid .col.offset-l3-10 {
+  .grid .col.offset-l3-10 {
     margin-left: 30%;
   }
-  .i-grid .col.l7-10 {
+  .grid .col.l7-10 {
     width: 70%;
   }
-  .i-grid .col.push-l7-10 {
+  .grid .col.push-l7-10 {
     left: 70%;
   }
-  .i-grid .col.pull-l7-10 {
+  .grid .col.pull-l7-10 {
     right: 70%;
   }
-  .i-grid .col.offset-l7-10 {
+  .grid .col.offset-l7-10 {
     margin-left: 70%;
   }
-  .i-grid .col.l9-10 {
+  .grid .col.l9-10 {
     width: 90%;
   }
-  .i-grid .col.push-l9-10 {
+  .grid .col.push-l9-10 {
     left: 90%;
   }
-  .i-grid .col.pull-l9-10 {
+  .grid .col.pull-l9-10 {
     right: 90%;
   }
-  .i-grid .col.offset-l9-10 {
+  .grid .col.offset-l9-10 {
     margin-left: 90%;
   }
-  .i-grid .col.l1-12 {
+  .grid .col.l1-12 {
     width: 8.33333%;
   }
-  .i-grid .col.push-l1-12 {
+  .grid .col.push-l1-12 {
     left: 8.33333%;
   }
-  .i-grid .col.pull-l1-12 {
+  .grid .col.pull-l1-12 {
     right: 8.33333%;
   }
-  .i-grid .col.offset-l1-12 {
+  .grid .col.offset-l1-12 {
     margin-left: 8.33333%;
   }
-  .i-grid .col.l5-12 {
+  .grid .col.l5-12 {
     width: 41.66667%;
   }
-  .i-grid .col.push-l5-12 {
+  .grid .col.push-l5-12 {
     left: 41.66667%;
   }
-  .i-grid .col.pull-l5-12 {
+  .grid .col.pull-l5-12 {
     right: 41.66667%;
   }
-  .i-grid .col.offset-l5-12 {
+  .grid .col.offset-l5-12 {
     margin-left: 41.66667%;
   }
-  .i-grid .col.l7-12 {
+  .grid .col.l7-12 {
     width: 58.33333%;
   }
-  .i-grid .col.push-l7-12 {
+  .grid .col.push-l7-12 {
     left: 58.33333%;
   }
-  .i-grid .col.pull-l7-12 {
+  .grid .col.pull-l7-12 {
     right: 58.33333%;
   }
-  .i-grid .col.offset-l7-12 {
+  .grid .col.offset-l7-12 {
     margin-left: 58.33333%;
   }
-  .i-grid .col.l11-12 {
+  .grid .col.l11-12 {
     width: 91.66667%;
   }
-  .i-grid .col.push-l11-12 {
+  .grid .col.push-l11-12 {
     left: 91.66667%;
   }
-  .i-grid .col.pull-l11-12 {
+  .grid .col.pull-l11-12 {
     right: 91.66667%;
   }
-  .i-grid .col.offset-l11-12 {
+  .grid .col.offset-l11-12 {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 1500px) {
-  .i-grid .col.b1-2, .i-grid .col.b2-4, .i-grid .col.b3-6, .i-grid .col.b4-8, .i-grid .col.b5-10, .i-grid .col.b6-12 {
+  .grid .col.b1-2, .grid .col.b2-4, .grid .col.b3-6, .grid .col.b4-8, .grid .col.b5-10, .grid .col.b6-12 {
     width: 50%;
   }
-  .i-grid .col.push-b1-2, .i-grid .col.push-b2-4, .i-grid .col.push-b3-6, .i-grid .col.push-b4-8, .i-grid .col.push-b5-10, .i-grid .col.push-b6-12 {
+  .grid .col.push-b1-2, .grid .col.push-b2-4, .grid .col.push-b3-6, .grid .col.push-b4-8, .grid .col.push-b5-10, .grid .col.push-b6-12 {
     left: 50%;
   }
-  .i-grid .col.pull-b1-2, .i-grid .col.pull-b2-4, .i-grid .col.pull-b3-6, .i-grid .col.pull-b4-8, .i-grid .col.pull-b5-10, .i-grid .col.pull-b6-12 {
+  .grid .col.pull-b1-2, .grid .col.pull-b2-4, .grid .col.pull-b3-6, .grid .col.pull-b4-8, .grid .col.pull-b5-10, .grid .col.pull-b6-12 {
     right: 50%;
   }
-  .i-grid .col.offset-b1-2, .i-grid .col.offset-b2-4, .i-grid .col.offset-b3-6, .i-grid .col.offset-b4-8, .i-grid .col.offset-b5-10, .i-grid .col.offset-b6-12 {
+  .grid .col.offset-b1-2, .grid .col.offset-b2-4, .grid .col.offset-b3-6, .grid .col.offset-b4-8, .grid .col.offset-b5-10, .grid .col.offset-b6-12 {
     margin-left: 50%;
   }
-  .i-grid .col.b2-2, .i-grid .col.b3-3, .i-grid .col.b4-4, .i-grid .col.b5-5, .i-grid .col.b6-6, .i-grid .col.b8-8, .i-grid .col.b10-10, .i-grid .col.b12-12 {
+  .grid .col.b2-2, .grid .col.b3-3, .grid .col.b4-4, .grid .col.b5-5, .grid .col.b6-6, .grid .col.b8-8, .grid .col.b10-10, .grid .col.b12-12 {
     width: 100%;
   }
-  .i-grid .col.push-b2-2, .i-grid .col.push-b3-3, .i-grid .col.push-b4-4, .i-grid .col.push-b5-5, .i-grid .col.push-b6-6, .i-grid .col.push-b8-8, .i-grid .col.push-b10-10, .i-grid .col.push-b12-12 {
+  .grid .col.push-b2-2, .grid .col.push-b3-3, .grid .col.push-b4-4, .grid .col.push-b5-5, .grid .col.push-b6-6, .grid .col.push-b8-8, .grid .col.push-b10-10, .grid .col.push-b12-12 {
     left: 100%;
   }
-  .i-grid .col.pull-b2-2, .i-grid .col.pull-b3-3, .i-grid .col.pull-b4-4, .i-grid .col.pull-b5-5, .i-grid .col.pull-b6-6, .i-grid .col.pull-b8-8, .i-grid .col.pull-b10-10, .i-grid .col.pull-b12-12 {
+  .grid .col.pull-b2-2, .grid .col.pull-b3-3, .grid .col.pull-b4-4, .grid .col.pull-b5-5, .grid .col.pull-b6-6, .grid .col.pull-b8-8, .grid .col.pull-b10-10, .grid .col.pull-b12-12 {
     right: 100%;
   }
-  .i-grid .col.offset-b2-2, .i-grid .col.offset-b3-3, .i-grid .col.offset-b4-4, .i-grid .col.offset-b5-5, .i-grid .col.offset-b6-6, .i-grid .col.offset-b8-8, .i-grid .col.offset-b10-10, .i-grid .col.offset-b12-12 {
+  .grid .col.offset-b2-2, .grid .col.offset-b3-3, .grid .col.offset-b4-4, .grid .col.offset-b5-5, .grid .col.offset-b6-6, .grid .col.offset-b8-8, .grid .col.offset-b10-10, .grid .col.offset-b12-12 {
     margin-left: 100%;
   }
-  .i-grid .col.b1-3, .i-grid .col.b2-6, .i-grid .col.b4-12 {
+  .grid .col.b1-3, .grid .col.b2-6, .grid .col.b4-12 {
     width: 33.33333%;
   }
-  .i-grid .col.push-b1-3, .i-grid .col.push-b2-6, .i-grid .col.push-b4-12 {
+  .grid .col.push-b1-3, .grid .col.push-b2-6, .grid .col.push-b4-12 {
     left: 33.33333%;
   }
-  .i-grid .col.pull-b1-3, .i-grid .col.pull-b2-6, .i-grid .col.pull-b4-12 {
+  .grid .col.pull-b1-3, .grid .col.pull-b2-6, .grid .col.pull-b4-12 {
     right: 33.33333%;
   }
-  .i-grid .col.offset-b1-3, .i-grid .col.offset-b2-6, .i-grid .col.offset-b4-12 {
+  .grid .col.offset-b1-3, .grid .col.offset-b2-6, .grid .col.offset-b4-12 {
     margin-left: 33.33333%;
   }
-  .i-grid .col.b2-3, .i-grid .col.b4-6, .i-grid .col.b8-12 {
+  .grid .col.b2-3, .grid .col.b4-6, .grid .col.b8-12 {
     width: 66.66667%;
   }
-  .i-grid .col.push-b2-3, .i-grid .col.push-b4-6, .i-grid .col.push-b8-12 {
+  .grid .col.push-b2-3, .grid .col.push-b4-6, .grid .col.push-b8-12 {
     left: 66.66667%;
   }
-  .i-grid .col.pull-b2-3, .i-grid .col.pull-b4-6, .i-grid .col.pull-b8-12 {
+  .grid .col.pull-b2-3, .grid .col.pull-b4-6, .grid .col.pull-b8-12 {
     right: 66.66667%;
   }
-  .i-grid .col.offset-b2-3, .i-grid .col.offset-b4-6, .i-grid .col.offset-b8-12 {
+  .grid .col.offset-b2-3, .grid .col.offset-b4-6, .grid .col.offset-b8-12 {
     margin-left: 66.66667%;
   }
-  .i-grid .col.b1-4, .i-grid .col.b2-8, .i-grid .col.b3-12 {
+  .grid .col.b1-4, .grid .col.b2-8, .grid .col.b3-12 {
     width: 25%;
   }
-  .i-grid .col.push-b1-4, .i-grid .col.push-b2-8, .i-grid .col.push-b3-12 {
+  .grid .col.push-b1-4, .grid .col.push-b2-8, .grid .col.push-b3-12 {
     left: 25%;
   }
-  .i-grid .col.pull-b1-4, .i-grid .col.pull-b2-8, .i-grid .col.pull-b3-12 {
+  .grid .col.pull-b1-4, .grid .col.pull-b2-8, .grid .col.pull-b3-12 {
     right: 25%;
   }
-  .i-grid .col.offset-b1-4, .i-grid .col.offset-b2-8, .i-grid .col.offset-b3-12 {
+  .grid .col.offset-b1-4, .grid .col.offset-b2-8, .grid .col.offset-b3-12 {
     margin-left: 25%;
   }
-  .i-grid .col.b3-4, .i-grid .col.b6-8, .i-grid .col.b9-12 {
+  .grid .col.b3-4, .grid .col.b6-8, .grid .col.b9-12 {
     width: 75%;
   }
-  .i-grid .col.push-b3-4, .i-grid .col.push-b6-8, .i-grid .col.push-b9-12 {
+  .grid .col.push-b3-4, .grid .col.push-b6-8, .grid .col.push-b9-12 {
     left: 75%;
   }
-  .i-grid .col.pull-b3-4, .i-grid .col.pull-b6-8, .i-grid .col.pull-b9-12 {
+  .grid .col.pull-b3-4, .grid .col.pull-b6-8, .grid .col.pull-b9-12 {
     right: 75%;
   }
-  .i-grid .col.offset-b3-4, .i-grid .col.offset-b6-8, .i-grid .col.offset-b9-12 {
+  .grid .col.offset-b3-4, .grid .col.offset-b6-8, .grid .col.offset-b9-12 {
     margin-left: 75%;
   }
-  .i-grid .col.b1-5, .i-grid .col.b2-10 {
+  .grid .col.b1-5, .grid .col.b2-10 {
     width: 20%;
   }
-  .i-grid .col.push-b1-5, .i-grid .col.push-b2-10 {
+  .grid .col.push-b1-5, .grid .col.push-b2-10 {
     left: 20%;
   }
-  .i-grid .col.pull-b1-5, .i-grid .col.pull-b2-10 {
+  .grid .col.pull-b1-5, .grid .col.pull-b2-10 {
     right: 20%;
   }
-  .i-grid .col.offset-b1-5, .i-grid .col.offset-b2-10 {
+  .grid .col.offset-b1-5, .grid .col.offset-b2-10 {
     margin-left: 20%;
   }
-  .i-grid .col.b2-5, .i-grid .col.b4-10 {
+  .grid .col.b2-5, .grid .col.b4-10 {
     width: 40%;
   }
-  .i-grid .col.push-b2-5, .i-grid .col.push-b4-10 {
+  .grid .col.push-b2-5, .grid .col.push-b4-10 {
     left: 40%;
   }
-  .i-grid .col.pull-b2-5, .i-grid .col.pull-b4-10 {
+  .grid .col.pull-b2-5, .grid .col.pull-b4-10 {
     right: 40%;
   }
-  .i-grid .col.offset-b2-5, .i-grid .col.offset-b4-10 {
+  .grid .col.offset-b2-5, .grid .col.offset-b4-10 {
     margin-left: 40%;
   }
-  .i-grid .col.b3-5, .i-grid .col.b6-10 {
+  .grid .col.b3-5, .grid .col.b6-10 {
     width: 60%;
   }
-  .i-grid .col.push-b3-5, .i-grid .col.push-b6-10 {
+  .grid .col.push-b3-5, .grid .col.push-b6-10 {
     left: 60%;
   }
-  .i-grid .col.pull-b3-5, .i-grid .col.pull-b6-10 {
+  .grid .col.pull-b3-5, .grid .col.pull-b6-10 {
     right: 60%;
   }
-  .i-grid .col.offset-b3-5, .i-grid .col.offset-b6-10 {
+  .grid .col.offset-b3-5, .grid .col.offset-b6-10 {
     margin-left: 60%;
   }
-  .i-grid .col.b4-5, .i-grid .col.b8-10 {
+  .grid .col.b4-5, .grid .col.b8-10 {
     width: 80%;
   }
-  .i-grid .col.push-b4-5, .i-grid .col.push-b8-10 {
+  .grid .col.push-b4-5, .grid .col.push-b8-10 {
     left: 80%;
   }
-  .i-grid .col.pull-b4-5, .i-grid .col.pull-b8-10 {
+  .grid .col.pull-b4-5, .grid .col.pull-b8-10 {
     right: 80%;
   }
-  .i-grid .col.offset-b4-5, .i-grid .col.offset-b8-10 {
+  .grid .col.offset-b4-5, .grid .col.offset-b8-10 {
     margin-left: 80%;
   }
-  .i-grid .col.b1-6, .i-grid .col.b2-12 {
+  .grid .col.b1-6, .grid .col.b2-12 {
     width: 16.66667%;
   }
-  .i-grid .col.push-b1-6, .i-grid .col.push-b2-12 {
+  .grid .col.push-b1-6, .grid .col.push-b2-12 {
     left: 16.66667%;
   }
-  .i-grid .col.pull-b1-6, .i-grid .col.pull-b2-12 {
+  .grid .col.pull-b1-6, .grid .col.pull-b2-12 {
     right: 16.66667%;
   }
-  .i-grid .col.offset-b1-6, .i-grid .col.offset-b2-12 {
+  .grid .col.offset-b1-6, .grid .col.offset-b2-12 {
     margin-left: 16.66667%;
   }
-  .i-grid .col.b5-6, .i-grid .col.b10-12 {
+  .grid .col.b5-6, .grid .col.b10-12 {
     width: 83.33333%;
   }
-  .i-grid .col.push-b5-6, .i-grid .col.push-b10-12 {
+  .grid .col.push-b5-6, .grid .col.push-b10-12 {
     left: 83.33333%;
   }
-  .i-grid .col.pull-b5-6, .i-grid .col.pull-b10-12 {
+  .grid .col.pull-b5-6, .grid .col.pull-b10-12 {
     right: 83.33333%;
   }
-  .i-grid .col.offset-b5-6, .i-grid .col.offset-b10-12 {
+  .grid .col.offset-b5-6, .grid .col.offset-b10-12 {
     margin-left: 83.33333%;
   }
-  .i-grid .col.b1-8 {
+  .grid .col.b1-8 {
     width: 12.5%;
   }
-  .i-grid .col.push-b1-8 {
+  .grid .col.push-b1-8 {
     left: 12.5%;
   }
-  .i-grid .col.pull-b1-8 {
+  .grid .col.pull-b1-8 {
     right: 12.5%;
   }
-  .i-grid .col.offset-b1-8 {
+  .grid .col.offset-b1-8 {
     margin-left: 12.5%;
   }
-  .i-grid .col.b3-8 {
+  .grid .col.b3-8 {
     width: 37.5%;
   }
-  .i-grid .col.push-b3-8 {
+  .grid .col.push-b3-8 {
     left: 37.5%;
   }
-  .i-grid .col.pull-b3-8 {
+  .grid .col.pull-b3-8 {
     right: 37.5%;
   }
-  .i-grid .col.offset-b3-8 {
+  .grid .col.offset-b3-8 {
     margin-left: 37.5%;
   }
-  .i-grid .col.b5-8 {
+  .grid .col.b5-8 {
     width: 62.5%;
   }
-  .i-grid .col.push-b5-8 {
+  .grid .col.push-b5-8 {
     left: 62.5%;
   }
-  .i-grid .col.pull-b5-8 {
+  .grid .col.pull-b5-8 {
     right: 62.5%;
   }
-  .i-grid .col.offset-b5-8 {
+  .grid .col.offset-b5-8 {
     margin-left: 62.5%;
   }
-  .i-grid .col.b7-8 {
+  .grid .col.b7-8 {
     width: 87.5%;
   }
-  .i-grid .col.push-b7-8 {
+  .grid .col.push-b7-8 {
     left: 87.5%;
   }
-  .i-grid .col.pull-b7-8 {
+  .grid .col.pull-b7-8 {
     right: 87.5%;
   }
-  .i-grid .col.offset-b7-8 {
+  .grid .col.offset-b7-8 {
     margin-left: 87.5%;
   }
-  .i-grid .col.b1-10 {
+  .grid .col.b1-10 {
     width: 10%;
   }
-  .i-grid .col.push-b1-10 {
+  .grid .col.push-b1-10 {
     left: 10%;
   }
-  .i-grid .col.pull-b1-10 {
+  .grid .col.pull-b1-10 {
     right: 10%;
   }
-  .i-grid .col.offset-b1-10 {
+  .grid .col.offset-b1-10 {
     margin-left: 10%;
   }
-  .i-grid .col.b3-10 {
+  .grid .col.b3-10 {
     width: 30%;
   }
-  .i-grid .col.push-b3-10 {
+  .grid .col.push-b3-10 {
     left: 30%;
   }
-  .i-grid .col.pull-b3-10 {
+  .grid .col.pull-b3-10 {
     right: 30%;
   }
-  .i-grid .col.offset-b3-10 {
+  .grid .col.offset-b3-10 {
     margin-left: 30%;
   }
-  .i-grid .col.b7-10 {
+  .grid .col.b7-10 {
     width: 70%;
   }
-  .i-grid .col.push-b7-10 {
+  .grid .col.push-b7-10 {
     left: 70%;
   }
-  .i-grid .col.pull-b7-10 {
+  .grid .col.pull-b7-10 {
     right: 70%;
   }
-  .i-grid .col.offset-b7-10 {
+  .grid .col.offset-b7-10 {
     margin-left: 70%;
   }
-  .i-grid .col.b9-10 {
+  .grid .col.b9-10 {
     width: 90%;
   }
-  .i-grid .col.push-b9-10 {
+  .grid .col.push-b9-10 {
     left: 90%;
   }
-  .i-grid .col.pull-b9-10 {
+  .grid .col.pull-b9-10 {
     right: 90%;
   }
-  .i-grid .col.offset-b9-10 {
+  .grid .col.offset-b9-10 {
     margin-left: 90%;
   }
-  .i-grid .col.b1-12 {
+  .grid .col.b1-12 {
     width: 8.33333%;
   }
-  .i-grid .col.push-b1-12 {
+  .grid .col.push-b1-12 {
     left: 8.33333%;
   }
-  .i-grid .col.pull-b1-12 {
+  .grid .col.pull-b1-12 {
     right: 8.33333%;
   }
-  .i-grid .col.offset-b1-12 {
+  .grid .col.offset-b1-12 {
     margin-left: 8.33333%;
   }
-  .i-grid .col.b5-12 {
+  .grid .col.b5-12 {
     width: 41.66667%;
   }
-  .i-grid .col.push-b5-12 {
+  .grid .col.push-b5-12 {
     left: 41.66667%;
   }
-  .i-grid .col.pull-b5-12 {
+  .grid .col.pull-b5-12 {
     right: 41.66667%;
   }
-  .i-grid .col.offset-b5-12 {
+  .grid .col.offset-b5-12 {
     margin-left: 41.66667%;
   }
-  .i-grid .col.b7-12 {
+  .grid .col.b7-12 {
     width: 58.33333%;
   }
-  .i-grid .col.push-b7-12 {
+  .grid .col.push-b7-12 {
     left: 58.33333%;
   }
-  .i-grid .col.pull-b7-12 {
+  .grid .col.pull-b7-12 {
     right: 58.33333%;
   }
-  .i-grid .col.offset-b7-12 {
+  .grid .col.offset-b7-12 {
     margin-left: 58.33333%;
   }
-  .i-grid .col.b11-12 {
+  .grid .col.b11-12 {
     width: 91.66667%;
   }
-  .i-grid .col.push-b11-12 {
+  .grid .col.push-b11-12 {
     left: 91.66667%;
   }
-  .i-grid .col.pull-b11-12 {
+  .grid .col.pull-b11-12 {
     right: 91.66667%;
   }
-  .i-grid .col.offset-b11-12 {
+  .grid .col.offset-b11-12 {
     margin-left: 91.66667%;
   }
+}
+
+/*
+* For default theme. Here is the style definition of `badge`
+______________________________________________________________*/
+.badge {
+  display: inline-block;
+  font-size: 0.8em;
+  font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
+  border-radius: 3px;
+  min-width: 30px;
+  padding: 2px 3px;
+  text-align: center;
+  border: 1px solid #fff;
+  color: #1a1a1a;
+  background-color: #f2f2f2;
+}
+.badge.s-new {
+  color: #fff;
+  background-color: #ff6600;
+  border: 1px solid #fff;
+}
+.badge.s-old {
+  color: #1a1a1a;
+  background-color: lightgray;
+  border: 1px solid #fff;
+}
+.badge.s-hey {
+  color: #fff;
+  background-color: #008723;
+  border: 1px solid #fff;
 }
 
 /*

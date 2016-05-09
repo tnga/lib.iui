@@ -42,6 +42,7 @@ $global-z-index: 1000 !default;
 $white-color: #fff !default;
 $red-color: #f00 !default;
 $yellow-color: yellow !default;
+$green-color: #008723 !default;
 $light-color: #f2f2f2 !default;
 $black-color: #1a1a1a !default;
 $dark-color: #2d2d2d !default;
@@ -159,6 +160,8 @@ $quote-font-family: Purisa, i_Purisa, "Lucida Handwriting", "Comic Sans Ms" ;
 //5.----------------------------
 //For some helpers's properties
 //6.----------------------------
+//For some ships's properties
+//7.----------------------------
 //For some other extras properties
 
 //1.----------------------------
@@ -209,7 +212,7 @@ $grid-offsets: true !default;
 $inl-gutter-width: 1em !default; // internal column's gutter
 $enl-gutter-width: 0/100 !default; //external column's gutter; it's take in [0,1]
 
-$grid-namespace: "i-grid" !default;
+$grid-namespace: "grid" !default;
 
 
 //4.----------------------------
@@ -232,6 +235,18 @@ $elt-hides: true !default;
 
 
 //6.----------------------------
+//For some ships's properties
+
+$badge-new: true !default;
+$badge-old: true !default;
+$badge-hey: true !default;
+
+$badge-new-color: $active-color !default;
+$badge-old-color: lighten( $dark-color, 65%) !default;
+$badge-hey-color: $green-color !default;
+
+
+//7.----------------------------
 //For some other extras properties
 
 $shadow-styles: ('s-sha', 's-sha-t', 's-sha-b', 's-sha-l', 's-sha-r') !default;

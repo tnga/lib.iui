@@ -2,7 +2,7 @@
 * For default theme. Here is the style definition of border design for selection in navbar.
 __________________________________________________________________________________________*/
 
-.i-nav {
+.navbar {
 
     @if index( $navbar-border-aspect, 'look-b') != null {
 
