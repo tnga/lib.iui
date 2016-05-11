@@ -1297,7 +1297,7 @@ form.look-form label {
   margin: 0.3em;
 }
 form.look-form label span:first-of-type {
-  border: 1px solid #2d2d2d;
+  border: 1px solid #868686;
   padding: 0.3em;
   margin-left: 0.1em;
 }
@@ -1326,6 +1326,8 @@ form.mi-style {
   width: 50%;
   margin: auto;
   border-radius: 25px;
+  color: #1a1a1a;
+  background-color: #fff;
 }
 form.mi-style label {
   display: block;
@@ -1351,6 +1353,8 @@ ________________________________________________________________________________
   padding: 1.3em 0.9em;
   box-shadow: 0px 0px 5px rgba(129, 129, 129, 0.7);
   display: block;
+  color: #1a1a1a;
+  background-color: #fff;
 }
 
 /*
