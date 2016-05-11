@@ -96,11 +96,20 @@ $quote-font-family: Purisa, i_Purisa, "Lucida Handwriting", "Comic Sans Ms" ;
     background-image: linear-gradient(to top, $btn-color, lighten($btn-color,10%), lighten($btn-color,15%)) ;
 }
 
-@mixin global-bg-look ($bg-color:$default-bg-color, $txt-color:$default-txt-color) {
+@mixin global-bg-look ($map-look-colors: ('bgcolor':$default-bg-color, 'color':$default-txt-color)) {
 
-    color: #{$txt-color} ;
-    background-color: #{$bg-color} ; 
-    //background-image: linear-gradient(to top, $bg-color, lighten($bg-color,5%), lighten($bg-color,10%)) ;
+    @if map-get( $map-look-colors, 'color') != null {
+        
+        color: #{ map-get( $map-look-colors, 'color')};
+    }
+    @if map-get( $map-look-colors, 'bgcolor') != null {
+        
+        background-color: #{ map-get( $map-look-colors, 'bgcolor')} ;
+    }
+    //@if map-get( $map-look-colors, 'bg') != null { //(ex: url, linear-gradiant, ...)
+    //    
+    //    background: #{ map-get( $map-look-colors, 'bg')} ;
+    //}
 }
 
 @mixin style-focus-of ($elt-type:default) {
@@ -172,6 +181,8 @@ $navbar-b-fixed: true !default;
 
 $navbar-border-aspect: ('look-b', 'look-bt', 'look-bb', 'look-bl', 'look-br') !default;
 
+$navbar-colors: ('bgcolor':$default-bg-color, 'color':$default-txt-color) ;
+
 $navbar-border: 0.15em solid $hover-color ;
 $navbar-active-border: 0.25em solid $select-color ;
 $navbar-padding: 0.5em ;
@@ -188,6 +199,9 @@ $menu-max-width: 200px ;
 
 //2.----------------------------
 //For some collections's properties
+
+$collection-ih-colors: ('bgcolor': lighten( $dark-color, 71%))  !default; //hovered item colors
+$collection-ia-colors: ('bgcolor': $hover-color, 'color': $select-txt-color)  !default; //actived item colors
 
 $block-tb-padding: 1.3em ; //top-bottom padding size
 $block-lr-padding: 0.9em ; //left-right padding size
@@ -218,11 +232,11 @@ $grid-namespace: "grid" !default;
 //4.----------------------------
 //For some tables's properties
 
-$table-cel-a-color: lighten( $dark-color, 35%) !default; //column-active color
-$table-cel-o-color: lighten( $dark-color, 70%) !default; //column-odd color
-$table-cel-h-color: lighten( $dark-color, 80%) !default; //column-hover color
-$table-line-o-color: lighten( $dark-color, 75%) !default; //line-odd color
-$table-line-h-color: lighten( $dark-color, 60%) !default; //line-odd color
+$table-cel-a-colors: ('bgcolor': lighten( $dark-color, 35%), 'color': $select-txt-color) !default; //column-active color
+$table-cel-o-colors: ('bgcolor': lighten( $dark-color, 70%)) !default; //column-odd color
+$table-cel-h-colors: ('bgcolor': lighten( $dark-color, 80%), 'color': $default-txt-color) !default; //column-hover color
+$table-line-o-colors: ('bgcolor': lighten( $dark-color, 75%)) !default; //line-odd color
+$table-line-h-colors: ('bgcolor': lighten( $dark-color, 60%)) !default; //line-odd color
 
 $table-aspects: ('s-cel', 's-line', 'hover-cel', 'hover-line', 'h-border', 'v-border', 'no-border') !default;
 
@@ -241,9 +255,9 @@ $badge-new: true !default;
 $badge-old: true !default;
 $badge-hey: true !default;
 
-$badge-new-color: $active-color !default;
-$badge-old-color: lighten( $dark-color, 65%) !default;
-$badge-hey-color: $green-color !default;
+$badge-new-colors: ('bgcolor': $active-color, 'color': $select-txt-color)!default;
+$badge-old-colors: ('bgcolor': lighten( $dark-color, 65%)) !default;
+$badge-hey-colors: ('bgcolor': $green-color, 'color': $select-txt-color) !default;
 
 
 //7.----------------------------

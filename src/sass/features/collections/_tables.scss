@@ -19,7 +19,7 @@ table {
 
     td.active-item, td#current-item {
 
-        @include global-bg-look( $table-cel-a-color, $select-txt-color) ;
+        @include global-bg-look( $table-cel-a-colors) ;
     }
     
     @if index($table-aspects, 's-cel') != null {
@@ -31,7 +31,7 @@ table {
                 //@TODO verify `.unfocusable` style priority on helpers features since this (:not) will not work on old browser.
                 &:not( .unfocusable), &:not( .unfocusable) {
 
-                    @include global-bg-look( $table-cel-o-color) ;
+                    @include global-bg-look( $table-cel-o-colors) ;
                 }
             }
         }
@@ -44,7 +44,7 @@ table {
             //@TODO verify `.unfocusable` style priority on helpers features since this (:not) will not work on old browser.
             tr:nth-child( odd) {
 
-                @include global-bg-look( $table-line-o-color) ;
+                @include global-bg-look( $table-line-o-colors) ;
             }
         }
     }
@@ -58,7 +58,7 @@ table {
                 //@TODO verify `.unfocusable` implementation on helpers features since this (:not) will not work on old browser.
                 &:hover:not( .unfocusable), &:not( .unfocusable).hover {
 
-                    @include global-bg-look( $table-cel-h-color) ;
+                    @include global-bg-look( $table-cel-h-colors) ;
                 }
             }
         }
@@ -71,7 +71,7 @@ table {
             //@TODO verify `.unfocusable` style priority on helpers features since this (:not) will not work on old browser.
             tr:hover:not( .unfocusable), tr:not( .unfocusable).hover {
 
-                @include global-bg-look( $table-line-h-color) ;
+                @include global-bg-look( $table-line-h-colors) ;
             }
         }
     }

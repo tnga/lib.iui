@@ -13,14 +13,14 @@ ______________________________________________________________*/
     text-align: center;
     border: 1px solid $select-txt-color ;
     
-    @include global-bg-look( $light-color) ;
+    @include global-bg-look( ('bgcolor': $light-color)) ;
     
     
     @if $badge-new {
         
         &.s-new {
             
-            @include global-bg-look( $badge-new-color, $select-txt-color) ;
+            @include global-bg-look( $badge-new-colors) ;
             border: 1px solid $select-txt-color ;
         }
     }
@@ -29,7 +29,7 @@ ______________________________________________________________*/
         
         &.s-old {
             
-            @include global-bg-look( $badge-old-color) ;
+            @include global-bg-look( $badge-old-colors) ;
             border: 1px solid $select-txt-color ;
         }
     }
@@ -38,7 +38,7 @@ ______________________________________________________________*/
         
         &.s-hey {
             
-            @include global-bg-look( $badge-hey-color, $select-txt-color) ;
+            @include global-bg-look( $badge-hey-colors) ;
             border: 1px solid $select-txt-color ;
         }
     }

@@ -1111,7 +1111,7 @@ __________________________________________________________________*/
   font-weight: bold;
 }
 .navbar > ul li.unfocusable, .navbar > ul li:hover.unfocusable, .navbar > ul li:focus.unfocusable {
-  color: #7f7f7f;
+  color: #848484;
   background-color: transparent;
 }
 .navbar.t-fixed {
@@ -1393,7 +1393,6 @@ ________________________________________________________________________________
   text-decoration: none;
 }
 .collection:not(.unfocusable) > li:hover:not(.unfocusable), .collection:not(.unfocusable) > li:not(.unfocusable).hover, .collection:not(.unfocusable) > a:hover:not(.unfocusable), .collection:not(.unfocusable) > a:not(.unfocusable).hover {
-  color: #1a1a1a;
   background-color: #e2e2e2;
 }
 .collection:not(.unfocusable) > li:active:not(.unfocusable), .collection:not(.unfocusable) > li.active-item, .collection:not(.unfocusable) > li#current-item, .collection:not(.unfocusable) > a:active:not(.unfocusable), .collection:not(.unfocusable) > a.active-item, .collection:not(.unfocusable) > a#current-item {
@@ -1422,11 +1421,9 @@ table td.active-item, table td#current-item {
   background-color: #868686;
 }
 table.s-cel tr td:nth-child(odd):not(.unfocusable), table.s-cel tr td:nth-child(odd):not(.unfocusable) {
-  color: #1a1a1a;
   background-color: #e0e0e0;
 }
 table.s-line tr:nth-child(odd) {
-  color: #1a1a1a;
   background-color: #ececec;
 }
 table.hover-cel tr:not(.unfocusable) td:hover:not(.unfocusable), table.hover-cel tr:not(.unfocusable) td:not(.unfocusable).hover {
@@ -1434,7 +1431,6 @@ table.hover-cel tr:not(.unfocusable) td:hover:not(.unfocusable), table.hover-cel
   background-color: #f9f9f9;
 }
 table.hover-line tr:hover:not(.unfocusable), table.hover-line tr:not(.unfocusable).hover {
-  color: #1a1a1a;
   background-color: #c6c6c6;
 }
 table.h-border td, table.h-border th {
@@ -3537,7 +3533,6 @@ ______________________________________________________________*/
   padding: 2px 3px;
   text-align: center;
   border: 1px solid #fff;
-  color: #1a1a1a;
   background-color: #f2f2f2;
 }
 .badge.s-new {
@@ -3546,7 +3541,6 @@ ______________________________________________________________*/
   border: 1px solid #fff;
 }
 .badge.s-old {
-  color: #1a1a1a;
   background-color: lightgray;
   border: 1px solid #fff;
 }

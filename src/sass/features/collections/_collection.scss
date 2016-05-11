@@ -63,20 +63,20 @@ ________________________________________________________________________________
         //@TODO verify `.unfocusable` implementation on extras features since this (:not) will not work on old browser.
         &:hover:not( .unfocusable), &:not( .unfocusable).hover {
 
-            @include global-bg-look( lighten( $dark-color, 71%)) ;
+            @include global-bg-look( $collection-ih-colors) ;
         }
         &:active:not( .unfocusable), &.active-item, &#current-item { //@TODO maybe setting `active-item` when `unfocusable` ?
 
             transition: none ; //@TODO remove or modify this when will use `hover` library
 
-            @include global-bg-look( $hover-color, $select-txt-color) ;
+            @include global-bg-look( $collection-ia-colors) ;
         }
     }
     &.disable >li, &>li.disable { //@FIXME when will implement `.disable` in extras features. this not have to be affected by `:hover` or `:active` actions.
 
         &, &:hover, &.hover-item, &:active, &.active-item, &#current-item {
 
-            @include global-bg-look( "transparent", darken( $disable-color, 25%) ) ;
+            @include global-bg-look( ('bgcolor': "transparent", 'color' :darken( $disable-color, 25%) )) ;
         }
     }
 }

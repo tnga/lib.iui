@@ -10,7 +10,7 @@ ________________________________________________________________________________
 
         &:hover, &#current-page, &.active-item {
 
-            @include global-bg-look( $select-color, $select-txt-color) ;
+            @include global-bg-look( ('bgcolor':$select-color, 'color': $select-txt-color)) ;
 
             >a:not([href]) {
 
@@ -28,7 +28,7 @@ ________________________________________________________________________________
 
         a:hover {
 
-            @include global-bg-look( "transparent", $white-color) ;
+            @include global-bg-look( ('bgcolor': "transparent", 'color': $white-color)) ;
         }
     }
 }
