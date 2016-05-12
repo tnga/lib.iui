@@ -30,6 +30,34 @@
                 <span>badge-old <span class="badge s-old">5</span></span>
                 <span>badge-hey <span class="badge s-hey">3</span></span>
             </center>
+                  
+            <nav class="block">
+                <h4>navcrumb</h4>
+                <ul class="navcrumb">
+                    <li>crumb-item</li>
+                    <li><a class="unfocusable" href="#">crumb-item1</a></li>
+                    <li><a href="#">crumb-item2</a></li>
+                    <li><a href="#">crumb-item3</a></li>
+                    <li><a class="actived" href="#">crumb-item4</a></li>
+                </ul>
+                <br />
+                <nav class="navcrumb">
+                    <a class="unfocusable">crumb-atem</a>
+                    <a href="#">crumb-atem1</a>
+                    <a href="#">crumb-atem2</a>
+                    <a href="#">crumb-atem3</a>
+                    <a id="current-crumb" href="#">crumb-atem4</a>
+                </nav>
+                <br />
+                <!--@TODO implement global scope for `data-join=""`. javascript can be necessary for that-->
+                <nav class="navcrumb">
+                    <a data-join=">" href="#">crumb-atem</a>
+                    <a data-join=">" href="#">crumb-atem1</a>
+                    <a data-join=">" id="current-crumb" href="#">crumb-atem2</a>
+                    <a data-join=">" href="#">crumb-atem3</a>
+                    <a data-join=">" href="#">crumb-atem4</a>
+                </nav>
+            </nav> 
         
         </div>
         

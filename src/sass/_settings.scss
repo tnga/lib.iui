@@ -60,6 +60,7 @@ $border-color: $dark-color !default;
 $default-bg-color: $white-color !default;
 $default-txt-color: $black-color !default;
 $select-txt-color: $white-color !default;
+$disable-txt-color: lighten( $default-txt-color, 40%) !default;
 
 $shadow-color: rgba(103, 103, 103, 0.7) !default;
 
@@ -259,6 +260,9 @@ $badge-new-colors: ('bgcolor': $active-color, 'color': $select-txt-color)!defaul
 $badge-old-colors: ('bgcolor': lighten( $dark-color, 65%)) !default;
 $badge-hey-colors: ('bgcolor': $green-color, 'color': $select-txt-color) !default;
 
+$crumb-font-size: 0.9em !default;
+$crumb-max-width: 200px !default;
+$crumb-separator: "/" !default;
 
 //7.----------------------------
 //For some other extras properties

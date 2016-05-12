@@ -1139,53 +1139,53 @@ __________________________________________________________________*/
 }
 
 /*
-* For default theme. Here is the style definition of "mbar" from umiproject's website navbar.
+* For default theme. Here is the style definition of "mi-bar" from umiproject's website navbar.
 ______________________________________________________________________________________________*/
-.navbar.mbar {
+.navbar.mi-bar {
   box-shadow: 0px 4px 5px rgba(103, 103, 103, 0.7);
   border: none;
   padding: 0.7em 0.5em 0.3em 0.5em;
 }
-.navbar.mbar.b-fixed {
+.navbar.mi-bar.b-fixed {
   box-shadow: 0px -4px 5px rgba(103, 103, 103, 0.7);
   border: none;
   padding: 0.4em 0.5em 0.6em 0.5em;
 }
-.navbar.mbar.b-fixed > ul li {
+.navbar.mi-bar.b-fixed > ul li {
   vertical-align: bottom;
 }
-.navbar.mbar.b-fixed > ul li > ul {
+.navbar.mi-bar.b-fixed > ul li > ul {
   top: auto;
   bottom: 2.1em;
   box-shadow: 0px -3px 3px rgba(103, 103, 103, 0.7);
 }
-.navbar.mbar.b-fixed > ul li > ul li ul {
+.navbar.mi-bar.b-fixed > ul li > ul li ul {
   top: auto;
   bottom: 0em;
 }
-.navbar.mbar.mi-style > ul > li ul {
+.navbar.mi-bar.mi-style > ul > li ul {
   top: 3em;
 }
-.navbar.mbar.mi-style > ul > li ul li {
+.navbar.mi-bar.mi-style > ul > li ul li {
   margin: 0.5em 0.4em;
 }
-.navbar.mbar.mi-style > ul > li ul li ul {
+.navbar.mi-bar.mi-style > ul > li ul li ul {
   top: 2.6em;
 }
-.navbar.mbar.mi-style.b-fixed > ul > li ul {
+.navbar.mi-bar.mi-style.b-fixed > ul > li ul {
   top: auto;
   bottom: 2.8em;
   border: none;
   border-bottom: 1px solid #bfbfbf;
 }
-.navbar.mbar.mi-style.b-fixed > ul > li ul li {
+.navbar.mi-bar.mi-style.b-fixed > ul > li ul li {
   margin: 0.5em 0.4em;
 }
-.navbar.mbar.mi-style.b-fixed > ul > li ul li ul {
+.navbar.mi-bar.mi-style.b-fixed > ul > li ul li ul {
   top: auto;
   bottom: 2.6em;
 }
-.navbar.mbar.mi-style.b-fixed > ul > li ul:hover {
+.navbar.mi-bar.mi-style.b-fixed > ul > li ul:hover {
   border: none;
   border-bottom: 1px solid #ff6600;
 }
@@ -3552,6 +3552,61 @@ ______________________________________________________________*/
   color: #fff;
   background-color: #008723;
   border: 1px solid #fff;
+}
+
+/*
+* For default theme. Here is the style definition of `crumb` design.
+____________________________________________________________________*/
+.navcrumb {
+  padding: 0.1em;
+  margin: 5px;
+  font-size: 0.9em;
+  display: inline-block;
+}
+.navcrumb > li, .navcrumb > a {
+  display: inline-block;
+  margin-right: 0.3em;
+  font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
+  padding: 0em;
+  box-sizing: border-box;
+  max-width: 200px;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.navcrumb > li:before, .navcrumb > a:before {
+  content: "/";
+  padding-right: 0.3em;
+}
+.navcrumb > li:before, .navcrumb > li:before:hover, .navcrumb > a:before, .navcrumb > a:before:hover {
+  color: #1a1a1a;
+  font-weight: normal;
+}
+.navcrumb > li[data-join]:before, .navcrumb > a[data-join]:before {
+  content: attr(data-join);
+}
+.navcrumb > li:first-of-type:before, .navcrumb > a:first-of-type:before {
+  content: "";
+}
+.navcrumb > li a, .navcrumb > li a:visited, .navcrumb > a, .navcrumb > a:visited {
+  color: #4d4d4d;
+}
+.navcrumb > li a:hover, .navcrumb > li a:focus, .navcrumb > li a.hovered, .navcrumb > li a.actived, .navcrumb > li a.focused, .navcrumb > li a.current, .navcrumb > li a#current-crumb, .navcrumb > a:hover, .navcrumb > a:focus, .navcrumb > a.hovered, .navcrumb > a.actived, .navcrumb > a.focused, .navcrumb > a.current, .navcrumb > a#current-crumb {
+  color: #ff6600;
+}
+.navcrumb > li a:hover, .navcrumb > a:hover {
+  text-decoration: none;
+}
+.navcrumb > li a.current, .navcrumb > li a#current-crumb, .navcrumb > a.current, .navcrumb > a#current-crumb {
+  font-weight: bold;
+}
+.navcrumb > li a.unfocusable, .navcrumb > a.unfocusable {
+  color: gray !important;
+  text-decoration: none !important;
+}
+.navcrumb a:not([href]):hover {
+  color: #4d4d4d;
 }
 
 /*

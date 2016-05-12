@@ -1,0 +1,75 @@
+/*
+* For default theme. Here is the style definition of `crumb` design.
+____________________________________________________________________*/
+
+
+.navcrumb {
+    
+    padding: 0.1em ;
+    margin: 5px ;
+    font-size: $crumb-font-size ;
+    display: inline-block ;
+    
+    &>li, &>a { // for item's crumb
+
+        display: inline-block ;
+        margin-right: 0.3em ;
+        font-family: $item-font-family ;
+        padding: 0em ;
+        box-sizing: border-box ;
+        max-width: $crumb-max-width ;
+        vertical-align: middle ;
+        
+        @include style-overflow-of("line") ;
+        
+        &:before {
+            
+            content: $crumb-separator ; //default separator
+            padding-right: 0.3em ;
+            
+            &, &:hover {
+                
+                color: $default-txt-color ;
+                font-weight: normal ;
+            }
+        }
+        &[data-join]:before {
+
+            content: attr(data-join) ;
+        }
+        &:first-of-type:before {
+            
+            content: "" ;
+        }
+    }
+    
+    @at-root &>li a, &>a {
+        
+        &, &:visited {
+
+            color: lighten( $default-txt-color, 20%) ;
+        }
+        &:hover, &:focus, &.hovered, &.actived, &.focused, &.current, &#current-crumb {
+
+            color: $hover-color ;
+        }
+        &:hover {
+
+            text-decoration: none ;
+        } 
+        &.current, &#current-crumb {
+            
+            font-weight: bold ;
+        }
+        &.unfocusable {
+            
+            color: $disable-txt-color !important;
+            text-decoration: none !important;
+        }
+    }
+    
+    a:not([href]):hover {
+        
+        color: lighten( $default-txt-color, 20%) ;
+    }
+}
