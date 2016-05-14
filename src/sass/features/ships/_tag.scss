@@ -33,13 +33,13 @@ __________________________________________________________________*/
       //font-weight: bold;
     }
   }
-  .btn.close {
+  button.close {
 
     @extend %circle ;
 
     max-height: 28px ;
     line-height: normal ;
-    padding: 3px 5px ;
+    padding: 3px 6px ;
     margin-right: -($tag-padding-lr)/2 ;
 
     &, &:hover, &.hovered, &.actived {

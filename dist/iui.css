@@ -4,11 +4,7 @@ img.responsive, video.responsive {
   height: auto;
 }
 
-.s-circle, .tag .btn.close, .tag button.close,
-.tag input.close[type="button"],
-.tag input.close[type="submit"],
-.tag input.close[type="reset"],
-.tag input.close[type="file"], .tag img {
+.s-circle, .tag button.close, .tag img {
   border-radius: 50%;
 }
 
@@ -3641,33 +3637,13 @@ __________________________________________________________________*/
   padding-left: 8px;
   font-style: normal;
 }
-.tag .btn.close, .tag button.close,
-.tag input.close[type="button"],
-.tag input.close[type="submit"],
-.tag input.close[type="reset"],
-.tag input.close[type="file"] {
+.tag button.close {
   max-height: 28px;
   line-height: normal;
-  padding: 3px 5px;
+  padding: 3px 6px;
   margin-right: -6px;
 }
-.tag .btn.close, .tag button.close,
-.tag input.close[type="button"],
-.tag input.close[type="submit"],
-.tag input.close[type="reset"],
-.tag input.close[type="file"], .tag .btn.close:hover, .tag button.close:hover,
-.tag input.close[type="button"]:hover,
-.tag input.close[type="submit"]:hover,
-.tag input.close[type="reset"]:hover,
-.tag input.close[type="file"]:hover, .tag .btn.close.hovered, .tag button.close.hovered,
-.tag input.close.hovered[type="button"],
-.tag input.close.hovered[type="submit"],
-.tag input.close.hovered[type="reset"],
-.tag input.close.hovered[type="file"], .tag .btn.close.actived, .tag button.close.actived,
-.tag input.close.actived[type="button"],
-.tag input.close.actived[type="submit"],
-.tag input.close.actived[type="reset"],
-.tag input.close.actived[type="file"] {
+.tag button.close, .tag button.close:hover, .tag button.close.hovered, .tag button.close.actived {
   box-shadow: none;
 }
 .tag img {
