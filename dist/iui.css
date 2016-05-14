@@ -4,7 +4,11 @@ img.responsive, video.responsive {
   height: auto;
 }
 
-.s-circle {
+.s-circle, .tag .btn.close, .tag button.close,
+.tag input.close[type="button"],
+.tag input.close[type="submit"],
+.tag input.close[type="reset"],
+.tag input.close[type="file"], .tag img {
   border-radius: 50%;
 }
 
@@ -3607,6 +3611,76 @@ ____________________________________________________________________*/
 }
 .navcrumb a:not([href]):hover {
   color: #4d4d4d;
+}
+
+/*
+* For default theme. Here is the style definition of `tag` design.
+__________________________________________________________________*/
+.tag {
+  display: inline-block;
+  height: 32px;
+  font-size: 0.85em;
+  font-weight: 500;
+  line-height: 32px;
+  font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
+  padding: 0 12px;
+  border-radius: 16px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  max-width: 220px;
+  color: #1a1a1a;
+  background-color: #cccccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tag .close {
+  cursor: pointer;
+  float: right;
+  font-size: 0.9em;
+  padding-left: 8px;
+  font-style: normal;
+}
+.tag .btn.close, .tag button.close,
+.tag input.close[type="button"],
+.tag input.close[type="submit"],
+.tag input.close[type="reset"],
+.tag input.close[type="file"] {
+  max-height: 28px;
+  line-height: normal;
+  padding: 3px 5px;
+  margin-right: -6px;
+}
+.tag .btn.close, .tag button.close,
+.tag input.close[type="button"],
+.tag input.close[type="submit"],
+.tag input.close[type="reset"],
+.tag input.close[type="file"], .tag .btn.close:hover, .tag button.close:hover,
+.tag input.close[type="button"]:hover,
+.tag input.close[type="submit"]:hover,
+.tag input.close[type="reset"]:hover,
+.tag input.close[type="file"]:hover, .tag .btn.close.hovered, .tag button.close.hovered,
+.tag input.close.hovered[type="button"],
+.tag input.close.hovered[type="submit"],
+.tag input.close.hovered[type="reset"],
+.tag input.close.hovered[type="file"], .tag .btn.close.actived, .tag button.close.actived,
+.tag input.close.actived[type="button"],
+.tag input.close.actived[type="submit"],
+.tag input.close.actived[type="reset"],
+.tag input.close.actived[type="file"] {
+  box-shadow: none;
+}
+.tag img {
+  float: left;
+  margin: 0px 8px 0px -12px;
+  height: 32px;
+  width: 32px;
+}
+
+a.tag:hover, a.tag.hovered, a.tag.actived {
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff6600;
 }
 
 /*

@@ -1,0 +1,71 @@
+/*
+* For default theme. Here is the style definition of `tag` design.
+__________________________________________________________________*/
+
+
+.tag {
+  
+  display: inline-block ;
+  height: $tag-height ;
+  font-size: 0.85em ;
+  font-weight: 500 ;
+  line-height: $tag-height ;
+  font-family: $item-font-family ;
+  padding: 0 $tag-padding-lr ;
+  border-radius: 16px ;
+  margin-bottom: 5px ;
+  margin-right: 5px ;
+  max-width: 220px ;
+  
+  @include global-bg-look( $tag-colors) ;
+  @include style-overflow-of("line") ;
+  
+  .close {
+    
+    cursor: pointer ;
+    float: right ;
+    font-size: 0.9em;
+    padding-left: 8px ;
+    font-style: normal ;
+    
+    &:hover {
+      
+      //font-weight: bold;
+    }
+  }
+  .btn.close {
+
+    @extend %circle ;
+
+    max-height: 28px ;
+    line-height: normal ;
+    padding: 3px 5px ;
+    margin-right: -($tag-padding-lr)/2 ;
+
+    &, &:hover, &.hovered, &.actived {
+
+      box-shadow: none ;
+    }
+  }
+  
+  img {
+    
+    @extend %circle ;
+    
+    float: left ;
+    margin: 0px 8px 0px #{-($tag-padding-lr)} ;
+    height: $tag-height ;
+    width: $tag-height ;
+  }
+}
+
+
+a.tag {
+  
+  &:hover, &.hovered, &.actived {
+    
+    text-decoration: none ;
+    
+    @include global-bg-look( $tag-h-colors) ;
+  }
+}
