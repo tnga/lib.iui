@@ -1356,6 +1356,9 @@ ________________________________________________________________________________
   color: #1a1a1a;
   background-color: #fff;
 }
+.block > *:first-child {
+  margin-top: 0px;
+}
 
 /*
 * For default theme. Here is the style definition of `collection` for `block` collections, ...

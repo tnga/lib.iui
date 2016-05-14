@@ -11,4 +11,9 @@ ________________________________________________________________________________
     display: block ;
     
     @include global-bg-look() ;
+    
+    &>*:first-child {
+
+        margin-top: 0px ;
+    }
 }
