@@ -9,6 +9,7 @@ ________________________________________________________________________________
     padding: $block-tb-padding $block-lr-padding ;
     box-shadow: 0px 0px 5px lighten( $shadow-color, 10%) ;
     display: block ;
+    box-sizing: border-box ;
     
     @include global-bg-look() ;
     

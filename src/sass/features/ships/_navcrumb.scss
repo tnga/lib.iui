@@ -14,7 +14,7 @@ ____________________________________________________________________*/
     &>li, &>a { // for item's crumb
 
         display: inline-block ;
-        margin-right: 0.3em ;
+        margin-right: 0.2em ;
         font-family: $item-font-family ;
         padding: 0em ;
         box-sizing: border-box ;
@@ -41,6 +41,7 @@ ____________________________________________________________________*/
         &:first-of-type:before {
             
             content: "" ;
+            padding-right: 0.1em ;
         }
     }
     
