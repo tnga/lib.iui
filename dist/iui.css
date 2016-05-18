@@ -3685,7 +3685,10 @@ __________________________________________________________________*/
   height: 32px;
   width: 32px;
 }
-a.tag:hover, .tags > a:hover, a.tag.hovered, .tags > a.hovered, a.tag.actived, .tags > a.actived {
+a:visited.tag, .tags > a:visited {
+  color: #1a1a1a;
+}
+a.tag:hover, .tags > a:hover, a.tag.hovered, .tags > a.hovered, a.tag.actived, .tags > a.actived, a:visited.tag:hover, .tags > a:visited:hover, a:visited.tag.hovered, .tags > a:visited.hovered, a:visited.tag.actived, .tags > a:visited.actived {
   text-decoration: none;
   color: #fff;
   background-color: #ff6600;
