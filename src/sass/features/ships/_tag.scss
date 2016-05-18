@@ -57,15 +57,27 @@ __________________________________________________________________*/
     height: $tag-height ;
     width: $tag-height ;
   }
+  
+  @at-root a.tag {
+
+    &:hover, &.hovered, &.actived {
+
+      text-decoration: none ;
+
+      @include global-bg-look( $tag-h-colors) ;
+    }
+  }
 }
 
 
-a.tag {
+.tags {
   
-  &:hover, &.hovered, &.actived {
+  display: block ;
+  padding: 0.5em ;
+  margin: 0px ;
+  
+  &>li, &>a {
     
-    text-decoration: none ;
-    
-    @include global-bg-look( $tag-h-colors) ;
+    @extend .tag ;
   }
 }

@@ -264,7 +264,7 @@ $crumb-font-size: 0.9em !default;
 $crumb-max-width: 200px !default;
 $crumb-separator: "/" !default;
 
-$tag-colors: ('bgcolor': darken( $light-color, 15%), 'color': $default-txt-color) !default;
+$tag-colors: ('bgcolor': darken( $light-color, 12%), 'color': $default-txt-color) !default;
 $tag-h-colors: ('bgcolor': $hover-color, 'color': $select-txt-color) !default; //colors when hover
 
 $tag-padding-lr: 12px !default; //padding-left-right

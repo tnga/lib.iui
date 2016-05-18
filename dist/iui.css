@@ -4,7 +4,7 @@ img.responsive, video.responsive {
   height: auto;
 }
 
-.s-circle, .tag button.close, .tag img {
+.s-circle, .tag button.close, .tags > li button.close, .tags > a button.close, .tag img, .tags > li img, .tags > a img {
   border-radius: 50%;
 }
 
@@ -3615,7 +3615,7 @@ ____________________________________________________________________*/
 /*
 * For default theme. Here is the style definition of `tag` design.
 __________________________________________________________________*/
-.tag {
+.tag, .tags > li, .tags > a {
   display: inline-block;
   height: 32px;
   font-size: 0.85em;
@@ -3628,38 +3628,43 @@ __________________________________________________________________*/
   margin-right: 5px;
   max-width: 220px;
   color: #1a1a1a;
-  background-color: #cccccc;
+  background-color: lightgray;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.tag .close {
+.tag .close, .tags > li .close, .tags > a .close {
   cursor: pointer;
   float: right;
   font-size: 0.9em;
   padding-left: 8px;
   font-style: normal;
 }
-.tag button.close {
+.tag button.close, .tags > li button.close, .tags > a button.close {
   max-height: 28px;
   line-height: normal;
   padding: 3px 6px;
   margin-right: -6px;
 }
-.tag button.close, .tag button.close:hover, .tag button.close.hovered, .tag button.close.actived {
+.tag button.close, .tags > li button.close, .tags > a button.close, .tag button.close:hover, .tags > li button.close:hover, .tags > a button.close:hover, .tag button.close.hovered, .tags > li button.close.hovered, .tags > a button.close.hovered, .tag button.close.actived, .tags > li button.close.actived, .tags > a button.close.actived {
   box-shadow: none;
 }
-.tag img {
+.tag img, .tags > li img, .tags > a img {
   float: left;
   margin: 0px 8px 0px -12px;
   height: 32px;
   width: 32px;
 }
-
-a.tag:hover, a.tag.hovered, a.tag.actived {
+a.tag:hover, .tags > a:hover, a.tag.hovered, .tags > a.hovered, a.tag.actived, .tags > a.actived {
   text-decoration: none;
   color: #fff;
   background-color: #ff6600;
+}
+
+.tags {
+  display: block;
+  padding: 0.5em;
+  margin: 0px;
 }
 
 /*
