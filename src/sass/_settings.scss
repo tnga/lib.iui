@@ -92,11 +92,17 @@ $quote-font-family: Purisa, i_Purisa, "Lucida Handwriting", "Comic Sans Ms" ;
 // /* Global's mixins declarations
 // --------------------------------*/
 
-@mixin button-bg-look ($btn-color, $txt-color) {
+@mixin button-bg-look ($btn-color:$dark-color, $txt-color:$white-color) {
 
-    color: $txt-color ;
-    background-color: $btn-color ;
-    background-image: linear-gradient(to top, $btn-color, lighten($btn-color,10%), lighten($btn-color,15%)) ;
+    color: #{$txt-color} ;
+    background-color: #{$btn-color} ;
+    @if $btn-color != "transparent" /*|| $btn-color != "none"*/ {
+        //@TODO maybe there is a sass funtion like `isAColor()` that can be better use here
+        background-image: linear-gradient(to top, $btn-color, lighten($btn-color,10%), lighten($btn-color,15%)) ;
+    }
+    @else {
+        background-image: none ;
+    }
 }
 
 @mixin global-bg-look ($map-look-colors: ('bgcolor':$default-bg-color, 'color':$default-txt-color)) {
@@ -272,6 +278,10 @@ $tag-h-colors: ('bgcolor': $hover-color, 'color': $select-txt-color) !default; /
 $tag-padding-lr: 12px !default; //padding-left-right
 $tag-height: 32px !default;
 $tag-max-width: $item-max-width !default;
+
+$pagination-max-width: $item-max-width !default;
+$pagination-font-size: 0.95em !default;
+
 
 //7.----------------------------
 //For some other extras properties

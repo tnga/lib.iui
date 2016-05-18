@@ -151,7 +151,7 @@ img, video {
     }
     &:active, &.actived {
 
-        box-shadow: 0px 1px 5px $active-color ;
+        @include button-bg-look($active-color, $select-txt-color) ;
     }
     &:focus, &.focused {
         
@@ -169,6 +169,7 @@ img, video {
         
         @extend a.btn ;
         color: $white-color ;
+        //@TODO expressively set unclickable the element when it's disable
     }
 }
 

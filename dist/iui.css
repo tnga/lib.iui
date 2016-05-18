@@ -549,14 +549,14 @@ a.btn:hover, .btn a:hover, button a:hover,
 input[type="button"] a:hover,
 input[type="submit"] a:hover,
 input[type="reset"] a:hover,
-input[type="file"] a:hover, a btn:hover, a button:hover {
+input[type="file"] a:hover, .pagination > li:not(.btn) a:hover, .pagination > a:not(.btn) a:hover, .pagination > a:hover:not(.btn), a btn:hover, a button:hover {
   text-decoration: none;
 }
 a.btn:visited, .btn a:visited, button a:visited,
 input[type="button"] a:visited,
 input[type="submit"] a:visited,
 input[type="reset"] a:visited,
-input[type="file"] a:visited, a btn:visited, a button:visited {
+input[type="file"] a:visited, .pagination > li:not(.btn) a:visited, .pagination > a:not(.btn) a:visited, .pagination > a:visited:not(.btn), a btn:visited, a button:visited {
   color: #fff;
 }
 
@@ -568,7 +568,7 @@ img:focus, video:focus {
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
-input[type="file"] {
+input[type="file"], .pagination > li:not(.btn), .pagination > a:not(.btn) {
   color: #fff;
   background-color: #2d2d2d;
   background-image: linear-gradient(to top, #2d2d2d, #474747, #535353);
@@ -591,11 +591,11 @@ input[type="file"] {
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
-input[type="file"]:hover, .btn.hovered, button.hovered,
+input[type="file"]:hover, .pagination > li:hover:not(.btn), .pagination > a:hover:not(.btn), .btn.hovered, button.hovered,
 input.hovered[type="button"],
 input.hovered[type="submit"],
 input.hovered[type="reset"],
-input.hovered[type="file"] {
+input.hovered[type="file"], .pagination > li.hovered:not(.btn), .pagination > a.hovered:not(.btn) {
   color: #fff;
   background-color: #ff6600;
   background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
@@ -605,22 +605,24 @@ input.hovered[type="file"] {
 input[type="button"]:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
-input[type="file"]:active, .btn.actived, button.actived,
+input[type="file"]:active, .pagination > li:active:not(.btn), .pagination > a:active:not(.btn), .btn.actived, button.actived,
 input.actived[type="button"],
 input.actived[type="submit"],
 input.actived[type="reset"],
-input.actived[type="file"] {
-  box-shadow: 0px 1px 5px #ff6600;
+input.actived[type="file"], .pagination > li.actived:not(.btn), .pagination > a.actived:not(.btn) {
+  color: #fff;
+  background-color: #ff6600;
+  background-image: linear-gradient(to top, #ff6600, #ff8533, #ff944d);
 }
 .btn:focus, button:focus,
 input[type="button"]:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
-input[type="file"]:focus, .btn.focused, button.focused,
+input[type="file"]:focus, .pagination > li:focus:not(.btn), .pagination > a:focus:not(.btn), .btn.focused, button.focused,
 input.focused[type="button"],
 input.focused[type="submit"],
 input.focused[type="reset"],
-input.focused[type="file"] {
+input.focused[type="file"], .pagination > li.focused:not(.btn), .pagination > a.focused:not(.btn) {
   outline: 0;
   box-shadow: 0px 1px 5px #ff6600;
 }
@@ -628,19 +630,19 @@ input.focused[type="file"] {
 input[disabled][type="button"],
 input[disabled][type="submit"],
 input[disabled][type="reset"],
-input[disabled][type="file"], .btn.disabled, button.disabled,
+input[disabled][type="file"], .pagination > li[disabled]:not(.btn), .pagination > a[disabled]:not(.btn), .btn.disabled, button.disabled,
 input.disabled[type="button"],
 input.disabled[type="submit"],
 input.disabled[type="reset"],
-input.disabled[type="file"], .btn[disabled]:hover, button[disabled]:hover,
+input.disabled[type="file"], .pagination > li.disabled:not(.btn), .pagination > a.disabled:not(.btn), .btn[disabled]:hover, button[disabled]:hover,
 input[disabled][type="button"]:hover,
 input[disabled][type="submit"]:hover,
 input[disabled][type="reset"]:hover,
-input[disabled][type="file"]:hover, .btn.disabled:hover, button.disabled:hover,
+input[disabled][type="file"]:hover, .pagination > li[disabled]:hover:not(.btn), .pagination > a[disabled]:hover:not(.btn), .btn.disabled:hover, button.disabled:hover,
 input.disabled[type="button"]:hover,
 input.disabled[type="submit"]:hover,
 input.disabled[type="reset"]:hover,
-input.disabled[type="file"]:hover {
+input.disabled[type="file"]:hover, .pagination > li.disabled:hover:not(.btn), .pagination > a.disabled:hover:not(.btn) {
   color: #fff;
   background-color: #d0d0d0;
   background-image: linear-gradient(to top, #d0d0d0, #eaeaea, #f6f6f6);
@@ -651,7 +653,7 @@ input.disabled[type="file"]:hover {
 input[type="button"] a,
 input[type="submit"] a,
 input[type="reset"] a,
-input[type="file"] a {
+input[type="file"] a, .pagination > li:not(.btn) a, .pagination > a:not(.btn) a {
   color: #fff;
 }
 
@@ -3610,6 +3612,34 @@ ____________________________________________________________________*/
 }
 .navcrumb a:not([href]):hover {
   color: #4d4d4d;
+}
+
+/*
+* For default theme. Here is the style definition of `pagination` design.
+________________________________________________________________________*/
+.pagination {
+  padding: 0.1em;
+  font-size: 0.95em;
+  display: block;
+}
+.pagination > li:not(.btn):not(button), .pagination > a:not(.btn):not(button) {
+  color: #1a1a1a;
+  background-color: transparent;
+  background-image: none;
+}
+.pagination > li:not(.btn):not(button) a, .pagination > li:not(.btn):not(button) a:visited, .pagination > a:not(.btn):not(button):visited {
+  color: #1a1a1a;
+}
+.pagination > a:not(.btn):not(button):visited:hover, .pagination > a:not(.btn):not(button):visited.hovered, .pagination > a:not(.btn):not(button):visited:active, .pagination > a:not(.btn):not(button):visited.actived, .pagination > a:not(.btn):not(button):visited[disabled], .pagination > a:not(.btn):not(button):visited.disabled {
+  color: #fff;
+}
+.pagination > li, .pagination > a, .pagination > button, .pagination > li:not(.btn):not(button), .pagination > a:not(.btn):not(button) {
+  box-shadow: 0px 0px 1px rgba(103, 103, 103, 0.7);
+  margin: 0.2em 0.1em;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*
