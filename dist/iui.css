@@ -1053,7 +1053,7 @@ __________________________________________________________________*/
   text-decoration: none;
   padding: 0.5em 0.2em;
   display: inline-block;
-  max-width: 200px;
+  max-width: 220px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3572,7 +3572,7 @@ ____________________________________________________________________*/
   font-family: Ubuntu, _Ubuntu, "DejaVu Sans", _DejaVu_Sans, verdana, OpenSans, sans-serif;
   padding: 0em;
   box-sizing: border-box;
-  max-width: 200px;
+  max-width: 220px;
   vertical-align: middle;
   white-space: nowrap;
   overflow: hidden;

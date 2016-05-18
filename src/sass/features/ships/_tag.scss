@@ -15,7 +15,7 @@ __________________________________________________________________*/
   border-radius: 16px ;
   margin-bottom: 5px ;
   margin-right: 5px ;
-  max-width: 220px ;
+  max-width: $tag-max-width ;
   
   @include global-bg-look( $tag-colors) ;
   @include style-overflow-of("line") ;

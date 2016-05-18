@@ -34,6 +34,8 @@ $media-groups: ("x": "any",
     "l": $screen-large-width,   "b": $screen-big-width
 ) ;
 
+$item-max-width: 220px !default;
+
 $global-z-index: 1000 !default;
 
 //2. color
@@ -182,7 +184,7 @@ $navbar-b-fixed: true !default;
 
 $navbar-border-aspect: ('look-b', 'look-bt', 'look-bb', 'look-bl', 'look-br') !default;
 
-$navbar-colors: ('bgcolor':$default-bg-color, 'color':$default-txt-color) ;
+$navbar-colors: ('bgcolor':$default-bg-color, 'color':$default-txt-color) !default;
 
 $navbar-border: 0.15em solid $hover-color ;
 $navbar-active-border: 0.25em solid $select-color ;
@@ -195,7 +197,7 @@ $navbar-dsm-position: 1.9em ; //navbar default submenu position
 
 $menu-font-size: 1.05em ;
 $menu-sub-font-size: 1.0em ; //default submenu font size
-$menu-max-width: 200px ;
+$menu-max-width: $item-max-width !default;
 
 
 //2.----------------------------
@@ -261,7 +263,7 @@ $badge-old-colors: ('bgcolor': lighten( $dark-color, 65%)) !default;
 $badge-hey-colors: ('bgcolor': $green-color, 'color': $select-txt-color) !default;
 
 $crumb-font-size: 0.9em !default;
-$crumb-max-width: 200px !default;
+$crumb-max-width: $item-max-width !default;
 $crumb-separator: "/" !default;
 
 $tag-colors: ('bgcolor': darken( $light-color, 12%), 'color': $default-txt-color) !default;
@@ -269,6 +271,7 @@ $tag-h-colors: ('bgcolor': $hover-color, 'color': $select-txt-color) !default; /
 
 $tag-padding-lr: 12px !default; //padding-left-right
 $tag-height: 32px !default;
+$tag-max-width: $item-max-width !default;
 
 //7.----------------------------
 //For some other extras properties
